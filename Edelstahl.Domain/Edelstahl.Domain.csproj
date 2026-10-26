@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{6D81C64F-0027-47A6-9B46-A54C2999458E}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Edelstahl.Domain</RootNamespace>
+    <AssemblyName>Edelstahl.Domain</AssemblyName>
+    <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Comercial\Cliente.cs" />
+    <Compile Include="Comercial\DetallePedido.cs" />
+    <Compile Include="Comercial\DetallePresupuesto.cs" />
+    <Compile Include="Comercial\EstadoPedido.cs" />
+    <Compile Include="Comercial\EstadoPresupuesto.cs" />
+    <Compile Include="Comercial\Moneda.cs" />
+    <Compile Include="Comercial\Pedido.cs" />
+    <Compile Include="Comercial\Presupuesto.cs" />
+    <Compile Include="Comercial\TipoItemPresupuesto.cs" />
+    <Compile Include="Common\Entity.cs" />
+    <Compile Include="Integrity\ClienteDvvService.cs" />
+    <Compile Include="Integrity\IntegridadTabla.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Security\PruebaSecurity.cs" />
+    <Compile Include="Security\RegistroBitacora.cs" />
+    <Compile Include="Security\ResultadoRespaldo.cs" />
+    <Compile Include="Security\Rol.cs" />
+    <Compile Include="Security\Usuario.cs" />
+      <Compile Include="Catalogo\Catalogo.cs" />
+    <Compile Include="Compras\Compras.cs" />
+    <Compile Include="Finanzas\Finanzas.cs" />
+    <Compile Include="Logistica\Logistica.cs" />
+    <Compile Include="Produccion\Produccion.cs" />
+      <Compile Include="Security\Permisos.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Inventario\" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>

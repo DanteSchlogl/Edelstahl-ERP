@@ -1,0 +1,8 @@
+<Solution>
+  <Project Path="Edelstahl.BLL/Edelstahl.BLL.csproj" Id="42cbeee8-002d-455b-804f-147097d48b34" />
+  <Project Path="Edelstahl.DAL/Edelstahl.DAL.csproj" Id="04dd06ef-1575-49a8-b4cb-256177f9adf4" />
+  <Project Path="Edelstahl.Domain/Edelstahl.Domain.csproj" Id="6d81c64f-0027-47a6-9b46-a54c2999458e" />
+  <Project Path="Edelstahl.Services/Edelstahl.Services.csproj" Id="43ee47a6-29b6-435f-a28d-1c8c6f190e6e" />
+  <Project Path="Edelstahl.Test/Edelstahl.Test.csproj" Id="da689262-561e-45f1-b34c-511e805ecdd2" />
+  <Project Path="Edelstahl.WinApp/Edelstahl.WinApp.csproj" Id="2303c0b0-b684-442e-b2ab-e14bbf058313" />
+</Solution>

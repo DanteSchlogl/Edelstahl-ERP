@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{42CBEEE8-002D-455B-804F-147097D48B34}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Edelstahl.BLL</RootNamespace>
+    <AssemblyName>Edelstahl.BLL</AssemblyName>
+    <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="DTOs\ClienteSeleccionDto.cs" />
+    <Compile Include="DTOs\DetallePresupuestoDto.cs" />
+    <Compile Include="DTOs\PresupuestoSeleccionDto.cs" />
+    <Compile Include="Exceptions\Base\BusinessRuleException.cs" />
+    <Compile Include="Exceptions\Commercial\ClienteDuplicadoException.cs" />
+    <Compile Include="Exceptions\Commercial\CUITInvalidoException.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Services\BitacoraService.cs" />
+    <Compile Include="Services\ClienteService.cs" />
+    <Compile Include="Services\ConfirmarPedidoService.cs" />
+    <Compile Include="Services\DemoAuthenticationService.cs" />
+    <Compile Include="Services\PedidoService.cs" />
+    <Compile Include="Services\PresupuestoService.cs" />
+    <Compile Include="Services\RespaldoService.cs" />
+    <Compile Include="Services\SesionActual.cs" />
+    <Compile Include="Services\UsuarioService.cs" />
+    <Compile Include="Validators\Crear ClienteValidator.cs" />
+      <Compile Include="Exceptions\Base\ReglaDeNegocioException.cs" />
+    <Compile Include="Infrastructure\Autorizacion.cs" />
+    <Compile Include="Infrastructure\Mensajes.cs" />
+    <Compile Include="Infrastructure\Numeracion.cs" />
+    <Compile Include="Infrastructure\Direcciones.cs" />
+    <Compile Include="Services\FaltantesService.cs" />
+      <Compile Include="DTOs\ComprasDtos.cs" />
+    <Compile Include="DTOs\InventarioDtos.cs" />
+    <Compile Include="DTOs\ProduccionDtos.cs" />
+    <Compile Include="Infrastructure\Etiquetas.cs" />
+    <Compile Include="Infrastructure\Referencias.cs" />
+    <Compile Include="Produccion\EstadosOrden.cs" />
+    <Compile Include="Services\CatalogoService.cs" />
+    <Compile Include="Services\ComprasService.cs" />
+    <Compile Include="Services\InventarioMotor.cs" />
+    <Compile Include="Services\InventarioService.cs" />
+    <Compile Include="Services\ProduccionService.cs" />
+      <Compile Include="DTOs\PresupuestoDtos.cs" />
+      <Compile Include="DTOs\FinanzasDtos.cs" />
+    <Compile Include="DTOs\LogisticaDtos.cs" />
+    <Compile Include="Services\DevolucionService.cs" />
+    <Compile Include="Services\FacturacionService.cs" />
+    <Compile Include="Services\FinanzasService.cs" />
+    <Compile Include="Services\LogisticaService.cs" />
+      <Compile Include="DTOs\ImportacionDtos.cs" />
+    <Compile Include="Infrastructure\LectorCsv.cs" />
+    <Compile Include="Services\CargaInicialService.cs" />
+    <Compile Include="Services\ImportacionService.cs" />
+      <Compile Include="DTOs\ReportesDtos.cs" />
+    <Compile Include="Services\AdministracionService.cs" />
+    <Compile Include="Services\DocumentosService.cs" />
+    <Compile Include="Services\MonitorDeStock.cs" />
+    <Compile Include="Services\ReporteService.cs" />
+    <Compile Include="Services\SeguimientoService.cs" />
+      <Compile Include="Services\PreparacionService.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Edelstahl.DAL\Edelstahl.DAL.csproj">
+      <Project>{04dd06ef-1575-49a8-b4cb-256177f9adf4}</Project>
+      <Name>Edelstahl.DAL</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Edelstahl.Domain\Edelstahl.Domain.csproj">
+      <Project>{6d81c64f-0027-47a6-9b46-a54c2999458e}</Project>
+      <Name>Edelstahl.Domain</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Edelstahl.Services\Edelstahl.Services.csproj">
+      <Project>{43ee47a6-29b6-435f-a28d-1c8c6f190e6e}</Project>
+      <Name>Edelstahl.Services</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.config" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>

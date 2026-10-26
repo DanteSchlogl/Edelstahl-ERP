@@ -1,0 +1,526 @@
+﻿# Edelstahl ERP - ru-RU. Formato: clave<TAB>texto. La clave es el texto en ingles.
+TituloAplicacion	Edelstahl ERP
+ModuloVentas	Коммерческое управление - Продажи
+Idioma	Язык
+NombreEspanolArgentina	Español (Argentina)
+NombreEspanolEspana	Español (España)
+NombreInglesEstadosUnidos	English (United States)
+NombreInglesReinoUnido	English (United Kingdom)
+NombrePortuguesBrasil	Português (Brasil)
+NombreAleman	Deutsch
+NombreRuso	Русский
+VentasPedidos	Продажи и заказы
+Produccion	Производство
+ComprasStock	Закупки / Склад
+Logistica	Логистика
+Finanzas	Финансы
+AtencionCliente	Обслуживание клиентов
+ConfirmarPedido	Подтвердить заказ
+Cliente	Клиент
+Presupuesto	Предложение
+Productos	Товары
+Validacion	Проверка
+Sena	Предоплата
+Confirmacion	Подтверждение
+Resultado	Результат
+Buscar	Поиск
+Actualizar	Обновить
+NuevaOperacion	Новая операция
+QuitarPresupuesto	Удалить предложение
+VerComprobante	Просмотреть документ
+GuardarCliente	Сохранить клиента
+NuevoCliente	Новый клиент
+SeleccionarCliente	Выбрать клиента
+SeleccionarPresupuesto	Выбрать предложение
+RegistrarSena	Зарегистрировать предоплату
+Refrescar	Обновить
+Limpiar	Очистить
+Cancelar	Отмена
+Aceptar	Принять
+Cerrar	Закрыть
+Estado	Статус
+EstadoPendiente	Ожидание
+PedidoConfirmado	Заказ подтверждён
+AnticipoRequerido	Требуется предоплата
+ListoConfirmar	Готово к подтверждению
+SinSeleccionar	Не выбрано
+CreditoDisponible	Доступный кредит
+Subtotal	Промежуточный итог
+IVA	НДС
+Anticipo	Предоплата
+AnticipoRegistrado	Зарегистрированная предоплата
+SaldoFacturar	Остаток к выставлению
+Items	Позиции
+Total	ИТОГО
+Codigo	Код
+Descripcion	Описание
+Cantidad	Количество
+Precio	Цена
+Numero	Номер
+Fecha	Дата
+Usuario	Пользователь
+RazonSocial	Название компании
+CUIT	Налоговый номер
+Correo	Электронная почта
+Telefono	Телефон
+Localidad	Город
+Provincia	Регион
+CodigoPostal	Почтовый индекс
+LimiteCredito	Кредитный лимит
+DeudaActual	Текущая задолженность
+Activo	Активен
+MedioPago	Способ оплаты
+NumeroComprobante	Номер документа
+FechaPago	Дата оплаты
+PresupuestosDisponibles	Доступные предложения
+ClientesRegistrados	Зарегистрированные клиенты
+GestionClientes	Управление клиентами
+DatosCliente	Данные клиента
+ImporteRecibido	Полученная сумма
+ComprobantePedido	Документ заказа
+InformacionComercial	Коммерческая информация
+CondicionPago	Условия оплаты
+PlazoEntrega	Срок поставки
+EntregaIncluida	Доставка включена
+Observaciones	Примечания
+Si	Да
+No	Нет
+RespaldoDatos	Резервное копирование
+IniciarSesion	Войти
+NombreUsuario	Имя пользователя
+Contrasena	Пароль
+CerrarSesion	Выйти
+UsuarioActual	Текущий пользователь
+Bienvenido	Добро пожаловать
+CredencialesInvalidas	Неверное имя пользователя или пароль
+SeleccionarModoInicio	Выберите режим запуска
+IniciarConSqlServer	Запустить с SQL Server
+IniciarModoDemostracion	Запустить демонстрационный режим
+SalirAplicacion	Выйти из приложения
+BaseDatosDisponible	База данных доступна
+BaseDatosNoDisponible	База данных недоступна
+ModoDemostracion	Демонстрационный режим
+BuscarClientes	Поиск клиентов
+MostrarTodos	Показать всех
+ClienteRequerido	Необходимо выбрать клиента
+ClienteNoEncontrado	Клиент не найден
+BusquedaSinResultados	Результаты не найдены
+ClienteDuplicado	Клиент с указанным налоговым номером уже существует
+ClienteRegistradoCorrectamente	Клиент успешно зарегистрирован
+ActualizarListado	Обновить список
+SeleccionCliente	Выбор клиента
+SeleccionPresupuesto	Выбор предложения
+RevisionProductos	Проверка товаров
+ValidacionCredito	Проверка кредита
+RegistroSena	Регистрация предоплаты
+ResumenConfirmacion	Сводка подтверждения
+ResultadoOperacion	Результат операции
+CreditoSuficiente	Достаточный кредит
+CreditoInsuficiente	Недостаточный кредит
+PresupuestoConfirmable	Предложение доступно для подтверждения
+PresupuestoNoConfirmable	Предложение не может быть подтверждено
+ConfirmarGeneracionPedido	Подтвердить создание заказа?
+ImportarClientes	Импортировать клиентов
+SeleccionarArchivo	Выбрать файл
+ArchivoSeleccionado	Файл выбран
+ArchivoNoSeleccionado	Файл не выбран
+RegistrosDetectados	Обнаружено записей
+RegistrosImportados	Импортировано записей
+RegistrosOmitidos	Пропущено записей
+ImportacionFinalizada	Импорт завершён
+ImportacionConErrores	Импорт завершён с ошибками
+DatosProtegidos	Защищённые данные
+CifradoSimetrico	Симметричное шифрование
+CUITCifrado	Зашифрованный налоговый номер
+ErrorDescifrado	Не удалось расшифровать данные
+IntegridadInvalida	Целостность данных нарушена
+CrearRespaldo	Создать резервную копию
+RestaurarRespaldo	Восстановить резервную копию
+SeleccionarDestino	Выбрать место сохранения
+RespaldoExitoso	Резервное копирование успешно завершено
+RestauracionExitosa	Восстановление успешно завершено
+ErrorBaseDatos	Ошибка базы данных
+ConexionExitosa	Соединение успешно установлено
+DescripcionRegistrarSena	Введите точную сумму предоплаты, необходимую для подтверждения заказа
+SenaPendiente	Предоплата ожидается
+TransferenciaBancaria	Банковский перевод
+DepositoBancario	Банковский взнос
+Cheque	Чек
+Efectivo	Наличные
+Tarjeta	Карта
+SenaNoRequerida	Предоплата не требуется
+PresupuestoSinAnticipo	Для выбранного предложения предоплата не требуется
+ImporteInsuficiente	Недостаточная сумма
+MensajeImporteInsuficiente	Полученной суммы недостаточно. Необходимая предоплата составляет
+ImporteSuperior	Сумма превышает необходимую предоплату
+MensajeImporteSuperior	Полученная сумма не может превышать необходимую предоплату
+MedioPagoRequerido	Необходимо выбрать способ оплаты
+DebeSeleccionarMedioPago	Выберите способ оплаты
+ComprobanteRequerido	Необходим платёжный документ
+ErrorGenerarComprobante	Не удалось создать номер платёжного документа
+FechaIncorrecta	Неверная дата
+FechaPagoFutura	Дата платежа не может быть в будущем
+SenaRegistradaCorrectamente	Предоплата успешно зарегистрирована
+MensajeSenaRegistrada	Предоплата была успешно зарегистрирована
+Importe	Сумма
+Comprobante	Документ
+SubtituloLogin	Введите учётные данные, чтобы продолжить
+MostrarContrasena	Показать пароль
+AccesoDenegado	Доступ запрещён
+DescripcionModoInicio	Выберите способ запуска Edelstahl ERP
+DescripcionModoSql	Использует базы данных, вход, журнал аудита, сохранение данных и шифрование налогового номера
+DescripcionModoDemo	Позволяет просматривать интерфейс с временными данными без подключения к SQL Server
+Dashboard	Панель
+Sales	Продажи
+Production	Производство
+Purchasing and stock	Закупки и склад
+Logistics and returns	Логистика и возвраты
+Finance	Финансы
+View audit log	Журнал аудита
+Administration	Администрирование
+Audit log	Журнал аудита
+Language	Язык
+User: {0} ({1})	Пользователь: {0} ({1})
+Stock alerts: {0}	Предупреждения по складу: {0}
+Orders	Заказы
+Quotations	Предложения
+Customers	Клиенты
+Stock	Склад
+Catalog	Каталог
+Movements	Движения
+Reservations	Резервы
+Reorder suggestions	Предложения по пополнению
+Purchase orders	Заказы поставщикам
+Receipts	Поступления
+Suppliers	Поставщики
+Manufacturing orders	Производственные заказы
+Pending to manufacture	Ожидает производства
+Ready to ship	Готово к отправке
+Delivery notes	Накладные
+Route sheets	Маршрутные листы
+Returns	Возвраты
+Vehicles	Транспорт
+Drivers	Водители
+Invoices	Счета
+Collections	Поступления платежей
+Credit notes	Кредит-ноты
+Supplier payments	Платежи поставщикам
+Receivables	Дебиторская задолженность
+Payables	Кредиторская задолженность
+Payment methods	Способы оплаты
+Indicators	Показатели
+Reports	Отчёты
+Users	Пользователи
+Roles and permissions	Роли и права
+Backup and data	Резервное копирование и данные
+Accept	Принять
+Cancel	Отмена
+Edit	Изменить
+Delete	Удалить
+Search	Поиск
+Export CSV	Экспорт CSV
+Export XML	Экспорт XML
+New customer	Новый клиент
+New quotation	Новое предложение
+Confirm order	Подтвердить заказ
+Issue invoice	Выставить счёт
+Print invoice	Печать счёта
+Cancel order	Отменить заказ
+Account statement	Выписка по счёту
+New product	Новый товар
+Register movement	Зарегистрировать движение
+Transfer	Перемещение
+Mass price update	Массовое изменение цен
+Create purchase order	Создать заказ поставщику
+New purchase order	Новый заказ поставщику
+Receive goods	Принять товар
+Pay supplier	Оплатить поставщику
+New supplier	Новый поставщик
+Create manufacturing order	Создать производственный заказ
+Reserve materials	Резервировать материалы
+Start production	Начать производство
+Record progress	Отметить ход работ
+Record consumption	Зафиксировать расход
+Send to quality	Отправить в контроль качества
+Quality result	Результат контроля качества
+Create delivery note	Создать накладную
+Print delivery note (3 copies)	Печать накладной (3 экз.)
+New route sheet	Новый маршрутный лист
+Start route	Начать маршрут
+Register delivery	Зарегистрировать доставку
+Register return	Зарегистрировать возврат
+Receive	Принять
+Issue credit note	Выставить кредит-ноту
+Register collection	Зарегистрировать платёж
+New user	Новый пользователь
+Reset password	Сбросить пароль
+Unlock	Разблокировать
+Change role	Изменить роль
+Activate / deactivate	Включить / отключить
+Create full backup	Создать полную копию
+Load sample data	Загрузить демо-данные
+Import customers (CSV)	Импорт клиентов (CSV)
+Import products (CSV)	Импорт товаров (CSV)
+Select a row first.	Сначала выберите строку.
+Loading...	Загрузка...
+{0} record(s)	Записей: {0}
+Customer	Клиент
+Supplier	Поставщик
+Product	Товар
+Quantity	Количество
+Description	Описание
+Status	Статус
+Date	Дата
+Number	Номер
+Total	Итого
+Net	Нетто
+VAT	НДС
+Balance	Остаток
+Amount	Сумма
+Name	Название
+Code	Код
+Price	Цена
+Unit price	Цена за единицу
+Reason	Причина
+Notes	Примечания
+Address	Адрес
+City	Город
+Phone	Телефон
+Email	Эл. почта
+Priority	Приоритет
+Active	Активен
+Pending	В ожидании
+Delivered	Доставлено
+Cancelled	Отменено
+Draft	Черновик
+Sent	Отправлено
+Accepted	Принято
+Rejected	Отклонено
+Expired	Просрочено
+Paid	Оплачено
+Void	Аннулировано
+Approved	Одобрено
+Rework	Доработка
+In process	В работе
+In production	В производстве
+Finished	Завершено
+Confirmed	Подтверждён
+Tax ID	ИНН
+Customer return	Возврат от клиента
+Invoice A	Счёт A
+Invoice B	Счёт B
+Choose the invoice type. Type A is for VAT registered customers; type B for final consumers.	Выберите тип счёта. Тип A для плательщиков НДС, тип B для конечных потребителей.
+Invoice type	Тип счёта
+Payment method	Способ оплаты
+Role	Роль
+User name	Имя пользователя
+Password	Пароль
+From	С
+To	По
+Run	Выполнить
+Report	Отчёт
+Sales by period	Продажи за период
+Sales by customer	Продажи по клиентам
+Sales by product	Продажи по товарам
+Stock valuation	Оценка запасов
+Edelstahl ERP could not be started.	Не удалось запустить Edelstahl ERP.
+Unexpected error	Непредвиденная ошибка
+The technical detail was recorded in the audit log.	Технические подробности записаны в журнал аудита.
+The operation could not be completed.	Не удалось выполнить операцию.
+The user name or the password is incorrect.	Неверное имя пользователя или пароль.
+Preparing the database...	Подготовка базы данных...
+Working...	Выполняется...
+Distance	Расстояние
+Time	Время
+Not delivered	Не доставлено
+This route sheet has no stops.	В этом маршрутном листе нет остановок.
+Calculating the route...	Расчёт маршрута...
+Straight lines: street routing is not available.	Прямые линии: маршрут по улицам недоступен.
+User	Пользователь
+Locked	Заблокирован
+Failed attempts	Неудачные попытки
+Last access	Последний вход
+Customer type	Тип клиента
+Company (CUIT)	Компания (CUIT)
+Individual (CUIL)	Физическое лицо (CUIL)
+Company	Компания
+Individual	Физическое лицо
+Tax ID (CUIT / CUIL)	Налоговый номер (CUIT / CUIL)
+Business name / full name	Название компании / полное имя
+Invoice A is only for companies (CUIT). Use Invoice B for individuals.	Счёт A только для компаний (CUIT). Для физических лиц используйте счёт B.
+The customer has no delivery address. Complete it in Customers before confirming an order with delivery.	У клиента нет адреса доставки. Заполните его в разделе «Клиенты» перед подтверждением заказа с доставкой.
+The customer has no delivery address. Complete it in Customers.	У клиента нет адреса доставки. Заполните его в разделе «Клиенты».
+The customer has no delivery address	У клиента нет адреса доставки
+No delivery address	Нет адреса доставки
+Expired quotations: {0}. Use "Extend validity" to renew them.	Просроченные предложения: {0}. Используйте «Продлить срок», чтобы обновить.
+Change quantity	Изменить количество
+Select a line first.	Сначала выберите строку.
+Order date	Дата заказа
+Delivery date	Дата доставки
+Enter a value greater than zero for {0}.	Введите значение больше нуля в поле «{0}».
+Enter a unit price greater than zero.	Введите цену за единицу больше нуля.
+Every item needs a unit price greater than zero.	Для каждой позиции нужна цена за единицу больше нуля.
+Edit line	Изменить строку
+Refresh	Обновить
+Quotation accepted. You can now confirm the order from Orders > Confirm order.	Предложение принято. Теперь можно подтвердить заказ: Заказы > Подтвердить заказ.
+Missing products	Недостающие товары
+Some products are not in stock. Add the quantities below to confirm the order.	Некоторых товаров нет на складе. Укажите ниже количества, чтобы подтвердить заказ.
+Add stock and confirm	Добавить остаток и подтвердить
+Add at least the missing quantity of {0}.	Добавьте не меньше недостающего количества для {0}.
+Stock entry for quotation {0}	Приход на склад для предложения {0}
+This product is not marked as purchasable.	Этот товар не отмечен как закупаемый.
+Required	Требуется
+Missing	Не хватает
+Add	Добавить
+Verify the load	Проверка погрузки
+Check each line against the goods you are loading onto the truck. The quantities come from the invoice and cannot be changed.	Сверьте каждую строку с товаром, который загружается в грузовик. Количества берутся из счёта и не изменяются.
+Not ready to ship	Не готов к отправке
+Verified: {0} of {1}	Проверено: {0} из {1}
+Route started.	Маршрут начат.
+This delivery note is not available for a route sheet (it may already be on one).	Эта накладная недоступна для маршрутного листа (возможно, она уже в одном из них).
+Assign to route sheet	Назначить в маршрутный лист
+Loaded	Загружено
+Incomplete weight	Вес неполный
+{0} was made to measure and cannot be returned.	{0} изготовлен на заказ и возврату не подлежит.
+Delivery and returns policy	Политика доставки и возвратов
+Check the goods when you receive them. Once the goods are delivered and the delivery note is signed, no returns are accepted. Only goods rejected or damaged at the time of delivery, noted on the delivery note, can be returned. Made-to-measure orders (custom manufacturing) cannot be returned.	Проверьте товар при получении. После доставки и подписания накладной возврат не принимается. Возврату подлежит только товар, отклонённый или повреждённый при доставке, с отметкой в накладной. Заказы на изготовление по размерам возврату не подлежат.
+ID / CUIT / CUIL	Документ / CUIT / CUIL
+Signature and clarification	Подпись и расшифровка
+Product to manufacture	Изготавливаемый товар
+There are no products that can be manufactured to measure.	Нет товаров, которые можно изготовить на заказ.
+Deposit	Аванс
+This quotation includes custom manufacturing, which requires a deposit of at least 30%.	Это предложение включает изготовление на заказ, для которого требуется аванс не менее 30%.
+Created automatically when the order was confirmed.	Создано автоматически при подтверждении заказа.
+Manufacturing orders created: {0}	Созданные производственные заказы: {0}
+Ready to coordinate delivery	Готово к согласованию доставки
+Preparation orders	Заказы на комплектацию
+Prepared	Подготовлен
+Waiting for production	Ожидает производства
+To prepare	К подготовке
+Products	Товары
+Invoice	Счёт
+The order was manufactured. Issue the invoice now so Logistics can ship it?	Заказ изготовлен. Выставить счёт сейчас, чтобы логистика могла отправить его?
+Invoice {0} issued. The order is ready to coordinate the delivery.	Счёт {0} выставлен. Заказ готов к согласованию доставки.
+Quotation	Предложение
+Warehouse	Склад
+Quotation {0} issued	Предложение {0} выставлено
+Quotation {0} accepted by the customer	Предложение {0} принято клиентом
+{0}: progress {1}% ({2})	{0}: ход {1}% ({2})
+Stock reserved: {0} x {1}	Остаток зарезервирован: {0} x {1}
+{0} assigned to route sheet {1}	{0} назначен в маршрутный лист {1}
+Route sheet {0} started	Маршрутный лист {0} начат
+Payment details	Данные платежа
+The order has a balance of {0}. Register the collection now?	По заказу остаток {0}. Зарегистрировать оплату сейчас?
+Departs from	Отправление из
+approximate location	примерное местоположение
+Deposit paid	Аванс оплачен
+Not paid yet	Ещё не оплачено
+Paid in full	Оплачено полностью
+Accept and manufacture	Принять и изготовить
+Accept order {0} and start manufacturing?	Принять заказ {0} и начать изготовление?
+Order {0} accepted. It is now in process; follow it in Manufacturing orders.	Заказ {0} принят. Он в работе; следите за ним в разделе «Производственные заказы».
+Lines without order	Строки без заказа
+Pending collections	Ожидаемые платежи
+Expected payment method	Предполагаемый способ оплаты
+Note how the customer plans to pay the balance. It does not register any collection.	Укажите, как клиент планирует оплатить остаток. Платёж не регистрируется.
+Cash	Наличные
+Bank transfer	Банковский перевод
+Check	Чек
+Card	Карта
+Cash on delivery	Наложенный платёж
+Balance due {0}: the customer must pay 100% before shipping	Остаток {0}: клиент должен оплатить 100% до отправки
+Customer paid 100% - ready to ship and deliver	Клиент оплатил 100%: готово к отправке и доставке
+The customer still owes {0}. The delivery note can be issued once the order is paid in full.	Клиент ещё должен {0}. Накладную можно выписать после полной оплаты заказа.
+Remaining	Остаток
+Payment	Оплата
+Document	Документ
+Order	Заказ
+Authorize / revoke credit	Разрешить / отозвать кредит
+Authorize {0} to receive goods without paying 100% beforehand (credit account)?	Разрешить {0} получать товар без 100% предоплаты (кредитный счёт)?
+Revoke the credit authorization of {0}? From now on they must pay 100% before delivery.	Отозвать кредитное разрешение для {0}? Теперь нужна 100% оплата до доставки.
+Authorized customer (credit account) - ready to ship and deliver	Авторизованный клиент (кредитный счёт): готово к отправке и доставке
+Authorized	Разрешено
+Consumed automatically when sent to quality control.	Списано автоматически при отправке на контроль качества.
+The order has no materials reserved. Reserve the materials before sending to quality control.	У заказа нет зарезервированных материалов. Зарезервируйте их перед отправкой на контроль качества.
+Summary	Сводка
+Order created	Заказ создан
+{0} units	{0} ед.
+Accepted and started	Принят и начат
+Progress	Ход работ
+Quality control	Контроль качества
+Finished product delivered to stock.	Готовая продукция принята на склад.
+Reason: {0}	Причина: {0}
+Shipment log	Журнал отправок
+Delivery note issued	Накладная выписана
+Load verified	Погрузка проверена
+Assigned to route sheet	Назначен в маршрутный лист
+Route started	Маршрут начат
+Delivery result	Результат доставки
+Received by {0} (ID {1})	Получил {0} (документ {1})
+Rescheduled	Перенесён
+Reschedule delivery	Перенести доставку
+The delivery note becomes available again for a new route sheet. The failed attempt stays on record.	Накладная снова доступна для нового маршрутного листа. Неудачная попытка сохраняется в истории.
+Delivery rescheduled. Assign it to a new route sheet from Delivery notes.	Доставка перенесена. Назначьте её в новый маршрутный лист в разделе «Накладные».
+The reason for rescheduling is required.	Необходимо указать причину переноса.
+Only rejected or rescheduled deliveries can be rescheduled.	Переносить можно только отклонённые или несостоявшиеся доставки.
+Event	Событие
+Route sheet	Маршрутный лист
+Result	Результат
+Received by	Получил
+Issued	Выписан
+Delivery note	Накладная
+Ready to accept	Готов к приёму
+Waiting for the order to be confirmed and the deposit paid	Ожидает подтверждения заказа и оплаты аванса
+Deposit required: {0}	Требуемый аванс: {0}
+Quotation {0} is accepted but is not an order yet. Go to Sales > Orders > Confirm order and register the deposit; the manufacturing order will then be ready to accept here.	Предложение {0} принято, но ещё не заказ. Откройте Продажи > Заказы > Подтвердить заказ и зарегистрируйте аванс; затем производственный заказ можно будет принять здесь.
+Situation	Статус
+The deposit entered is below the minimum required by the quotation ({0}).	Введённый аванс меньше минимума, требуемого предложением ({0}).
+The deposit cannot exceed the total of the quotation.	Аванс не может превышать итог предложения.
+Enter the deposit the customer actually paid. It cannot be below the minimum shown next to the quotation.	Введите аванс, который клиент действительно заплатил. Он не может быть ниже минимума рядом с предложением.
+The password cannot be empty.	Пароль не может быть пустым.
+The password must have at least 8 characters.	Пароль должен содержать не менее 8 символов.
+Confirm password	Подтвердите пароль
+Show password	Показать пароль
+The passwords do not match.	Пароли не совпадают.
+Edit user	Изменить пользователя
+The full name and the email are required.	Полное имя и email обязательны.
+The order does not meet the conditions to be confirmed. Check the deposit and the quotation lines.	Заказ не соответствует условиям подтверждения. Проверьте аванс и строки предложения.
+To collect (customers)	К получению (клиенты)
+To pay (suppliers)	К оплате (поставщики)
+Materials of {0} - {1}	Материалы {0} - {1}
+The order is at {0}% progress. It cannot be sent to quality control until manufacturing reaches 100%. Keep manufacturing or cancel the order.	Заказ выполнен на {0}%. Его нельзя отправить на контроль качества, пока производство не достигнет 100%. Продолжайте производство или отмените заказ.
+The order is not complete	Заказ не завершён
+{0} is at {1}%. A product cannot go to quality control or enter the stock before manufacturing reaches 100%.	{0} выполнен на {1}%. Продукт нельзя отправить на контроль качества или на склад до достижения 100%.
+What do you want to do?	Что вы хотите сделать?
+Continue manufacturing	Продолжить производство
+Cancel the order (missing materials or products)	Отменить заказ (не хватает материалов или продуктов)
+Reason for cancelling	Причина отмены
+The order stays in process. Use Register progress to keep loading the manufacturing progress.	Заказ остаётся в работе. Используйте «Зарегистрировать ход», чтобы продолжить вносить ход производства.
+Write the reason for cancelling the order.	Укажите причину отмены заказа.
+Order {0} cancelled. The reserved materials were released.	Заказ {0} отменён. Зарезервированные материалы освобождены.
+QUOTATION	КОММЕРЧЕСКОЕ ПРЕДЛОЖЕНИЕ
+Valid until	Действительно до
+Quotation valid for {0} days (until {1}).	ПРЕДЛОЖЕНИЕ ДЕЙСТВИТЕЛЬНО {0} ДНЕЙ (до {1}).
+This quotation has expired. Ask for an updated one.	Срок действия предложения истёк. Запросите обновлённое.
+Prices may vary according to the date. The amounts are guaranteed only until the date of validity.	Цены могут меняться в зависимости от даты. Суммы гарантируются только до окончания срока действия.
+Made to measure	На заказ
+Deposit required to start manufacturing ({0}%)	Аванс для начала производства ({0}%)
+Terms and conditions	Условия
+This quotation does not reserve stock. Availability is confirmed when the order is placed.	Это предложение не резервирует товар. Наличие подтверждается при оформлении заказа.
+Made-to-measure items start manufacturing once the deposit is received, and they cannot be returned.	Изделия на заказ запускаются в производство после получения аванса и возврату не подлежат.
+Amounts in US dollars. Reference exchange rate: {0}.	Суммы в долларах США. Справочный курс: {0}.
+Delivery times start when the order is confirmed and, for made-to-measure items, when the deposit is received.	Сроки поставки начинаются с подтверждения заказа, а для изделий на заказ — с получения аванса.
+To accept this quotation, sign below or confirm it to your salesperson within the validity period.	Чтобы принять предложение, подпишите ниже или подтвердите его у менеджера в течение срока действия.
+Signature	Подпись
+Full name	ФИО
+ID number	Номер документа
+Print quotation	Печать предложения
+Rejected in quality control	Отклонено контролем качества
+Manufacturing cannot start until the minimum deposit ({0}%) is paid. Deposit received: {1}. Required: {2}.	Производство нельзя начать, пока не оплачен минимальный аванс ({0}%). Получено: {1}. Требуется: {2}.
+The order was rejected and closed. Its reserved materials were released. Resolve the sales order or ask for a new manufacturing order.	Заказ отклонён и закрыт. Зарезервированные материалы освобождены. Решите судьбу заказа клиента или запросите новый производственный заказ.
+Every quotation requires a deposit of at least {0}% to become an order.	Для превращения в заказ каждое предложение требует аванса не менее {0}%.
+Production cannot start until the invoice that records the deposit is issued. Issue it from Sales > Orders.	Производство нельзя начать, пока не выставлен счёт с отметкой об авансе. Выставьте его в разделе Продажи > Заказы.
+The invoice {0} does not show the minimum deposit ({1}%) as paid. Production cannot start.	В счёте {0} минимальный аванс ({1}%) не отмечен как оплаченный. Производство начать нельзя.
+Waiting for the invoice that records the deposit	Ожидается счёт с авансом
+The deposit is not invoiced yet. Issue the invoice now so the order can go to production?	Аванс ещё не выставлен в счёте. Выставить счёт сейчас, чтобы заказ мог пойти в производство?
+Invoice {0} issued, showing the deposit paid.	Счёт {0} выставлен, аванс оплачен.

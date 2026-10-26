@@ -1,0 +1,526 @@
+﻿# Edelstahl ERP - pt-BR. Formato: clave<TAB>texto. La clave es el texto en ingles.
+TituloAplicacion	Edelstahl ERP
+ModuloVentas	Gestão Comercial - Vendas
+Idioma	Idioma
+NombreEspanolArgentina	Español (Argentina)
+NombreEspanolEspana	Español (España)
+NombreInglesEstadosUnidos	English (United States)
+NombreInglesReinoUnido	English (United Kingdom)
+NombrePortuguesBrasil	Português (Brasil)
+NombreAleman	Deutsch
+NombreRuso	Русский
+VentasPedidos	Vendas e Pedidos
+Produccion	Produção
+ComprasStock	Compras / Estoque
+Logistica	Logística
+Finanzas	Finanças
+AtencionCliente	Atendimento ao Cliente
+ConfirmarPedido	Confirmar Pedido
+Cliente	Cliente
+Presupuesto	Orçamento
+Productos	Produtos
+Validacion	Validação
+Sena	Entrada
+Confirmacion	Confirmação
+Resultado	Resultado
+Buscar	Pesquisar
+Actualizar	Atualizar
+NuevaOperacion	Nova Operação
+QuitarPresupuesto	Remover Orçamento
+VerComprobante	Ver Comprovante
+GuardarCliente	Salvar Cliente
+NuevoCliente	Novo Cliente
+SeleccionarCliente	Selecionar Cliente
+SeleccionarPresupuesto	Selecionar Orçamento
+RegistrarSena	Registrar Entrada
+Refrescar	Atualizar
+Limpiar	Limpar
+Cancelar	Cancelar
+Aceptar	Aceitar
+Cerrar	Fechar
+Estado	Status
+EstadoPendiente	Pendente
+PedidoConfirmado	Pedido Confirmado
+AnticipoRequerido	Entrada Necessária
+ListoConfirmar	Pronto para Confirmar
+SinSeleccionar	Não Selecionado
+CreditoDisponible	Crédito Disponível
+Subtotal	Subtotal
+IVA	Imposto
+Anticipo	Entrada
+AnticipoRegistrado	Entrada Registrada
+SaldoFacturar	Saldo a Faturar
+Items	Itens
+Total	TOTAL
+Codigo	Código
+Descripcion	Descrição
+Cantidad	Quantidade
+Precio	Preço
+Numero	Número
+Fecha	Data
+Usuario	Usuário
+RazonSocial	Razão Social
+CUIT	Identificação Fiscal
+Correo	E-mail
+Telefono	Telefone
+Localidad	Cidade
+Provincia	Estado
+CodigoPostal	CEP
+LimiteCredito	Limite de Crédito
+DeudaActual	Dívida Atual
+Activo	Ativo
+MedioPago	Forma de Pagamento
+NumeroComprobante	Número do Comprovante
+FechaPago	Data do Pagamento
+PresupuestosDisponibles	Orçamentos Disponíveis
+ClientesRegistrados	Clientes Cadastrados
+GestionClientes	Gestão de Clientes
+DatosCliente	Dados do Cliente
+ImporteRecibido	Valor Recebido
+ComprobantePedido	Comprovante do Pedido
+InformacionComercial	Informações Comerciais
+CondicionPago	Condição de Pagamento
+PlazoEntrega	Prazo de Entrega
+EntregaIncluida	Entrega Incluída
+Observaciones	Observações
+Si	Sim
+No	Não
+RespaldoDatos	Backup de dados
+IniciarSesion	Entrar
+NombreUsuario	Nome de usuário
+Contrasena	Senha
+CerrarSesion	Sair
+UsuarioActual	Usuário atual
+Bienvenido	Bem-vindo
+CredencialesInvalidas	O usuário ou a senha estão incorretos
+SeleccionarModoInicio	Selecione o modo de inicialização
+IniciarConSqlServer	Iniciar com SQL Server
+IniciarModoDemostracion	Iniciar modo de demonstração
+SalirAplicacion	Sair do aplicativo
+BaseDatosDisponible	Banco de dados disponível
+BaseDatosNoDisponible	Banco de dados indisponível
+ModoDemostracion	Modo de demonstração
+BuscarClientes	Pesquisar clientes
+MostrarTodos	Mostrar todos
+ClienteRequerido	Selecione um cliente
+ClienteNoEncontrado	Cliente não encontrado
+BusquedaSinResultados	Nenhum resultado encontrado
+ClienteDuplicado	Já existe um cliente com a identificação fiscal informada
+ClienteRegistradoCorrectamente	Cliente cadastrado com sucesso
+ActualizarListado	Atualizar lista
+SeleccionCliente	Seleção do cliente
+SeleccionPresupuesto	Seleção do orçamento
+RevisionProductos	Revisão dos produtos
+ValidacionCredito	Validação de crédito
+RegistroSena	Registro da entrada
+ResumenConfirmacion	Resumo da confirmação
+ResultadoOperacion	Resultado da operação
+CreditoSuficiente	Crédito suficiente
+CreditoInsuficiente	Crédito insuficiente
+PresupuestoConfirmable	Orçamento disponível para confirmação
+PresupuestoNoConfirmable	O orçamento não pode ser confirmado
+ConfirmarGeneracionPedido	Deseja confirmar a geração do pedido?
+ImportarClientes	Importar clientes
+SeleccionarArchivo	Selecionar arquivo
+ArchivoSeleccionado	Arquivo selecionado
+ArchivoNoSeleccionado	Nenhum arquivo selecionado
+RegistrosDetectados	Registros detectados
+RegistrosImportados	Registros importados
+RegistrosOmitidos	Registros ignorados
+ImportacionFinalizada	Importação concluída
+ImportacionConErrores	A importação foi concluída com erros
+DatosProtegidos	Dados protegidos
+CifradoSimetrico	Criptografia simétrica
+CUITCifrado	Identificação fiscal criptografada
+ErrorDescifrado	Não foi possível descriptografar o dado
+IntegridadInvalida	A integridade do dado não é válida
+CrearRespaldo	Criar backup
+RestaurarRespaldo	Restaurar backup
+SeleccionarDestino	Selecionar destino
+RespaldoExitoso	Backup realizado com sucesso
+RestauracionExitosa	Restauração realizada com sucesso
+ErrorBaseDatos	Erro no banco de dados
+ConexionExitosa	Conexão realizada com sucesso
+DescripcionRegistrarSena	Informe o valor exato da entrada necessária para confirmar o pedido
+SenaPendiente	Entrada pendente
+TransferenciaBancaria	Transferência bancária
+DepositoBancario	Depósito bancário
+Cheque	Cheque
+Efectivo	Dinheiro
+Tarjeta	Cartão
+SenaNoRequerida	Entrada não necessária
+PresupuestoSinAnticipo	O orçamento selecionado não requer entrada
+ImporteInsuficiente	Valor insuficiente
+MensajeImporteInsuficiente	O valor recebido é insuficiente. A entrada necessária é
+ImporteSuperior	Valor superior ao necessário
+MensajeImporteSuperior	O valor recebido não pode superar a entrada necessária de
+MedioPagoRequerido	Forma de pagamento necessária
+DebeSeleccionarMedioPago	Selecione uma forma de pagamento
+ComprobanteRequerido	Comprovante necessário
+ErrorGenerarComprobante	Não foi possível gerar o número do comprovante
+FechaIncorrecta	Data incorreta
+FechaPagoFutura	A data do pagamento não pode ser futura
+SenaRegistradaCorrectamente	Entrada registrada com sucesso
+MensajeSenaRegistrada	A entrada foi registrada com sucesso
+Importe	Valor
+Comprobante	Comprovante
+SubtituloLogin	Informe suas credenciais para continuar
+MostrarContrasena	Mostrar senha
+AccesoDenegado	Acesso negado
+DescripcionModoInicio	Selecione como deseja executar o Edelstahl ERP
+DescripcionModoSql	Utiliza os bancos de dados, o login, a auditoria, a persistência e a criptografia da identificação fiscal
+DescripcionModoDemo	Permite explorar a interface usando dados temporários sem conexão com o SQL Server
+Dashboard	Painel
+Sales	Vendas
+Production	Produção
+Purchasing and stock	Compras e estoque
+Logistics and returns	Logística e devoluções
+Finance	Finanças
+View audit log	Ver registro de auditoria
+Administration	Administração
+Audit log	Registro de auditoria
+Language	Idioma
+User: {0} ({1})	Usuário: {0} ({1})
+Stock alerts: {0}	Alertas de estoque: {0}
+Orders	Pedidos
+Quotations	Orçamentos
+Customers	Clientes
+Stock	Estoque
+Catalog	Catálogo
+Movements	Movimentos
+Reservations	Reservas
+Reorder suggestions	Sugestões de reposição
+Purchase orders	Ordens de compra
+Receipts	Recebimentos
+Suppliers	Fornecedores
+Manufacturing orders	Ordens de fabricação
+Pending to manufacture	Pendente de fabricação
+Ready to ship	Pronto para envio
+Delivery notes	Guias de remessa
+Route sheets	Roteiros
+Returns	Devoluções
+Vehicles	Veículos
+Drivers	Motoristas
+Invoices	Faturas
+Collections	Recebimentos
+Credit notes	Notas de crédito
+Supplier payments	Pagamentos a fornecedores
+Receivables	Contas a receber
+Payables	Contas a pagar
+Payment methods	Formas de pagamento
+Indicators	Indicadores
+Reports	Relatórios
+Users	Usuários
+Roles and permissions	Funções e permissões
+Backup and data	Backup e dados
+Accept	Aceitar
+Cancel	Cancelar
+Edit	Editar
+Delete	Excluir
+Search	Buscar
+Export CSV	Exportar CSV
+Export XML	Exportar XML
+New customer	Novo cliente
+New quotation	Novo orçamento
+Confirm order	Confirmar pedido
+Issue invoice	Emitir fatura
+Print invoice	Imprimir fatura
+Cancel order	Cancelar pedido
+Account statement	Extrato de conta
+New product	Novo produto
+Register movement	Registrar movimento
+Transfer	Transferir
+Mass price update	Atualização de preços em massa
+Create purchase order	Criar ordem de compra
+New purchase order	Nova ordem de compra
+Receive goods	Receber mercadoria
+Pay supplier	Pagar fornecedor
+New supplier	Novo fornecedor
+Create manufacturing order	Criar ordem de fabricação
+Reserve materials	Reservar materiais
+Start production	Iniciar produção
+Record progress	Registrar andamento
+Record consumption	Registrar consumo
+Send to quality	Enviar à qualidade
+Quality result	Resultado da qualidade
+Create delivery note	Criar guia de remessa
+Print delivery note (3 copies)	Imprimir guia (3 vias)
+New route sheet	Novo roteiro
+Start route	Iniciar rota
+Register delivery	Registrar entrega
+Register return	Registrar devolução
+Receive	Receber
+Issue credit note	Emitir nota de crédito
+Register collection	Registrar recebimento
+New user	Novo usuário
+Reset password	Redefinir senha
+Unlock	Desbloquear
+Change role	Alterar função
+Activate / deactivate	Ativar / desativar
+Create full backup	Criar backup completo
+Load sample data	Carregar dados de exemplo
+Import customers (CSV)	Importar clientes (CSV)
+Import products (CSV)	Importar produtos (CSV)
+Select a row first.	Selecione uma linha primeiro.
+Loading...	Carregando...
+{0} record(s)	{0} registro(s)
+Customer	Cliente
+Supplier	Fornecedor
+Product	Produto
+Quantity	Quantidade
+Description	Descrição
+Status	Situação
+Date	Data
+Number	Número
+Total	Total
+Net	Líquido
+VAT	IVA
+Balance	Saldo
+Amount	Valor
+Name	Nome
+Code	Código
+Price	Preço
+Unit price	Preço unitário
+Reason	Motivo
+Notes	Observações
+Address	Endereço
+City	Cidade
+Phone	Telefone
+Email	E-mail
+Priority	Prioridade
+Active	Ativo
+Pending	Pendente
+Delivered	Entregue
+Cancelled	Cancelado
+Draft	Rascunho
+Sent	Enviado
+Accepted	Aceito
+Rejected	Rejeitado
+Expired	Vencido
+Paid	Pago
+Void	Anulada
+Approved	Aprovado
+Rework	Retrabalho
+In process	Em andamento
+In production	Em produção
+Finished	Finalizada
+Confirmed	Confirmado
+Tax ID	CNPJ/CUIT
+Customer return	Devolução de cliente
+Invoice A	Fatura A
+Invoice B	Fatura B
+Choose the invoice type. Type A is for VAT registered customers; type B for final consumers.	Escolha o tipo de fatura. O tipo A é para clientes contribuintes; o tipo B para consumidores finais.
+Invoice type	Tipo de fatura
+Payment method	Forma de pagamento
+Role	Função
+User name	Nome de usuário
+Password	Senha
+From	De
+To	Até
+Run	Executar
+Report	Relatório
+Sales by period	Vendas por período
+Sales by customer	Vendas por cliente
+Sales by product	Vendas por produto
+Stock valuation	Valorização do estoque
+Edelstahl ERP could not be started.	Não foi possível iniciar o Edelstahl ERP.
+Unexpected error	Erro inesperado
+The technical detail was recorded in the audit log.	O detalhe técnico foi registrado no log de auditoria.
+The operation could not be completed.	Não foi possível concluir a operação.
+The user name or the password is incorrect.	Usuário ou senha incorretos.
+Preparing the database...	Preparando o banco de dados...
+Working...	Processando...
+Distance	Distância
+Time	Tempo
+Not delivered	Não entregue
+This route sheet has no stops.	Esta folha de rota não tem paradas.
+Calculating the route...	Calculando o percurso...
+Straight lines: street routing is not available.	Linhas retas: roteamento por ruas indisponível.
+User	Usuário
+Locked	Bloqueado
+Failed attempts	Tentativas falhas
+Last access	Último acesso
+Customer type	Tipo de cliente
+Company (CUIT)	Empresa (CUIT)
+Individual (CUIL)	Pessoa física (CUIL)
+Company	Empresa
+Individual	Pessoa física
+Tax ID (CUIT / CUIL)	CUIT / CUIL
+Business name / full name	Razão social / nome completo
+Invoice A is only for companies (CUIT). Use Invoice B for individuals.	A fatura A é só para empresas (CUIT). Use a fatura B para pessoas físicas.
+The customer has no delivery address. Complete it in Customers before confirming an order with delivery.	O cliente não tem endereço de entrega. Complete em Clientes antes de confirmar um pedido com entrega.
+The customer has no delivery address. Complete it in Customers.	O cliente não tem endereço de entrega. Complete em Clientes.
+The customer has no delivery address	O cliente não tem endereço de entrega
+No delivery address	Sem endereço de entrega
+Expired quotations: {0}. Use "Extend validity" to renew them.	Orçamentos vencidos: {0}. Use "Estender validade" para renová-los.
+Change quantity	Alterar quantidade
+Select a line first.	Selecione primeiro uma linha.
+Order date	Data do pedido
+Delivery date	Data de entrega
+Enter a value greater than zero for {0}.	Informe um valor maior que zero em {0}.
+Enter a unit price greater than zero.	Informe um preço unitário maior que zero.
+Every item needs a unit price greater than zero.	Cada item precisa de um preço unitário maior que zero.
+Edit line	Editar linha
+Refresh	Atualizar
+Quotation accepted. You can now confirm the order from Orders > Confirm order.	Orçamento aceito. Agora você pode confirmar o pedido em Pedidos > Confirmar pedido.
+Missing products	Produtos em falta
+Some products are not in stock. Add the quantities below to confirm the order.	Alguns produtos estão sem estoque. Informe abaixo as quantidades para confirmar o pedido.
+Add stock and confirm	Adicionar estoque e confirmar
+Add at least the missing quantity of {0}.	Adicione pelo menos a quantidade que falta de {0}.
+Stock entry for quotation {0}	Entrada de estoque para o orçamento {0}
+This product is not marked as purchasable.	Este produto não está marcado como comprável.
+Required	Necessário
+Missing	Em falta
+Add	Adicionar
+Verify the load	Verificar a carga
+Check each line against the goods you are loading onto the truck. The quantities come from the invoice and cannot be changed.	Confira cada linha com a mercadoria que sobe no caminhão. As quantidades vêm da fatura e não podem ser alteradas.
+Not ready to ship	Não pronto para despacho
+Verified: {0} of {1}	Verificadas: {0} de {1}
+Route started.	Rota iniciada.
+This delivery note is not available for a route sheet (it may already be on one).	Esta nota de entrega não está disponível para uma folha de rota (pode já estar em uma).
+Assign to route sheet	Atribuir a folha de rota
+Loaded	Carregado
+Incomplete weight	Peso incompleto
+{0} was made to measure and cannot be returned.	{0} foi feito sob medida e não pode ser devolvido.
+Delivery and returns policy	Política de entrega e devoluções
+Check the goods when you receive them. Once the goods are delivered and the delivery note is signed, no returns are accepted. Only goods rejected or damaged at the time of delivery, noted on the delivery note, can be returned. Made-to-measure orders (custom manufacturing) cannot be returned.	Confira a mercadoria ao recebê-la. Depois de entregue e assinada a nota de entrega, não se aceitam devoluções. Só pode ser devolvida a mercadoria recusada ou danificada no momento da entrega, com registro na nota. Pedidos sob medida (fabricação especial) não admitem devolução.
+ID / CUIT / CUIL	Documento / CUIT / CUIL
+Signature and clarification	Assinatura e esclarecimento
+Product to manufacture	Produto a fabricar
+There are no products that can be manufactured to measure.	Não há produtos que possam ser fabricados sob medida.
+Deposit	Sinal
+This quotation includes custom manufacturing, which requires a deposit of at least 30%.	Este orçamento inclui fabricação especial, que exige um sinal de pelo menos 30%.
+Created automatically when the order was confirmed.	Criada automaticamente ao confirmar o pedido.
+Manufacturing orders created: {0}	Ordens de produção criadas: {0}
+Ready to coordinate delivery	Pronto para coordenar a entrega
+Preparation orders	Ordens de preparação
+Prepared	Preparado
+Waiting for production	Aguardando produção
+To prepare	A preparar
+Products	Produtos
+Invoice	Fatura
+The order was manufactured. Issue the invoice now so Logistics can ship it?	O pedido foi fabricado. Emitir a fatura agora para que a Logística possa despachá-lo?
+Invoice {0} issued. The order is ready to coordinate the delivery.	Fatura {0} emitida. O pedido está pronto para coordenar a entrega.
+Quotation	Orçamento
+Warehouse	Depósito
+Quotation {0} issued	Orçamento {0} emitido
+Quotation {0} accepted by the customer	Orçamento {0} aceito pelo cliente
+{0}: progress {1}% ({2})	{0}: avanço {1}% ({2})
+Stock reserved: {0} x {1}	Estoque reservado: {0} x {1}
+{0} assigned to route sheet {1}	{0} atribuído à folha de rota {1}
+Route sheet {0} started	Folha de rota {0} iniciada
+Payment details	Dados do pagamento
+The order has a balance of {0}. Register the collection now?	O pedido tem saldo de {0}. Registrar o recebimento agora?
+Departs from	Parte de
+approximate location	localização aproximada
+Deposit paid	Sinal pago
+Not paid yet	Ainda não pago
+Paid in full	Pago integral
+Accept and manufacture	Aceitar e fabricar
+Accept order {0} and start manufacturing?	Aceitar a ordem {0} e iniciar a fabricação?
+Order {0} accepted. It is now in process; follow it in Manufacturing orders.	Ordem {0} aceita. Já está em processo; acompanhe em Ordens de fabricação.
+Lines without order	Linhas sem ordem
+Pending collections	Recebimentos pendentes
+Expected payment method	Forma de pagamento prevista
+Note how the customer plans to pay the balance. It does not register any collection.	Anote como o cliente pretende pagar o saldo. Não registra nenhum recebimento.
+Cash	Dinheiro
+Bank transfer	Transferência
+Check	Cheque
+Card	Cartão
+Cash on delivery	Contra entrega
+Balance due {0}: the customer must pay 100% before shipping	Falta pagar {0}: o cliente deve pagar 100% antes do envio
+Customer paid 100% - ready to ship and deliver	Cliente pagou 100%: pronto para remeter e entregar
+The customer still owes {0}. The delivery note can be issued once the order is paid in full.	O cliente ainda deve {0}. A nota de entrega pode ser emitida quando o pedido estiver totalmente pago.
+Remaining	Falta
+Payment	Pagamento
+Document	Documento
+Order	Ordem
+Authorize / revoke credit	Autorizar / revogar crédito
+Authorize {0} to receive goods without paying 100% beforehand (credit account)?	Autorizar {0} a receber a mercadoria sem pagar 100% antes (conta corrente)?
+Revoke the credit authorization of {0}? From now on they must pay 100% before delivery.	Revogar a autorização de crédito de {0}? Daqui em diante deve pagar 100% antes da entrega.
+Authorized customer (credit account) - ready to ship and deliver	Cliente autorizado (conta corrente): pronto para remeter e entregar
+Authorized	Autorizado
+Consumed automatically when sent to quality control.	Consumido automaticamente ao enviar para o controle de qualidade.
+The order has no materials reserved. Reserve the materials before sending to quality control.	A ordem não tem materiais reservados. Reserve os materiais antes de enviar ao controle de qualidade.
+Summary	Resumo
+Order created	Ordem criada
+{0} units	{0} unidades
+Accepted and started	Aceita e iniciada
+Progress	Avanço
+Quality control	Controle de qualidade
+Finished product delivered to stock.	Produto acabado entregue ao estoque.
+Reason: {0}	Motivo: {0}
+Shipment log	Histórico de envios
+Delivery note issued	Nota de entrega emitida
+Load verified	Carga verificada
+Assigned to route sheet	Atribuído à folha de rota
+Route started	Rota iniciada
+Delivery result	Resultado da entrega
+Received by {0} (ID {1})	Recebido por {0} (documento {1})
+Rescheduled	Reprogramado
+Reschedule delivery	Reprogramar entrega
+The delivery note becomes available again for a new route sheet. The failed attempt stays on record.	A nota de entrega volta a ficar disponível para uma nova folha de rota. A tentativa falhada fica registrada.
+Delivery rescheduled. Assign it to a new route sheet from Delivery notes.	Entrega reprogramada. Atribua-a a uma nova folha de rota em Notas de entrega.
+The reason for rescheduling is required.	O motivo da reprogramação é obrigatório.
+Only rejected or rescheduled deliveries can be rescheduled.	Só entregas recusadas ou não concretizadas podem ser reprogramadas.
+Event	Evento
+Route sheet	Folha de rota
+Result	Resultado
+Received by	Recebido por
+Issued	Emissão
+Delivery note	Nota de entrega
+Ready to accept	Pronta para aceitar
+Waiting for the order to be confirmed and the deposit paid	Aguardando confirmação do pedido e pagamento do sinal
+Deposit required: {0}	Sinal exigido: {0}
+Quotation {0} is accepted but is not an order yet. Go to Sales > Orders > Confirm order and register the deposit; the manufacturing order will then be ready to accept here.	O orçamento {0} está aceito, mas ainda não é pedido. Vá em Vendas > Pedidos > Confirmar pedido e registre o sinal; depois a ordem de fabricação ficará pronta para aceitar aqui.
+Situation	Situação
+The deposit entered is below the minimum required by the quotation ({0}).	O sinal informado é menor que o mínimo exigido pelo orçamento ({0}).
+The deposit cannot exceed the total of the quotation.	O sinal não pode superar o total do orçamento.
+Enter the deposit the customer actually paid. It cannot be below the minimum shown next to the quotation.	Informe o sinal que o cliente realmente pagou. Não pode ser menor que o mínimo mostrado ao lado do orçamento.
+The password cannot be empty.	A senha não pode estar vazia.
+The password must have at least 8 characters.	A senha deve ter pelo menos 8 caracteres.
+Confirm password	Confirmar senha
+Show password	Mostrar senha
+The passwords do not match.	As senhas não coincidem.
+Edit user	Editar usuário
+The full name and the email are required.	O nome completo e o e-mail são obrigatórios.
+The order does not meet the conditions to be confirmed. Check the deposit and the quotation lines.	O pedido não cumpre as condições para ser confirmado. Verifique o sinal e as linhas do orçamento.
+To collect (customers)	A receber (clientes)
+To pay (suppliers)	A pagar (fornecedores)
+Materials of {0} - {1}	Materiais de {0} - {1}
+The order is at {0}% progress. It cannot be sent to quality control until manufacturing reaches 100%. Keep manufacturing or cancel the order.	A ordem está em {0}% de avanço. Não pode ir ao controle de qualidade até a fabricação chegar a 100%. Continue fabricando ou cancele a ordem.
+The order is not complete	A ordem não está completa
+{0} is at {1}%. A product cannot go to quality control or enter the stock before manufacturing reaches 100%.	{0} está em {1}%. Um produto não pode ir ao controle de qualidade nem entrar no estoque antes de a fabricação chegar a 100%.
+What do you want to do?	O que deseja fazer?
+Continue manufacturing	Continuar a fabricação
+Cancel the order (missing materials or products)	Cancelar a ordem (faltam materiais ou produtos)
+Reason for cancelling	Motivo do cancelamento
+The order stays in process. Use Register progress to keep loading the manufacturing progress.	A ordem continua em processo. Use Registrar avanço para continuar lançando o avanço da fabricação.
+Write the reason for cancelling the order.	Escreva o motivo do cancelamento da ordem.
+Order {0} cancelled. The reserved materials were released.	Ordem {0} cancelada. Os materiais reservados foram liberados.
+QUOTATION	ORÇAMENTO
+Valid until	Válido até
+Quotation valid for {0} days (until {1}).	ORÇAMENTO VÁLIDO POR {0} DIAS (até {1}).
+This quotation has expired. Ask for an updated one.	Este orçamento está vencido. Solicite um atualizado.
+Prices may vary according to the date. The amounts are guaranteed only until the date of validity.	Os preços podem variar conforme a data. Os valores só estão garantidos até a data de validade.
+Made to measure	Sob medida
+Deposit required to start manufacturing ({0}%)	Sinal exigido para iniciar a fabricação ({0}%)
+Terms and conditions	Condições
+This quotation does not reserve stock. Availability is confirmed when the order is placed.	Este orçamento não reserva estoque. A disponibilidade é confirmada ao fazer o pedido.
+Made-to-measure items start manufacturing once the deposit is received, and they cannot be returned.	Os produtos sob medida começam a ser fabricados ao receber o sinal e não admitem devolução.
+Amounts in US dollars. Reference exchange rate: {0}.	Valores em dólares americanos. Taxa de câmbio de referência: {0}.
+Delivery times start when the order is confirmed and, for made-to-measure items, when the deposit is received.	Os prazos de entrega começam na confirmação do pedido e, nos produtos sob medida, no recebimento do sinal.
+To accept this quotation, sign below or confirm it to your salesperson within the validity period.	Para aceitar este orçamento, assine abaixo ou confirme com seu vendedor dentro do prazo de validade.
+Signature	Assinatura
+Full name	Nome completo
+ID number	Documento
+Print quotation	Imprimir orçamento
+Rejected in quality control	Rejeitada no controle de qualidade
+Manufacturing cannot start until the minimum deposit ({0}%) is paid. Deposit received: {1}. Required: {2}.	Não é possível fabricar até que o sinal mínimo ({0}%) seja pago. Sinal recebido: {1}. Exigido: {2}.
+The order was rejected and closed. Its reserved materials were released. Resolve the sales order or ask for a new manufacturing order.	A ordem foi rejeitada e encerrada. Os materiais reservados foram liberados. Resolva o pedido de venda ou solicite uma nova ordem de fabricação.
+Every quotation requires a deposit of at least {0}% to become an order.	Todo orçamento exige um sinal de pelo menos {0}% para se tornar pedido.
+Production cannot start until the invoice that records the deposit is issued. Issue it from Sales > Orders.	A produção só pode começar depois de emitida a fatura que registra o sinal. Emita-a em Vendas > Pedidos.
+The invoice {0} does not show the minimum deposit ({1}%) as paid. Production cannot start.	A fatura {0} não mostra o sinal mínimo ({1}%) como pago. A produção não pode começar.
+Waiting for the invoice that records the deposit	Aguardando a fatura que registra o sinal
+The deposit is not invoiced yet. Issue the invoice now so the order can go to production?	O sinal ainda não foi faturado. Emitir a fatura agora para que a ordem possa ir à produção?
+Invoice {0} issued, showing the deposit paid.	Fatura {0} emitida, com o sinal pago.

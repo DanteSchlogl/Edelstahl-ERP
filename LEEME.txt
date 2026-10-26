@@ -1,0 +1,68 @@
+﻿EDELSTAHL ERP
+Sistema ficticio de gestion para una empresa de acero inoxidable (Practicas Profesionalizantes III).
+Todos los datos, comprobantes y empresas son de demostracion y no tienen validez fiscal.
+
+REQUISITOS
+- Windows con .NET Framework 4.8 y Visual Studio 2022 o posterior.
+- Para el modo SQL Server: SQL Server Express (localhost\SQLEXPRESS) o LocalDB.
+  Las bases y las tablas se crean solas la primera vez. Tambien estan los scripts en la carpeta Scripts.
+
+COMO EJECUTAR
+1. Abrir Edelstahl.slnx (o los .csproj) en Visual Studio. Restaura los paquetes NuGet solo.
+2. Dejar Edelstahl.WinApp como proyecto de inicio y presionar F5.
+3. Elegir el modo:
+   - Demostracion: todo en memoria, sin base de datos. Usuario demo con la clave que figura en el codigo
+     del servicio de autenticacion de demostracion (DemoAuthenticationService).
+   - SQL Server: la primera vez pide crear el administrador inicial. Los clientes y productos de ejemplo
+     se cargan desde Datos\clientes.csv y Datos\productos.csv (el programa lo ofrece al ingresar).
+4. El programa siempre arranca en ingles. Al iniciar sesion se aplica el idioma que el usuario eligio
+   la ultima vez (selector con banderas arriba a la derecha).
+
+QUE INCLUYE
+- Ventas: clientes (alta, edicion, importacion CSV), presupuestos con vigencia de 7 dias, confirmacion de pedido
+  con seña, descuento mayor al 10% solo con administrador, seguimiento del pedido en todas sus etapas.
+- Produccion: ordenes de fabricacion con patron State, reserva de materiales, avance, consumo y merma,
+  control de calidad (aprobado, rechazado, reproceso).
+- Compras y stock: catalogo con categorias y actualizacion masiva de precios, stock por ubicacion, movimientos,
+  reservas, alertas de reposicion (hilo en segundo plano), ordenes de compra, recepcion y pago a proveedores.
+- Logistica: remito en triplicado (original verde, duplicado amarillo, triplicado rosa, en colores pastel),
+  preparacion de pedidos (reservar o ingresar el stock faltante) y fabricacion rapida, hojas de ruta con mapa interactivo del recorrido (esquematico y ficticio, sede en Capital), flota, choferes, entregas y devoluciones con inspeccion y reingreso al stock.
+- Finanzas: factura A o B a eleccion, cobros, notas de credito, cuentas a cobrar y a pagar, cuenta corriente.
+- Reportes: indicadores, ventas por periodo/cliente/producto, valorizacion de stock; exportacion a CSV y XML
+  (reflexion y serializacion).
+- Administracion: usuarios, roles y permisos, BITACORA (menu "View audit log" con filtros), respaldo de bases,
+  carga y importacion de datos en segundo plano.
+
+SEGURIDAD
+- Contraseñas con PBKDF2 y sal; bloqueo tras intentos fallidos; permisos por rol en cada operacion.
+- CUIT de clientes cifrado con AES; digitos verificadores (DVH/DVV) para detectar alteraciones.
+- El archivo Datos\clientes.csv tiene el contacto (correo, telefono, calle) reemplazado por datos ficticios.
+
+PRUEBAS AUTOMATICAS
+Edelstahl.Test.exe [cifrado] [demo] [sql] [pantallas] [pantallassql]
+  demo / sql   recorre todos los casos de uso de punta a punta
+  pantallas    abre cada modulo y cada dialogo principal
+Para no tocar las bases reales, usar variables de entorno antes de ejecutar las pruebas:
+  EDELSTAHL_NEGOCIO_DB=PruebaNegocio   EDELSTAHL_SERVICIOS_DB=PruebaServicios
+
+CONFIGURACION (Edelstahl.WinApp\App.config)
+  SqlServerInstancia  vacio = busca localhost\SQLEXPRESS y luego LocalDB
+  BaseNegocio, BaseServicios  nombres de las bases
+  AesEncryptionSecret  clave de cifrado (proyecto academico; en produccion va en un gestor de secretos)
+
+CAPAS
+Edelstahl.Domain (entidades) / Edelstahl.DAL (Entity Framework 6, repositorios, esquema) /
+Edelstahl.BLL (reglas de negocio) / Edelstahl.Services (cifrado, idiomas, PDF, exportadores) /
+Edelstahl.WinApp (interfaz) / Edelstahl.Test (pruebas).
+
+PATRONES USADOS
+Repository, Factory (FactoryDataAccess), State (ordenes de fabricacion), Template Method (PDF y exportadores),
+Observer (cambio de idioma, alertas de stock), Singleton de sesion, reflexion (ExportadorCsv), serializacion XML,
+hilos (Task, lock, carga en segundo plano, monitor de stock).
+
+
+MAPA DE LA HOJA DE RUTA
+Usa Leaflet (carpeta Edelstahl.WinApp\Mapa, licencia BSD-2) con los mapas de OpenStreetMap dentro de WebView2.
+No necesita clave de API. Requiere internet para los mosaicos del mapa y para calcular el recorrido por calles
+(servicio publico OSRM); sin internet o sin el runtime WebView2 muestra el mapa esquematico anterior.
+Las direcciones son ficticias: las paradas se ubican con la tabla GeoFicticio. Mapa (c) colaboradores de OpenStreetMap.

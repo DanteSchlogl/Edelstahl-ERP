@@ -1,0 +1,543 @@
+﻿# Edelstahl ERP - de-DE. Formato: clave<TAB>texto. La clave es el texto en ingles.
+TituloAplicacion	Edelstahl ERP
+ModuloVentas	Kaufmännische Verwaltung - Vertrieb
+Idioma	Sprache
+NombreEspanolArgentina	Español (Argentina)
+NombreEspanolEspana	Español (España)
+NombreInglesEstadosUnidos	English (United States)
+NombreInglesReinoUnido	English (United Kingdom)
+NombrePortuguesBrasil	Português (Brasil)
+NombreAleman	Deutsch
+NombreRuso	Русский
+VentasPedidos	Verkauf und Bestellungen
+Produccion	Produktion
+ComprasStock	Einkauf / Lager
+Logistica	Logistik
+Finanzas	Finanzen
+AtencionCliente	Kundenservice
+ConfirmarPedido	Bestellung bestätigen
+Cliente	Kunde
+Presupuesto	Angebot
+Productos	Produkte
+Validacion	Validierung
+Sena	Anzahlung
+Confirmacion	Bestätigung
+Resultado	Ergebnis
+Buscar	Suchen
+Actualizar	Aktualisieren
+NuevaOperacion	Neuer Vorgang
+QuitarPresupuesto	Angebot entfernen
+VerComprobante	Beleg anzeigen
+GuardarCliente	Kunden speichern
+NuevoCliente	Neuer Kunde
+SeleccionarCliente	Kunden auswählen
+SeleccionarPresupuesto	Angebot auswählen
+RegistrarSena	Anzahlung erfassen
+Refrescar	Aktualisieren
+Limpiar	Leeren
+Cancelar	Abbrechen
+Aceptar	Bestätigen
+Cerrar	Schließen
+Estado	Status
+EstadoPendiente	Ausstehend
+PedidoConfirmado	Bestellung bestätigt
+AnticipoRequerido	Anzahlung erforderlich
+ListoConfirmar	Bereit zur Bestätigung
+SinSeleccionar	Nicht ausgewählt
+CreditoDisponible	Verfügbarer Kredit
+Subtotal	Zwischensumme
+IVA	Mehrwertsteuer
+Anticipo	Anzahlung
+AnticipoRegistrado	Erfasste Anzahlung
+SaldoFacturar	Zu berechnender Restbetrag
+Items	Positionen
+Total	GESAMT
+Codigo	Code
+Descripcion	Beschreibung
+Cantidad	Menge
+Precio	Preis
+Numero	Nummer
+Fecha	Datum
+Usuario	Benutzer
+RazonSocial	Firmenname
+CUIT	Steuernummer
+Correo	E-Mail
+Telefono	Telefon
+Localidad	Ort
+Provincia	Bundesland
+CodigoPostal	Postleitzahl
+LimiteCredito	Kreditlimit
+DeudaActual	Aktuelle Schulden
+Activo	Aktiv
+MedioPago	Zahlungsmethode
+NumeroComprobante	Belegnummer
+FechaPago	Zahlungsdatum
+PresupuestosDisponibles	Verfügbare Angebote
+ClientesRegistrados	Registrierte Kunden
+GestionClientes	Kundenverwaltung
+DatosCliente	Kundendaten
+ImporteRecibido	Erhaltener Betrag
+ComprobantePedido	Bestellbeleg
+InformacionComercial	Geschäftsinformationen
+CondicionPago	Zahlungsbedingungen
+PlazoEntrega	Lieferzeit
+EntregaIncluida	Lieferung enthalten
+Observaciones	Anmerkungen
+Si	Ja
+No	Nein
+RespaldoDatos	Datensicherung
+IniciarSesion	Anmelden
+NombreUsuario	Benutzername
+Contrasena	Passwort
+CerrarSesion	Abmelden
+UsuarioActual	Aktueller Benutzer
+Bienvenido	Willkommen
+CredencialesInvalidas	Benutzername oder Passwort ist falsch
+SeleccionarModoInicio	Startmodus auswählen
+IniciarConSqlServer	Mit SQL Server starten
+IniciarModoDemostracion	Demomodus starten
+SalirAplicacion	Anwendung beenden
+BaseDatosDisponible	Datenbank verfügbar
+BaseDatosNoDisponible	Datenbank nicht verfügbar
+ModoDemostracion	Demomodus
+BuscarClientes	Kunden suchen
+MostrarTodos	Alle anzeigen
+ClienteRequerido	Bitte wählen Sie einen Kunden aus
+ClienteNoEncontrado	Kunde nicht gefunden
+BusquedaSinResultados	Keine Ergebnisse gefunden
+ClienteDuplicado	Ein Kunde mit dieser Steuernummer ist bereits vorhanden
+ClienteRegistradoCorrectamente	Kunde erfolgreich registriert
+ActualizarListado	Liste aktualisieren
+SeleccionCliente	Kundenauswahl
+SeleccionPresupuesto	Angebotsauswahl
+RevisionProductos	Produktprüfung
+ValidacionCredito	Kreditprüfung
+RegistroSena	Anzahlung erfassen
+ResumenConfirmacion	Bestätigungsübersicht
+ResultadoOperacion	Vorgangsergebnis
+CreditoSuficiente	Kredit ausreichend
+CreditoInsuficiente	Kredit nicht ausreichend
+PresupuestoConfirmable	Angebot kann bestätigt werden
+PresupuestoNoConfirmable	Das Angebot kann nicht bestätigt werden
+ConfirmarGeneracionPedido	Möchten Sie die Bestellung bestätigen?
+ImportarClientes	Kunden importieren
+SeleccionarArchivo	Datei auswählen
+ArchivoSeleccionado	Datei ausgewählt
+ArchivoNoSeleccionado	Keine Datei ausgewählt
+RegistrosDetectados	Erkannte Datensätze
+RegistrosImportados	Importierte Datensätze
+RegistrosOmitidos	Übersprungene Datensätze
+ImportacionFinalizada	Import abgeschlossen
+ImportacionConErrores	Der Import wurde mit Fehlern abgeschlossen
+DatosProtegidos	Geschützte Daten
+CifradoSimetrico	Symmetrische Verschlüsselung
+CUITCifrado	Verschlüsselte Steuernummer
+ErrorDescifrado	Die Daten konnten nicht entschlüsselt werden
+IntegridadInvalida	Die Datenintegrität ist ungültig
+CrearRespaldo	Datensicherung erstellen
+RestaurarRespaldo	Datensicherung wiederherstellen
+SeleccionarDestino	Ziel auswählen
+RespaldoExitoso	Datensicherung erfolgreich abgeschlossen
+RestauracionExitosa	Wiederherstellung erfolgreich abgeschlossen
+ErrorBaseDatos	Datenbankfehler
+ConexionExitosa	Verbindung erfolgreich hergestellt
+PresupuestosDisponiblesCliente	Verfügbare Angebote für den ausgewählten Kunden
+Vencimiento	Gültig bis
+PresupuestosEncontrados	Gefundene Angebote
+NoPresupuestosEncontrados	Keine Angebote gefunden
+SeleccioneClientePrincipal	Wählen Sie im Hauptbereich einen Kunden aus
+ClienteInvalido	Ungültiger Kunde
+ClientePrimero	Bitte wählen Sie zuerst einen Kunden aus
+ErrorCargarPresupuestos	Die Angebote konnten nicht geladen werden
+PresupuestoRequerido	Bitte wählen Sie ein Angebot aus
+PresupuestoNoEncontrado	Das ausgewählte Angebot konnte nicht gefunden werden
+DetallePresupuestoNoConfirmable	Das ausgewählte Angebot kann nicht bestätigt werden. Es muss angenommen und gültig sein und Positionen enthalten
+EstadoPresupuesto_Borrador	Entwurf
+EstadoPresupuesto_Enviado	Gesendet
+EstadoPresupuesto_Aceptado	Angenommen
+EstadoPresupuesto_Vencido	Abgelaufen
+EstadoPresupuesto_Rechazado	Abgelehnt
+EstadoPresupuesto_ConvertidoEnPedido	In Bestellung umgewandelt
+DescripcionRegistrarSena	Geben Sie die genau erforderliche Anzahlung ein, um die Bestellung zu bestätigen
+SenaPendiente	Anzahlung ausstehend
+TransferenciaBancaria	Banküberweisung
+DepositoBancario	Bankeinzahlung
+Cheque	Scheck
+Efectivo	Barzahlung
+Tarjeta	Karte
+SenaNoRequerida	Keine Anzahlung erforderlich
+PresupuestoSinAnticipo	Für das ausgewählte Angebot ist keine Anzahlung erforderlich
+ImporteInsuficiente	Betrag nicht ausreichend
+MensajeImporteInsuficiente	Der erhaltene Betrag ist nicht ausreichend. Die erforderliche Anzahlung beträgt
+ImporteSuperior	Betrag über der erforderlichen Anzahlung
+MensajeImporteSuperior	Der erhaltene Betrag darf die erforderliche Anzahlung nicht überschreiten
+MedioPagoRequerido	Zahlungsmethode erforderlich
+DebeSeleccionarMedioPago	Bitte wählen Sie eine Zahlungsmethode aus
+ComprobanteRequerido	Beleg erforderlich
+ErrorGenerarComprobante	Die Belegnummer konnte nicht erstellt werden
+FechaIncorrecta	Ungültiges Datum
+FechaPagoFutura	Das Zahlungsdatum darf nicht in der Zukunft liegen
+SenaRegistradaCorrectamente	Anzahlung erfolgreich erfasst
+MensajeSenaRegistrada	Die Anzahlung wurde erfolgreich erfasst
+Importe	Betrag
+Comprobante	Beleg
+SubtituloLogin	Geben Sie Ihre Anmeldedaten ein, um fortzufahren
+MostrarContrasena	Passwort anzeigen
+AccesoDenegado	Zugriff verweigert
+DescripcionModoInicio	Wählen Sie aus, wie Edelstahl ERP ausgeführt werden soll
+DescripcionModoSql	Verwendet Datenbanken, Anmeldung, Protokollierung, Persistenz und Verschlüsselung der Steuernummer
+DescripcionModoDemo	Ermöglicht die Nutzung der Oberfläche mit temporären Daten ohne Verbindung zu SQL Server
+Dashboard	Übersicht
+Sales	Verkauf
+Production	Produktion
+Purchasing and stock	Einkauf und Lager
+Logistics and returns	Logistik und Retouren
+Finance	Finanzen
+View audit log	Prüfprotokoll anzeigen
+Administration	Verwaltung
+Audit log	Prüfprotokoll
+Language	Sprache
+User: {0} ({1})	Benutzer: {0} ({1})
+Stock alerts: {0}	Lagerwarnungen: {0}
+Orders	Aufträge
+Quotations	Angebote
+Customers	Kunden
+Stock	Lager
+Catalog	Katalog
+Movements	Bewegungen
+Reservations	Reservierungen
+Reorder suggestions	Nachbestellvorschläge
+Purchase orders	Bestellungen
+Receipts	Wareneingänge
+Suppliers	Lieferanten
+Manufacturing orders	Fertigungsaufträge
+Pending to manufacture	Zu fertigen
+Ready to ship	Versandbereit
+Delivery notes	Lieferscheine
+Route sheets	Tourenblätter
+Returns	Retouren
+Vehicles	Fahrzeuge
+Drivers	Fahrer
+Invoices	Rechnungen
+Collections	Zahlungseingänge
+Credit notes	Gutschriften
+Supplier payments	Lieferantenzahlungen
+Receivables	Forderungen
+Payables	Verbindlichkeiten
+Payment methods	Zahlungsarten
+Indicators	Kennzahlen
+Reports	Berichte
+Users	Benutzer
+Roles and permissions	Rollen und Berechtigungen
+Backup and data	Sicherung und Daten
+Accept	Übernehmen
+Cancel	Abbrechen
+Edit	Bearbeiten
+Delete	Löschen
+Search	Suchen
+Export CSV	CSV exportieren
+Export XML	XML exportieren
+New customer	Neuer Kunde
+New quotation	Neues Angebot
+Confirm order	Auftrag bestätigen
+Issue invoice	Rechnung ausstellen
+Print invoice	Rechnung drucken
+Cancel order	Auftrag stornieren
+Account statement	Kontoauszug
+New product	Neues Produkt
+Register movement	Bewegung buchen
+Transfer	Umlagern
+Mass price update	Preisanpassung
+Create purchase order	Bestellung anlegen
+New purchase order	Neue Bestellung
+Receive goods	Ware annehmen
+Pay supplier	Lieferanten bezahlen
+New supplier	Neuer Lieferant
+Create manufacturing order	Fertigungsauftrag anlegen
+Reserve materials	Material reservieren
+Start production	Produktion starten
+Record progress	Fortschritt erfassen
+Record consumption	Verbrauch erfassen
+Send to quality	An Qualität senden
+Quality result	Qualitätsergebnis
+Create delivery note	Lieferschein erstellen
+Print delivery note (3 copies)	Lieferschein drucken (3 Kopien)
+New route sheet	Neues Tourenblatt
+Start route	Tour starten
+Register delivery	Lieferung erfassen
+Register return	Retoure erfassen
+Receive	Annehmen
+Issue credit note	Gutschrift ausstellen
+Register collection	Zahlungseingang buchen
+New user	Neuer Benutzer
+Reset password	Passwort zurücksetzen
+Unlock	Entsperren
+Change role	Rolle ändern
+Activate / deactivate	Aktivieren / deaktivieren
+Create full backup	Vollsicherung erstellen
+Load sample data	Beispieldaten laden
+Import customers (CSV)	Kunden importieren (CSV)
+Import products (CSV)	Produkte importieren (CSV)
+Select a row first.	Bitte zuerst eine Zeile wählen.
+Loading...	Wird geladen...
+{0} record(s)	{0} Datensatz/Datensätze
+Customer	Kunde
+Supplier	Lieferant
+Product	Produkt
+Quantity	Menge
+Description	Beschreibung
+Status	Status
+Date	Datum
+Number	Nummer
+Total	Gesamt
+Net	Netto
+VAT	MwSt.
+Balance	Saldo
+Amount	Betrag
+Name	Name
+Code	Code
+Price	Preis
+Unit price	Stückpreis
+Reason	Grund
+Notes	Notizen
+Address	Adresse
+City	Stadt
+Phone	Telefon
+Email	E-Mail
+Priority	Priorität
+Active	Aktiv
+Pending	Ausstehend
+Delivered	Geliefert
+Cancelled	Storniert
+Draft	Entwurf
+Sent	Gesendet
+Accepted	Angenommen
+Rejected	Abgelehnt
+Expired	Abgelaufen
+Paid	Bezahlt
+Void	Storniert
+Approved	Genehmigt
+Rework	Nacharbeit
+In process	In Bearbeitung
+In production	In Produktion
+Finished	Abgeschlossen
+Confirmed	Bestätigt
+Tax ID	Steuernummer
+Customer return	Kundenretoure
+Invoice A	Rechnung A
+Invoice B	Rechnung B
+Choose the invoice type. Type A is for VAT registered customers; type B for final consumers.	Wählen Sie den Rechnungstyp. Typ A gilt für umsatzsteuerpflichtige Kunden, Typ B für Endverbraucher.
+Invoice type	Rechnungstyp
+Payment method	Zahlungsart
+Role	Rolle
+User name	Benutzername
+Password	Passwort
+From	Von
+To	Bis
+Run	Ausführen
+Report	Bericht
+Sales by period	Verkäufe nach Zeitraum
+Sales by customer	Verkäufe nach Kunde
+Sales by product	Verkäufe nach Produkt
+Stock valuation	Lagerbewertung
+Edelstahl ERP could not be started.	Edelstahl ERP konnte nicht gestartet werden.
+Unexpected error	Unerwarteter Fehler
+The technical detail was recorded in the audit log.	Die technischen Details wurden im Prüfprotokoll gespeichert.
+The operation could not be completed.	Der Vorgang konnte nicht abgeschlossen werden.
+The user name or the password is incorrect.	Benutzername oder Passwort ist falsch.
+Preparing the database...	Datenbank wird vorbereitet...
+Working...	Wird verarbeitet...
+Distance	Entfernung
+Time	Zeit
+Not delivered	Nicht geliefert
+This route sheet has no stops.	Dieses Tourenblatt hat keine Stopps.
+Calculating the route...	Route wird berechnet...
+Straight lines: street routing is not available.	Gerade Linien: Straßenrouting nicht verfügbar.
+User	Benutzer
+Locked	Gesperrt
+Failed attempts	Fehlversuche
+Last access	Letzter Zugriff
+Customer type	Kundentyp
+Company (CUIT)	Unternehmen (CUIT)
+Individual (CUIL)	Privatperson (CUIL)
+Company	Unternehmen
+Individual	Privatperson
+Tax ID (CUIT / CUIL)	Steuernummer (CUIT / CUIL)
+Business name / full name	Firmenname / vollständiger Name
+Invoice A is only for companies (CUIT). Use Invoice B for individuals.	Rechnung A gilt nur für Unternehmen (CUIT). Für Privatpersonen Rechnung B verwenden.
+The customer has no delivery address. Complete it in Customers before confirming an order with delivery.	Der Kunde hat keine Lieferadresse. Bitte unter Kunden ergänzen, bevor eine Bestellung mit Lieferung bestätigt wird.
+The customer has no delivery address. Complete it in Customers.	Der Kunde hat keine Lieferadresse. Bitte unter Kunden ergänzen.
+The customer has no delivery address	Der Kunde hat keine Lieferadresse
+No delivery address	Keine Lieferadresse
+Expired quotations: {0}. Use "Extend validity" to renew them.	Abgelaufene Angebote: {0}. Mit "Gültigkeit verlängern" erneuern.
+Change quantity	Menge ändern
+Select a line first.	Bitte zuerst eine Zeile auswählen.
+Order date	Bestelldatum
+Delivery date	Lieferdatum
+Enter a value greater than zero for {0}.	Geben Sie für {0} einen Wert größer als null ein.
+Enter a unit price greater than zero.	Geben Sie einen Stückpreis größer als null ein.
+Every item needs a unit price greater than zero.	Jede Position braucht einen Stückpreis größer als null.
+Edit line	Zeile bearbeiten
+Refresh	Aktualisieren
+Quotation accepted. You can now confirm the order from Orders > Confirm order.	Angebot akzeptiert. Sie können die Bestellung jetzt unter Bestellungen > Bestellung bestätigen bestätigen.
+Missing products	Fehlende Produkte
+Some products are not in stock. Add the quantities below to confirm the order.	Einige Produkte sind nicht auf Lager. Tragen Sie unten die Mengen ein, um die Bestellung zu bestätigen.
+Add stock and confirm	Bestand hinzufügen und bestätigen
+Add at least the missing quantity of {0}.	Fügen Sie mindestens die fehlende Menge von {0} hinzu.
+Stock entry for quotation {0}	Bestandszugang für Angebot {0}
+This product is not marked as purchasable.	Dieses Produkt ist nicht als kaufbar markiert.
+Required	Benötigt
+Missing	Fehlend
+Add	Hinzufügen
+Verify the load	Ladung prüfen
+Check each line against the goods you are loading onto the truck. The quantities come from the invoice and cannot be changed.	Prüfen Sie jede Zeile anhand der Ware, die auf den LKW geladen wird. Die Mengen stammen aus der Rechnung und können nicht geändert werden.
+Not ready to ship	Nicht versandbereit
+Verified: {0} of {1}	Geprüft: {0} von {1}
+Route started.	Route gestartet.
+This delivery note is not available for a route sheet (it may already be on one).	Dieser Lieferschein ist für kein Tourenblatt verfügbar (möglicherweise bereits in einem).
+Assign to route sheet	Tourenblatt zuweisen
+Loaded	Geladen
+Incomplete weight	Gewicht unvollständig
+{0} was made to measure and cannot be returned.	{0} wurde nach Maß gefertigt und kann nicht zurückgegeben werden.
+Delivery and returns policy	Liefer- und Rückgaberichtlinie
+Check the goods when you receive them. Once the goods are delivered and the delivery note is signed, no returns are accepted. Only goods rejected or damaged at the time of delivery, noted on the delivery note, can be returned. Made-to-measure orders (custom manufacturing) cannot be returned.	Prüfen Sie die Ware beim Empfang. Nach der Lieferung und Unterschrift des Lieferscheins werden keine Rückgaben akzeptiert. Nur bei der Lieferung zurückgewiesene oder beschädigte Ware, auf dem Lieferschein vermerkt, kann zurückgegeben werden. Maßanfertigungen sind von der Rückgabe ausgeschlossen.
+ID / CUIT / CUIL	Ausweis / CUIT / CUIL
+Signature and clarification	Unterschrift und Name
+Product to manufacture	Zu fertigendes Produkt
+There are no products that can be manufactured to measure.	Es gibt keine Produkte, die nach Maß gefertigt werden können.
+Deposit	Anzahlung
+This quotation includes custom manufacturing, which requires a deposit of at least 30%.	Dieses Angebot enthält eine Sonderanfertigung, die eine Anzahlung von mindestens 30 % erfordert.
+Created automatically when the order was confirmed.	Automatisch beim Bestätigen der Bestellung erstellt.
+Manufacturing orders created: {0}	Fertigungsaufträge erstellt: {0}
+Ready to coordinate delivery	Bereit zur Lieferkoordination
+Preparation orders	Kommissionieraufträge
+Prepared	Vorbereitet
+Waiting for production	Wartet auf Fertigung
+To prepare	Zu bereiten
+Products	Produkte
+Invoice	Rechnung
+The order was manufactured. Issue the invoice now so Logistics can ship it?	Die Bestellung wurde gefertigt. Rechnung jetzt ausstellen, damit die Logistik versenden kann?
+Invoice {0} issued. The order is ready to coordinate the delivery.	Rechnung {0} ausgestellt. Die Bestellung ist bereit zur Lieferkoordination.
+Quotation	Angebot
+Warehouse	Lager
+Quotation {0} issued	Angebot {0} ausgestellt
+Quotation {0} accepted by the customer	Angebot {0} vom Kunden akzeptiert
+{0}: progress {1}% ({2})	{0}: Fortschritt {1}% ({2})
+Stock reserved: {0} x {1}	Bestand reserviert: {0} x {1}
+{0} assigned to route sheet {1}	{0} dem Tourenblatt {1} zugewiesen
+Route sheet {0} started	Tourenblatt {0} gestartet
+Payment details	Zahlungsdetails
+The order has a balance of {0}. Register the collection now?	Die Bestellung hat einen Saldo von {0}. Zahlung jetzt erfassen?
+Departs from	Abfahrt ab
+approximate location	ungefähre Position
+Deposit paid	Anzahlung geleistet
+Not paid yet	Noch nicht bezahlt
+Paid in full	Vollständig bezahlt
+Accept and manufacture	Annehmen und fertigen
+Accept order {0} and start manufacturing?	Auftrag {0} annehmen und Fertigung starten?
+Order {0} accepted. It is now in process; follow it in Manufacturing orders.	Auftrag {0} angenommen. Er ist in Bearbeitung; verfolgen Sie ihn unter Fertigungsaufträge.
+Lines without order	Positionen ohne Auftrag
+Pending collections	Offene Zahlungen
+Expected payment method	Voraussichtliche Zahlungsart
+Note how the customer plans to pay the balance. It does not register any collection.	Notieren Sie, wie der Kunde den Rest zahlen will. Es wird keine Zahlung erfasst.
+Cash	Bar
+Bank transfer	Überweisung
+Check	Scheck
+Card	Karte
+Cash on delivery	Nachnahme
+Balance due {0}: the customer must pay 100% before shipping	Offener Betrag {0}: der Kunde muss vor dem Versand 100% zahlen
+Customer paid 100% - ready to ship and deliver	Kunde hat 100% bezahlt: bereit zu Versand und Lieferung
+The customer still owes {0}. The delivery note can be issued once the order is paid in full.	Der Kunde schuldet noch {0}. Der Lieferschein kann ausgestellt werden, sobald die Bestellung vollständig bezahlt ist.
+Remaining	Offen
+Payment	Zahlung
+Document	Dokument
+Order	Auftrag
+Authorize / revoke credit	Kredit erlauben / entziehen
+Authorize {0} to receive goods without paying 100% beforehand (credit account)?	{0} erlauben, Ware ohne vorherige 100%-Zahlung zu erhalten (Kundenkonto)?
+Revoke the credit authorization of {0}? From now on they must pay 100% before delivery.	Kreditfreigabe von {0} entziehen? Ab jetzt muss vor der Lieferung 100% bezahlt werden.
+Authorized customer (credit account) - ready to ship and deliver	Autorisierter Kunde (Kundenkonto): bereit zu Versand und Lieferung
+Authorized	Autorisiert
+Consumed automatically when sent to quality control.	Beim Senden zur Qualitätskontrolle automatisch verbraucht.
+The order has no materials reserved. Reserve the materials before sending to quality control.	Der Auftrag hat keine reservierten Materialien. Reservieren Sie die Materialien vor der Qualitätskontrolle.
+Summary	Zusammenfassung
+Order created	Auftrag erstellt
+{0} units	{0} Einheiten
+Accepted and started	Angenommen und gestartet
+Progress	Fortschritt
+Quality control	Qualitätskontrolle
+Finished product delivered to stock.	Fertigprodukt ins Lager eingebucht.
+Reason: {0}	Grund: {0}
+Shipment log	Versandprotokoll
+Delivery note issued	Lieferschein ausgestellt
+Load verified	Ladung geprüft
+Assigned to route sheet	Tourenblatt zugewiesen
+Route started	Route gestartet
+Delivery result	Lieferergebnis
+Received by {0} (ID {1})	Empfangen von {0} (Ausweis {1})
+Rescheduled	Umgeplant
+Reschedule delivery	Lieferung umplanen
+The delivery note becomes available again for a new route sheet. The failed attempt stays on record.	Der Lieferschein steht wieder für ein neues Tourenblatt zur Verfügung. Der fehlgeschlagene Versuch bleibt dokumentiert.
+Delivery rescheduled. Assign it to a new route sheet from Delivery notes.	Lieferung umgeplant. Weisen Sie sie unter Lieferscheine einem neuen Tourenblatt zu.
+The reason for rescheduling is required.	Der Grund für die Umplanung ist erforderlich.
+Only rejected or rescheduled deliveries can be rescheduled.	Nur abgelehnte oder nicht erfolgte Lieferungen können umgeplant werden.
+Event	Ereignis
+Route sheet	Tourenblatt
+Result	Ergebnis
+Received by	Empfangen von
+Issued	Ausgestellt
+Delivery note	Lieferschein
+Ready to accept	Bereit zur Annahme
+Waiting for the order to be confirmed and the deposit paid	Wartet auf Bestellbestätigung und Anzahlung
+Deposit required: {0}	Erforderliche Anzahlung: {0}
+Quotation {0} is accepted but is not an order yet. Go to Sales > Orders > Confirm order and register the deposit; the manufacturing order will then be ready to accept here.	Angebot {0} ist akzeptiert, aber noch keine Bestellung. Unter Verkauf > Bestellungen > Bestellung bestätigen die Anzahlung erfassen; danach kann der Fertigungsauftrag hier angenommen werden.
+Situation	Situation
+The deposit entered is below the minimum required by the quotation ({0}).	Die eingegebene Anzahlung liegt unter dem im Angebot geforderten Minimum ({0}).
+The deposit cannot exceed the total of the quotation.	Die Anzahlung darf den Gesamtbetrag des Angebots nicht überschreiten.
+Enter the deposit the customer actually paid. It cannot be below the minimum shown next to the quotation.	Geben Sie die tatsächlich gezahlte Anzahlung ein. Sie darf das neben dem Angebot angezeigte Minimum nicht unterschreiten.
+The password cannot be empty.	Das Passwort darf nicht leer sein.
+The password must have at least 8 characters.	Das Passwort muss mindestens 8 Zeichen lang sein.
+Confirm password	Passwort bestätigen
+Show password	Passwort anzeigen
+The passwords do not match.	Die Passwörter stimmen nicht überein.
+Edit user	Benutzer bearbeiten
+The full name and the email are required.	Vollständiger Name und E-Mail sind erforderlich.
+The order does not meet the conditions to be confirmed. Check the deposit and the quotation lines.	Die Bestellung erfüllt die Bestätigungsbedingungen nicht. Prüfen Sie Anzahlung und Angebotspositionen.
+To collect (customers)	Zu kassieren (Kunden)
+To pay (suppliers)	Zu zahlen (Lieferanten)
+Materials of {0} - {1}	Materialien von {0} - {1}
+The order is at {0}% progress. It cannot be sent to quality control until manufacturing reaches 100%. Keep manufacturing or cancel the order.	Der Auftrag steht bei {0}% Fortschritt. Er kann erst zur Qualitätskontrolle gehen, wenn die Fertigung 100% erreicht. Weiter fertigen oder den Auftrag stornieren.
+The order is not complete	Der Auftrag ist nicht vollständig
+{0} is at {1}%. A product cannot go to quality control or enter the stock before manufacturing reaches 100%.	{0} steht bei {1}%. Ein Produkt darf erst bei 100% Fertigung zur Qualitätskontrolle oder ins Lager.
+What do you want to do?	Was möchten Sie tun?
+Continue manufacturing	Fertigung fortsetzen
+Cancel the order (missing materials or products)	Auftrag stornieren (Material oder Produkte fehlen)
+Reason for cancelling	Stornierungsgrund
+The order stays in process. Use Register progress to keep loading the manufacturing progress.	Der Auftrag bleibt in Bearbeitung. Mit Fortschritt erfassen wird der Fertigungsfortschritt weitergeführt.
+Write the reason for cancelling the order.	Geben Sie den Stornierungsgrund ein.
+Order {0} cancelled. The reserved materials were released.	Auftrag {0} storniert. Die reservierten Materialien wurden freigegeben.
+QUOTATION	ANGEBOT
+Valid until	Gültig bis
+Quotation valid for {0} days (until {1}).	ANGEBOT {0} TAGE GÜLTIG (bis {1}).
+This quotation has expired. Ask for an updated one.	Dieses Angebot ist abgelaufen. Bitte fordern Sie ein aktuelles an.
+Prices may vary according to the date. The amounts are guaranteed only until the date of validity.	Die Preise können sich je nach Datum ändern. Die Beträge gelten nur bis zum Gültigkeitsdatum.
+Made to measure	Maßanfertigung
+Deposit required to start manufacturing ({0}%)	Erforderliche Anzahlung für den Fertigungsbeginn ({0}%)
+Terms and conditions	Bedingungen
+This quotation does not reserve stock. Availability is confirmed when the order is placed.	Dieses Angebot reserviert keinen Bestand. Die Verfügbarkeit wird bei der Bestellung bestätigt.
+Made-to-measure items start manufacturing once the deposit is received, and they cannot be returned.	Maßanfertigungen werden nach Eingang der Anzahlung gefertigt und können nicht zurückgegeben werden.
+Amounts in US dollars. Reference exchange rate: {0}.	Beträge in US-Dollar. Referenzwechselkurs: {0}.
+Delivery times start when the order is confirmed and, for made-to-measure items, when the deposit is received.	Die Lieferfristen beginnen mit der Bestellbestätigung und bei Maßanfertigungen mit Eingang der Anzahlung.
+To accept this quotation, sign below or confirm it to your salesperson within the validity period.	Um dieses Angebot anzunehmen, unterschreiben Sie unten oder bestätigen Sie es innerhalb der Gültigkeit bei Ihrem Verkäufer.
+Signature	Unterschrift
+Full name	Name
+ID number	Ausweis-/Steuernummer
+Print quotation	Angebot drucken
+Rejected in quality control	In der Qualitätskontrolle abgelehnt
+Manufacturing cannot start until the minimum deposit ({0}%) is paid. Deposit received: {1}. Required: {2}.	Die Fertigung kann erst nach Zahlung der Mindestanzahlung ({0}%) beginnen. Erhalten: {1}. Erforderlich: {2}.
+The order was rejected and closed. Its reserved materials were released. Resolve the sales order or ask for a new manufacturing order.	Der Auftrag wurde abgelehnt und geschlossen. Die reservierten Materialien wurden freigegeben. Klären Sie den Kundenauftrag oder fordern Sie einen neuen Fertigungsauftrag an.
+Every quotation requires a deposit of at least {0}% to become an order.	Jedes Angebot erfordert eine Anzahlung von mindestens {0}%, um zur Bestellung zu werden.
+Production cannot start until the invoice that records the deposit is issued. Issue it from Sales > Orders.	Die Produktion kann erst starten, wenn die Rechnung mit der Anzahlung ausgestellt ist. Stellen Sie sie unter Verkauf > Bestellungen aus.
+The invoice {0} does not show the minimum deposit ({1}%) as paid. Production cannot start.	Die Rechnung {0} weist die Mindestanzahlung ({1}%) nicht als bezahlt aus. Die Produktion kann nicht starten.
+Waiting for the invoice that records the deposit	Wartet auf die Rechnung mit der Anzahlung
+The deposit is not invoiced yet. Issue the invoice now so the order can go to production?	Die Anzahlung ist noch nicht fakturiert. Rechnung jetzt ausstellen, damit der Auftrag in die Produktion gehen kann?
+Invoice {0} issued, showing the deposit paid.	Rechnung {0} ausgestellt, mit bezahlter Anzahlung.

@@ -1,0 +1,172 @@
+﻿# Edelstahl ERP - en-GB. Formato: clave<TAB>texto. La clave es el texto en ingles.
+TituloAplicacion	Edelstahl ERP
+ModuloVentas	Commercial Management - Sales
+Idioma	Language
+NombreEspanolArgentina	Español (Argentina)
+NombreEspanolEspana	Español (España)
+NombreInglesEstadosUnidos	English (United States)
+NombreInglesReinoUnido	English (United Kingdom)
+NombrePortuguesBrasil	Português (Brasil)
+NombreAleman	Deutsch
+NombreRuso	Русский
+VentasPedidos	Sales and Orders
+Produccion	Production
+ComprasStock	Purchasing / Stock
+Logistica	Logistics
+Finanzas	Finance
+AtencionCliente	Customer Service
+ConfirmarPedido	Confirm Order
+Cliente	Customer
+Presupuesto	Quotation
+Productos	Products
+Validacion	Validation
+Sena	Deposit
+Confirmacion	Confirmation
+Resultado	Result
+Buscar	Search
+Actualizar	Refresh
+NuevaOperacion	New Operation
+QuitarPresupuesto	Remove Quotation
+VerComprobante	View Document
+GuardarCliente	Save Customer
+NuevoCliente	New Customer
+SeleccionarCliente	Select Customer
+SeleccionarPresupuesto	Select Quotation
+RegistrarSena	Register Deposit
+Refrescar	Refresh
+Limpiar	Clear
+Cancelar	Cancel
+Aceptar	OK
+Cerrar	Close
+Estado	Status
+EstadoPendiente	Pending
+PedidoConfirmado	Order Confirmed
+AnticipoRequerido	Deposit Required
+ListoConfirmar	Ready to Confirm
+SinSeleccionar	Not Selected
+CreditoDisponible	Available Credit
+Subtotal	Subtotal
+IVA	VAT
+Anticipo	Deposit
+AnticipoRegistrado	Registered Deposit
+SaldoFacturar	Balance to Invoice
+Items	Items
+Total	TOTAL
+Codigo	Code
+Descripcion	Description
+Cantidad	Quantity
+Precio	Price
+Numero	Number
+Fecha	Date
+Usuario	User
+RazonSocial	Company Name
+CUIT	Tax ID
+Correo	Email
+Telefono	Telephone
+Localidad	Town
+Provincia	County
+CodigoPostal	Postcode
+LimiteCredito	Credit Limit
+DeudaActual	Current Debt
+Activo	Active
+MedioPago	Payment Method
+NumeroComprobante	Receipt Number
+FechaPago	Payment Date
+PresupuestosDisponibles	Available Quotations
+ClientesRegistrados	Registered Customers
+GestionClientes	Customer Management
+DatosCliente	Customer Details
+ImporteRecibido	Amount Received
+ComprobantePedido	Order Document
+InformacionComercial	Commercial Information
+CondicionPago	Payment Terms
+PlazoEntrega	Delivery Time
+EntregaIncluida	Delivery Included
+Observaciones	Notes
+Si	Yes
+No	No
+RespaldoDatos	Data Backup
+IniciarSesion	Sign In
+NombreUsuario	Username
+Contrasena	Password
+CerrarSesion	Sign Out
+UsuarioActual	Current User
+Bienvenido	Welcome
+CredencialesInvalidas	The username or password is incorrect
+SeleccionarModoInicio	Select Start-up Mode
+IniciarConSqlServer	Start with SQL Server
+IniciarModoDemostracion	Start Demonstration Mode
+SalirAplicacion	Exit Application
+BaseDatosDisponible	Database Available
+BaseDatosNoDisponible	Database Unavailable
+ModoDemostracion	Demonstration Mode
+BuscarClientes	Search Customers
+MostrarTodos	Show All
+ClienteRequerido	Please select a customer
+ClienteNoEncontrado	Customer not found
+BusquedaSinResultados	No results were found
+ClienteDuplicado	A customer with the entered Tax ID already exists
+ClienteRegistradoCorrectamente	Customer registered successfully
+ActualizarListado	Refresh List
+SeleccionCliente	Customer Selection
+SeleccionPresupuesto	Quotation Selection
+RevisionProductos	Product Review
+ValidacionCredito	Credit Validation
+RegistroSena	Deposit Registration
+ResumenConfirmacion	Confirmation Summary
+ResultadoOperacion	Operation Result
+CreditoSuficiente	Sufficient Credit
+CreditoInsuficiente	Insufficient Credit
+PresupuestoConfirmable	Quotation available for confirmation
+PresupuestoNoConfirmable	The quotation cannot be confirmed
+ConfirmarGeneracionPedido	Do you wish to confirm the order?
+ImportarClientes	Import Customers
+SeleccionarArchivo	Select File
+ArchivoSeleccionado	File Selected
+ArchivoNoSeleccionado	No File Selected
+RegistrosDetectados	Records Detected
+RegistrosImportados	Records Imported
+RegistrosOmitidos	Records Skipped
+ImportacionFinalizada	Import Completed
+ImportacionConErrores	The import completed with errors
+DatosProtegidos	Protected Data
+CifradoSimetrico	Symmetric Encryption
+CUITCifrado	Encrypted Tax ID
+ErrorDescifrado	The data could not be decrypted
+IntegridadInvalida	Data integrity validation failed
+CrearRespaldo	Create Backup
+RestaurarRespaldo	Restore Backup
+SeleccionarDestino	Select Destination
+RespaldoExitoso	Backup completed successfully
+RestauracionExitosa	Restoration completed successfully
+ErrorBaseDatos	Database Error
+ConexionExitosa	Connection completed successfully
+DescripcionRegistrarSena	Enter the exact deposit required to confirm the order
+SenaPendiente	Deposit pending
+TransferenciaBancaria	Bank transfer
+DepositoBancario	Bank deposit
+Cheque	Cheque
+Efectivo	Cash
+Tarjeta	Card
+SenaNoRequerida	Deposit not required
+PresupuestoSinAnticipo	The selected quotation does not require a deposit
+ImporteInsuficiente	Insufficient amount
+MensajeImporteInsuficiente	The amount received is insufficient. The required deposit is
+ImporteSuperior	Amount exceeds the required deposit
+MensajeImporteSuperior	The amount received cannot exceed the required deposit of
+MedioPagoRequerido	Payment method required
+DebeSeleccionarMedioPago	Please select a payment method
+ComprobanteRequerido	Receipt required
+ErrorGenerarComprobante	The receipt number could not be generated
+FechaIncorrecta	Invalid date
+FechaPagoFutura	The payment date cannot be in the future
+SenaRegistradaCorrectamente	Deposit registered successfully
+MensajeSenaRegistrada	The deposit was registered successfully
+Importe	Amount
+Comprobante	Receipt
+SubtituloLogin	Enter your credentials to continue
+MostrarContrasena	Show password
+AccesoDenegado	Access denied
+DescripcionModoInicio	Select how you want to run Edelstahl ERP
+DescripcionModoSql	Uses the databases, sign-in, audit log, persistence, and Tax ID encryption
+DescripcionModoDemo	Allows you to explore the interface using temporary data without connecting to SQL Server

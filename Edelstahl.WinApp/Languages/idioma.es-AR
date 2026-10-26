@@ -1,0 +1,1223 @@
+﻿# Edelstahl ERP - es-AR. Formato: clave<TAB>texto. La clave es el texto en ingles.
+TituloAplicacion	Edelstahl ERP
+ModuloVentas	Gestión Comercial - Ventas
+Idioma	Idioma
+NombreEspanolArgentina	Español (Argentina)
+NombreEspanolEspana	Español (España)
+NombreInglesEstadosUnidos	English (United States)
+NombreInglesReinoUnido	English (United Kingdom)
+NombrePortuguesBrasil	Português (Brasil)
+NombreAleman	Deutsch
+NombreRuso	Русский
+VentasPedidos	Ventas y Pedidos
+Produccion	Producción
+ComprasStock	Compras / Stock
+Logistica	Logística
+Finanzas	Finanzas
+AtencionCliente	Atención al Cliente
+ConfirmarPedido	Confirmar pedido
+Cliente	Cliente
+Presupuesto	Presupuesto
+Productos	Productos
+Validacion	Validación
+Sena	Seña
+Confirmacion	Confirmación
+Resultado	Resultado
+Buscar	Buscar
+Actualizar	Actualizar
+NuevaOperacion	Nueva operación
+QuitarPresupuesto	Quitar presupuesto
+VerComprobante	Ver comprobante
+GuardarCliente	Guardar cliente
+NuevoCliente	Nuevo cliente
+SeleccionarCliente	Seleccionar cliente
+SeleccionarPresupuesto	Seleccionar presupuesto
+RegistrarSena	Registrar seña
+Refrescar	Refrescar
+Limpiar	Limpiar
+Cancelar	Cancelar
+Aceptar	Aceptar
+Cerrar	Cerrar
+Estado	Estado
+EstadoPendiente	Estado pendiente
+PedidoConfirmado	Pedido confirmado
+AnticipoRequerido	Anticipo requerido
+ListoConfirmar	Listo para confirmar
+SinSeleccionar	Sin seleccionar
+CreditoDisponible	Crédito disponible
+Subtotal	Subtotal
+IVA	IVA
+Anticipo	Anticipo
+AnticipoRegistrado	Anticipo registrado
+SaldoFacturar	Saldo a facturar
+Items	Ítems
+Total	TOTAL
+Codigo	Código
+Descripcion	Descripción
+Cantidad	Cantidad
+Precio	Precio
+Numero	Número
+Fecha	Fecha
+Usuario	Usuario
+RazonSocial	Razón social
+CUIT	CUIT
+Correo	Correo electrónico
+Telefono	Teléfono
+Localidad	Localidad
+Provincia	Provincia
+CodigoPostal	Código postal
+LimiteCredito	Límite de crédito
+DeudaActual	Deuda actual
+Activo	Activo
+MedioPago	Medio de pago
+NumeroComprobante	Número de comprobante
+FechaPago	Fecha de pago
+PresupuestosDisponibles	Presupuestos disponibles
+ClientesRegistrados	Clientes registrados
+GestionClientes	Gestión de clientes
+DatosCliente	Datos del cliente
+ImporteRecibido	Importe recibido
+ComprobantePedido	Comprobante del pedido
+InformacionComercial	Información comercial
+CondicionPago	Condición de pago
+PlazoEntrega	Plazo de entrega
+EntregaIncluida	Entrega incluida
+Observaciones	Observaciones
+Si	Sí
+No	No
+RespaldoDatos	Respaldo de datos
+IniciarSesion	Iniciar sesión
+NombreUsuario	Nombre de usuario
+Contrasena	Contraseña
+CerrarSesion	Cerrar sesión
+UsuarioActual	Usuario actual
+Bienvenido	Bienvenido
+CredencialesInvalidas	El usuario o la contraseña son incorrectos
+SeleccionarModoInicio	Seleccione el modo de inicio
+IniciarConSqlServer	Iniciar con SQL Server
+IniciarModoDemostracion	Iniciar modo demostración
+SalirAplicacion	Salir de la aplicación
+BaseDatosDisponible	Base de datos disponible
+BaseDatosNoDisponible	Base de datos no disponible
+ModoDemostracion	Modo demostración
+BuscarClientes	Buscar clientes
+MostrarTodos	Mostrar todos
+ClienteRequerido	Debe seleccionar un cliente
+ClienteNoEncontrado	No se encontró el cliente
+BusquedaSinResultados	No se encontraron resultados
+ClienteDuplicado	Ya existe un cliente con el CUIT ingresado
+ClienteRegistradoCorrectamente	Cliente registrado correctamente
+ActualizarListado	Actualizar listado
+SeleccionCliente	Selección del cliente
+SeleccionPresupuesto	Selección del presupuesto
+RevisionProductos	Revisión de productos
+ValidacionCredito	Validación de crédito
+RegistroSena	Registro de seña
+ResumenConfirmacion	Resumen de confirmación
+ResultadoOperacion	Resultado de la operación
+CreditoSuficiente	Crédito suficiente
+CreditoInsuficiente	Crédito insuficiente
+PresupuestoConfirmable	Presupuesto disponible para confirmar
+PresupuestoNoConfirmable	El presupuesto no puede confirmarse
+ConfirmarGeneracionPedido	¿Confirma la generación del pedido?
+ImportarClientes	Importar clientes
+SeleccionarArchivo	Seleccionar archivo
+ArchivoSeleccionado	Archivo seleccionado
+ArchivoNoSeleccionado	Ningún archivo seleccionado
+RegistrosDetectados	Registros detectados
+RegistrosImportados	Registros importados
+RegistrosOmitidos	Registros omitidos
+ImportacionFinalizada	Importación finalizada
+ImportacionConErrores	La importación finalizó con errores
+DatosProtegidos	Datos protegidos
+CifradoSimetrico	Cifrado simétrico
+CUITCifrado	CUIT cifrado
+ErrorDescifrado	No fue posible descifrar el dato
+IntegridadInvalida	La integridad del dato no es válida
+CrearRespaldo	Crear respaldo
+RestaurarRespaldo	Restaurar respaldo
+SeleccionarDestino	Seleccionar destino
+RespaldoExitoso	El respaldo se realizó correctamente
+RestauracionExitosa	La restauración se realizó correctamente
+ErrorBaseDatos	Error de base de datos
+ConexionExitosa	Conexión realizada correctamente
+DescripcionRegistrarSena	Ingrese el anticipo exacto requerido para confirmar el pedido
+SenaPendiente	Seña pendiente
+TransferenciaBancaria	Transferencia bancaria
+DepositoBancario	Depósito bancario
+Cheque	Cheque
+Efectivo	Efectivo
+Tarjeta	Tarjeta
+SenaNoRequerida	Seña no requerida
+PresupuestoSinAnticipo	El presupuesto seleccionado no requiere anticipo
+ImporteInsuficiente	Importe insuficiente
+MensajeImporteInsuficiente	El importe recibido no alcanza. El anticipo requerido es
+ImporteSuperior	Importe superior al requerido
+MensajeImporteSuperior	El importe recibido no puede superar el anticipo requerido de
+MedioPagoRequerido	Medio de pago requerido
+DebeSeleccionarMedioPago	Debe seleccionar un medio de pago
+ComprobanteRequerido	Comprobante requerido
+ErrorGenerarComprobante	No se pudo generar el número de comprobante
+FechaIncorrecta	Fecha incorrecta
+FechaPagoFutura	La fecha del pago no puede ser futura
+SenaRegistradaCorrectamente	Seña registrada correctamente
+MensajeSenaRegistrada	La seña fue registrada correctamente
+Importe	Importe
+Comprobante	Comprobante
+SubtituloLogin	Ingresá tus credenciales para continuar
+MostrarContrasena	Mostrar contraseña
+AccesoDenegado	Acceso denegado
+DescripcionModoInicio	Seleccione cómo desea ejecutar Edelstahl ERP
+DescripcionModoSql	Utiliza las bases de datos, el inicio de sesión, la bitácora, la persistencia y el cifrado del CUIT
+DescripcionModoDemo	Permite recorrer la interfaz utilizando información temporal sin conectarse a SQL Server
+(none)	(ninguno)
+{0} delivered to {1}	{0} entregado a {1}
+{0} delivery note(s), {1} delivered	{0} remito(s), {1} entregado(s)
+{0} dispatched	{0} despachado
+{0} finished	{0} finalizada
+{0} is required.	{0} es obligatorio.
+{0} of {1} finished	{0} de {1} finalizadas
+{0} product(s) updated.	{0} producto(s) actualizado(s).
+{0} quotation(s) marked as expired.	{0} presupuesto(s) marcado(s) como vencido(s).
+{0} received	{0} recibida
+{0} record(s)	{0} registro(s)
+{0} started	{0} iniciada
+{0} stop(s) - estimated distance {1} km - estimated time {2}	{0} parada(s) - distancia estimada {1} km - tiempo estimado {2}
+{0}: quality control {1}	{0}: control de calidad {1}
+30 days	30 días
+7 days	7 días
+A category cannot be its own parent.	Una categoría no puede ser su propio padre.
+A credit note requires an approved resolution of the return.	La nota de crédito requiere una resolución aprobada de la devolución.
+A custom manufacturing line requires a deposit of at least 30%.	Una línea de fabricación especial requiere una seña de al menos el 30%.
+A delivery note cannot appear twice in the same route.	Un remito no puede figurar dos veces en la misma hoja de ruta.
+A delivery that was not completed must state the reason.	Una entrega no concretada debe indicar el motivo.
+A product cannot be used as a material of itself.	Un producto no puede ser material de sí mismo.
+A quotation that is {0} cannot change to {1}.	Un presupuesto en estado {0} no puede pasar a {1}.
+A service line needs a code and a description.	Una línea de servicio necesita código y descripción.
+Accept	Aceptar
+Accepted	Aceptado
+Account balance	Saldo de cuenta
+Account statement	Cuenta corriente
+Action	Acción
+Activate / deactivate	Activar / desactivar
+Active	Activo
+Active orders	Pedidos activos
+Add at least one line.	Agregue al menos una línea.
+Add custom manufacturing	Agregar fabricación especial
+Add line	Agregar línea
+Add missing materials	Agregar materiales faltantes
+Add stock	Agregar stock
+Add the missing stock to the warehouse	Ingresar al depósito el stock que falta
+Additional days	Días adicionales
+Address	Dirección
+Address not provided	Dirección no informada
+Adjustment	Ajuste
+Administer backups	Administrar respaldos
+Administer roles	Administrar roles
+Administer users	Administrar usuarios
+Administration	Administración
+All categories	Todas las categorías
+All materials were reserved.	Todos los materiales fueron reservados.
+Allowed deposit: {0}	Seña permitida: {0}
+Amount	Importe
+Amount in pesos	Importe en pesos
+An adjustment must state the reason.	Un ajuste debe indicar el motivo.
+An unexpected error occurred in the system.	Se produjo un error inesperado en el sistema.
+An unexpected error occurred. The operation could not be completed.	Se produjo un error inesperado. La operación no pudo completarse.
+Applies a percentage to the base price of every active product in the category.	Aplica un porcentaje al precio base de cada producto activo de la categoría.
+Approved	Aprobado
+Approved in quick manufacturing.	Aprobado en la fabricación rápida.
+ARS	ARS
+Assigned	Asignado
+At least one material is required to manufacture.	Se necesita al menos un material para fabricar.
+Audit log	Bitácora
+Available	Disponible
+Available credit	Crédito disponible
+Available credit: {0}	Crédito disponible: {0}
+Back to stock	Reingresada al stock
+Backup and data	Respaldo y datos
+Backups are saved in the backups folder. Imports skip records that already exist.	Los respaldos se guardan en la carpeta de respaldos. Las importaciones omiten los registros que ya existen.
+Balance	Saldo
+Bank	Banco
+Base price	Precio base
+Batch starting at {0}: {1}	Lote desde la fila {0}: {1}
+Billing address	Domicilio de facturación
+Blocked	Bloqueada
+Can be confirmed	Puede confirmarse
+Cancel	Cancelar
+Cancel order	Cancelar pedido
+Cancelled	Cancelado
+Capacity (kg)	Capacidad (kg)
+Cash on delivery	Contado
+Catalog	Catálogo
+Category	Categoría
+Change role	Cambiar rol
+Check the delivery notes to include. They are visited in the order shown.	Marque los remitos a incluir. Se visitan en el orden mostrado.
+Choose the invoice type. Type A is for VAT registered customers; type B for final consumers.	Elija el tipo de factura. La A es para clientes responsables inscriptos; la B para consumidores finales.
+Choose the materials needed to make it. A suggestion is loaded; adjust it if needed.	Elija los materiales necesarios para fabricarlo. Se carga una sugerencia: modifíquela si hace falta.
+City	Localidad
+Code	Código
+Collection	Cobro
+Collection {0} of {1}	Cobro {0} por {1}
+Collection {0} registered.	Cobro {0} registrado.
+Collections	Cobros
+Company name	Razón social
+Completed	Completado
+Component	Componente
+Computer	Equipo
+Condition	Condición
+Confirm order	Confirmar pedido
+Confirm order - customer	Confirmar pedido - cliente
+Confirm order - deposit	Confirmar pedido - seña
+Confirm orders	Confirmar pedidos
+Confirmed	Confirmado
+Consumable supply	Insumo consumible
+Consumed	Consumida
+Consumption can only be registered while the order is in process.	El consumo solo se registra mientras la orden está en proceso.
+Contact	Contacto
+Converted to order	Convertido en pedido
+Cost	Costo
+Create administrator	Crear administrador
+Create delivery note	Generar remito
+Create full backup	Crear respaldo completo
+Create manufacturing order	Crear orden de fabricación
+Create purchase order	Crear orden de compra
+Create the initial administrator	Crear el administrador inicial
+Created	Creación
+Credit	Haber
+Credit limit	Límite de crédito
+Credit limit {0}   Debt {1}   Available {2}	Límite de crédito {0}   Deuda {1}   Disponible {2}
+Credit note	Nota de crédito
+Credit note {0} for {1}	Nota de crédito {0} por {1}
+Credit notes	Notas de crédito
+Currency	Moneda
+Current cost	Costo actual
+Current debt	Deuda actual
+Custom manufacture	Fabricación especial
+Custom manufactured items need complete technical specifications.	Los ítems de fabricación especial necesitan especificaciones técnicas completas.
+Custom manufactured items require a deposit of at least {0}%.	Los ítems de fabricación especial requieren una seña de al menos el {0}%.
+Custom manufacturing	Fabricación especial
+Customer	Cliente
+Customer Id	Id de cliente
+Customer return	Devolución de cliente
+Customers	Clientes
+Dashboard	Panel general
+Date	Fecha
+Days overdue	Días de atraso
+Debit	Debe
+Debit note	Nota de débito
+Delete	Eliminar
+Delete the selected customer?	¿Eliminar el cliente seleccionado?
+Delivered	Entregado
+Delivered in good order	Entregado conforme
+Deliveries can only be registered on a route that is in progress.	Las entregas solo se registran en una hoja de ruta en curso.
+Deliveries this month	Entregas del mes
+Delivery address	Domicilio de entrega
+Delivery included	Entrega incluida
+Delivery note	Remito
+Delivery note {0} issued	Remito {0} emitido
+Delivery note Id	Id de remito
+Delivery note line Id	Id de línea de remito
+Delivery notes	Remitos
+Delivery time	Plazo de entrega
+deposit	seña
+Deposit	Seña
+Deposit %	Seña %
+Deposit date	Fecha de la seña
+Deposit of {0} registered	Seña de {0} registrada
+Deposit received	Seña recibida
+Description	Descripción
+Detail	Detalle
+Detail Id	Id de detalle
+Discarded	Descartada
+Discount	Descuento
+Discount %	Descuento %
+Discounts above {0}% require the approval of an administrator.	Los descuentos superiores al {0}% requieren la aprobación de un administrador.
+Dispatch	Despacho
+Document	Documento
+Draft	Borrador
+Drawing	Plano
+Driver	Chofer
+Drivers	Choferes
+Due	Vencimiento
+Due date	Fecha de vencimiento
+Edelstahl - Head office (Capital)	Edelstahl - Sede central (Capital)
+Edelstahl ERP	Edelstahl ERP
+Edelstahl ERP could not be started.	No fue posible iniciar Edelstahl ERP.
+Edit	Editar
+Edit catalog	Editar catálogo
+Edit customers	Editar clientes
+Email	Correo electrónico
+Enabled	Habilitado
+Enter the consumed quantity or the waste.	Ingrese la cantidad consumida o la merma.
+Enter the quantity returned for each line (zero when it is not returned).	Ingrese la cantidad devuelta de cada línea (cero si no se devuelve).
+Enter the quantity to ship for each line. Lines with zero quantity are left out.	Ingrese la cantidad a enviar de cada línea. Las líneas con cantidad cero quedan afuera.
+Enter the user name and the password.	Ingrese el nombre de usuario y la contraseña.
+Entity	Entidad
+Errors	Errores
+Estimated delivery	Entrega estimada
+Estimated finish	Fin estimado
+Estimated location	Ubicación estimada
+Event type	Tipo de evento
+Every pending line will be received in full. Use the rejected quantity to register defective goods.	Cada línea pendiente se recibe completa. Use la cantidad rechazada para registrar mercadería defectuosa.
+Exchange rate	Tipo de cambio
+Expired	Vencido
+Explain the reason for a rejection or a rework.	Explique el motivo de un rechazo o de un reproceso.
+Export CSV	Exportar CSV
+Export XML	Exportar XML
+Extend validity	Extender vigencia
+Failed attempts	Intentos fallidos
+File saved: {0}	Archivo guardado: {0}
+Final consumer	Consumidor final
+Final kilometers	Kilómetros finales
+Finance	Finanzas
+Finish	Acabado
+Finished	Finalizada
+Finished product	Producto terminado
+Finished product in	Ingreso de producto terminado
+First name	Nombre
+Fit for stock	Apto para stock
+Fit to return to stock	Apto para volver al stock
+From	Desde
+From location	Ubicación de origen
+Full name	Nombre completo
+General discount %	Descuento general %
+Heat number	Colada
+High	Alta
+History	Historial
+Id	Id
+ID number	Número de documento
+Import customers (CSV)	Importar clientes (CSV)
+Import products (CSV)	Importar productos (CSV)
+Imported	Importados
+In distribution	En distribución
+In preparation	En preparación
+In process	En proceso
+In production	En producción
+In progress	En curso
+In stock	En stock
+In transit	En tránsito
+Indicators	Indicadores
+Initial kilometers	Kilómetros iniciales
+Initial setup	Configuración inicial
+Inspect and resolve line	Inspeccionar y resolver línea
+Insufficient stock of {0} ({1}): available {2}, required {3}.	Stock insuficiente de {0} ({1}): disponible {2}, requerido {3}.
+Insufficient stock of {0}: available {1}, requested {2}.	Stock insuficiente de {0}: disponible {1}, solicitado {2}.
+Insurance expires	Vence el seguro
+Invoice	Factura
+Invoice {0}	Factura {0}
+Invoice {0} issued for {1}	Factura {0} emitida por {1}
+Invoice {0}. Suggested net amount: {1}	Factura {0}. Neto sugerido: {1}
+Invoice A	Factura A
+Invoice A requires a customer with a valid CUIT.	La factura A requiere un cliente con CUIT válido.
+Invoice B	Factura B
+Invoice Id	Id de factura
+Invoice type	Tipo de factura
+Invoiced	Facturado
+Invoices	Facturas
+Invoicing	Facturación
+Issue	Emitir
+Issue credit note	Emitir nota de crédito
+Issue date	Fecha de emisión
+Issue invoice	Emitir factura
+Issue invoices	Emitir facturas
+Issue now	Emitir ahora
+Issued	Emitida
+Items	Ítems
+km	km
+Language	Idioma
+Last access	Último acceso
+Last name	Apellido
+Lead time (days)	Plazo de entrega (días)
+License	Licencia
+License category	Categoría de licencia
+License expires	Vence la licencia
+License number	Número de licencia
+Line	Línea
+Lines	Líneas
+Load sample data	Cargar datos de ejemplo
+Loading sample customers and products...	Cargando clientes y productos de ejemplo...
+Loading...	Cargando...
+Location	Ubicación
+Location Id	Id de ubicación
+Locked	Bloqueado
+Logistics	Logística
+Logistics and returns	Logística y devoluciones
+Lot	Lote
+Make	Marca
+Manage logistics	Gestionar logística
+Manage production	Gestionar producción
+Manage purchasing	Gestionar compras
+Manage quotations	Gestionar presupuestos
+Manage returns	Gestionar devoluciones
+Manage suppliers	Gestionar proveedores
+Manager	Responsable
+Manufacturable	Fabricable
+Manufacture now	Fabricar ahora
+Manufacture order {0} now? Missing materials are added to the warehouse and quality is approved.	¿Fabricar ahora la orden {0}? Los materiales faltantes se ingresan al depósito y la calidad se aprueba.
+Manufacturing	Fabricación
+Manufacturing cannot start without all the materials reserved.	La fabricación no puede comenzar sin todos los materiales reservados.
+Manufacturing order	Orden de fabricación
+Manufacturing order {0} created	Orden de fabricación {0} creada
+Manufacturing order {0} created.	Orden de fabricación {0} creada.
+Manufacturing orders	Órdenes de fabricación
+Mark as sent	Marcar como enviado
+Mass price update	Actualización masiva de precios
+Material	Material
+Materials can only be received against an issued purchase order.	Los materiales solo se reciben contra una orden de compra emitida.
+Materials can only be reserved for pending or in-process orders.	Los materiales solo se reservan para órdenes pendientes o en proceso.
+Method	Medio
+Minimum stock	Stock mínimo
+Missing	Faltante
+Missing items	Faltantes
+Missing materials: {0}	Materiales faltantes: {0}
+Model	Modelo
+Module	Módulo
+Mouse wheel: zoom - drag: move - double click: fit	Rueda del mouse: zoom - arrastrar: mover - doble clic: ajustar
+Move inventory	Mover inventario
+Movement type	Tipo de movimiento
+Movements	Movimientos
+Name	Nombre
+Negative adjustment	Ajuste negativo
+Net	Neto
+Net amount	Importe neto
+Net total: {0}	Total neto: {0}
+New category	Nueva categoría
+New customer	Nuevo cliente
+New driver	Nuevo chofer
+New password	Nueva contraseña
+New product	Nuevo producto
+New purchase order	Nueva orden de compra
+New quotation	Nuevo presupuesto
+New route sheet	Nueva hoja de ruta
+New supplier	Nuevo proveedor
+New user	Nuevo usuario
+New vehicle	Nuevo vehículo
+No action	Sin acción
+No delivery notes yet	Todavía no hay remitos
+Normal	Normal
+Not delivered	No entregado
+Not invoiced	Sin facturar
+Not required	No requerida
+Notes	Observaciones
+Nothing pending to deliver	Nada pendiente de entrega
+Number	Número
+On hand	En existencia
+On-hand balance	Saldo físico
+Only active products that can be sold may be quoted.	Solo pueden cotizarse productos activos que se puedan vender.
+Only active suppliers can receive purchase orders.	Solo los proveedores activos pueden recibir órdenes de compra.
+Only alerts	Solo alertas
+Only confirmed orders can be invoiced.	Solo los pedidos confirmados pueden facturarse.
+Only delivered or rejected delivery notes can originate a return.	Solo los remitos entregados o rechazados pueden originar una devolución.
+Only draft purchase orders can be issued.	Solo las órdenes de compra en borrador pueden emitirse.
+Only items approved by the inspection can return to stock.	Solo los ítems aprobados en la inspección pueden volver al stock.
+Only lines marked for manufacturing can generate a manufacturing order.	Solo las líneas marcadas para fabricación pueden generar una orden de fabricación.
+Only pending delivery notes can be cancelled.	Solo los remitos pendientes pueden cancelarse.
+Only planned route sheets can be started.	Solo las hojas de ruta planificadas pueden iniciarse.
+Open invoices	Facturas pendientes
+Open purchase orders	Órdenes de compra abiertas
+Open route in web map	Abrir recorrido en mapa web
+Order	Pedido
+Order {0}	Pedido {0}
+Order {0} confirmed	Pedido {0} confirmado
+Order {0} confirmed.	Pedido {0} confirmado.
+Order {0} was manufactured and the finished product is in stock.	La orden {0} se fabricó y el producto terminado está en stock.
+Order Id	Id de pedido
+Order line Id	Id de línea de pedido
+Order reservation	Reserva de pedido
+Order voucher PDF	Comprobante de pedido PDF
+Ordered	Pedida
+Orders	Pedidos
+Orders in process	Órdenes en proceso
+Out of stock	Sin stock
+Outstanding balance	Saldo pendiente
+Overdue	Vencida
+Paid	Pagada
+Parent category	Categoría padre
+Partial	Parcial
+Partial delivery	Entrega parcial
+Partially received	Parcialmente recibida
+Password	Contraseña
+Path	Ruta
+Pay supplier	Pagar a proveedor
+Payable	A pagar
+Payables	Cuentas a pagar
+Payment	Pago
+Payment method	Medio de pago
+Payment methods	Medios de pago
+Payment terms	Condición de pago
+pending	pendiente
+Pending	Pendiente
+Pending to manufacture	Pendiente de fabricar
+Pending: {0} line(s) without a manufacturing order	Pendiente: {0} línea(s) sin orden de fabricación
+Percentage	Porcentaje
+Permission	Permiso
+Permissions	Permisos
+Phone	Teléfono
+Planned	Planificada
+Planned date	Fecha planificada
+Plate	Patente
+Positive adjustment	Ajuste positivo
+Postal code	Código postal
+Prepare order	Preparar pedido
+Preparing the database...	Preparando la base de datos...
+Price	Precio
+Prices and costs cannot be negative.	Los precios y costos no pueden ser negativos.
+Print credit note	Imprimir nota de crédito
+Print delivery note (3 copies)	Imprimir remito (3 copias)
+Print invoice	Imprimir factura
+Priority	Prioridad
+Priority key	Clave de prioridad
+Product	Producto
+Product Id	Id de producto
+Product to manufacture: {0} - {1}	Producto a fabricar: {0} - {1}
+Product type	Tipo de producto
+Production	Producción
+Production consumption	Consumo de producción
+Production waste	Merma de producción
+Products below the reorder point	Productos por debajo del punto de reposición
+Products in alert	Productos en alerta
+Progress	Avance
+Progress %	Avance %
+Province	Provincia
+Purchasable	Comprable
+Purchase order	Orden de compra
+Purchase order {0} created.	Orden de compra {0} creada.
+Purchase order line Id	Id de línea de orden de compra
+Purchase order PDF	Orden de compra PDF
+Purchase orders	Órdenes de compra
+Purchase receipt	Recepción de compra
+Purchasing and stock	Compras y stock
+Quality control	Control de calidad
+Quality controls	Controles de calidad
+Quality result	Resultado de calidad
+Quantities cannot be negative.	Las cantidades no pueden ser negativas.
+Quantity	Cantidad
+Quantity {0} - Customer {1} - Order {2}	Cantidad {0} - Cliente {1} - Pedido {2}
+Quantity back to stock	Cantidad que vuelve al stock
+Quantity consumed	Cantidad consumida
+Quantity discarded	Cantidad descartada
+Quotation	Presupuesto
+Quotation {0} created.	Presupuesto {0} creado.
+Quotations	Presupuestos
+Raw material	Materia prima
+Ready for delivery	Listo para entrega
+Ready to ship	Listo para despachar
+Reason	Motivo
+Reason (if not delivered)	Motivo (si no se entregó)
+Receipt {0} registered.	Recepción {0} registrada.
+Receipt reference	Referencia del recibo
+Receipts	Recepciones
+Receivable	A cobrar
+Receivables	Cuentas a cobrar
+Receive	Recibir
+Receive goods	Recibir mercadería
+Received	Recibida
+Received by	Recibido por
+Receiver ID	Documento del receptor
+Recipient absent	Destinatario ausente
+Record consumption	Registrar consumo
+Record progress	Registrar avance
+Record quality results	Registrar resultados de calidad
+Reference	Referencia
+Register collection	Registrar cobro
+Register collections	Registrar cobros
+Register delivery	Registrar entrega
+Register movement	Registrar movimiento
+Register return	Registrar devolución
+Register supplier payments	Registrar pagos a proveedores
+Register the material consumption before sending to quality control.	Registre el consumo de materiales antes de enviar a control de calidad.
+Rejected	Rechazado
+Rejected % of each line	% rechazado de cada línea
+Rejection reason	Motivo del rechazo
+Release reservation	Liberar reserva
+Released	Liberada
+Remove line	Quitar línea
+Reorder	Reposición
+Reorder point	Punto de reposición
+Reorder suggestions	Sugerencias de reposición
+Repeat password	Repetir contraseña
+Replacement	Reemplazo
+Report	Reporte
+Reports	Reportes
+Requested	Solicitada
+Required	Requerido
+Required credit: {0}	Crédito requerido: {0}
+Requires reference	Requiere referencia
+Rescheduled	Reprogramado
+Reservation release	Liberación de reserva
+Reservations	Reservas
+Reserve materials	Reservar materiales
+Reserved	Reservado
+Reserved balance	Saldo reservado
+Reserved: {0}	Reservado: {0}
+Reserves the stock the order is missing so it can be shipped. Lines that must be manufactured are resolved in Production.	Reserva el stock que le falta al pedido para poder enviarlo. Las líneas que hay que fabricar se resuelven en Producción.
+Reset password	Restablecer contraseña
+Resolved	Resueltas
+Result	Resultado
+Return {0} registered.	Devolución {0} registrada.
+Return {0} requested	Devolución {0} solicitada
+Return line Id	Id de línea de devolución
+Return to stock	Reingreso al stock
+Returned	Devuelta
+Returns	Devoluciones
+Rework	Reproceso
+Reworks	Reprocesos
+Role	Rol
+Roles and permissions	Roles y permisos
+Route sheet {0}	Hoja de ruta {0}
+Route sheet {0} created.	Hoja de ruta {0} creada.
+Route sheets	Hojas de ruta
+Row {0}: {1}	Fila {0}: {1}
+Row {0}: the name is missing or too short.	Fila {0}: falta el nombre o es muy corto.
+Run	Ejecutar
+Run the whole manufacturing cycle for this order? Missing materials are added and quality is approved.	¿Realizar todo el ciclo de fabricación de esta orden? Se agregan los materiales faltantes y se aprueba la calidad.
+Sales	Ventas
+Sales by customer	Ventas por cliente
+Sales by period	Ventas por período
+Sales by product	Ventas por producto
+Sales order	Pedido de venta
+Sales this month	Ventas del mes
+Schematic map (fictitious)	Mapa esquemático (ficticio)
+Scrap	Descarte
+Search	Buscar
+Sector	Sector
+Select a customer to continue.	Seleccione un cliente para continuar.
+Select a product for every product line.	Seleccione un producto en cada línea de producto.
+Select a product from the list.	Seleccione un producto de la lista.
+Select a quotation to continue.	Seleccione un presupuesto para continuar.
+Select a route sheet to see its route.	Seleccione una hoja de ruta para ver su recorrido.
+Select a row first.	Seleccione primero una fila.
+Select a value for {0}.	Seleccione un valor para {0}.
+Select at least one delivery note for the route.	Seleccione al menos un remito para la ruta.
+Select at least one item to return.	Seleccione al menos un ítem para devolver.
+Select at least one line to deliver.	Seleccione al menos una línea para entregar.
+Select the customer. Only accepted quotations that are still valid can be confirmed.	Seleccione el cliente. Solo pueden confirmarse presupuestos aceptados y aún vigentes.
+Sellable	Vendible
+Semi-finished	Semielaborado
+Send	Enviar
+Send to quality	Enviar a calidad
+Sent	Enviado
+Service	Servicio
+Setup completed	Configuración completada
+Shipped	Remitida
+Size	Medida
+Skipped	Omitidos
+SKU	SKU
+Source	Origen
+Specifications	Especificaciones
+Stage	Etapa
+Start production	Iniciar producción
+Start route	Iniciar ruta
+Startup error	Error de inicio
+Status	Estado
+Status key	Clave de estado
+Steel grade	Calidad de acero
+Still missing: {0}	Sigue faltando: {0}
+Stock	Stock
+Stock added: {0}	Stock ingresado: {0}
+Stock alerts: {0}	Alertas de stock: {0}
+Stock entry	Ingreso de stock
+Stock valuation	Valorización de stock
+Stop	Parada
+Stops	Paradas
+Subtotal	Subtotal
+Suggested	Sugerido
+Supplier	Proveedor
+Supplier delivery note	Remito del proveedor
+Supplier Id	Id de proveedor
+Supplier payments	Pagos a proveedores
+Suppliers	Proveedores
+Surcharge %	Recargo %
+Tax ID	CUIT
+Tax ID (CUIT)	CUIT
+Technical description	Descripción técnica
+Technical drawing reference	Referencia del plano técnico
+Text	Texto
+The accepted quantity exceeds what is pending on the order.	La cantidad aceptada supera lo pendiente de la orden.
+The administrator could not be created	No fue posible crear el administrador
+The administrator role cannot be deactivated.	El rol de administrador no puede desactivarse.
+The amount exceeds the balance owed to the supplier ({0}).	El importe supera el saldo adeudado al proveedor ({0}).
+The amount exceeds the current debt of the customer ({0}).	El importe supera la deuda actual del cliente ({0}).
+The amount exceeds the pending balance of the invoice ({0}).	El importe supera el saldo pendiente de la factura ({0}).
+The amount exceeds the pending balance of the purchase order ({0}).	El importe supera el saldo pendiente de la orden de compra ({0}).
+The amount must be greater than zero.	El importe debe ser mayor que cero.
+The amount of the credit note must be greater than zero.	El importe de la nota de crédito debe ser mayor que cero.
+The available credit of the customer is not enough to confirm the order.	El crédito disponible del cliente no alcanza para confirmar el pedido.
+The business name cannot exceed 150 characters.	La razón social no puede superar los 150 caracteres.
+The business name is required.	La razón social es obligatoria.
+The business name must have at least 3 characters.	La razón social debe tener al menos 3 caracteres.
+The business name must have between 3 and 150 characters.	La razón social debe tener entre 3 y 150 caracteres.
+The capacity must be greater than zero.	La capacidad debe ser mayor que cero.
+The catalog is empty. Load the sample customers and products?	El catálogo está vacío. ¿Cargar los clientes y productos de ejemplo?
+The category code and name are required.	El código y el nombre de la categoría son obligatorios.
+The columns Name, SKU and Price were not found in the file.	No se encontraron las columnas Nombre, SKU y Precio en el archivo.
+The cost or the discount is not valid.	El costo o el descuento no es válido.
+The credit limit cannot be negative.	El límite de crédito no puede ser negativo.
+The credit note cannot exceed the balance of the invoice.	La nota de crédito no puede superar el saldo de la factura.
+The credit note does not exist.	La nota de crédito no existe.
+The CUIT entered is not valid. It must contain 11 digits.	El CUIT ingresado no es válido. Debe contener 11 dígitos.
+The CUIT must contain 11 digits.	El CUIT debe contener 11 dígitos.
+The current password is incorrect.	La contraseña actual es incorrecta.
+The customer does not exist.	El cliente no existe.
+The customer identifier is not valid.	El identificador del cliente no es válido.
+The customer is not active.	El cliente no está activo.
+The customer name column was not found in the file.	No se encontró la columna del nombre del cliente en el archivo.
+The data could not be loaded.	No se pudieron cargar los datos.
+The date of the deposit cannot be in the future.	La fecha de la seña no puede ser futura.
+The date of the deposit is required.	La fecha de la seña es obligatoria.
+The delivery note {0} is not pending.	El remito {0} no está pendiente.
+The delivery note does not exist.	El remito no existe.
+The delivery of this stop was already registered.	La entrega de esta parada ya fue registrada.
+The delivery term cannot be negative.	El plazo de entrega no puede ser negativo.
+The deposit amount cannot be negative.	El importe de la seña no puede ser negativo.
+The deposit entered exceeds the required amount. A larger deposit is not allowed, to avoid skipping the credit check.	La seña ingresada supera el monto requerido. No se permite una seña mayor para no eludir el control de crédito.
+The deposit entered is not enough. The exact required amount must be registered.	La seña ingresada no alcanza. Debe registrarse el monto exacto requerido.
+The deposit is filled in with the amount the quotation requires. You can change it if needed.	La seña se completa con el monto que exige el presupuesto. Puede modificarla si lo desea.
+The document number is not valid.	El número de documento no es válido.
+The driver is not available.	El chofer no está disponible.
+The driver's license has expired.	La licencia del chofer está vencida.
+The email address entered is not valid.	El correo electrónico ingresado no es válido.
+The email address is not valid.	El correo electrónico no es válido.
+The estimated delivery date cannot be earlier than the issue date.	La fecha estimada de entrega no puede ser anterior a la de emisión.
+The estimated end date cannot be in the past.	La fecha estimada de fin no puede estar en el pasado.
+The exchange rate is not valid.	El tipo de cambio no es válido.
+The exchange rate of the quotation is not valid.	El tipo de cambio del presupuesto no es válido.
+The file {0} does not exist.	El archivo {0} no existe.
+The file has no data rows.	El archivo no tiene filas de datos.
+The file was created at {0} but could not be opened.	El archivo se creó en {0} pero no se pudo abrir.
+The first name and last name are required.	El nombre y el apellido son obligatorios.
+The full name is required.	El nombre completo es obligatorio.
+The initial administrator was created.	El administrador inicial fue creado correctamente.
+The insurance or the technical inspection of the vehicle has expired.	El seguro o la verificación técnica del vehículo está vencido.
+The invoice does not belong to the customer.	La factura no pertenece al cliente.
+The invoice does not exist.	La factura no existe.
+The invoice is already void.	La factura ya está anulada.
+The invoice is void.	La factura está anulada.
+The item does not belong to the delivery note.	El ítem no pertenece al remito.
+The item does not belong to the purchase order.	El ítem no pertenece a la orden de compra.
+The item type is not valid.	El tipo de ítem no es válido.
+The license category does not allow driving this vehicle.	La categoría de la licencia no permite conducir este vehículo.
+The license number and category are required.	El número y la categoría de la licencia son obligatorios.
+The license plate is not valid.	La patente no es válida.
+The line {0} is not ready: there is no reserved stock for that quantity.	La línea {0} no está lista: no hay stock reservado para esa cantidad.
+The line does not belong to the order or cannot be delivered.	La línea no pertenece al pedido o no puede entregarse.
+The load ({0} kg) exceeds the capacity of the vehicle ({1} kg).	La carga ({0} kg) supera la capacidad del vehículo ({1} kg).
+The manufacturing order does not exist.	La orden de fabricación no existe.
+The material {0} is a finished product.	El material {0} es un producto terminado.
+The material does not belong to the manufacturing order.	El material no pertenece a la orden de fabricación.
+The maximum number of attempts was reached. The user was locked for 15 minutes.	Se alcanzó el máximo de intentos. El usuario quedó bloqueado por 15 minutos.
+The minimum stock and the reorder point cannot be negative.	El stock mínimo y el punto de reposición no pueden ser negativos.
+The model year is not valid.	El año del modelo no es válido.
+The module could not be opened.	No se pudo abrir el módulo.
+The movement type is not valid for this operation.	El tipo de movimiento no es válido para esta operación.
+The name and the document of the person who received are required.	El nombre y el documento de quien recibe son obligatorios.
+The new password must be different from the current one.	La nueva contraseña debe ser distinta de la actual.
+The operation ({0}) is not allowed while the order is {1}.	La operación ({0}) no está permitida mientras el pedido está {1}.
+The operation could not be completed.	No se pudo completar la operación.
+The order already has an invoice.	El pedido ya tiene una factura.
+The order already has delivery notes.	El pedido ya tiene remitos.
+The order already has everything reserved.	El pedido ya tiene todo reservado.
+The order cannot be cancelled in its current state.	El pedido no puede cancelarse en su estado actual.
+The order does not exist.	El pedido no existe.
+The order has an active invoice. Issue a credit note first.	El pedido tiene una factura activa. Emita primero una nota de crédito.
+The order has no invoice to credit.	El pedido no tiene factura para acreditar.
+The order has no lines to invoice.	El pedido no tiene líneas para facturar.
+The order has not been invoiced	El pedido no fue facturado
+The order identifier is not valid.	El identificador del pedido no es válido.
+The order is not enabled for dispatch.	El pedido no está habilitado para despacho.
+The order is not in a state that allows manufacturing.	El pedido no está en un estado que permita fabricar.
+The order line already has an active manufacturing order.	La línea del pedido ya tiene una orden de fabricación activa.
+The order must be invoiced before a delivery note can be issued.	El pedido debe facturarse antes de emitir un remito.
+The order was manufactured and the finished product is in stock.	La orden se fabricó y el producto terminado está en stock.
+The origin and destination locations must be different.	Las ubicaciones de origen y destino deben ser distintas.
+The password is required.	La contraseña es obligatoria.
+The password was reset.	La contraseña fue restablecida.
+The passwords entered do not match.	Las contraseñas ingresadas no coinciden.
+The payment method is not available.	El medio de pago no está disponible.
+The payment method of the deposit is required.	El medio de pago de la seña es obligatorio.
+The percentage must be between -90 and 500, and different from zero.	El porcentaje debe estar entre -90 y 500, y ser distinto de cero.
+The percentages must be between 0 and 100.	Los porcentajes deben estar entre 0 y 100.
+The planned date cannot be in the past.	La fecha planificada no puede estar en el pasado.
+The price or the discount is not valid.	El precio o el descuento no es válido.
+The product {0} cannot be manufactured.	El producto {0} no puede fabricarse.
+The product {0} cannot be purchased.	El producto {0} no puede comprarse.
+The product {0} is inactive.	El producto {0} está inactivo.
+The product {0} is not in the catalog.	El producto {0} no está en el catálogo.
+The product {0} of the order is not in the catalog.	El producto {0} del pedido no está en el catálogo.
+The product code (SKU) is required.	El código de producto (SKU) es obligatorio.
+The product code cannot exceed 50 characters.	El código de producto no puede superar los 50 caracteres.
+The product does not exist.	El producto no existe.
+The product name is required.	El nombre del producto es obligatorio.
+The production stage is required.	La etapa de producción es obligatoria.
+The progress cannot be lower than the last one registered ({0}%).	El avance no puede ser menor que el último registrado ({0}%).
+The progress must be between 0 and 100.	El avance debe estar entre 0 y 100.
+The purchase order already has payments applied.	La orden de compra ya tiene pagos aplicados.
+The purchase order already has received materials.	La orden de compra ya tiene materiales recibidos.
+The purchase order cannot be cancelled in its current state.	La orden de compra no puede cancelarse en su estado actual.
+The purchase order does not belong to the supplier.	La orden de compra no pertenece al proveedor.
+The purchase order does not exist.	La orden de compra no existe.
+The purchase order must have at least one item.	La orden de compra debe tener al menos un ítem.
+The purchase would exceed the credit limit of the supplier (balance {0}, limit {1}).	La compra superaría el límite de crédito del proveedor (saldo {0}, límite {1}).
+The quantity exceeds what is pending on the reservation.	La cantidad supera lo pendiente de la reserva.
+The quantity exceeds what is reserved for this material.	La cantidad supera lo reservado para este material.
+The quantity must be greater than zero.	La cantidad debe ser mayor que cero.
+The quantity of {0} exceeds what is pending to deliver ({1}).	La cantidad de {0} supera lo pendiente de entregar ({1}).
+The quantity of {0} exceeds what was delivered ({1}).	La cantidad de {0} supera lo entregado ({1}).
+The quantity returned to stock plus the quantity scrapped cannot exceed the quantity returned.	La cantidad que vuelve al stock más la descartada no puede superar la devuelta.
+The quantity to manufacture must be greater than zero.	La cantidad a fabricar debe ser mayor que cero.
+The quotation cannot be confirmed. It must be valid, accepted and have items.	El presupuesto no puede confirmarse. Debe estar vigente, aceptado y tener ítems.
+The quotation does not belong to the selected customer.	El presupuesto no pertenece al cliente seleccionado.
+The quotation does not exist.	El presupuesto no existe.
+The quotation does not require a deposit.	El presupuesto no requiere seña.
+The quotation identifier is not valid.	El identificador del presupuesto no es válido.
+The quotation must contain at least one item.	El presupuesto debe contener al menos un ítem.
+The reason for cancelling is required.	El motivo de la cancelación es obligatorio.
+The reason for releasing the reservation is required.	El motivo de la liberación de la reserva es obligatorio.
+The reason for the rejection is required.	El motivo del rechazo es obligatorio.
+The reason for the return is required.	El motivo de la devolución es obligatorio.
+The reason of the credit note is required.	El motivo de la nota de crédito es obligatorio.
+The receipt of the deposit is required.	El comprobante de la seña es obligatorio.
+The received quantity must equal the accepted plus the rejected quantity.	La cantidad recibida debe ser igual a la aceptada más la rechazada.
+The requested user was not found.	No se encontró el usuario solicitado.
+The required quantity of every material must be greater than zero.	La cantidad requerida de cada material debe ser mayor que cero.
+The reservation does not cover the quantity requested.	La reserva no cubre la cantidad solicitada.
+The reservation does not exist.	La reserva no existe.
+The reservation is no longer active.	La reserva ya no está activa.
+The reserved quantity of {0} is not enough.	La cantidad reservada de {0} no alcanza.
+The return cannot be cancelled in its current state.	La devolución no puede cancelarse en su estado actual.
+The return does not belong to the order of the invoice.	La devolución no pertenece al pedido de la factura.
+The return does not exist.	La devolución no existe.
+The return must be received before it can be inspected.	La devolución debe recibirse antes de inspeccionarse.
+The return was already received or closed.	La devolución ya fue recibida o cerrada.
+The returned item does not exist.	El ítem devuelto no existe.
+The role is required.	El rol es obligatorio.
+The route sheet does not exist.	La hoja de ruta no existe.
+The selected category is not available.	La categoría seleccionada no está disponible.
+The selected customer is not active.	El cliente seleccionado no está activo.
+The selected customer was not found.	No se encontró el cliente seleccionado.
+The selected quotation is not valid, was not accepted or has no items.	El presupuesto seleccionado no es válido, no fue aceptado o no tiene ítems.
+The selected quotation was already converted into an order.	El presupuesto seleccionado ya se convirtió en pedido.
+The selected quotation was not found.	No se encontró el presupuesto seleccionado.
+The selected role is not active.	El rol seleccionado no está activo.
+The selected role was not found.	No se encontró el rol seleccionado.
+The stop does not exist.	La parada no existe.
+The supplier does not exist.	El proveedor no existe.
+The technical detail was recorded in the audit log.	El detalle técnico fue registrado en la bitácora.
+The unit of measure is not valid.	La unidad de medida no es válida.
+The user identifier is not valid.	El identificador del usuario no es válido.
+The user is inactive.	El usuario está inactivo.
+The user is locked until {0}.	El usuario está bloqueado hasta {0}.
+The user name is required.	El nombre de usuario es obligatorio.
+The user name must have at least 4 characters.	El nombre de usuario debe tener al menos 4 caracteres.
+The user name or the password is incorrect.	El usuario o la contraseña son incorrectos.
+The user name or the password is incorrect. Remaining attempts: {0}.	El usuario o la contraseña son incorrectos. Intentos restantes: {0}.
+The user was unlocked.	El usuario fue desbloqueado.
+The validity must be between 1 and 90 days.	La vigencia debe estar entre 1 y 90 días.
+The validity of this quotation cannot be extended.	La vigencia de este presupuesto no puede extenderse.
+The vehicle is not available.	El vehículo no está disponible.
+The warehouse and the location code are required.	El depósito y el código de ubicación son obligatorios.
+The warehouse code and name are required.	El código y el nombre del depósito son obligatorios.
+The warehouse location is not available.	La ubicación del depósito no está disponible.
+The web page could not be opened.	No se pudo abrir la página web.
+There are no delivered notes to return against.	No hay remitos entregados contra los cuales devolver.
+There are no delivery notes available for a route.	No hay remitos disponibles para una hoja de ruta.
+There are no payment methods configured.	No hay medios de pago configurados.
+There is already a category with the code {0}.	Ya existe una categoría con el código {0}.
+There is already a customer registered with the CUIT {0}.	Ya existe un cliente registrado con el CUIT {0}.
+There is already a driver with that license number.	Ya existe un chofer con ese número de licencia.
+There is already a driver with the document {0}.	Ya existe un chofer con el documento {0}.
+There is already a location with the code {0} in this warehouse.	Ya existe una ubicación con el código {0} en este depósito.
+There is already a product with the code {0}.	Ya existe un producto con el código {0}.
+There is already a quotation {0}.	Ya existe el presupuesto {0}.
+There is already a supplier with the CUIT {0}.	Ya existe un proveedor con el CUIT {0}.
+There is already a user with that email.	Ya existe un usuario con ese correo electrónico.
+There is already a user with that name.	Ya existe un usuario con ese nombre.
+There is already a vehicle with the plate {0}.	Ya existe un vehículo con la patente {0}.
+There is already a warehouse with the code {0}.	Ya existe un depósito con el código {0}.
+There is already an active administrator.	Ya existe un administrador activo.
+There is no active warehouse location. Create one in the Inventory module.	No hay ninguna ubicación de depósito activa. Cree una en el módulo de Inventario.
+There is not enough reserved stock to dispatch {0}.	No hay stock reservado suficiente para despachar {0}.
+There is nothing left to rework.	No queda nada por reprocesar.
+There is nothing pending to receive.	No hay nada pendiente de recibir.
+There is nothing to export.	No hay nada para exportar.
+There is nothing to receive.	No hay nada para recibir.
+This customer has no accepted quotations to confirm. Mark the quotation as Accepted first.	Este cliente no tiene presupuestos aceptados para confirmar. Marque primero el presupuesto como Aceptado.
+This item was already resolved.	Este ítem ya fue resuelto.
+This order has no invoice yet.	Este pedido todavía no tiene factura.
+This order has no materials.	Esta orden no tiene materiales.
+This order has nothing pending to ship.	Este pedido no tiene nada pendiente de enviar.
+This payment method requires a reference.	Este medio de pago requiere una referencia.
+This payment method requires the financial institution.	Este medio de pago requiere la entidad financiera.
+This route has no pending stops.	Esta ruta no tiene paradas pendientes.
+This route has no stops.	Esta ruta no tiene paradas.
+This user will have full access to the system.	Este usuario tendrá acceso completo al sistema.
+To	Hasta
+To consume	Por consumir
+To location	Ubicación de destino
+Total	Total
+Total {0}, imported {1}, skipped {2}.	Total {0}, importados {1}, omitidos {2}.
+Total in pesos	Total en pesos
+Transfer	Transferir
+Transfer in	Entrada por transferencia
+Transfer out	Salida por transferencia
+Type	Tipo
+Under inspection	En inspección
+Unexpected error	Error inesperado
+Unit	Unidad
+Unit cost	Costo unitario
+Unit price	Precio unitario
+Unlock	Desbloquear
+Update expired	Actualizar vencidos
+Urgent	Urgente
+USD	USD
+User	Usuario
+User name	Nombre de usuario
+User: {0} ({1})	Usuario: {0} ({1})
+Users	Usuarios
+Valid	Vigente
+Validity (days)	Vigencia (días)
+Value	Valor
+VAT	IVA
+VAT %	IVA %
+VAT registered taxpayer	IVA Responsable Inscripto
+Vehicle	Vehículo
+Vehicles	Vehículos
+View audit log	Ver bitácora
+View catalog	Ver catálogo
+View customer accounts	Ver cuentas corrientes
+View customers	Ver clientes
+View inventory	Ver inventario
+View logistics	Ver logística
+View management reports	Ver reportes gerenciales
+View orders	Ver pedidos
+View production	Ver producción
+View purchasing	Ver compras
+View reports	Ver reportes
+Void	Anulada
+Waiting for manufacturing: {0}	A la espera de fabricación: {0}
+Waiting for production or stock: {0}	A la espera de producción o stock: {0}
+Warehouse	Depósito
+Warehouse Id	Id de depósito
+Waste	Merma
+Weight (kg)	Peso (kg)
+Working...	Trabajando...
+Wrong address	Domicilio incorrecto
+Year	Año
+You cannot deactivate the user you are logged in with.	No puede desactivar el usuario con el que inició sesión.
+You do not have permission to perform this operation.	No tiene permiso para realizar esta operación.
+Register the deposit received. The amount must cover the minimum deposit of the quotation.	Registre la seña recibida. El importe debe cubrir la seña mínima del presupuesto.
+Select the customer. Only quotations that are sent or accepted and still valid can be confirmed.	Seleccione el cliente. Solo pueden confirmarse presupuestos enviados o aceptados y aún vigentes.
+This customer has no valid quotations to confirm.	Este cliente no tiene presupuestos vigentes para confirmar.
+Waiting for production or stock	A la espera de producción o stock
+Choose the invoice type	Elija el tipo de factura
+Backup	Respaldo
+Sample data	Datos de ejemplo
+Products	Productos
+Stock alerts	Alertas de stock
+Orders in production	Órdenes en producción
+Quotation lines	Líneas del presupuesto
+Purchase order lines	Líneas de la orden de compra
+Invoice number	Número de factura
+Materials required	Materiales requeridos
+(demonstration, not issued by the tax authority)	(demostración, no emitido por la autoridad fiscal)
+A receipt can only be generated for a confirmed order.	El comprobante solo puede generarse para un pedido confirmado.
+Balance due	Saldo a pagar
+Balance to invoice	Saldo a facturar
+CREDIT NOTE	NOTA DE CRÉDITO
+DELIVERY NOTE	REMITO
+DUPLICATE	DUPLICADO
+Delivered by	Entregó
+Delivery term	Plazo de entrega
+Demonstration document, without fiscal validity	Documento de demostración, sin validez fiscal
+Deposit applied	Seña aplicada
+Disc.	Desc.
+Expected delivery	Entrega prevista
+General discount	Descuento general
+Gross income	Ingresos Brutos
+INVOICE	FACTURA
+No	No
+No.	N.°
+Not valid as an invoice	Documento no válido como factura
+ORDER RECEIPT	COMPROBANTE DE PEDIDO
+ORIGINAL	ORIGINAL
+PURCHASE ORDER	ORDEN DE COMPRA
+Page	Página
+Qty	Cant.
+Received in good order	Recibí conforme
+Route sheet	Hoja de ruta
+Start of activities	Inicio de actividades
+Surcharge	Recargo
+TRIPLICATE	TRIPLICADO
+Unit price (VAT incl.)	Precio unitario (IVA incl.)
+VAT condition	Condición frente al IVA
+VAT contained	IVA contenido
+Yes	Sí
+Distance	Distancia
+Time	Tiempo
+This route sheet has no stops.	Esta hoja de ruta no tiene paradas.
+Calculating the route...	Calculando el recorrido...
+Straight lines: street routing is not available.	Líneas rectas: no se pudo calcular el recorrido por calles.
+Customer type	Tipo de cliente
+Company (CUIT)	Empresa (CUIT)
+Individual (CUIL)	Particular (CUIL)
+Company	Empresa
+Individual	Particular
+Tax ID (CUIT / CUIL)	CUIT / CUIL
+Business name / full name	Razón social / nombre completo
+Invoice A is only for companies (CUIT). Use Invoice B for individuals.	La factura A es solo para empresas (CUIT). Use la factura B para particulares.
+The customer has no delivery address. Complete it in Customers before confirming an order with delivery.	El cliente no tiene dirección de entrega. Complétela en Clientes antes de confirmar un pedido con entrega.
+The customer has no delivery address. Complete it in Customers.	El cliente no tiene dirección de entrega. Complétela en Clientes.
+The customer has no delivery address	El cliente no tiene dirección de entrega
+No delivery address	Sin dirección de entrega
+Expired quotations: {0}. Use "Extend validity" to renew them.	Presupuestos vencidos: {0}. Use "Extender vigencia" para renovarlos.
+Change quantity	Cambiar cantidad
+Select a line first.	Seleccione primero una línea.
+Order date	Fecha del pedido
+Delivery date	Fecha de entrega
+Enter a value greater than zero for {0}.	Ingrese un valor mayor que cero en {0}.
+Enter a unit price greater than zero.	Ingrese un precio unitario mayor que cero.
+Every item needs a unit price greater than zero.	Cada ítem necesita un precio unitario mayor que cero.
+Edit line	Modificar línea
+Refresh	Actualizar
+Quotation accepted. You can now confirm the order from Orders > Confirm order.	Presupuesto aceptado. Ahora podés confirmar el pedido desde Pedidos > Confirmar pedido.
+Missing products	Productos faltantes
+Some products are not in stock. Add the quantities below to confirm the order.	Algunos productos no tienen stock. Agregue abajo las cantidades para poder confirmar el pedido.
+Add stock and confirm	Agregar stock y confirmar
+Add at least the missing quantity of {0}.	Agregue al menos la cantidad que falta de {0}.
+Stock entry for quotation {0}	Ingreso de stock para el presupuesto {0}
+This product is not marked as purchasable.	Este producto no está marcado como comprable.
+Add	Agregar
+Verify the load	Verificar la carga
+Check each line against the goods you are loading onto the truck. The quantities come from the invoice and cannot be changed.	Controle cada línea con la mercadería que sube al camión. Las cantidades salen de la factura y no se pueden cambiar.
+Not ready to ship	No listo para despachar
+Verified: {0} of {1}	Verificadas: {0} de {1}
+Route started.	Ruta iniciada.
+This delivery note is not available for a route sheet (it may already be on one).	Este remito no está disponible para una hoja de ruta (puede que ya esté en una).
+Assign to route sheet	Asignar a hoja de ruta
+Loaded	Cargado
+Incomplete weight	Peso incompleto
+{0} was made to measure and cannot be returned.	{0} se fabricó a medida y no admite devolución.
+Delivery and returns policy	Política de entrega y devoluciones
+Check the goods when you receive them. Once the goods are delivered and the delivery note is signed, no returns are accepted. Only goods rejected or damaged at the time of delivery, noted on the delivery note, can be returned. Made-to-measure orders (custom manufacturing) cannot be returned.	Revise la mercadería al recibirla. Una vez entregada y firmado el remito no se aceptan devoluciones. Solo puede devolverse la mercadería rechazada o dañada al momento de la entrega, con la constancia en el remito. Los pedidos a medida (fabricación especial) no admiten devolución.
+ID / CUIT / CUIL	DNI / CUIT / CUIL
+Signature and clarification	Firma y aclaración
+Product to manufacture	Producto a fabricar
+There are no products that can be manufactured to measure.	No hay productos que se puedan fabricar a medida.
+This quotation includes custom manufacturing, which requires a deposit of at least 30%.	Este presupuesto incluye fabricación especial, que requiere una seña de al menos el 30%.
+Created automatically when the order was confirmed.	Creada automáticamente al confirmar el pedido.
+Manufacturing orders created: {0}	Órdenes de producción creadas: {0}
+Ready to coordinate delivery	Listo para coordinar la entrega
+Preparation orders	Órdenes de preparación
+Prepared	Preparado
+Waiting for production	Esperando producción
+To prepare	Por preparar
+The order was manufactured. Issue the invoice now so Logistics can ship it?	El pedido ya se fabricó. ¿Emitir la factura ahora para que Logística pueda despacharlo?
+Invoice {0} issued. The order is ready to coordinate the delivery.	Factura {0} emitida. El pedido está listo para coordinar la entrega.
+Quotation {0} issued	Presupuesto {0} emitido
+Quotation {0} accepted by the customer	Presupuesto {0} aceptado por el cliente
+{0}: progress {1}% ({2})	{0}: avance {1}% ({2})
+Stock reserved: {0} x {1}	Stock reservado: {0} x {1}
+{0} assigned to route sheet {1}	{0} asignado a la hoja de ruta {1}
+Route sheet {0} started	Hoja de ruta {0} iniciada
+Payment details	Datos del pago
+The order has a balance of {0}. Register the collection now?	El pedido tiene un saldo de {0}. ¿Registrar el cobro ahora?
+Departs from	Parte desde
+approximate location	ubicación aproximada
+Deposit paid	Seña abonada
+Not paid yet	Sin abonar
+Paid in full	Abonó el total
+Accept and manufacture	Aceptar y fabricar
+Accept order {0} and start manufacturing?	¿Aceptar la orden {0} y comenzar la fabricación?
+Order {0} accepted. It is now in process; follow it in Manufacturing orders.	Orden {0} aceptada. Ya está en proceso; seguila en Órdenes de fabricación.
+Lines without order	Líneas sin orden
+Pending collections	Cobros pendientes
+Expected payment method	Forma de pago prevista
+Note how the customer plans to pay the balance. It does not register any collection.	Anote cómo piensa pagar el saldo el cliente. No registra ningún cobro.
+Cash	Efectivo
+Bank transfer	Transferencia
+Check	Cheque
+Card	Tarjeta
+Balance due {0}: the customer must pay 100% before shipping	Falta abonar {0}: el cliente debe pagar el 100% antes del envío
+Customer paid 100% - ready to ship and deliver	Cliente abonó el 100%: listo para remitir y entregar
+The customer still owes {0}. The delivery note can be issued once the order is paid in full.	El cliente todavía debe {0}. El remito se puede generar cuando el pedido esté pagado por completo.
+Remaining	Falta
+Authorize / revoke credit	Autorizar / quitar crédito
+Authorize {0} to receive goods without paying 100% beforehand (credit account)?	¿Autorizar a {0} a recibir la mercadería sin haber pagado el 100% (cuenta corriente)?
+Revoke the credit authorization of {0}? From now on they must pay 100% before delivery.	¿Quitar la autorización de crédito de {0}? Desde ahora debe pagar el 100% antes de la entrega.
+Authorized customer (credit account) - ready to ship and deliver	Cliente autorizado (cuenta corriente): listo para remitir y entregar
+Authorized	Autorizado
+Consumed automatically when sent to quality control.	Consumido automáticamente al enviar a calidad.
+The order has no materials reserved. Reserve the materials before sending to quality control.	La orden no tiene materiales reservados. Reserve los materiales antes de enviar a calidad.
+Summary	Resumen
+Order created	Orden creada
+{0} units	{0} unidades
+Accepted and started	Aceptada e iniciada
+Finished product delivered to stock.	Producto terminado ingresado al stock.
+Reason: {0}	Motivo: {0}
+Shipment log	Historial de envíos
+Delivery note issued	Remito emitido
+Load verified	Carga verificada
+Assigned to route sheet	Asignado a hoja de ruta
+Route started	Ruta iniciada
+Delivery result	Resultado de la entrega
+Received by {0} (ID {1})	Recibió {0} (documento {1})
+Reschedule delivery	Reprogramar entrega
+The delivery note becomes available again for a new route sheet. The failed attempt stays on record.	El remito vuelve a quedar disponible para una nueva hoja de ruta. El intento fallido queda registrado.
+Delivery rescheduled. Assign it to a new route sheet from Delivery notes.	Entrega reprogramada. Asignala a una nueva hoja de ruta desde Remitos.
+The reason for rescheduling is required.	El motivo de la reprogramación es obligatorio.
+Only rejected or rescheduled deliveries can be rescheduled.	Solo se reprograman entregas rechazadas o no concretadas.
+Event	Evento
+Ready to accept	Lista para aceptar
+Waiting for the order to be confirmed and the deposit paid	Esperando confirmar el pedido y cobrar la seña
+Deposit required: {0}	Seña requerida: {0}
+Quotation {0} is accepted but is not an order yet. Go to Sales > Orders > Confirm order and register the deposit; the manufacturing order will then be ready to accept here.	El presupuesto {0} está aceptado pero todavía no es pedido. Andá a Ventas > Pedidos > Confirmar pedido y registrá la seña; después la orden de fabricación queda lista para aceptar acá.
+Situation	Situación
+The deposit entered is below the minimum required by the quotation ({0}).	La seña ingresada es menor al mínimo que exige el presupuesto ({0}).
+The deposit cannot exceed the total of the quotation.	La seña no puede superar el total del presupuesto.
+Enter the deposit the customer actually paid. It cannot be below the minimum shown next to the quotation.	Ingrese la seña que el cliente realmente pagó. No puede ser menor al mínimo que se ve junto al presupuesto.
+The password cannot be empty.	La contraseña no puede estar vacía.
+The password must have at least 8 characters.	La contraseña debe tener al menos 8 caracteres.
+Confirm password	Confirmar contraseña
+Show password	Mostrar contraseña
+The passwords do not match.	Las contraseñas no coinciden.
+Edit user	Modificar usuario
+The full name and the email are required.	El nombre completo y el correo son obligatorios.
+The order does not meet the conditions to be confirmed. Check the deposit and the quotation lines.	El pedido no cumple las condiciones para confirmarse. Revise la seña y las líneas del presupuesto.
+To collect (customers)	A cobrar (clientes)
+To pay (suppliers)	A pagar (proveedores)
+Materials of {0} - {1}	Materiales de {0} - {1}
+The order is at {0}% progress. It cannot be sent to quality control until manufacturing reaches 100%. Keep manufacturing or cancel the order.	La orden está al {0}% de avance. No puede enviarse a calidad hasta que la fabricación llegue al 100%. Siga fabricando o cancele la orden.
+The order is not complete	La orden no está completa
+{0} is at {1}%. A product cannot go to quality control or enter the stock before manufacturing reaches 100%.	{0} está al {1}%. Un producto no puede pasar a calidad ni ingresar al stock antes de que la fabricación llegue al 100%.
+What do you want to do?	¿Qué desea hacer?
+Continue manufacturing	Continuar la fabricación
+Cancel the order (missing materials or products)	Cancelar la orden (faltan materiales o productos)
+Reason for cancelling	Motivo de la cancelación
+The order stays in process. Use Register progress to keep loading the manufacturing progress.	La orden sigue en proceso. Use Registrar avance para seguir cargando el avance de la fabricación.
+Write the reason for cancelling the order.	Escriba el motivo de la cancelación de la orden.
+Order {0} cancelled. The reserved materials were released.	Orden {0} cancelada. Se liberaron los materiales reservados.
+QUOTATION	PRESUPUESTO
+Valid until	Válido hasta
+Quotation valid for {0} days (until {1}).	PRESUPUESTO VÁLIDO POR {0} DÍAS (hasta el {1}).
+This quotation has expired. Ask for an updated one.	Este presupuesto está vencido. Solicite uno actualizado.
+Prices may vary according to the date. The amounts are guaranteed only until the date of validity.	Los precios pueden variar según la fecha. Los importes solo están garantizados hasta la fecha de validez.
+Made to measure	A medida
+Deposit required to start manufacturing ({0}%)	Seña requerida para iniciar la fabricación ({0}%)
+Terms and conditions	Condiciones
+This quotation does not reserve stock. Availability is confirmed when the order is placed.	Este presupuesto no reserva stock. La disponibilidad se confirma al realizar el pedido.
+Made-to-measure items start manufacturing once the deposit is received, and they cannot be returned.	Los productos a medida se empiezan a fabricar al recibir la seña y no admiten devolución.
+Amounts in US dollars. Reference exchange rate: {0}.	Importes en dólares estadounidenses. Tipo de cambio de referencia: {0}.
+Delivery times start when the order is confirmed and, for made-to-measure items, when the deposit is received.	Los plazos de entrega comienzan al confirmarse el pedido y, en los productos a medida, al recibir la seña.
+To accept this quotation, sign below or confirm it to your salesperson within the validity period.	Para aceptar este presupuesto, firme abajo o confírmelo con su vendedor dentro del plazo de validez.
+Signature	Firma
+Print quotation	Imprimir presupuesto
+Rejected in quality control	Rechazada en control de calidad
+Manufacturing cannot start until the minimum deposit ({0}%) is paid. Deposit received: {1}. Required: {2}.	No se puede fabricar hasta que se abone la seña mínima ({0}%). Seña recibida: {1}. Requerida: {2}.
+The order was rejected and closed. Its reserved materials were released. Resolve the sales order or ask for a new manufacturing order.	La orden fue rechazada y quedó cerrada. Se liberaron los materiales reservados. Resuelva el pedido de venta o solicite una nueva orden de fabricación.
+Every quotation requires a deposit of at least {0}% to become an order.	Todo presupuesto exige una seña de al menos el {0}% para convertirse en pedido.
+Production cannot start until the invoice that records the deposit is issued. Issue it from Sales > Orders.	No se puede mandar a producir hasta que se emita la factura que deja asentada la seña. Emítala desde Ventas > Pedidos.
+The invoice {0} does not show the minimum deposit ({1}%) as paid. Production cannot start.	La factura {0} no muestra como abonada la seña mínima ({1}%). No se puede mandar a producir.
+Waiting for the invoice that records the deposit	Esperando la factura que asienta la seña
+The deposit is not invoiced yet. Issue the invoice now so the order can go to production?	La seña todavía no está facturada. ¿Emitir ahora la factura para que la orden pueda pasar a producción?
+Invoice {0} issued, showing the deposit paid.	Factura {0} emitida, con la seña abonada.
