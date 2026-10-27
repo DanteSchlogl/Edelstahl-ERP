@@ -20,6 +20,8 @@
     <DebugType>full</DebugType>
     <Optimize>false</Optimize>
     <OutputPath>bin\Debug\</OutputPath>
+    <DocumentationFile>bin\Debug\Edelstahl.Services.xml</DocumentationFile>
+    <NoWarn>$(NoWarn);1591</NoWarn>
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
@@ -28,6 +30,8 @@
     <DebugType>pdbonly</DebugType>
     <Optimize>true</Optimize>
     <OutputPath>bin\Release\</OutputPath>
+    <DocumentationFile>bin\Release\Edelstahl.Services.xml</DocumentationFile>
+    <NoWarn>$(NoWarn);1591</NoWarn>
     <DefineConstants>TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>

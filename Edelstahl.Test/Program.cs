@@ -22,6 +22,7 @@ namespace Edelstahl.Test
             bool pantallas = Array.IndexOf(args, "pantallas") >= 0;
             bool preparacion = Array.IndexOf(args, "prep") >= 0;
             bool pantallasSql = Array.IndexOf(args, "pantallassql") >= 0;
+            int iCatalogo = Array.IndexOf(args, "catalogo");
 
             try
             {
@@ -119,6 +120,12 @@ namespace Edelstahl.Test
                 if (pantallasSql)
                 {
                     PruebaPantallas.Ejecutar(ExecutionMode.SqlServer);
+                }
+
+                if (iCatalogo >= 0 && iCatalogo + 1 < args.Length)
+                {
+                    PruebaCatalogo.Ejecutar(ExecutionMode.SqlServer, args[iCatalogo + 1]);
+                    return Verificador.Resumen();
                 }
 
                 if (sql)
