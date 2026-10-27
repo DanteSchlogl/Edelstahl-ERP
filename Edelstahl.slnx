@@ -5,4 +5,7 @@
   <Project Path="Edelstahl.Services/Edelstahl.Services.csproj" Id="43ee47a6-29b6-435f-a28d-1c8c6f190e6e" />
   <Project Path="Edelstahl.Test/Edelstahl.Test.csproj" Id="da689262-561e-45f1-b34c-511e805ecdd2" />
   <Project Path="Edelstahl.WinApp/Edelstahl.WinApp.csproj" Id="2303c0b0-b684-442e-b2ab-e14bbf058313" />
+  <Project Path="Edelstahl.Installer/Edelstahl.Installer.vdproj" Type="978c614f-708e-4e1a-b201-565925725dba">
+    <BuildDependency Project="Edelstahl.WinApp/Edelstahl.WinApp.csproj" />
+  </Project>
 </Solution>
