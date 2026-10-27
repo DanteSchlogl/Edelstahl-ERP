@@ -27,6 +27,7 @@ namespace Edelstahl.WinApp
             Text = Tr.T("Initial setup");
             ClientSize = new Size(520, 470);
             StartPosition = FormStartPosition.CenterScreen;
+            Edelstahl.WinApp.Ui.Marca.AplicarIcono(this);
             FormBorderStyle = FormBorderStyle.FixedDialog;
             MaximizeBox = false;
             MinimizeBox = false;

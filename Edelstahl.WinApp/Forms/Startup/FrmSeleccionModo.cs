@@ -48,6 +48,8 @@ namespace Edelstahl.WinApp.Forms.Startup
             StartPosition =
                 FormStartPosition.CenterScreen;
 
+            Edelstahl.WinApp.Ui.Marca.AplicarIcono(this);
+
             FormBorderStyle =
                 FormBorderStyle.FixedDialog;
 

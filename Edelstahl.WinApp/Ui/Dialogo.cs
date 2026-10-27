@@ -190,6 +190,7 @@ namespace Edelstahl.WinApp.Ui
                 formulario.Text = Tr.T(tituloClave);
                 formulario.FormBorderStyle = FormBorderStyle.FixedDialog;
                 formulario.StartPosition = FormStartPosition.CenterParent;
+                Edelstahl.WinApp.Ui.Marca.AplicarIcono(formulario);
                 formulario.MaximizeBox = false;
                 formulario.MinimizeBox = false;
                 formulario.ShowInTaskbar = false;

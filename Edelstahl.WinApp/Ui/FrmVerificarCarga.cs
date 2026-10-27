@@ -40,6 +40,7 @@ namespace Edelstahl.WinApp.Ui
             Text = Tr.T("Verify the load") + " - " + pedido;
             Size = new Size(900, 560);
             StartPosition = FormStartPosition.CenterParent;
+            Edelstahl.WinApp.Ui.Marca.AplicarIcono(this);
             Font = Estilo.Normal;
             BackColor = Estilo.Superficie;
             MinimizeBox = false;

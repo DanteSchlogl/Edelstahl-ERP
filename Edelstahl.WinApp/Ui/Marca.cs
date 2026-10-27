@@ -14,6 +14,27 @@ namespace Edelstahl.WinApp.Ui
     /// </summary>
     public static class Marca
     {
+        private static Icon _icono;
+
+        /// <summary>
+        /// Pone en la ventana el icono del programa (el yunque), que viene dentro del ejecutable.
+        /// </summary>
+        public static void AplicarIcono(Form formulario)
+        {
+            try
+            {
+                if (_icono == null)
+                {
+                    _icono = Icon.ExtractAssociatedIcon(Application.ExecutablePath);
+                }
+
+                formulario.Icon = _icono;
+            }
+            catch (Exception)
+            {
+                // sin icono la ventana sigue funcionando igual
+            }
+        }
         private static readonly Dictionary<string, Bitmap> Cache = new Dictionary<string, Bitmap>();
 
         private static PointF[] Hexagono(float cx, float cy, float radio)

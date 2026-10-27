@@ -20,6 +20,7 @@ namespace Edelstahl.WinApp.Ui
             Text = Tr.T("Edelstahl ERP");
             FormBorderStyle = FormBorderStyle.FixedDialog;
             StartPosition = FormStartPosition.CenterScreen;
+            Edelstahl.WinApp.Ui.Marca.AplicarIcono(this);
             ControlBox = false;
             ShowInTaskbar = false;
             ClientSize = new Size(420, 90);

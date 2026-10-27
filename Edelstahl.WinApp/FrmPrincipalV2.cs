@@ -72,6 +72,7 @@ namespace Edelstahl.WinApp
             WindowState = FormWindowState.Maximized;
             BackColor = Estilo.Fondo;
             StartPosition = FormStartPosition.CenterScreen;
+            Edelstahl.WinApp.Ui.Marca.AplicarIcono(this);
             MinimumSize = new Size(1100, 700);
             Font = Estilo.Normal;
         }

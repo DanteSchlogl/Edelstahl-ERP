@@ -7,6 +7,7 @@
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProjectGuid>{2303C0B0-B684-442E-B2AB-E14BBF058313}</ProjectGuid>
     <OutputType>WinExe</OutputType>
+    <ApplicationIcon>Resources\Icono\edelstahl.ico</ApplicationIcon>
     <RootNamespace>Edelstahl.WinApp</RootNamespace>
     <AssemblyName>Edelstahl.WinApp</AssemblyName>
     <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
@@ -238,4 +239,7 @@
     <Error Condition="!Exists('..\packages\EntityFramework.6.5.2\build\EntityFramework.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\EntityFramework.6.5.2\build\EntityFramework.targets'))" />
   </Target>
   <Import Project="..\packages\EntityFramework.6.5.2\build\EntityFramework.targets" Condition="Exists('..\packages\EntityFramework.6.5.2\build\EntityFramework.targets')" />
+  <ItemGroup>
+    <Content Include="Resources\Icono\edelstahl.ico" />
+  </ItemGroup>
 </Project>

@@ -38,6 +38,7 @@ namespace Edelstahl.WinApp.Ui
             Text = Tr.T(titulo);
             Size = new Size(920, 520);
             StartPosition = FormStartPosition.CenterParent;
+            Edelstahl.WinApp.Ui.Marca.AplicarIcono(this);
             Font = Estilo.Normal;
             BackColor = Estilo.Superficie;
             MinimizeBox = false;

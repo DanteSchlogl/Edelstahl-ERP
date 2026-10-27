@@ -39,6 +39,7 @@ namespace Edelstahl.WinApp.Ui
             Text = Tr.T(tituloClave) + (string.IsNullOrEmpty(cliente) ? string.Empty : " - " + Tr.T("Customer") + ": " + cliente);
             Size = new Size(940, 580);
             StartPosition = FormStartPosition.CenterParent;
+            Edelstahl.WinApp.Ui.Marca.AplicarIcono(this);
             Font = Estilo.Normal;
             BackColor = Estilo.Superficie;
             MinimizeBox = false;
