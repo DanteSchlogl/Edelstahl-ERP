@@ -1,0 +1,5 @@
+﻿Fecha;Pedido;Cliente;Estado;Moneda;Total;TotalEnPesos
+13/09/2026 22:20;PED-2026-DEBCF9;Dante Schlögl;Listo para entrega;USD;6037.72;9147145.80
+15/09/2026 19:50;PED-2026-955D59;Dante Schlögl;Confirmado;USD;400.27;606406.02
+21/10/2026 17:45;PED-2026-9E10EE;Cliente Prueba Cifrado AES SRL;Confirmado;USD;6037.72;9147145.80
+21/10/2026 18:09;PED-2026-9AAFF9;Abastecimiento ACI;Confirmado;ARS;203.46;203.46
