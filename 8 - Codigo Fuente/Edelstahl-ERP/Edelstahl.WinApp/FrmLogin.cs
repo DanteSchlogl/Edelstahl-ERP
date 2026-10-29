@@ -30,6 +30,8 @@ namespace Edelstahl.WinApp
 
         private CheckBox chkMostrarPassword;
 
+        private LinkLabel lnkOlvido;
+
         public FrmLogin()
         {
             _usuarioService =
@@ -352,6 +354,28 @@ namespace Edelstahl.WinApp
             Controls.Add(
                 btnIngresar);
 
+            lnkOlvido =
+                new LinkLabel
+                {
+                    Name =
+                        "lnkOlvido",
+
+                    AutoSize =
+                        true,
+
+                    Location =
+                        new Point(515, 455),
+
+                    Cursor =
+                        Cursors.Hand
+                };
+
+            lnkOlvido.LinkClicked +=
+                LnkOlvido_LinkClicked;
+
+            Controls.Add(
+                lnkOlvido);
+
             AcceptButton =
                 btnIngresar;
 
@@ -445,6 +469,13 @@ namespace Edelstahl.WinApp
                     "IniciarSesion")
                     .ToUpperInvariant();
 
+            lnkOlvido.Text =
+                Tr.T("Forgot your password?");
+
+            // En modo demostracion no hay usuarios reales cuya clave recuperar.
+            lnkOlvido.Visible =
+                !ApplicationMode.IsDemo;
+
             lblModo.Text =
                 ApplicationMode.IsDemo
                     ? LanguageService.Translate(
@@ -479,6 +510,21 @@ namespace Edelstahl.WinApp
             }
 
             txtUsuario.Focus();
+        }
+
+        private void LnkOlvido_LinkClicked(
+            object sender,
+            LinkLabelLinkClickedEventArgs e)
+        {
+            MessageBox.Show(
+                Tr.T("Passwords cannot be recovered, only replaced.") +
+                Environment.NewLine + Environment.NewLine +
+                Tr.T("Ask an administrator to reset it: Administration, Users tab, Reset password. You will sign in with the temporary password and choose your own.") +
+                Environment.NewLine + Environment.NewLine +
+                Tr.T("If you are the only administrator, run the script 05_Recuperar_Administrador.sql (see the installation manual, section 10.9)."),
+                Tr.T("Forgot your password?"),
+                MessageBoxButtons.OK,
+                MessageBoxIcon.Information);
         }
 
         private void ChkMostrarPassword_CheckedChanged(

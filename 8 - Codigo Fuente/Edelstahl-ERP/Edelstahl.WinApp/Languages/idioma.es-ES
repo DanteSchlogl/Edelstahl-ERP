@@ -1224,3 +1224,7 @@ Invoice {0} issued, showing the deposit paid.	Factura {0} emitida, con la seña 
 Choose a new password	Elija una contraseña nueva
 An administrator gave you a temporary password. Choose your own to continue. It must have at least 8 characters.	Un administrador le dio una contraseña provisoria. Elija una propia para continuar. Debe tener al menos 8 caracteres.
 You must choose a new password to sign in.	Debe elegir una contraseña nueva para ingresar.
+Forgot your password?	¿Olvidó su contraseña?
+Passwords cannot be recovered, only replaced.	Las contraseñas no se pueden recuperar, solo reemplazar.
+Ask an administrator to reset it: Administration, Users tab, Reset password. You will sign in with the temporary password and choose your own.	Pídale a un administrador que la restablezca: Administración, pestaña Users, Reset password. Ingresará con la contraseña provisoria y elegirá una propia.
+If you are the only administrator, run the script 05_Recuperar_Administrador.sql (see the installation manual, section 10.9).	Si usted es el único administrador, ejecute el script 05_Recuperar_Administrador.sql (ver el manual de instalación, sección 10.9).
