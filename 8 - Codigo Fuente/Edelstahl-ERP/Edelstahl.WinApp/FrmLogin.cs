@@ -522,11 +522,15 @@ namespace Edelstahl.WinApp
             string telefono =
                 System.Configuration.ConfigurationManager.AppSettings["ContactoRecuperacion"];
 
+            string correo =
+                System.Configuration.ConfigurationManager.AppSettings["ContactoCorreo"];
+
             MessageBox.Show(
                 Tr.T("Call this number to recover your password:") +
                 Environment.NewLine + Environment.NewLine +
                 (string.IsNullOrWhiteSpace(nombre) ? string.Empty : nombre.Trim() + Environment.NewLine) +
                 "WhatsApp: " + (telefono ?? string.Empty).Trim() +
+                (string.IsNullOrWhiteSpace(correo) ? string.Empty : Environment.NewLine + "Email: " + correo.Trim()) +
                 Environment.NewLine + Environment.NewLine +
                 Tr.T("You will receive a temporary password and the program will ask you to choose your own."),
                 Tr.T("Recover password"),
