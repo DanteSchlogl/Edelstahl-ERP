@@ -470,7 +470,7 @@ namespace Edelstahl.WinApp
                     .ToUpperInvariant();
 
             lnkOlvido.Text =
-                Tr.T("Forgot your password?");
+                Tr.T("Recover password");
 
             // En modo demostracion no hay usuarios reales cuya clave recuperar.
             lnkOlvido.Visible =
@@ -516,13 +516,20 @@ namespace Edelstahl.WinApp
             object sender,
             LinkLabelLinkClickedEventArgs e)
         {
+            string nombre =
+                System.Configuration.ConfigurationManager.AppSettings["ContactoNombre"];
+
+            string telefono =
+                System.Configuration.ConfigurationManager.AppSettings["ContactoRecuperacion"];
+
             MessageBox.Show(
-                Tr.T("Passwords cannot be recovered, only replaced.") +
+                Tr.T("Call this number to recover your password:") +
                 Environment.NewLine + Environment.NewLine +
-                Tr.T("Ask an administrator to reset it: Administration, Users tab, Reset password. You will sign in with the temporary password and choose your own.") +
+                (string.IsNullOrWhiteSpace(nombre) ? string.Empty : nombre.Trim() + Environment.NewLine) +
+                "WhatsApp: " + (telefono ?? string.Empty).Trim() +
                 Environment.NewLine + Environment.NewLine +
-                Tr.T("If you are the only administrator, run the script 05_Recuperar_Administrador.sql (see the installation manual, section 10.9)."),
-                Tr.T("Forgot your password?"),
+                Tr.T("You will receive a temporary password and the program will ask you to choose your own."),
+                Tr.T("Recover password"),
                 MessageBoxButtons.OK,
                 MessageBoxIcon.Information);
         }

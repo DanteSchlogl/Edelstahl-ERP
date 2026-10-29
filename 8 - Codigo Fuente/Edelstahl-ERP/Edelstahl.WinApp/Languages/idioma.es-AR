@@ -1228,3 +1228,6 @@ Forgot your password?	¿Olvidó su contraseña?
 Passwords cannot be recovered, only replaced.	Las contraseñas no se pueden recuperar, solo reemplazar.
 Ask an administrator to reset it: Administration, Users tab, Reset password. You will sign in with the temporary password and choose your own.	Pídale a un administrador que la restablezca: Administración, pestaña Users, Reset password. Ingresará con la contraseña provisoria y elegirá una propia.
 If you are the only administrator, run the script 05_Recuperar_Administrador.sql (see the installation manual, section 10.9).	Si usted es el único administrador, ejecute el script 05_Recuperar_Administrador.sql (ver el manual de instalación, sección 10.9).
+Recover password	Recuperar contraseña
+Call this number to recover your password:	Llame a este número para recuperar su contraseña:
+You will receive a temporary password and the program will ask you to choose your own.	Recibirá una contraseña provisoria y el programa le pedirá que elija una propia.
