@@ -74,6 +74,7 @@ namespace Edelstahl.BLL.Services
             usuario.PasswordHash = datos.Hash;
             usuario.PasswordSalt = datos.Salt;
             usuario.Iteraciones = datos.Iteraciones;
+            usuario.DebeCambiarPassword = true;
             usuario.IntentosFallidos = 0;
             usuario.BloqueadoHasta = null;
 

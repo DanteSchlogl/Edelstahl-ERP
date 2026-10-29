@@ -193,6 +193,11 @@ namespace Edelstahl.Test
             new AdministracionService().RestablecerPassword(amigo.Id, "otra-clave-2");
             Verificador.Verificar(new AdministracionService().ObtenerUsuarios().Any(u => u.Id == amigo.Id && u.NombreCompleto == "Amigo S. Supervisor"),
                 "El administrador crea, modifica y restablece la clave de otro usuario");
+            Verificador.Verificar(new AdministracionService().ObtenerUsuarios().Any(u => u.Id == amigo.Id && u.DebeCambiarPassword),
+                "Al restablecer una clave el usuario queda obligado a elegir una propia");
+            new UsuarioService().CambiarPassword(amigo.Id, "otra-clave-2", "clave-propia-3");
+            Verificador.Verificar(new AdministracionService().ObtenerUsuarios().Any(u => u.Id == amigo.Id && !u.DebeCambiarPassword),
+                "Al elegir su propia clave deja de estar obligado a cambiarla");
             PresupuestoSolicitud redondeo = new PresupuestoSolicitud { ClienteId = empresa.Id, TipoCambio = 1m, PorcentajeAnticipo = 30m, Enviar = true };
             redondeo.Lineas.Add(new LineaPresupuestoSolicitud { Tipo = TipoItemPresupuesto.Servicio, Codigo = "SERV-R", Descripcion = "Servicio", Cantidad = 3m, PrecioUnitario = 37.77m });
             Presupuesto pr = presupuestos.CrearPresupuesto(redondeo);

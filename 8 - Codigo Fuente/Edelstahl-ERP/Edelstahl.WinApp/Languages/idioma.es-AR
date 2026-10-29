@@ -1221,3 +1221,6 @@ The invoice {0} does not show the minimum deposit ({1}%) as paid. Production can
 Waiting for the invoice that records the deposit	Esperando la factura que asienta la seña
 The deposit is not invoiced yet. Issue the invoice now so the order can go to production?	La seña todavía no está facturada. ¿Emitir ahora la factura para que la orden pueda pasar a producción?
 Invoice {0} issued, showing the deposit paid.	Factura {0} emitida, con la seña abonada.
+Choose a new password	Elija una contraseña nueva
+An administrator gave you a temporary password. Choose your own to continue. It must have at least 8 characters.	Un administrador le dio una contraseña provisoria. Elija una propia para continuar. Debe tener al menos 8 caracteres.
+You must choose a new password to sign in.	Debe elegir una contraseña nueva para ingresar.

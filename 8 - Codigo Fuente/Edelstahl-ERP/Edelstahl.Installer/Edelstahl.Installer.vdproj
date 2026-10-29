@@ -441,6 +441,12 @@
         }
         "Entry"
         {
+        "MsmKey" = "8:_B0A988214DC4631141D86601769174DC"
+        "OwnerKey" = "8:_UNDEFINED"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
         "MsmKey" = "8:_C94B2536F00E8BA61CF549876755315D"
         "OwnerKey" = "8:_UNDEFINED"
         "MsmSig" = "8:_UNDEFINED"
@@ -1944,6 +1950,26 @@
         "IsDependency" = "11:FALSE"
         "IsolateTo" = "8:"
         }
+        "{A582A373-4685-4296-BEFE-614B80A702C3}:_B0A988214DC4631141D86601769174DC"
+        {
+        "SourcePath" = "8:..\\Scripts\\05_Recuperar_Administrador.sql"
+        "TargetName" = "8:05_Recuperar_Administrador.sql"
+        "Tag" = "8:"
+        "Folder" = "8:_32BCE65854F94DF3B67097D5E8848487"
+        "Condition" = "8:"
+        "Transitive" = "11:FALSE"
+        "Vital" = "11:TRUE"
+        "ReadOnly" = "11:FALSE"
+        "Hidden" = "11:FALSE"
+        "System" = "11:FALSE"
+        "Permanent" = "11:FALSE"
+        "SharedLegacy" = "11:FALSE"
+        "PackageAs" = "3:1"
+        "Register" = "3:1"
+        "Exclude" = "11:FALSE"
+        "IsDependency" = "11:FALSE"
+        "IsolateTo" = "8:"
+        }
         "{A582A373-4685-4296-BEFE-614B80A702C3}:_C94B2536F00E8BA61CF549876755315D"
         {
         "SourcePath" = "8:..\\Edelstahl.WinApp\\Resources\\Icono\\edelstahl.ico"
@@ -2196,15 +2222,15 @@
         {
         "Name" = "8:Microsoft Visual Studio"
         "ProductName" = "8:Edelstahl ERP"
-        "ProductCode" = "8:{F117364C-2195-417F-9913-9274C8378372}"
-        "PackageCode" = "8:{12289CE5-518E-4FC9-87CB-DBCBF338542E}"
+        "ProductCode" = "8:{5534A23F-B394-4936-9DE4-AB2A02BB9725}"
+        "PackageCode" = "8:{5BEE7291-A7E1-4EFC-A1B0-0E4ECA0A701C}"
         "UpgradeCode" = "8:{C2874628-A030-4C76-B4B4-70DBCF772886}"
         "AspNetVersion" = "8:"
         "RestartWWWService" = "11:FALSE"
         "RemovePreviousVersions" = "11:TRUE"
         "DetectNewerInstalledVersion" = "11:TRUE"
         "InstallAllUsers" = "11:TRUE"
-        "ProductVersion" = "8:1.0.0"
+        "ProductVersion" = "8:1.0.1"
         "Manufacturer" = "8:Edelstahl"
         "ARPHELPTELEPHONE" = "8:"
         "ARPHELPLINK" = "8:"

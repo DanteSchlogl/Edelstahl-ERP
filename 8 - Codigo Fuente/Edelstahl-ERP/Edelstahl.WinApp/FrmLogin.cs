@@ -5,6 +5,7 @@ using System.Windows.Forms;
 using Edelstahl.BLL.Services;
 using Edelstahl.Services.Configuration;
 using Edelstahl.Services.Localization;
+using Edelstahl.WinApp.Ui;
 
 namespace Edelstahl.WinApp
 {
@@ -518,6 +519,25 @@ namespace Edelstahl.WinApp
                 SesionActual.Iniciar(
                     usuario);
 
+                // Clave provisoria entregada por un administrador: hay que elegir una propia para entrar.
+                if (ApplicationMode.UsesSqlServer &&
+                    usuario.DebeCambiarPassword &&
+                    !ElegirPasswordPropia(usuario))
+                {
+                    SesionActual.Cerrar();
+                    txtPassword.Clear();
+                    txtPassword.Focus();
+
+                    MessageBox.Show(
+                        Tr.T("You must choose a new password to sign in."),
+                        LanguageService.Translate(
+                            "AccesoDenegado"),
+                        MessageBoxButtons.OK,
+                        MessageBoxIcon.Information);
+
+                    return;
+                }
+
                 DialogResult =
                     DialogResult.OK;
 
@@ -539,6 +559,44 @@ namespace Edelstahl.WinApp
             {
                 btnIngresar.Enabled =
                     true;
+            }
+        }
+
+        /// <summary>
+        /// Pide la clave nueva hasta que sea valida. Devuelve false si el usuario cancela.
+        /// </summary>
+        private bool ElegirPasswordPropia(Domain.Security.Usuario usuario)
+        {
+            while (true)
+            {
+                Respuesta datos = Dialogo.Pedir(this, "Choose a new password",
+                    "An administrator gave you a temporary password. Choose your own to continue. It must have at least 8 characters.",
+                    Campo.Clave("clave", "New password"),
+                    Campo.Clave("clave2", "Confirm password").Confirmando("clave"));
+
+                if (datos == null)
+                {
+                    return false;
+                }
+
+                try
+                {
+                    // La clave actual es la provisoria que se acaba de escribir en el login.
+                    _usuarioService.CambiarPassword(
+                        usuario.Id,
+                        txtPassword.Text,
+                        datos.Texto("clave"));
+
+                    return true;
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(
+                        ex.Message,
+                        Tr.T("Choose a new password"),
+                        MessageBoxButtons.OK,
+                        MessageBoxIcon.Warning);
+                }
             }
         }
 
