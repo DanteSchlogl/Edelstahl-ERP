@@ -37,8 +37,15 @@ namespace Edelstahl.WinApp
         private Label lblUsuario;
         private Label lblAlertas;
         private ComboBox cboIdioma;
+        private Button btnPerfil;
+        private Button btnPedirAyuda;
+        private Button btnAyuda;
+        private Button btnCerrarSesion;
         private EntradaMenu _actual;
         private bool _cambiandoIdioma;
+
+        /// <summary>Es true cuando el usuario cerro la sesion (y no la ventana): el programa vuelve a pedir el login.</summary>
+        public bool CerrarSesionSolicitada { get; private set; }
 
         public FrmPrincipalV2()
         {
@@ -205,7 +212,7 @@ namespace Edelstahl.WinApp
 
         private void CrearHeader()
         {
-            pnlHeader = new PanelEncabezado { Dock = DockStyle.Top, Height = 74, BackColor = Estilo.Superficie };
+            pnlHeader = new PanelEncabezado { Dock = DockStyle.Top, Height = 106, BackColor = Estilo.Superficie };
             Controls.Add(pnlHeader);
             pnlHeader.BringToFront();
 
@@ -259,12 +266,68 @@ namespace Edelstahl.WinApp
             cboIdioma.DrawItem += CboIdioma_DrawItem;
             cboIdioma.SelectedIndexChanged += CboIdioma_SelectedIndexChanged;
 
+            btnPerfil = BotonCabecera("My profile", (s, e) => Estilo.Ejecutar(this, () =>
+            {
+                using (FrmPerfil perfil = new FrmPerfil())
+                {
+                    perfil.ShowDialog(this);
+                }
+            }));
+            btnPedirAyuda = BotonCabecera("Request help", (s, e) => DialogosUsuario.PedirAyuda(this));
+            btnAyuda = BotonCabecera("Help", (s, e) => DialogosUsuario.AbrirAyuda(this));
+            btnCerrarSesion = BotonCabecera("Sign out", BtnCerrarSesion_Click);
+
+            // En modo demostracion no hay usuarios reales: no tiene sentido el perfil ni pedir ayuda al administrador.
+            btnPerfil.Visible = !Edelstahl.Services.Configuration.ApplicationMode.IsDemo;
+            btnPedirAyuda.Visible = !Edelstahl.Services.Configuration.ApplicationMode.IsDemo;
+
+            pnlHeader.Controls.Add(btnPerfil);
+            pnlHeader.Controls.Add(btnPedirAyuda);
+            pnlHeader.Controls.Add(btnAyuda);
+            pnlHeader.Controls.Add(btnCerrarSesion);
             pnlHeader.Controls.Add(lblModulo);
             pnlHeader.Controls.Add(lblUsuario);
             pnlHeader.Controls.Add(lblAlertas);
             pnlHeader.Controls.Add(lblIdioma);
             pnlHeader.Controls.Add(cboIdioma);
             pnlHeader.Resize += (remitente, argumentos) => Distribuir();
+        }
+
+        private Button BotonCabecera(string clave, EventHandler accion)
+        {
+            Button boton = new Button
+            {
+                AutoSize = true,
+                AutoSizeMode = AutoSizeMode.GrowAndShrink,
+                MinimumSize = new Size(96, 28),
+                FlatStyle = FlatStyle.Flat,
+                ForeColor = Color.White,
+                BackColor = Color.FromArgb(64, 106, 172),
+                Font = new Font("Segoe UI", 9f),
+                Cursor = Cursors.Hand,
+                Padding = new Padding(8, 0, 8, 0),
+                Tag = clave,
+                Anchor = AnchorStyles.Top | AnchorStyles.Right
+            };
+
+            boton.FlatAppearance.BorderColor = Color.FromArgb(200, 215, 245);
+            boton.FlatAppearance.BorderSize = 1;
+            boton.Click += accion;
+            return boton;
+        }
+
+        private void BtnCerrarSesion_Click(object sender, EventArgs e)
+        {
+            if (!Estilo.Confirmar(this, Tr.T("Do you want to sign out?")))
+            {
+                return;
+            }
+
+            new BitacoraService().RegistrarSeguridad(
+                "Cierre de sesion", "El usuario cerro su sesion.", true, SesionActual.NombreUsuario);
+
+            CerrarSesionSolicitada = true;
+            Close();
         }
 
         private void Distribuir()
@@ -278,6 +341,20 @@ namespace Edelstahl.WinApp
             lblIdioma.Location = new Point(cboIdioma.Left - lblIdioma.Width - 10, 18);
             lblUsuario.Location = new Point(pnlHeader.ClientSize.Width - lblUsuario.Width - 24, 46);
             lblAlertas.Location = new Point(Math.Max(lblModulo.Right + 20, lblUsuario.Left - lblAlertas.Width - 30), 46);
+
+            int x = pnlHeader.ClientSize.Width - 24;
+
+            foreach (Button boton in new[] { btnCerrarSesion, btnAyuda, btnPedirAyuda, btnPerfil })
+            {
+                if (boton == null || !boton.Visible)
+                {
+                    continue;
+                }
+
+                x -= boton.Width;
+                boton.Location = new Point(x, 68);
+                x -= 8;
+            }
         }
 
         private void CrearWorkspace()
@@ -403,6 +480,10 @@ namespace Edelstahl.WinApp
             Text = Tr.T("Edelstahl ERP");
             lblTituloAplicacion.Text = "EDELSTAHL";
             lblIdioma.Text = Tr.T("Language") + ":";
+            btnPerfil.Text = Tr.T("My profile");
+            btnPedirAyuda.Text = Tr.T("Request help");
+            btnAyuda.Text = Tr.T("Help");
+            btnCerrarSesion.Text = Tr.T("Sign out");
 
             foreach (EntradaMenu entrada in _menu)
             {

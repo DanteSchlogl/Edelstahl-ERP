@@ -198,6 +198,47 @@ namespace Edelstahl.Test
             new UsuarioService().CambiarPassword(amigo.Id, "otra-clave-2", "clave-propia-3");
             Verificador.Verificar(new AdministracionService().ObtenerUsuarios().Any(u => u.Id == amigo.Id && !u.DebeCambiarPassword),
                 "Al elegir su propia clave deja de estar obligado a cambiarla");
+
+            // Pregunta de seguridad y recuperacion de la clave
+            UsuarioService usuariosSvc = new UsuarioService();
+            Verificador.Falla<ReglaDeNegocioException>(
+                () => usuariosSvc.ObtenerPreguntaSeguridad("amigo.sup"),
+                "Sin pregunta de seguridad no se puede recuperar la clave con pregunta");
+            Verificador.Falla<ReglaDeNegocioException>(
+                () => new AdministracionService().DefinirPreguntaSeguridad(amigo.Id, "Pregunta inventada", "Rex"),
+                "Solo se aceptan las preguntas de la lista");
+            new AdministracionService().DefinirPreguntaSeguridad(amigo.Id, UsuarioService.PreguntasSeguridad[0], "Rex el Perro");
+            Verificador.Verificar(usuariosSvc.ObtenerPreguntaSeguridad("amigo.sup") == UsuarioService.PreguntasSeguridad[0],
+                "El administrador define la pregunta y el usuario la ve en la pantalla de recuperacion");
+            Verificador.Falla<ReglaDeNegocioException>(
+                () => usuariosSvc.RecuperarConPregunta("amigo.sup", "otra cosa", "Nueva-clave-9"),
+                "Una respuesta incorrecta no cambia la clave");
+            usuariosSvc.RecuperarConPregunta("amigo.sup", "  REX   el   perro ", "Nueva-clave-9");
+            Verificador.Verificar(usuariosSvc.Autenticar("amigo.sup", "Nueva-clave-9") != null,
+                "Con la respuesta correcta (sin importar mayusculas ni espacios) se elige una clave nueva y se puede entrar");
+            Verificador.Falla<ReglaDeNegocioException>(
+                () => usuariosSvc.CambiarPreguntaSeguridad(amigo.Id, "clave-equivocada", UsuarioService.PreguntasSeguridad[1], "Buenos Aires"),
+                "Para cambiar la pregunta hay que escribir la contrasena actual");
+            usuariosSvc.CambiarPreguntaSeguridad(amigo.Id, "Nueva-clave-9", UsuarioService.PreguntasSeguridad[1], "Buenos Aires");
+            Verificador.Verificar(usuariosSvc.ObtenerPreguntaSeguridad("amigo.sup") == UsuarioService.PreguntasSeguridad[1],
+                "El usuario cambia su propia pregunta de seguridad");
+            for (int intento = 0; intento < 5; intento++)
+            {
+                try { usuariosSvc.RecuperarConPregunta("amigo.sup", "mal", "Nueva-clave-10"); } catch (ReglaDeNegocioException) { }
+            }
+            Verificador.Falla<ReglaDeNegocioException>(
+                () => usuariosSvc.RecuperarConPregunta("amigo.sup", "Buenos Aires", "Nueva-clave-10"),
+                "Cinco respuestas incorrectas bloquean al usuario aunque despues acierte");
+            new AdministracionService().Desbloquear(amigo.Id);
+
+            // Pedido de ayuda al administrador segun el perfil
+            Verificador.Verificar(AyudaService.TemasPara(NombresRol.Vendedor).Count > 3
+                && AyudaService.TemasPara(NombresRol.Produccion).Contains("Materials are missing for an order")
+                && !AyudaService.TemasPara(NombresRol.Vendedor).Contains("Materials are missing for an order"),
+                "Cada perfil ve temas de ayuda propios");
+            new AyudaService().RegistrarPedido(AyudaService.TemasPara(SesionActual.NombreRol)[0], "prueba automatica");
+            Verificador.Verificar(new BitacoraService().ObtenerTodos().Any(r => r.Accion == "Pedido de ayuda" && r.Descripcion.Contains("prueba automatica")),
+                "El pedido de ayuda queda registrado en la bitacora");
             PresupuestoSolicitud redondeo = new PresupuestoSolicitud { ClienteId = empresa.Id, TipoCambio = 1m, PorcentajeAnticipo = 30m, Enviar = true };
             redondeo.Lineas.Add(new LineaPresupuestoSolicitud { Tipo = TipoItemPresupuesto.Servicio, Codigo = "SERV-R", Descripcion = "Servicio", Cantidad = 3m, PrecioUnitario = 37.77m });
             Presupuesto pr = presupuestos.CrearPresupuesto(redondeo);

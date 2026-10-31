@@ -59,15 +59,37 @@ namespace Edelstahl.WinApp
                     VerificarAdministradorInicial();
                 }
 
-                if (!MostrarLogin())
+                // Cerrar sesion vuelve a la pantalla de inicio de sesion; cerrar la ventana termina el programa.
+                bool primeraVez = true;
+
+                while (true)
                 {
-                    return;
+                    if (!primeraVez)
+                    {
+                        SesionActual.Cerrar();
+                        LanguageService.Inicializar();
+                    }
+
+                    primeraVez = false;
+
+                    if (!MostrarLogin())
+                    {
+                        return;
+                    }
+
+                    LanguageService.AplicarIdiomaPreferido();
+                    OfrecerDatosDeEjemplo();
+
+                    using (FrmPrincipalV2 principal = new FrmPrincipalV2())
+                    {
+                        Application.Run(principal);
+
+                        if (!principal.CerrarSesionSolicitada)
+                        {
+                            return;
+                        }
+                    }
                 }
-
-                LanguageService.AplicarIdiomaPreferido();
-                OfrecerDatosDeEjemplo();
-
-                Application.Run(new FrmPrincipalV2());
             }
             catch (Exception ex)
             {

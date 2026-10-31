@@ -28,8 +28,20 @@ CREATE TABLE dbo.Usuarios (
     IntentosFallidos int NOT NULL,
     BloqueadoHasta datetime2 NULL,
     FechaAlta datetime2 NOT NULL,
-    UltimoAcceso datetime2 NULL
+    UltimoAcceso datetime2 NULL,
+    PreguntaSeguridad nvarchar(250) NOT NULL CONSTRAINT DF_Usuarios_PreguntaSeguridad DEFAULT '',
+    RespuestaHash nvarchar(500) NOT NULL CONSTRAINT DF_Usuarios_RespuestaHash DEFAULT '',
+    RespuestaSalt nvarchar(500) NOT NULL CONSTRAINT DF_Usuarios_RespuestaSalt DEFAULT ''
 );
+
+IF COL_LENGTH('dbo.Usuarios', 'PreguntaSeguridad') IS NULL
+ALTER TABLE dbo.Usuarios ADD PreguntaSeguridad nvarchar(250) NOT NULL CONSTRAINT DF_Usuarios_PreguntaSeguridad DEFAULT '';
+
+IF COL_LENGTH('dbo.Usuarios', 'RespuestaHash') IS NULL
+ALTER TABLE dbo.Usuarios ADD RespuestaHash nvarchar(500) NOT NULL CONSTRAINT DF_Usuarios_RespuestaHash DEFAULT '';
+
+IF COL_LENGTH('dbo.Usuarios', 'RespuestaSalt') IS NULL
+ALTER TABLE dbo.Usuarios ADD RespuestaSalt nvarchar(500) NOT NULL CONSTRAINT DF_Usuarios_RespuestaSalt DEFAULT '';
 
 IF OBJECT_ID('dbo.Bitacora', 'U') IS NULL
 CREATE TABLE dbo.Bitacora (

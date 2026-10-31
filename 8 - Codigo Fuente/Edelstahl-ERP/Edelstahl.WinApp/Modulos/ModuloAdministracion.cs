@@ -48,7 +48,9 @@ namespace Edelstahl.WinApp.Modulos
                     Campo.Texto("email", "Email", "", true, 100),
                     Campo.Clave("clave", "Password"),
                     Campo.Clave("clave2", "Confirm password").Confirmando("clave"),
-                    Campo.Combo("rol", "Role", roles));
+                    Campo.Combo("rol", "Role", roles),
+                    Campo.Combo("pregunta", "Security question (optional)", DialogosUsuario.PreguntasSeguridad(true), false),
+                    Campo.Clave("respuestaSeg", "Answer to the security question"));
 
                 if (datos == null)
                 {
@@ -56,7 +58,8 @@ namespace Edelstahl.WinApp.Modulos
                 }
 
                 _admin.CrearUsuario(datos.Texto("usuario"), datos.Texto("nombre"), datos.Texto("email"),
-                    datos.Texto("clave"), (string)datos.Seleccion("rol"));
+                    datos.Texto("clave"), (string)datos.Seleccion("rol"),
+                    (string)datos.Seleccion("pregunta"), datos.Texto("respuestaSeg"));
                 lista.Recargar();
             }, false);
 
@@ -87,6 +90,23 @@ namespace Edelstahl.WinApp.Modulos
 
                 _admin.RestablecerPassword(Estilo.IdDe(fila).Value, datos.Texto("clave"));
                 Estilo.Informar(this, Tr.T("The password was reset."));
+            });
+
+            lista.Agregar("Security question", fila =>
+            {
+                Respuesta datos = Dialogo.Pedir(this, "Security question",
+                    "Define the security question of the selected user. They will use it to recover their password.",
+                    Campo.Combo("pregunta", "Question", DialogosUsuario.PreguntasSeguridad(false)),
+                    Campo.Clave("respuesta", "Answer"),
+                    Campo.Clave("respuesta2", "Confirm answer").Confirmando("respuesta"));
+
+                if (datos == null)
+                {
+                    return;
+                }
+
+                _admin.DefinirPreguntaSeguridad(Estilo.IdDe(fila).Value, (string)datos.Seleccion("pregunta"), datos.Texto("respuesta"));
+                Estilo.Informar(this, Tr.T("The security question was saved."));
             });
 
             lista.Agregar("Edit user", fila =>

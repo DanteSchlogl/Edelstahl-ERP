@@ -34,10 +34,26 @@ namespace Edelstahl.BLL.Services
         }
 
         public Usuario CrearUsuario(
-            string nombreUsuario, string nombreCompleto, string email, string password, string nombreRol)
+            string nombreUsuario, string nombreCompleto, string email, string password, string nombreRol,
+            string preguntaSeguridad = null, string respuestaSeguridad = null)
         {
             Autorizacion.Exigir(Permiso.UsuariosAdministrar);
-            return _usuarios.Registrar(nombreUsuario, nombreCompleto, email, password, nombreRol, false);
+
+            Usuario usuario = _usuarios.Registrar(nombreUsuario, nombreCompleto, email, password, nombreRol, false);
+
+            if (!string.IsNullOrWhiteSpace(preguntaSeguridad))
+            {
+                _usuarios.DefinirPreguntaSeguridad(usuario.Id, preguntaSeguridad, respuestaSeguridad);
+            }
+
+            return usuario;
+        }
+
+        /// <summary>El administrador define o reemplaza la pregunta de seguridad de un usuario.</summary>
+        public void DefinirPreguntaSeguridad(Guid usuarioId, string pregunta, string respuesta)
+        {
+            Autorizacion.Exigir(Permiso.UsuariosAdministrar);
+            _usuarios.DefinirPreguntaSeguridad(usuarioId, pregunta, respuesta);
         }
 
         public void CambiarEstado(Guid usuarioId, bool activo)

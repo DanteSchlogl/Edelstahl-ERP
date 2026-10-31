@@ -40,6 +40,14 @@ namespace Edelstahl.Domain.Security
 
         public DateTime? UltimoAcceso { get; set; }
 
+        /// <summary>Pregunta de seguridad elegida por el usuario (texto en ingles de la lista del sistema).</summary>
+        public string PreguntaSeguridad { get; set; }
+
+        /// <summary>Hash y sal de la respuesta a la pregunta de seguridad; la respuesta nunca se guarda.</summary>
+        public string RespuestaHash { get; set; }
+
+        public string RespuestaSalt { get; set; }
+
         public Rol Rol { get; set; }
 
         public Usuario()
@@ -56,7 +64,17 @@ namespace Edelstahl.Domain.Security
             BloqueadoHasta = null;
             FechaAlta = DateTime.Now;
             UltimoAcceso = null;
+            PreguntaSeguridad = string.Empty;
+            RespuestaHash = string.Empty;
+            RespuestaSalt = string.Empty;
             Rol = null;
+        }
+
+        public bool TienePreguntaSeguridad()
+        {
+            return !string.IsNullOrWhiteSpace(PreguntaSeguridad) &&
+                   !string.IsNullOrWhiteSpace(RespuestaHash) &&
+                   !string.IsNullOrWhiteSpace(RespuestaSalt);
         }
 
         public bool EstaBloqueado()

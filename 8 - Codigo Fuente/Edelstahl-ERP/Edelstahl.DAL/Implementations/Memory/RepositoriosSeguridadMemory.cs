@@ -222,6 +222,9 @@ namespace Edelstahl.DAL.Implementations.Memory
                 actual.IntentosFallidos = entity.IntentosFallidos;
                 actual.BloqueadoHasta = entity.BloqueadoHasta;
                 actual.UltimoAcceso = entity.UltimoAcceso;
+                actual.PreguntaSeguridad = entity.PreguntaSeguridad;
+                actual.RespuestaHash = entity.RespuestaHash;
+                actual.RespuestaSalt = entity.RespuestaSalt;
             }
         }
 

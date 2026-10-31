@@ -18,6 +18,7 @@ namespace Edelstahl.DAL.Implementations.SqlServer
               u.PasswordHash, u.PasswordSalt, u.Iteraciones, u.Activo,
               u.DebeCambiarPassword, u.IntentosFallidos, u.BloqueadoHasta,
               u.FechaAlta, u.UltimoAcceso,
+              u.PreguntaSeguridad, u.RespuestaHash, u.RespuestaSalt,
               r.Id AS Rol_Id, r.Nombre AS Rol_Nombre,
               r.Descripcion AS Rol_Descripcion, r.Activo AS Rol_Activo,
               r.FechaAlta AS Rol_FechaAlta";
@@ -52,12 +53,14 @@ namespace Edelstahl.DAL.Implementations.SqlServer
                   (Id, RolId, NombreUsuario, NombreCompleto, Email,
                    PasswordHash, PasswordSalt, Iteraciones, Activo,
                    DebeCambiarPassword, IntentosFallidos, BloqueadoHasta,
-                   FechaAlta, UltimoAcceso)
+                   FechaAlta, UltimoAcceso,
+                   PreguntaSeguridad, RespuestaHash, RespuestaSalt)
                   VALUES
                   (@Id, @RolId, @NombreUsuario, @NombreCompleto, @Email,
                    @PasswordHash, @PasswordSalt, @Iteraciones, @Activo,
                    @DebeCambiarPassword, @IntentosFallidos, @BloqueadoHasta,
-                   @FechaAlta, @UltimoAcceso)";
+                   @FechaAlta, @UltimoAcceso,
+                   @PreguntaSeguridad, @RespuestaHash, @RespuestaSalt)";
 
             EjecutarEscritura(sql, entity, false);
         }
@@ -101,7 +104,10 @@ namespace Edelstahl.DAL.Implementations.SqlServer
                       IntentosFallidos = @IntentosFallidos,
                       BloqueadoHasta = @BloqueadoHasta,
                       FechaAlta = @FechaAlta,
-                      UltimoAcceso = @UltimoAcceso
+                      UltimoAcceso = @UltimoAcceso,
+                      PreguntaSeguridad = @PreguntaSeguridad,
+                      RespuestaHash = @RespuestaHash,
+                      RespuestaSalt = @RespuestaSalt
                   WHERE Id = @Id";
 
             EjecutarEscritura(sql, entity, true);
@@ -387,6 +393,15 @@ namespace Edelstahl.DAL.Implementations.SqlServer
                 usuario.UltimoAcceso.HasValue
                     ? (object)usuario.UltimoAcceso.Value
                     : DBNull.Value;
+            command.Parameters.Add(
+                "@PreguntaSeguridad", SqlDbType.NVarChar, 250).Value =
+                usuario.PreguntaSeguridad ?? string.Empty;
+            command.Parameters.Add(
+                "@RespuestaHash", SqlDbType.NVarChar, 500).Value =
+                usuario.RespuestaHash ?? string.Empty;
+            command.Parameters.Add(
+                "@RespuestaSalt", SqlDbType.NVarChar, 500).Value =
+                usuario.RespuestaSalt ?? string.Empty;
         }
 
         private static Usuario Mapear(SqlDataReader reader)
@@ -423,6 +438,15 @@ namespace Edelstahl.DAL.Implementations.SqlServer
                 UltimoAcceso = reader["UltimoAcceso"] == DBNull.Value
                     ? (DateTime?)null
                     : Convert.ToDateTime(reader["UltimoAcceso"]),
+                PreguntaSeguridad = reader["PreguntaSeguridad"] == DBNull.Value
+                    ? string.Empty
+                    : reader["PreguntaSeguridad"].ToString(),
+                RespuestaHash = reader["RespuestaHash"] == DBNull.Value
+                    ? string.Empty
+                    : reader["RespuestaHash"].ToString(),
+                RespuestaSalt = reader["RespuestaSalt"] == DBNull.Value
+                    ? string.Empty
+                    : reader["RespuestaSalt"].ToString(),
                 Rol = rol
             };
         }

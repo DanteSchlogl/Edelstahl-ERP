@@ -396,6 +396,193 @@ namespace Edelstahl.BLL.Services
             }
         }
 
+        // ------------------------------------------------------------------
+        // Pregunta de seguridad y recuperacion de la contrasena
+        // ------------------------------------------------------------------
+
+        /// <summary>Preguntas que el usuario puede elegir (texto en ingles; la pantalla las traduce).</summary>
+        public static readonly string[] PreguntasSeguridad =
+        {
+            "What was the name of your first pet?",
+            "What is the name of the street where you grew up?",
+            "What is your mother's maiden name?",
+            "What was the name of your first school?",
+            "In which city were you born?",
+            "What was the make of your first car or motorcycle?"
+        };
+
+        /// <summary>
+        /// Deja la respuesta en minusculas, sin tildes y sin espacios repetidos,
+        /// para que "Rex", "rex " y "REX" cuenten como la misma respuesta.
+        /// </summary>
+        public static string NormalizarRespuesta(string respuesta)
+        {
+            if (string.IsNullOrWhiteSpace(respuesta))
+            {
+                return string.Empty;
+            }
+
+            string descompuesta = respuesta.Trim().ToLowerInvariant()
+                .Normalize(System.Text.NormalizationForm.FormD);
+
+            System.Text.StringBuilder limpia = new System.Text.StringBuilder();
+
+            foreach (char c in descompuesta)
+            {
+                if (System.Globalization.CharUnicodeInfo.GetUnicodeCategory(c) !=
+                    System.Globalization.UnicodeCategory.NonSpacingMark)
+                {
+                    limpia.Append(c);
+                }
+            }
+
+            return string.Join(" ", limpia.ToString().Split(new[] { ' ' }, StringSplitOptions.RemoveEmptyEntries));
+        }
+
+        private static void AplicarPregunta(Usuario usuario, string pregunta, string respuesta)
+        {
+            if (Array.IndexOf(PreguntasSeguridad, pregunta) < 0)
+            {
+                throw Mensajes.Regla("Choose one of the security questions in the list.");
+            }
+
+            string normalizada = NormalizarRespuesta(respuesta);
+
+            if (normalizada.Length < 3)
+            {
+                throw Mensajes.Regla("The answer must have at least 3 characters.");
+            }
+
+            PasswordHashData datos = PasswordHasher.CrearHash(normalizada);
+
+            usuario.PreguntaSeguridad = pregunta;
+            usuario.RespuestaHash = datos.Hash;
+            usuario.RespuestaSalt = datos.Salt;
+        }
+
+        /// <summary>
+        /// Guarda la pregunta sin pedir la contrasena. Lo usa el administrador
+        /// (ver AdministracionService.DefinirPreguntaSeguridad).
+        /// </summary>
+        public void DefinirPreguntaSeguridad(Guid usuarioId, string pregunta, string respuesta)
+        {
+            Usuario usuario = ObtenerPorId(usuarioId);
+
+            AplicarPregunta(usuario, pregunta, respuesta);
+            _usuarioRepository.Update(usuario);
+
+            _bitacoraService.Registrar(
+                "Seguridad", "Definicion de pregunta de seguridad", "Usuario", usuario.Id,
+                "Se definio la pregunta de seguridad de " + usuario.NombreUsuario + ".",
+                "Correcto", "Auditoria", string.Empty, SesionActual.NombreUsuario);
+        }
+
+        /// <summary>El usuario cambia su propia pregunta; se pide la contrasena para confirmar que es el.</summary>
+        public void CambiarPreguntaSeguridad(Guid usuarioId, string passwordActual, string pregunta, string respuesta)
+        {
+            Usuario usuario = ObtenerPorId(usuarioId);
+
+            if (!PasswordHasher.Verificar(passwordActual, usuario.PasswordHash, usuario.PasswordSalt, usuario.Iteraciones))
+            {
+                _bitacoraService.Registrar(
+                    "Seguridad", "Cambio de pregunta de seguridad", "Usuario", usuario.Id,
+                    "La contrasena actual ingresada es incorrecta.",
+                    "Fallido", "Seguridad", string.Empty, usuario.NombreUsuario);
+
+                throw Mensajes.Regla("The current password is incorrect.");
+            }
+
+            AplicarPregunta(usuario, pregunta, respuesta);
+            _usuarioRepository.Update(usuario);
+
+            _bitacoraService.Registrar(
+                "Seguridad", "Cambio de pregunta de seguridad", "Usuario", usuario.Id,
+                "El usuario cambio su pregunta de seguridad.",
+                "Correcto", "Auditoria", string.Empty, usuario.NombreUsuario);
+        }
+
+        /// <summary>
+        /// Devuelve la pregunta del usuario para mostrarla en la pantalla de recuperacion.
+        /// Si el usuario no existe o no tiene pregunta se da el mismo aviso, para no revelar cuales usuarios existen.
+        /// </summary>
+        public string ObtenerPreguntaSeguridad(string nombreUsuario)
+        {
+            Usuario usuario = _usuarioRepository.GetByNombreUsuario(NormalizarNombreUsuario(nombreUsuario));
+
+            if (usuario == null || !usuario.Activo || !usuario.TienePreguntaSeguridad())
+            {
+                throw Mensajes.Regla("This user has no security question available. Contact the administrator.");
+            }
+
+            return usuario.PreguntaSeguridad;
+        }
+
+        /// <summary>
+        /// Cambia la contrasena si la respuesta a la pregunta de seguridad es correcta.
+        /// Las respuestas incorrectas cuentan como intentos fallidos: a los 5 el usuario queda bloqueado 15 minutos.
+        /// </summary>
+        public void RecuperarConPregunta(string nombreUsuario, string respuesta, string nuevaPassword)
+        {
+            string usuarioNormalizado = NormalizarNombreUsuario(nombreUsuario);
+            Usuario usuario = _usuarioRepository.GetByNombreUsuario(usuarioNormalizado);
+
+            if (usuario == null || !usuario.Activo || !usuario.TienePreguntaSeguridad())
+            {
+                _bitacoraService.RegistrarSeguridad(
+                    "Recuperacion de contrasena",
+                    "Intento de recuperacion de un usuario inexistente, inactivo o sin pregunta de seguridad.",
+                    false, usuarioNormalizado);
+
+                throw Mensajes.Regla("This user has no security question available. Contact the administrator.");
+            }
+
+            if (usuario.EstaBloqueado())
+            {
+                throw Mensajes.Regla("The user is locked until {0}.",
+                    usuario.BloqueadoHasta.Value.ToString("dd/MM/yyyy HH:mm"));
+            }
+
+            bool correcta = PasswordHasher.Verificar(
+                NormalizarRespuesta(respuesta),
+                usuario.RespuestaHash,
+                usuario.RespuestaSalt,
+                PasswordHasher.IteracionesPredeterminadas);
+
+            if (!correcta)
+            {
+                usuario.RegistrarAccesoFallido(IntentosMaximos, DuracionBloqueo);
+                _usuarioRepository.Update(usuario);
+
+                _bitacoraService.Registrar(
+                    "Seguridad", "Recuperacion de contrasena", "Usuario", usuario.Id,
+                    "Respuesta incorrecta a la pregunta de seguridad.",
+                    "Fallido", "Seguridad", string.Empty, usuario.NombreUsuario);
+
+                if (usuario.EstaBloqueado())
+                {
+                    throw Mensajes.Regla("The maximum number of attempts was reached. The user was locked for 15 minutes.");
+                }
+
+                throw Mensajes.Regla("The answer is incorrect. Remaining attempts: {0}.",
+                    IntentosMaximos - usuario.IntentosFallidos);
+            }
+
+            PasswordHashData datos = PasswordHasher.CrearHash(ClaveValida(nuevaPassword));
+
+            usuario.PasswordHash = datos.Hash;
+            usuario.PasswordSalt = datos.Salt;
+            usuario.Iteraciones = datos.Iteraciones;
+            usuario.DebeCambiarPassword = false;
+            usuario.IntentosFallidos = 0;
+            usuario.BloqueadoHasta = null;
+            _usuarioRepository.Update(usuario);
+
+            _bitacoraService.Registrar(
+                "Seguridad", "Recuperacion de contrasena", "Usuario", usuario.Id,
+                "La contrasena se restablecio con la pregunta de seguridad.",
+                "Correcto", "Auditoria", string.Empty, usuario.NombreUsuario);
+        }
+
         public Usuario ObtenerPorId(Guid usuarioId)
         {
             if (usuarioId == Guid.Empty)

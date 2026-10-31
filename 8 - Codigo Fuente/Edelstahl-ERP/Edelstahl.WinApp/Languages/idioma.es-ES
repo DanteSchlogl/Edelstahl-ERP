@@ -1231,3 +1231,62 @@ If you are the only administrator, run the script 05_Recuperar_Administrador.sql
 Recover password	Recuperar contraseña
 Call this number to recover your password:	Llame a este número para recuperar su contraseña:
 You will receive a temporary password and the program will ask you to choose your own.	Recibirá una contraseña provisoria y el programa le pedirá que elija una propia.
+View security question	Ver pregunta de seguridad
+Answer	Respuesta
+Change password	Cambiar contraseña
+If you cannot recover it, contact the administrator:	Si no puede recuperarla, comuníquese con el administrador:
+Your password was changed. You can sign in now.	Su contraseña fue cambiada. Ya puede iniciar sesión.
+Choose one of the security questions in the list.	Elija una de las preguntas de seguridad de la lista.
+The answer must have at least 3 characters.	La respuesta debe tener al menos 3 caracteres.
+This user has no security question available. Contact the administrator.	Este usuario no tiene una pregunta de seguridad disponible. Comuníquese con el administrador.
+The answer is incorrect. Remaining attempts: {0}.	La respuesta es incorrecta. Intentos restantes: {0}.
+You must sign in first.	Primero debe iniciar sesión.
+Choose a topic.	Elija un tema.
+What was the name of your first pet?	¿Cómo se llamaba su primera mascota?
+What is the name of the street where you grew up?	¿Cómo se llama la calle donde creció?
+What is your mother's maiden name?	¿Cuál es el apellido de soltera de su madre?
+What was the name of your first school?	¿Cómo se llamaba su primera escuela?
+In which city were you born?	¿En qué ciudad nació?
+What was the make of your first car or motorcycle?	¿Cuál era la marca de su primer auto o moto?
+My profile	Mi perfil
+Security question	Pregunta de seguridad
+Not set. Choose one so you can recover your password.	Sin definir. Elija una para poder recuperar su contraseña.
+Your administrator	Su administrador
+Close	Cerrar
+Current password	Contraseña actual
+Your password was changed.	Su contraseña fue cambiada.
+Choose a question and an answer only you know. You will need the answer to recover your password.	Elija una pregunta y una respuesta que solo usted conozca. Necesitará la respuesta para recuperar su contraseña.
+Question	Pregunta
+Confirm answer	Confirmar respuesta
+Your security question was saved.	Su pregunta de seguridad fue guardada.
+Request help	Pedir ayuda
+Profile: {0}	Perfil: {0}
+Choose what you need. The request is recorded and your administrator will see it.	Elija lo que necesita. El pedido queda registrado y su administrador lo verá.
+Topic	Tema
+Details (optional)	Detalle (opcional)
+Your request was registered. If it is urgent, contact the administrator:	Su pedido fue registrado. Si es urgente, comuníquese con el administrador:
+The help file was not found.	No se encontró el archivo de ayuda.
+I cannot create or confirm a quotation or an order	No puedo crear o confirmar un presupuesto o un pedido
+A customer or a product is missing or wrong	Falta un cliente o un producto, o está mal cargado
+I cannot issue an invoice or register a collection	No puedo emitir una factura o registrar un cobro
+I cannot start or finish a manufacturing order	No puedo iniciar o finalizar una orden de fabricación
+Materials are missing for an order	Faltan materiales para una orden
+A quality check problem	Hay un problema con un control de calidad
+The stock does not match	El stock no coincide
+I cannot receive a purchase or register a stock movement	No puedo recibir una compra o registrar un movimiento de stock
+I cannot create a purchase order	No puedo crear una orden de compra
+A supplier is missing or wrong	Falta un proveedor o está mal cargado
+I cannot create a delivery note or a route	No puedo crear un remito o una ruta
+A return needs approval	Una devolución necesita aprobación
+I need a report or an access I do not have	Necesito un reporte o un acceso que no tengo
+A number in a report looks wrong	Un número de un reporte parece incorrecto
+I need a permission or a role change	Necesito un permiso o un cambio de rol
+I cannot sign in or my user is locked	No puedo iniciar sesión o mi usuario está bloqueado
+Other	Otro
+Help	Ayuda
+Sign out	Cerrar sesión
+Do you want to sign out?	¿Desea cerrar la sesión?
+Security question (optional)	Pregunta de seguridad (opcional)
+Answer to the security question	Respuesta a la pregunta de seguridad
+Define the security question of the selected user. They will use it to recover their password.	Defina la pregunta de seguridad del usuario seleccionado. La usará para recuperar su contraseña.
+The security question was saved.	La pregunta de seguridad fue guardada.
