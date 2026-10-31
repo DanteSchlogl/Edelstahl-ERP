@@ -439,6 +439,10 @@ namespace Edelstahl.BLL.Services
             return string.Join(" ", limpia.ToString().Split(new[] { ' ' }, StringSplitOptions.RemoveEmptyEntries));
         }
 
+        // El hash de la respuesta se calcula sobre este prefijo mas la respuesta: el generador de hashes
+        // pide al menos 8 caracteres (regla de las contrasenas) y una respuesta como "Rex" es mas corta.
+        private const string PrefijoRespuesta = "respuesta|";
+
         private static void AplicarPregunta(Usuario usuario, string pregunta, string respuesta)
         {
             if (Array.IndexOf(PreguntasSeguridad, pregunta) < 0)
@@ -453,7 +457,7 @@ namespace Edelstahl.BLL.Services
                 throw Mensajes.Regla("The answer must have at least 3 characters.");
             }
 
-            PasswordHashData datos = PasswordHasher.CrearHash(normalizada);
+            PasswordHashData datos = PasswordHasher.CrearHash(PrefijoRespuesta + normalizada);
 
             usuario.PreguntaSeguridad = pregunta;
             usuario.RespuestaHash = datos.Hash;
@@ -543,7 +547,7 @@ namespace Edelstahl.BLL.Services
             }
 
             bool correcta = PasswordHasher.Verificar(
-                NormalizarRespuesta(respuesta),
+                PrefijoRespuesta + NormalizarRespuesta(respuesta),
                 usuario.RespuestaHash,
                 usuario.RespuestaSalt,
                 PasswordHasher.IteracionesPredeterminadas);

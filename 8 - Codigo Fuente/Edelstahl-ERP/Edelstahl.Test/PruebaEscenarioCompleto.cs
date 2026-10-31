@@ -222,6 +222,12 @@ namespace Edelstahl.Test
             usuariosSvc.CambiarPreguntaSeguridad(amigo.Id, "Nueva-clave-9", UsuarioService.PreguntasSeguridad[1], "Buenos Aires");
             Verificador.Verificar(usuariosSvc.ObtenerPreguntaSeguridad("amigo.sup") == UsuarioService.PreguntasSeguridad[1],
                 "El usuario cambia su propia pregunta de seguridad");
+            // una respuesta corta (menos de 8 caracteres) tambien se puede guardar y usar
+            usuariosSvc.CambiarPreguntaSeguridad(amigo.Id, "Nueva-clave-9", UsuarioService.PreguntasSeguridad[0], "Rex");
+            usuariosSvc.RecuperarConPregunta("amigo.sup", "REX", "Nueva-clave-9");
+            Verificador.Verificar(usuariosSvc.Autenticar("amigo.sup", "Nueva-clave-9") != null,
+                "Una respuesta corta como Rex se guarda y permite recuperar la clave");
+            usuariosSvc.CambiarPreguntaSeguridad(amigo.Id, "Nueva-clave-9", UsuarioService.PreguntasSeguridad[1], "Buenos Aires");
             for (int intento = 0; intento < 5; intento++)
             {
                 try { usuariosSvc.RecuperarConPregunta("amigo.sup", "mal", "Nueva-clave-10"); } catch (ReglaDeNegocioException) { }
