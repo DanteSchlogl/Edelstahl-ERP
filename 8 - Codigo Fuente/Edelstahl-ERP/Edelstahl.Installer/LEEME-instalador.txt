@@ -1,0 +1,14 @@
+Instalador de Edelstahl ERP (proyecto de Visual Studio Installer Projects)
+
+Para generar el MSI:
+  1. Compilar la solucion en Release (dotnet build Edelstahl.slnx -c Release).
+  2. Compilar este proyecto: devenv.com Instalador.sln /Build Release
+  3. Ejecutar el parche del icono sobre el MSI generado:
+       powershell -ExecutionPolicy Bypass -File parchear-icono-msi.ps1 -msi "Release\Edelstahl ERP.msi" -parchear
+
+Por que el paso 3: Visual Studio guarda el icono de los accesos directos con nombre .exe aunque sea un .ico,
+y Windows no puede leerlo (el acceso directo queda con el icono generico). El parche lo reemplaza por un
+icono llamado edelstahl.ico (el yunque).
+
+Ademas, para que una actualizacion reemplace el .exe y las .dll hay que subir la version interna de los
+ensamblados (AssemblyVersion y AssemblyFileVersion de cada proyecto) y el ProductVersion de este instalador.
