@@ -132,6 +132,28 @@ namespace Edelstahl.WinApp.Ui
         }
     }
 
+    public class PedidoAyudaFila
+    {
+        public Guid Id { get; set; }
+        public DateTime Fecha { get; set; }
+        public string Usuario { get; set; }
+        public string Perfil { get; set; }
+        public string Tema { get; set; }
+        public string Detalle { get; set; }
+        public string Estado { get; set; }
+        public string AtendidoPor { get; set; }
+
+        public static PedidoAyudaFila De(Edelstahl.BLL.Services.PedidoAyuda p)
+        {
+            return new PedidoAyudaFila
+            {
+                Id = p.Id, Fecha = p.FechaHora, Usuario = p.Usuario, Perfil = p.Perfil,
+                Tema = Tr.T(p.Tema), Detalle = p.Detalle,
+                Estado = Tr.T(p.Atendido ? "Handled" : "Pending"), AtendidoPor = p.AtendidoPor
+            };
+        }
+    }
+
     public class RolFila
     {
         public Guid Id { get; set; }

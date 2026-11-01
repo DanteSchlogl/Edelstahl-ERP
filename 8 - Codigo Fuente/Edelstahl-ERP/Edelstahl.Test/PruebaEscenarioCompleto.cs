@@ -245,6 +245,19 @@ namespace Edelstahl.Test
             new AyudaService().RegistrarPedido(AyudaService.TemasPara(SesionActual.NombreRol)[0], "prueba automatica");
             Verificador.Verificar(new BitacoraService().ObtenerTodos().Any(r => r.Accion == "Pedido de ayuda" && r.Descripcion.Contains("prueba automatica")),
                 "El pedido de ayuda queda registrado en la bitacora");
+            Verificador.Verificar(new BitacoraService().ObtenerTodos().Any(r => r.Accion == "Pedido de ayuda"
+                    && new[] { "Correcto", "Fallido", "Advertencia" }.Contains(r.Resultado)
+                    && new[] { "Informacion", "Seguridad", "Error", "Auditoria" }.Contains(r.TipoEvento)),
+                "El pedido de ayuda se guarda con valores que acepta la bitacora de SQL Server");
+            AyudaService bandeja = new AyudaService();
+            PedidoAyuda pedidoNuevo = bandeja.ObtenerPedidos().FirstOrDefault(ped => ped.Detalle == "prueba automatica");
+            Verificador.Verificar(pedidoNuevo != null && !pedidoNuevo.Atendido && pedidoNuevo.Perfil == NombresRol.Administrador && bandeja.ContarPendientes() >= 1,
+                "El administrador ve el pedido en la bandeja como pendiente, con su perfil y su tema");
+            bandeja.MarcarAtendido(pedidoNuevo.Id);
+            Verificador.Verificar(bandeja.ObtenerPedidos().Any(ped => ped.Id == pedidoNuevo.Id && ped.Atendido && ped.AtendidoPor == SesionActual.NombreUsuario),
+                "Al marcarlo como atendido el pedido queda atendido y se sabe quien lo atendio");
+            Verificador.Falla<ReglaDeNegocioException>(() => bandeja.MarcarAtendido(pedidoNuevo.Id),
+                "Un pedido ya atendido no se puede atender de nuevo");
             PresupuestoSolicitud redondeo = new PresupuestoSolicitud { ClienteId = empresa.Id, TipoCambio = 1m, PorcentajeAnticipo = 30m, Enviar = true };
             redondeo.Lineas.Add(new LineaPresupuestoSolicitud { Tipo = TipoItemPresupuesto.Servicio, Codigo = "SERV-R", Descripcion = "Servicio", Cantidad = 3m, PrecioUnitario = 37.77m });
             Presupuesto pr = presupuestos.CrearPresupuesto(redondeo);

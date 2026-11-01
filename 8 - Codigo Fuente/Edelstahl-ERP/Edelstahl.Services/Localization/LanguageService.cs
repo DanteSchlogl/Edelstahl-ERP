@@ -360,7 +360,21 @@ namespace Edelstahl.Services.Localization
                 "idioma." + languageCode);
         }
 
+        /// <summary>
+        /// La preferencia se guarda en la carpeta de datos del usuario de Windows
+        /// (la carpeta de instalacion, en Program Files, no admite escritura).
+        /// </summary>
         private static string ObtenerRutaConfiguracion()
+        {
+            return Path.Combine(
+                Environment.GetFolderPath(
+                    Environment.SpecialFolder.LocalApplicationData),
+                "Edelstahl ERP",
+                NombreArchivoConfiguracion);
+        }
+
+        /// <summary>Ubicacion usada por las versiones anteriores, junto al programa.</summary>
+        private static string ObtenerRutaConfiguracionAnterior()
         {
             return Path.Combine(
                 AppDomain.CurrentDomain.BaseDirectory,
@@ -373,6 +387,13 @@ namespace Edelstahl.Services.Localization
             {
                 string rutaConfiguracion =
                     ObtenerRutaConfiguracion();
+
+                if (!File.Exists(
+                    rutaConfiguracion))
+                {
+                    rutaConfiguracion =
+                        ObtenerRutaConfiguracionAnterior();
+                }
 
                 if (!File.Exists(
                     rutaConfiguracion))
@@ -402,8 +423,14 @@ namespace Edelstahl.Services.Localization
         {
             try
             {
+                string ruta =
+                    ObtenerRutaConfiguracion();
+
+                Directory.CreateDirectory(
+                    Path.GetDirectoryName(ruta));
+
                 File.WriteAllText(
-                    ObtenerRutaConfiguracion(),
+                    ruta,
                     languageCode,
                     Encoding.UTF8);
             }

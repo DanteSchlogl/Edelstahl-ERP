@@ -1290,3 +1290,13 @@ Security question (optional)	Pregunta de seguridad (opcional)
 Answer to the security question	Respuesta a la pregunta de seguridad
 Define the security question of the selected user. They will use it to recover their password.	Defina la pregunta de seguridad del usuario seleccionado. La usará para recuperar su contraseña.
 The security question was saved.	La pregunta de seguridad fue guardada.
+Help requests	Pedidos de ayuda
+Mark as handled	Marcar como atendido
+The help request was marked as handled.	El pedido de ayuda fue marcado como atendido.
+Help requests: {0}	Pedidos de ayuda: {0}
+Handled	Atendido
+Profile	Perfil
+Handled by	Atendido por
+Details	Detalle
+The help request was not found.	No se encontró el pedido de ayuda.
+The help request was already handled.	El pedido de ayuda ya estaba atendido.

@@ -19,8 +19,40 @@ namespace Edelstahl.WinApp.Modulos
         {
             AgregarPestana("Users", CrearUsuarios(), Permiso.UsuariosAdministrar);
             AgregarPestana("Roles and permissions", CrearRoles(), Permiso.RolesAdministrar);
+            AgregarPestana("Help requests", CrearPedidosAyuda(), Permiso.UsuariosAdministrar);
             AgregarPestana("Backup and data", new PanelDatos(), Permiso.RespaldoAdministrar);
             CargarPestanaActual();
+        }
+
+        /// <summary>Bandeja de pedidos de ayuda que mandan los usuarios.</summary>
+        private Control CrearPedidosAyuda()
+        {
+            AyudaService ayuda = new AyudaService();
+
+            PanelLista lista = new PanelLista(() => ayuda.ObtenerPedidos().Select(PedidoAyudaFila.De).ToList());
+
+            Button atender = lista.Agregar("Mark as handled", fila =>
+            {
+                ayuda.MarcarAtendido(Estilo.IdDe(fila).Value);
+                Estilo.Informar(this, Tr.T("The help request was marked as handled."));
+                lista.Recargar();
+            });
+
+            lista.HabilitarSi(atender, fila => fila != null && Estilo.Valor<string>(fila, "Estado") == Tr.T("Pending"));
+            lista.AgregarExportacion();
+            return lista;
+        }
+
+        /// <summary>Abre la pestana de pedidos de ayuda (se usa desde el aviso de la cabecera).</summary>
+        public void MostrarPedidosDeAyuda()
+        {
+            foreach (TabPage pagina in Pestanas.TabPages)
+            {
+                if ((pagina.Tag as string) == "Help requests")
+                {
+                    Pestanas.SelectedTab = pagina;
+                }
+            }
         }
 
         private Dictionary<Guid, string> NombresDeRoles()

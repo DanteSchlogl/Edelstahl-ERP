@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Drawing;
 using System.IO;
+using System.Linq;
 using System.Windows.Forms;
 using Edelstahl.BLL.Infrastructure;
 using Edelstahl.BLL.Services;
@@ -36,6 +37,8 @@ namespace Edelstahl.WinApp
         private Label lblIdioma;
         private Label lblUsuario;
         private Label lblAlertas;
+        private Label lblPedidos;
+        private System.Windows.Forms.Timer _timerPedidos;
         private ComboBox cboIdioma;
         private Button btnPerfil;
         private Button btnPedirAyuda;
@@ -244,6 +247,19 @@ namespace Edelstahl.WinApp
                 Visible = false
             };
 
+            lblPedidos = new Label
+            {
+                ForeColor = Color.FromArgb(255, 190, 120),
+                BackColor = Color.Transparent,
+                Font = new Font("Segoe UI", 9, FontStyle.Bold),
+                AutoSize = true,
+                Cursor = Cursors.Hand,
+                Anchor = AnchorStyles.Top | AnchorStyles.Right,
+                Visible = false
+            };
+
+            lblPedidos.Click += (s, e) => AbrirPedidosDeAyuda();
+
             lblIdioma = new Label
             {
                 ForeColor = Color.White,
@@ -288,6 +304,7 @@ namespace Edelstahl.WinApp
             pnlHeader.Controls.Add(lblModulo);
             pnlHeader.Controls.Add(lblUsuario);
             pnlHeader.Controls.Add(lblAlertas);
+            pnlHeader.Controls.Add(lblPedidos);
             pnlHeader.Controls.Add(lblIdioma);
             pnlHeader.Controls.Add(cboIdioma);
             pnlHeader.Resize += (remitente, argumentos) => Distribuir();
@@ -316,6 +333,53 @@ namespace Edelstahl.WinApp
             return boton;
         }
 
+        /// <summary>Muestra cuantos pedidos de ayuda esperan al administrador.</summary>
+        private void ActualizarPedidos()
+        {
+            if (IsDisposed || !SesionActual.EstaIniciada || !SesionActual.Tiene(Permiso.UsuariosAdministrar) ||
+                Edelstahl.Services.Configuration.ApplicationMode.IsDemo)
+            {
+                return;
+            }
+
+            int pendientes = 0;
+
+            try
+            {
+                pendientes = new AyudaService().ContarPendientes();
+            }
+            catch (Exception)
+            {
+                return;
+            }
+
+            lblPedidos.Visible = pendientes > 0;
+            lblPedidos.Text = Tr.T("Help requests: {0}", pendientes);
+            Distribuir();
+        }
+
+        private void AbrirPedidosDeAyuda()
+        {
+            EntradaMenu admin = _menu.FirstOrDefault(e => e.Clave == "Administration");
+
+            if (admin == null)
+            {
+                return;
+            }
+
+            Mostrar(admin);
+
+            foreach (Control control in pnlWorkspace.Controls)
+            {
+                ModuloAdministracion modulo = control as ModuloAdministracion;
+
+                if (modulo != null)
+                {
+                    modulo.MostrarPedidosDeAyuda();
+                }
+            }
+        }
+
         private void BtnCerrarSesion_Click(object sender, EventArgs e)
         {
             if (!Estilo.Confirmar(this, Tr.T("Do you want to sign out?")))
@@ -341,6 +405,7 @@ namespace Edelstahl.WinApp
             lblIdioma.Location = new Point(cboIdioma.Left - lblIdioma.Width - 10, 18);
             lblUsuario.Location = new Point(pnlHeader.ClientSize.Width - lblUsuario.Width - 24, 46);
             lblAlertas.Location = new Point(Math.Max(lblModulo.Right + 20, lblUsuario.Left - lblAlertas.Width - 30), 46);
+            lblPedidos.Location = new Point(Math.Max(lblModulo.Right + 20, (lblAlertas.Visible ? lblAlertas.Left : lblUsuario.Left) - lblPedidos.Width - 30), 46);
 
             int x = pnlHeader.ClientSize.Width - 24;
 
@@ -504,6 +569,11 @@ namespace Edelstahl.WinApp
                 _monitor.AlertasActualizadas += Monitor_AlertasActualizadas;
                 _monitor.Iniciar();
             }
+
+            ActualizarPedidos();
+            _timerPedidos = new System.Windows.Forms.Timer { Interval = 30000 };
+            _timerPedidos.Tick += (s, a) => ActualizarPedidos();
+            _timerPedidos.Start();
         }
 
         private void Monitor_AlertasActualizadas(object sender, AlertasStockEventArgs e)
@@ -532,6 +602,12 @@ namespace Edelstahl.WinApp
             LanguageService.IdiomaCambiado -= LanguageService_IdiomaCambiado;
             _monitor.AlertasActualizadas -= Monitor_AlertasActualizadas;
             _monitor.Dispose();
+
+            if (_timerPedidos != null)
+            {
+                _timerPedidos.Stop();
+                _timerPedidos.Dispose();
+            }
 
             foreach (object elemento in cboIdioma.Items)
             {

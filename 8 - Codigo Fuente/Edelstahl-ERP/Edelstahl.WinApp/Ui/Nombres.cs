@@ -11,6 +11,9 @@ namespace Edelstahl.WinApp.Ui
         private static readonly Dictionary<string, string> Columnas = new Dictionary<string, string>
         {
             { "Accion", "Action" },
+            { "Perfil", "Profile" },
+            { "Tema", "Topic" },
+            { "Atendido Por", "Handled by" },
             { "Aceptada", "Accepted" },
             { "Aceptado", "Accepted" },
             { "Activo", "Active" },
