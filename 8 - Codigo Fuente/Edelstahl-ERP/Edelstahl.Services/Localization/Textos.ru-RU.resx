@@ -1,0 +1,1630 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="TituloAplicacion" xml:space="preserve">
+    <value>Edelstahl ERP</value>
+  </data>
+  <data name="ModuloVentas" xml:space="preserve">
+    <value>Коммерческое управление - Продажи</value>
+  </data>
+  <data name="Idioma" xml:space="preserve">
+    <value>Язык</value>
+  </data>
+  <data name="NombreEspanolArgentina" xml:space="preserve">
+    <value>Español (Argentina)</value>
+  </data>
+  <data name="NombreEspanolEspana" xml:space="preserve">
+    <value>Español (España)</value>
+  </data>
+  <data name="NombreInglesEstadosUnidos" xml:space="preserve">
+    <value>English (United States)</value>
+  </data>
+  <data name="NombreInglesReinoUnido" xml:space="preserve">
+    <value>English (United Kingdom)</value>
+  </data>
+  <data name="NombrePortuguesBrasil" xml:space="preserve">
+    <value>Português (Brasil)</value>
+  </data>
+  <data name="NombreAleman" xml:space="preserve">
+    <value>Deutsch</value>
+  </data>
+  <data name="NombreRuso" xml:space="preserve">
+    <value>Русский</value>
+  </data>
+  <data name="VentasPedidos" xml:space="preserve">
+    <value>Продажи и заказы</value>
+  </data>
+  <data name="Produccion" xml:space="preserve">
+    <value>Производство</value>
+  </data>
+  <data name="ComprasStock" xml:space="preserve">
+    <value>Закупки / Склад</value>
+  </data>
+  <data name="Logistica" xml:space="preserve">
+    <value>Логистика</value>
+  </data>
+  <data name="Finanzas" xml:space="preserve">
+    <value>Финансы</value>
+  </data>
+  <data name="AtencionCliente" xml:space="preserve">
+    <value>Обслуживание клиентов</value>
+  </data>
+  <data name="ConfirmarPedido" xml:space="preserve">
+    <value>Подтвердить заказ</value>
+  </data>
+  <data name="Cliente" xml:space="preserve">
+    <value>Клиент</value>
+  </data>
+  <data name="Presupuesto" xml:space="preserve">
+    <value>Предложение</value>
+  </data>
+  <data name="Productos" xml:space="preserve">
+    <value>Товары</value>
+  </data>
+  <data name="Validacion" xml:space="preserve">
+    <value>Проверка</value>
+  </data>
+  <data name="Sena" xml:space="preserve">
+    <value>Предоплата</value>
+  </data>
+  <data name="Confirmacion" xml:space="preserve">
+    <value>Подтверждение</value>
+  </data>
+  <data name="Resultado" xml:space="preserve">
+    <value>Результат</value>
+  </data>
+  <data name="Buscar" xml:space="preserve">
+    <value>Поиск</value>
+  </data>
+  <data name="Actualizar" xml:space="preserve">
+    <value>Обновить</value>
+  </data>
+  <data name="NuevaOperacion" xml:space="preserve">
+    <value>Новая операция</value>
+  </data>
+  <data name="QuitarPresupuesto" xml:space="preserve">
+    <value>Удалить предложение</value>
+  </data>
+  <data name="VerComprobante" xml:space="preserve">
+    <value>Просмотреть документ</value>
+  </data>
+  <data name="GuardarCliente" xml:space="preserve">
+    <value>Сохранить клиента</value>
+  </data>
+  <data name="NuevoCliente" xml:space="preserve">
+    <value>Новый клиент</value>
+  </data>
+  <data name="SeleccionarCliente" xml:space="preserve">
+    <value>Выбрать клиента</value>
+  </data>
+  <data name="SeleccionarPresupuesto" xml:space="preserve">
+    <value>Выбрать предложение</value>
+  </data>
+  <data name="RegistrarSena" xml:space="preserve">
+    <value>Зарегистрировать предоплату</value>
+  </data>
+  <data name="Refrescar" xml:space="preserve">
+    <value>Обновить</value>
+  </data>
+  <data name="Limpiar" xml:space="preserve">
+    <value>Очистить</value>
+  </data>
+  <data name="Cancelar" xml:space="preserve">
+    <value>Отмена</value>
+  </data>
+  <data name="Aceptar" xml:space="preserve">
+    <value>Принять</value>
+  </data>
+  <data name="Cerrar" xml:space="preserve">
+    <value>Закрыть</value>
+  </data>
+  <data name="Estado" xml:space="preserve">
+    <value>Статус</value>
+  </data>
+  <data name="EstadoPendiente" xml:space="preserve">
+    <value>Ожидание</value>
+  </data>
+  <data name="PedidoConfirmado" xml:space="preserve">
+    <value>Заказ подтверждён</value>
+  </data>
+  <data name="AnticipoRequerido" xml:space="preserve">
+    <value>Требуется предоплата</value>
+  </data>
+  <data name="ListoConfirmar" xml:space="preserve">
+    <value>Готово к подтверждению</value>
+  </data>
+  <data name="SinSeleccionar" xml:space="preserve">
+    <value>Не выбрано</value>
+  </data>
+  <data name="CreditoDisponible" xml:space="preserve">
+    <value>Доступный кредит</value>
+  </data>
+  <data name="Subtotal" xml:space="preserve">
+    <value>Промежуточный итог</value>
+  </data>
+  <data name="IVA" xml:space="preserve">
+    <value>НДС</value>
+  </data>
+  <data name="Anticipo" xml:space="preserve">
+    <value>Предоплата</value>
+  </data>
+  <data name="AnticipoRegistrado" xml:space="preserve">
+    <value>Зарегистрированная предоплата</value>
+  </data>
+  <data name="SaldoFacturar" xml:space="preserve">
+    <value>Остаток к выставлению</value>
+  </data>
+  <data name="Items" xml:space="preserve">
+    <value>Позиции</value>
+  </data>
+  <data name="Total" xml:space="preserve">
+    <value>Итого</value>
+  </data>
+  <data name="Codigo" xml:space="preserve">
+    <value>Код</value>
+  </data>
+  <data name="Descripcion" xml:space="preserve">
+    <value>Описание</value>
+  </data>
+  <data name="Cantidad" xml:space="preserve">
+    <value>Количество</value>
+  </data>
+  <data name="Precio" xml:space="preserve">
+    <value>Цена</value>
+  </data>
+  <data name="Numero" xml:space="preserve">
+    <value>Номер</value>
+  </data>
+  <data name="Fecha" xml:space="preserve">
+    <value>Дата</value>
+  </data>
+  <data name="Usuario" xml:space="preserve">
+    <value>Пользователь</value>
+  </data>
+  <data name="RazonSocial" xml:space="preserve">
+    <value>Название компании</value>
+  </data>
+  <data name="CUIT" xml:space="preserve">
+    <value>Налоговый номер</value>
+  </data>
+  <data name="Correo" xml:space="preserve">
+    <value>Электронная почта</value>
+  </data>
+  <data name="Telefono" xml:space="preserve">
+    <value>Телефон</value>
+  </data>
+  <data name="Localidad" xml:space="preserve">
+    <value>Город</value>
+  </data>
+  <data name="Provincia" xml:space="preserve">
+    <value>Регион</value>
+  </data>
+  <data name="CodigoPostal" xml:space="preserve">
+    <value>Почтовый индекс</value>
+  </data>
+  <data name="LimiteCredito" xml:space="preserve">
+    <value>Кредитный лимит</value>
+  </data>
+  <data name="DeudaActual" xml:space="preserve">
+    <value>Текущая задолженность</value>
+  </data>
+  <data name="Activo" xml:space="preserve">
+    <value>Активен</value>
+  </data>
+  <data name="MedioPago" xml:space="preserve">
+    <value>Способ оплаты</value>
+  </data>
+  <data name="NumeroComprobante" xml:space="preserve">
+    <value>Номер документа</value>
+  </data>
+  <data name="FechaPago" xml:space="preserve">
+    <value>Дата оплаты</value>
+  </data>
+  <data name="PresupuestosDisponibles" xml:space="preserve">
+    <value>Доступные предложения</value>
+  </data>
+  <data name="ClientesRegistrados" xml:space="preserve">
+    <value>Зарегистрированные клиенты</value>
+  </data>
+  <data name="GestionClientes" xml:space="preserve">
+    <value>Управление клиентами</value>
+  </data>
+  <data name="DatosCliente" xml:space="preserve">
+    <value>Данные клиента</value>
+  </data>
+  <data name="ImporteRecibido" xml:space="preserve">
+    <value>Полученная сумма</value>
+  </data>
+  <data name="ComprobantePedido" xml:space="preserve">
+    <value>Документ заказа</value>
+  </data>
+  <data name="InformacionComercial" xml:space="preserve">
+    <value>Коммерческая информация</value>
+  </data>
+  <data name="CondicionPago" xml:space="preserve">
+    <value>Условия оплаты</value>
+  </data>
+  <data name="PlazoEntrega" xml:space="preserve">
+    <value>Срок поставки</value>
+  </data>
+  <data name="EntregaIncluida" xml:space="preserve">
+    <value>Доставка включена</value>
+  </data>
+  <data name="Observaciones" xml:space="preserve">
+    <value>Примечания</value>
+  </data>
+  <data name="Si" xml:space="preserve">
+    <value>Да</value>
+  </data>
+  <data name="No" xml:space="preserve">
+    <value>Нет</value>
+  </data>
+  <data name="RespaldoDatos" xml:space="preserve">
+    <value>Резервное копирование</value>
+  </data>
+  <data name="IniciarSesion" xml:space="preserve">
+    <value>Войти</value>
+  </data>
+  <data name="NombreUsuario" xml:space="preserve">
+    <value>Имя пользователя</value>
+  </data>
+  <data name="Contrasena" xml:space="preserve">
+    <value>Пароль</value>
+  </data>
+  <data name="CerrarSesion" xml:space="preserve">
+    <value>Выйти</value>
+  </data>
+  <data name="UsuarioActual" xml:space="preserve">
+    <value>Текущий пользователь</value>
+  </data>
+  <data name="Bienvenido" xml:space="preserve">
+    <value>Добро пожаловать</value>
+  </data>
+  <data name="CredencialesInvalidas" xml:space="preserve">
+    <value>Неверное имя пользователя или пароль</value>
+  </data>
+  <data name="SeleccionarModoInicio" xml:space="preserve">
+    <value>Выберите режим запуска</value>
+  </data>
+  <data name="IniciarConSqlServer" xml:space="preserve">
+    <value>Запустить с SQL Server</value>
+  </data>
+  <data name="IniciarModoDemostracion" xml:space="preserve">
+    <value>Запустить демонстрационный режим</value>
+  </data>
+  <data name="SalirAplicacion" xml:space="preserve">
+    <value>Выйти из приложения</value>
+  </data>
+  <data name="BaseDatosDisponible" xml:space="preserve">
+    <value>База данных доступна</value>
+  </data>
+  <data name="BaseDatosNoDisponible" xml:space="preserve">
+    <value>База данных недоступна</value>
+  </data>
+  <data name="ModoDemostracion" xml:space="preserve">
+    <value>Демонстрационный режим</value>
+  </data>
+  <data name="BuscarClientes" xml:space="preserve">
+    <value>Поиск клиентов</value>
+  </data>
+  <data name="MostrarTodos" xml:space="preserve">
+    <value>Показать всех</value>
+  </data>
+  <data name="ClienteRequerido" xml:space="preserve">
+    <value>Необходимо выбрать клиента</value>
+  </data>
+  <data name="ClienteNoEncontrado" xml:space="preserve">
+    <value>Клиент не найден</value>
+  </data>
+  <data name="BusquedaSinResultados" xml:space="preserve">
+    <value>Результаты не найдены</value>
+  </data>
+  <data name="ClienteDuplicado" xml:space="preserve">
+    <value>Клиент с указанным налоговым номером уже существует</value>
+  </data>
+  <data name="ClienteRegistradoCorrectamente" xml:space="preserve">
+    <value>Клиент успешно зарегистрирован</value>
+  </data>
+  <data name="ActualizarListado" xml:space="preserve">
+    <value>Обновить список</value>
+  </data>
+  <data name="SeleccionCliente" xml:space="preserve">
+    <value>Выбор клиента</value>
+  </data>
+  <data name="SeleccionPresupuesto" xml:space="preserve">
+    <value>Выбор предложения</value>
+  </data>
+  <data name="RevisionProductos" xml:space="preserve">
+    <value>Проверка товаров</value>
+  </data>
+  <data name="ValidacionCredito" xml:space="preserve">
+    <value>Проверка кредита</value>
+  </data>
+  <data name="RegistroSena" xml:space="preserve">
+    <value>Регистрация предоплаты</value>
+  </data>
+  <data name="ResumenConfirmacion" xml:space="preserve">
+    <value>Сводка подтверждения</value>
+  </data>
+  <data name="ResultadoOperacion" xml:space="preserve">
+    <value>Результат операции</value>
+  </data>
+  <data name="CreditoSuficiente" xml:space="preserve">
+    <value>Достаточный кредит</value>
+  </data>
+  <data name="CreditoInsuficiente" xml:space="preserve">
+    <value>Недостаточный кредит</value>
+  </data>
+  <data name="PresupuestoConfirmable" xml:space="preserve">
+    <value>Предложение доступно для подтверждения</value>
+  </data>
+  <data name="PresupuestoNoConfirmable" xml:space="preserve">
+    <value>Предложение не может быть подтверждено</value>
+  </data>
+  <data name="ConfirmarGeneracionPedido" xml:space="preserve">
+    <value>Подтвердить создание заказа?</value>
+  </data>
+  <data name="ImportarClientes" xml:space="preserve">
+    <value>Импортировать клиентов</value>
+  </data>
+  <data name="SeleccionarArchivo" xml:space="preserve">
+    <value>Выбрать файл</value>
+  </data>
+  <data name="ArchivoSeleccionado" xml:space="preserve">
+    <value>Файл выбран</value>
+  </data>
+  <data name="ArchivoNoSeleccionado" xml:space="preserve">
+    <value>Файл не выбран</value>
+  </data>
+  <data name="RegistrosDetectados" xml:space="preserve">
+    <value>Обнаружено записей</value>
+  </data>
+  <data name="RegistrosImportados" xml:space="preserve">
+    <value>Импортировано записей</value>
+  </data>
+  <data name="RegistrosOmitidos" xml:space="preserve">
+    <value>Пропущено записей</value>
+  </data>
+  <data name="ImportacionFinalizada" xml:space="preserve">
+    <value>Импорт завершён</value>
+  </data>
+  <data name="ImportacionConErrores" xml:space="preserve">
+    <value>Импорт завершён с ошибками</value>
+  </data>
+  <data name="DatosProtegidos" xml:space="preserve">
+    <value>Защищённые данные</value>
+  </data>
+  <data name="CifradoSimetrico" xml:space="preserve">
+    <value>Симметричное шифрование</value>
+  </data>
+  <data name="CUITCifrado" xml:space="preserve">
+    <value>Зашифрованный налоговый номер</value>
+  </data>
+  <data name="ErrorDescifrado" xml:space="preserve">
+    <value>Не удалось расшифровать данные</value>
+  </data>
+  <data name="IntegridadInvalida" xml:space="preserve">
+    <value>Целостность данных нарушена</value>
+  </data>
+  <data name="CrearRespaldo" xml:space="preserve">
+    <value>Создать резервную копию</value>
+  </data>
+  <data name="RestaurarRespaldo" xml:space="preserve">
+    <value>Восстановить резервную копию</value>
+  </data>
+  <data name="SeleccionarDestino" xml:space="preserve">
+    <value>Выбрать место сохранения</value>
+  </data>
+  <data name="RespaldoExitoso" xml:space="preserve">
+    <value>Резервное копирование успешно завершено</value>
+  </data>
+  <data name="RestauracionExitosa" xml:space="preserve">
+    <value>Восстановление успешно завершено</value>
+  </data>
+  <data name="ErrorBaseDatos" xml:space="preserve">
+    <value>Ошибка базы данных</value>
+  </data>
+  <data name="ConexionExitosa" xml:space="preserve">
+    <value>Соединение успешно установлено</value>
+  </data>
+  <data name="DescripcionRegistrarSena" xml:space="preserve">
+    <value>Введите точную сумму предоплаты, необходимую для подтверждения заказа</value>
+  </data>
+  <data name="SenaPendiente" xml:space="preserve">
+    <value>Предоплата ожидается</value>
+  </data>
+  <data name="TransferenciaBancaria" xml:space="preserve">
+    <value>Банковский перевод</value>
+  </data>
+  <data name="DepositoBancario" xml:space="preserve">
+    <value>Банковский взнос</value>
+  </data>
+  <data name="Cheque" xml:space="preserve">
+    <value>Чек</value>
+  </data>
+  <data name="Efectivo" xml:space="preserve">
+    <value>Наличные</value>
+  </data>
+  <data name="Tarjeta" xml:space="preserve">
+    <value>Карта</value>
+  </data>
+  <data name="SenaNoRequerida" xml:space="preserve">
+    <value>Предоплата не требуется</value>
+  </data>
+  <data name="PresupuestoSinAnticipo" xml:space="preserve">
+    <value>Для выбранного предложения предоплата не требуется</value>
+  </data>
+  <data name="ImporteInsuficiente" xml:space="preserve">
+    <value>Недостаточная сумма</value>
+  </data>
+  <data name="MensajeImporteInsuficiente" xml:space="preserve">
+    <value>Полученной суммы недостаточно. Необходимая предоплата составляет</value>
+  </data>
+  <data name="ImporteSuperior" xml:space="preserve">
+    <value>Сумма превышает необходимую предоплату</value>
+  </data>
+  <data name="MensajeImporteSuperior" xml:space="preserve">
+    <value>Полученная сумма не может превышать необходимую предоплату</value>
+  </data>
+  <data name="MedioPagoRequerido" xml:space="preserve">
+    <value>Необходимо выбрать способ оплаты</value>
+  </data>
+  <data name="DebeSeleccionarMedioPago" xml:space="preserve">
+    <value>Выберите способ оплаты</value>
+  </data>
+  <data name="ComprobanteRequerido" xml:space="preserve">
+    <value>Необходим платёжный документ</value>
+  </data>
+  <data name="ErrorGenerarComprobante" xml:space="preserve">
+    <value>Не удалось создать номер платёжного документа</value>
+  </data>
+  <data name="FechaIncorrecta" xml:space="preserve">
+    <value>Неверная дата</value>
+  </data>
+  <data name="FechaPagoFutura" xml:space="preserve">
+    <value>Дата платежа не может быть в будущем</value>
+  </data>
+  <data name="SenaRegistradaCorrectamente" xml:space="preserve">
+    <value>Предоплата успешно зарегистрирована</value>
+  </data>
+  <data name="MensajeSenaRegistrada" xml:space="preserve">
+    <value>Предоплата была успешно зарегистрирована</value>
+  </data>
+  <data name="Importe" xml:space="preserve">
+    <value>Сумма</value>
+  </data>
+  <data name="Comprobante" xml:space="preserve">
+    <value>Документ</value>
+  </data>
+  <data name="SubtituloLogin" xml:space="preserve">
+    <value>Введите учётные данные, чтобы продолжить</value>
+  </data>
+  <data name="MostrarContrasena" xml:space="preserve">
+    <value>Показать пароль</value>
+  </data>
+  <data name="AccesoDenegado" xml:space="preserve">
+    <value>Доступ запрещён</value>
+  </data>
+  <data name="DescripcionModoInicio" xml:space="preserve">
+    <value>Выберите способ запуска Edelstahl ERP</value>
+  </data>
+  <data name="DescripcionModoSql" xml:space="preserve">
+    <value>Использует базы данных, вход, журнал аудита, сохранение данных и шифрование налогового номера</value>
+  </data>
+  <data name="DescripcionModoDemo" xml:space="preserve">
+    <value>Позволяет просматривать интерфейс с временными данными без подключения к SQL Server</value>
+  </data>
+  <data name="Dashboard" xml:space="preserve">
+    <value>Панель</value>
+  </data>
+  <data name="Sales" xml:space="preserve">
+    <value>Продажи</value>
+  </data>
+  <data name="Production" xml:space="preserve">
+    <value>Производство</value>
+  </data>
+  <data name="Purchasing and stock" xml:space="preserve">
+    <value>Закупки и склад</value>
+  </data>
+  <data name="Logistics and returns" xml:space="preserve">
+    <value>Логистика и возвраты</value>
+  </data>
+  <data name="Finance" xml:space="preserve">
+    <value>Финансы</value>
+  </data>
+  <data name="View audit log" xml:space="preserve">
+    <value>Журнал аудита</value>
+  </data>
+  <data name="Administration" xml:space="preserve">
+    <value>Администрирование</value>
+  </data>
+  <data name="Audit log" xml:space="preserve">
+    <value>Журнал аудита</value>
+  </data>
+  <data name="Language" xml:space="preserve">
+    <value>Язык</value>
+  </data>
+  <data name="User: {0} ({1})" xml:space="preserve">
+    <value>Пользователь: {0} ({1})</value>
+  </data>
+  <data name="Stock alerts: {0}" xml:space="preserve">
+    <value>Предупреждения по складу: {0}</value>
+  </data>
+  <data name="Orders" xml:space="preserve">
+    <value>Заказы</value>
+  </data>
+  <data name="Quotations" xml:space="preserve">
+    <value>Предложения</value>
+  </data>
+  <data name="Customers" xml:space="preserve">
+    <value>Клиенты</value>
+  </data>
+  <data name="Stock" xml:space="preserve">
+    <value>Склад</value>
+  </data>
+  <data name="Catalog" xml:space="preserve">
+    <value>Каталог</value>
+  </data>
+  <data name="Movements" xml:space="preserve">
+    <value>Движения</value>
+  </data>
+  <data name="Reservations" xml:space="preserve">
+    <value>Резервы</value>
+  </data>
+  <data name="Reorder suggestions" xml:space="preserve">
+    <value>Предложения по пополнению</value>
+  </data>
+  <data name="Purchase orders" xml:space="preserve">
+    <value>Заказы поставщикам</value>
+  </data>
+  <data name="Receipts" xml:space="preserve">
+    <value>Поступления</value>
+  </data>
+  <data name="Suppliers" xml:space="preserve">
+    <value>Поставщики</value>
+  </data>
+  <data name="Manufacturing orders" xml:space="preserve">
+    <value>Производственные заказы</value>
+  </data>
+  <data name="Pending to manufacture" xml:space="preserve">
+    <value>Ожидает производства</value>
+  </data>
+  <data name="Ready to ship" xml:space="preserve">
+    <value>Готово к отправке</value>
+  </data>
+  <data name="Delivery notes" xml:space="preserve">
+    <value>Накладные</value>
+  </data>
+  <data name="Route sheets" xml:space="preserve">
+    <value>Маршрутные листы</value>
+  </data>
+  <data name="Returns" xml:space="preserve">
+    <value>Возвраты</value>
+  </data>
+  <data name="Vehicles" xml:space="preserve">
+    <value>Транспорт</value>
+  </data>
+  <data name="Drivers" xml:space="preserve">
+    <value>Водители</value>
+  </data>
+  <data name="Invoices" xml:space="preserve">
+    <value>Счета</value>
+  </data>
+  <data name="Collections" xml:space="preserve">
+    <value>Поступления платежей</value>
+  </data>
+  <data name="Credit notes" xml:space="preserve">
+    <value>Кредит-ноты</value>
+  </data>
+  <data name="Supplier payments" xml:space="preserve">
+    <value>Платежи поставщикам</value>
+  </data>
+  <data name="Receivables" xml:space="preserve">
+    <value>Дебиторская задолженность</value>
+  </data>
+  <data name="Payables" xml:space="preserve">
+    <value>Кредиторская задолженность</value>
+  </data>
+  <data name="Payment methods" xml:space="preserve">
+    <value>Способы оплаты</value>
+  </data>
+  <data name="Indicators" xml:space="preserve">
+    <value>Показатели</value>
+  </data>
+  <data name="Reports" xml:space="preserve">
+    <value>Отчёты</value>
+  </data>
+  <data name="Users" xml:space="preserve">
+    <value>Пользователи</value>
+  </data>
+  <data name="Roles and permissions" xml:space="preserve">
+    <value>Роли и права</value>
+  </data>
+  <data name="Backup and data" xml:space="preserve">
+    <value>Резервное копирование и данные</value>
+  </data>
+  <data name="Accept" xml:space="preserve">
+    <value>Принять</value>
+  </data>
+  <data name="Cancel" xml:space="preserve">
+    <value>Отмена</value>
+  </data>
+  <data name="Edit" xml:space="preserve">
+    <value>Изменить</value>
+  </data>
+  <data name="Delete" xml:space="preserve">
+    <value>Удалить</value>
+  </data>
+  <data name="Search" xml:space="preserve">
+    <value>Поиск</value>
+  </data>
+  <data name="Export CSV" xml:space="preserve">
+    <value>Экспорт CSV</value>
+  </data>
+  <data name="Export XML" xml:space="preserve">
+    <value>Экспорт XML</value>
+  </data>
+  <data name="New customer" xml:space="preserve">
+    <value>Новый клиент</value>
+  </data>
+  <data name="New quotation" xml:space="preserve">
+    <value>Новое предложение</value>
+  </data>
+  <data name="Confirm order" xml:space="preserve">
+    <value>Подтвердить заказ</value>
+  </data>
+  <data name="Issue invoice" xml:space="preserve">
+    <value>Выставить счёт</value>
+  </data>
+  <data name="Print invoice" xml:space="preserve">
+    <value>Печать счёта</value>
+  </data>
+  <data name="Cancel order" xml:space="preserve">
+    <value>Отменить заказ</value>
+  </data>
+  <data name="Account statement" xml:space="preserve">
+    <value>Выписка по счёту</value>
+  </data>
+  <data name="New product" xml:space="preserve">
+    <value>Новый товар</value>
+  </data>
+  <data name="Register movement" xml:space="preserve">
+    <value>Зарегистрировать движение</value>
+  </data>
+  <data name="Transfer" xml:space="preserve">
+    <value>Перемещение</value>
+  </data>
+  <data name="Mass price update" xml:space="preserve">
+    <value>Массовое изменение цен</value>
+  </data>
+  <data name="Create purchase order" xml:space="preserve">
+    <value>Создать заказ поставщику</value>
+  </data>
+  <data name="New purchase order" xml:space="preserve">
+    <value>Новый заказ поставщику</value>
+  </data>
+  <data name="Receive goods" xml:space="preserve">
+    <value>Принять товар</value>
+  </data>
+  <data name="Pay supplier" xml:space="preserve">
+    <value>Оплатить поставщику</value>
+  </data>
+  <data name="New supplier" xml:space="preserve">
+    <value>Новый поставщик</value>
+  </data>
+  <data name="Create manufacturing order" xml:space="preserve">
+    <value>Создать производственный заказ</value>
+  </data>
+  <data name="Reserve materials" xml:space="preserve">
+    <value>Резервировать материалы</value>
+  </data>
+  <data name="Start production" xml:space="preserve">
+    <value>Начать производство</value>
+  </data>
+  <data name="Record progress" xml:space="preserve">
+    <value>Отметить ход работ</value>
+  </data>
+  <data name="Record consumption" xml:space="preserve">
+    <value>Зафиксировать расход</value>
+  </data>
+  <data name="Send to quality" xml:space="preserve">
+    <value>Отправить в контроль качества</value>
+  </data>
+  <data name="Quality result" xml:space="preserve">
+    <value>Результат контроля качества</value>
+  </data>
+  <data name="Create delivery note" xml:space="preserve">
+    <value>Создать накладную</value>
+  </data>
+  <data name="Print delivery note (3 copies)" xml:space="preserve">
+    <value>Печать накладной (3 экз.)</value>
+  </data>
+  <data name="New route sheet" xml:space="preserve">
+    <value>Новый маршрутный лист</value>
+  </data>
+  <data name="Start route" xml:space="preserve">
+    <value>Начать маршрут</value>
+  </data>
+  <data name="Register delivery" xml:space="preserve">
+    <value>Зарегистрировать доставку</value>
+  </data>
+  <data name="Register return" xml:space="preserve">
+    <value>Зарегистрировать возврат</value>
+  </data>
+  <data name="Receive" xml:space="preserve">
+    <value>Принять</value>
+  </data>
+  <data name="Issue credit note" xml:space="preserve">
+    <value>Выставить кредит-ноту</value>
+  </data>
+  <data name="Register collection" xml:space="preserve">
+    <value>Зарегистрировать платёж</value>
+  </data>
+  <data name="New user" xml:space="preserve">
+    <value>Новый пользователь</value>
+  </data>
+  <data name="Reset password" xml:space="preserve">
+    <value>Сбросить пароль</value>
+  </data>
+  <data name="Unlock" xml:space="preserve">
+    <value>Разблокировать</value>
+  </data>
+  <data name="Change role" xml:space="preserve">
+    <value>Изменить роль</value>
+  </data>
+  <data name="Activate / deactivate" xml:space="preserve">
+    <value>Включить / отключить</value>
+  </data>
+  <data name="Create full backup" xml:space="preserve">
+    <value>Создать полную копию</value>
+  </data>
+  <data name="Load sample data" xml:space="preserve">
+    <value>Загрузить демо-данные</value>
+  </data>
+  <data name="Import customers (CSV)" xml:space="preserve">
+    <value>Импорт клиентов (CSV)</value>
+  </data>
+  <data name="Import products (CSV)" xml:space="preserve">
+    <value>Импорт товаров (CSV)</value>
+  </data>
+  <data name="Select a row first." xml:space="preserve">
+    <value>Сначала выберите строку.</value>
+  </data>
+  <data name="Loading..." xml:space="preserve">
+    <value>Загрузка...</value>
+  </data>
+  <data name="{0} record(s)" xml:space="preserve">
+    <value>Записей: {0}</value>
+  </data>
+  <data name="Customer" xml:space="preserve">
+    <value>Клиент</value>
+  </data>
+  <data name="Supplier" xml:space="preserve">
+    <value>Поставщик</value>
+  </data>
+  <data name="Product" xml:space="preserve">
+    <value>Товар</value>
+  </data>
+  <data name="Quantity" xml:space="preserve">
+    <value>Количество</value>
+  </data>
+  <data name="Description" xml:space="preserve">
+    <value>Описание</value>
+  </data>
+  <data name="Status" xml:space="preserve">
+    <value>Статус</value>
+  </data>
+  <data name="Date" xml:space="preserve">
+    <value>Дата</value>
+  </data>
+  <data name="Number" xml:space="preserve">
+    <value>Номер</value>
+  </data>
+  <data name="Net" xml:space="preserve">
+    <value>Нетто</value>
+  </data>
+  <data name="VAT" xml:space="preserve">
+    <value>НДС</value>
+  </data>
+  <data name="Balance" xml:space="preserve">
+    <value>Остаток</value>
+  </data>
+  <data name="Amount" xml:space="preserve">
+    <value>Сумма</value>
+  </data>
+  <data name="Name" xml:space="preserve">
+    <value>Название</value>
+  </data>
+  <data name="Code" xml:space="preserve">
+    <value>Код</value>
+  </data>
+  <data name="Price" xml:space="preserve">
+    <value>Цена</value>
+  </data>
+  <data name="Unit price" xml:space="preserve">
+    <value>Цена за единицу</value>
+  </data>
+  <data name="Reason" xml:space="preserve">
+    <value>Причина</value>
+  </data>
+  <data name="Notes" xml:space="preserve">
+    <value>Примечания</value>
+  </data>
+  <data name="Address" xml:space="preserve">
+    <value>Адрес</value>
+  </data>
+  <data name="City" xml:space="preserve">
+    <value>Город</value>
+  </data>
+  <data name="Phone" xml:space="preserve">
+    <value>Телефон</value>
+  </data>
+  <data name="Email" xml:space="preserve">
+    <value>Эл. почта</value>
+  </data>
+  <data name="Priority" xml:space="preserve">
+    <value>Приоритет</value>
+  </data>
+  <data name="Active" xml:space="preserve">
+    <value>Активен</value>
+  </data>
+  <data name="Pending" xml:space="preserve">
+    <value>В ожидании</value>
+  </data>
+  <data name="Delivered" xml:space="preserve">
+    <value>Доставлено</value>
+  </data>
+  <data name="Cancelled" xml:space="preserve">
+    <value>Отменено</value>
+  </data>
+  <data name="Draft" xml:space="preserve">
+    <value>Черновик</value>
+  </data>
+  <data name="Sent" xml:space="preserve">
+    <value>Отправлено</value>
+  </data>
+  <data name="Accepted" xml:space="preserve">
+    <value>Принято</value>
+  </data>
+  <data name="Rejected" xml:space="preserve">
+    <value>Отклонено</value>
+  </data>
+  <data name="Expired" xml:space="preserve">
+    <value>Просрочено</value>
+  </data>
+  <data name="Paid" xml:space="preserve">
+    <value>Оплачено</value>
+  </data>
+  <data name="Void" xml:space="preserve">
+    <value>Аннулировано</value>
+  </data>
+  <data name="Approved" xml:space="preserve">
+    <value>Одобрено</value>
+  </data>
+  <data name="Rework" xml:space="preserve">
+    <value>Доработка</value>
+  </data>
+  <data name="In process" xml:space="preserve">
+    <value>В работе</value>
+  </data>
+  <data name="In production" xml:space="preserve">
+    <value>В производстве</value>
+  </data>
+  <data name="Finished" xml:space="preserve">
+    <value>Завершено</value>
+  </data>
+  <data name="Confirmed" xml:space="preserve">
+    <value>Подтверждён</value>
+  </data>
+  <data name="Tax ID" xml:space="preserve">
+    <value>ИНН</value>
+  </data>
+  <data name="Customer return" xml:space="preserve">
+    <value>Возврат от клиента</value>
+  </data>
+  <data name="Invoice A" xml:space="preserve">
+    <value>Счёт A</value>
+  </data>
+  <data name="Invoice B" xml:space="preserve">
+    <value>Счёт B</value>
+  </data>
+  <data name="Choose the invoice type. Type A is for VAT registered customers; type B for final consumers." xml:space="preserve">
+    <value>Выберите тип счёта. Тип A для плательщиков НДС, тип B для конечных потребителей.</value>
+  </data>
+  <data name="Invoice type" xml:space="preserve">
+    <value>Тип счёта</value>
+  </data>
+  <data name="Payment method" xml:space="preserve">
+    <value>Способ оплаты</value>
+  </data>
+  <data name="Role" xml:space="preserve">
+    <value>Роль</value>
+  </data>
+  <data name="User name" xml:space="preserve">
+    <value>Имя пользователя</value>
+  </data>
+  <data name="Password" xml:space="preserve">
+    <value>Пароль</value>
+  </data>
+  <data name="From" xml:space="preserve">
+    <value>С</value>
+  </data>
+  <data name="To" xml:space="preserve">
+    <value>По</value>
+  </data>
+  <data name="Run" xml:space="preserve">
+    <value>Выполнить</value>
+  </data>
+  <data name="Report" xml:space="preserve">
+    <value>Отчёт</value>
+  </data>
+  <data name="Sales by period" xml:space="preserve">
+    <value>Продажи за период</value>
+  </data>
+  <data name="Sales by customer" xml:space="preserve">
+    <value>Продажи по клиентам</value>
+  </data>
+  <data name="Sales by product" xml:space="preserve">
+    <value>Продажи по товарам</value>
+  </data>
+  <data name="Stock valuation" xml:space="preserve">
+    <value>Оценка запасов</value>
+  </data>
+  <data name="Edelstahl ERP could not be started." xml:space="preserve">
+    <value>Не удалось запустить Edelstahl ERP.</value>
+  </data>
+  <data name="Unexpected error" xml:space="preserve">
+    <value>Непредвиденная ошибка</value>
+  </data>
+  <data name="The technical detail was recorded in the audit log." xml:space="preserve">
+    <value>Технические подробности записаны в журнал аудита.</value>
+  </data>
+  <data name="The operation could not be completed." xml:space="preserve">
+    <value>Не удалось выполнить операцию.</value>
+  </data>
+  <data name="The user name or the password is incorrect." xml:space="preserve">
+    <value>Неверное имя пользователя или пароль.</value>
+  </data>
+  <data name="Preparing the database..." xml:space="preserve">
+    <value>Подготовка базы данных...</value>
+  </data>
+  <data name="Working..." xml:space="preserve">
+    <value>Выполняется...</value>
+  </data>
+  <data name="Distance" xml:space="preserve">
+    <value>Расстояние</value>
+  </data>
+  <data name="Time" xml:space="preserve">
+    <value>Время</value>
+  </data>
+  <data name="Not delivered" xml:space="preserve">
+    <value>Не доставлено</value>
+  </data>
+  <data name="This route sheet has no stops." xml:space="preserve">
+    <value>В этом маршрутном листе нет остановок.</value>
+  </data>
+  <data name="Calculating the route..." xml:space="preserve">
+    <value>Расчёт маршрута...</value>
+  </data>
+  <data name="Straight lines: street routing is not available." xml:space="preserve">
+    <value>Прямые линии: маршрут по улицам недоступен.</value>
+  </data>
+  <data name="User" xml:space="preserve">
+    <value>Пользователь</value>
+  </data>
+  <data name="Locked" xml:space="preserve">
+    <value>Заблокирован</value>
+  </data>
+  <data name="Failed attempts" xml:space="preserve">
+    <value>Неудачные попытки</value>
+  </data>
+  <data name="Last access" xml:space="preserve">
+    <value>Последний вход</value>
+  </data>
+  <data name="Customer type" xml:space="preserve">
+    <value>Тип клиента</value>
+  </data>
+  <data name="Company (CUIT)" xml:space="preserve">
+    <value>Компания (CUIT)</value>
+  </data>
+  <data name="Individual (CUIL)" xml:space="preserve">
+    <value>Физическое лицо (CUIL)</value>
+  </data>
+  <data name="Company" xml:space="preserve">
+    <value>Компания</value>
+  </data>
+  <data name="Individual" xml:space="preserve">
+    <value>Физическое лицо</value>
+  </data>
+  <data name="Tax ID (CUIT / CUIL)" xml:space="preserve">
+    <value>Налоговый номер (CUIT / CUIL)</value>
+  </data>
+  <data name="Business name / full name" xml:space="preserve">
+    <value>Название компании / полное имя</value>
+  </data>
+  <data name="Invoice A is only for companies (CUIT). Use Invoice B for individuals." xml:space="preserve">
+    <value>Счёт A только для компаний (CUIT). Для физических лиц используйте счёт B.</value>
+  </data>
+  <data name="The customer has no delivery address. Complete it in Customers before confirming an order with delivery." xml:space="preserve">
+    <value>У клиента нет адреса доставки. Заполните его в разделе «Клиенты» перед подтверждением заказа с доставкой.</value>
+  </data>
+  <data name="The customer has no delivery address. Complete it in Customers." xml:space="preserve">
+    <value>У клиента нет адреса доставки. Заполните его в разделе «Клиенты».</value>
+  </data>
+  <data name="The customer has no delivery address" xml:space="preserve">
+    <value>У клиента нет адреса доставки</value>
+  </data>
+  <data name="No delivery address" xml:space="preserve">
+    <value>Нет адреса доставки</value>
+  </data>
+  <data name="Expired quotations: {0}. Use &quot;Extend validity&quot; to renew them." xml:space="preserve">
+    <value>Просроченные предложения: {0}. Используйте «Продлить срок», чтобы обновить.</value>
+  </data>
+  <data name="Change quantity" xml:space="preserve">
+    <value>Изменить количество</value>
+  </data>
+  <data name="Select a line first." xml:space="preserve">
+    <value>Сначала выберите строку.</value>
+  </data>
+  <data name="Order date" xml:space="preserve">
+    <value>Дата заказа</value>
+  </data>
+  <data name="Delivery date" xml:space="preserve">
+    <value>Дата доставки</value>
+  </data>
+  <data name="Enter a value greater than zero for {0}." xml:space="preserve">
+    <value>Введите значение больше нуля в поле «{0}».</value>
+  </data>
+  <data name="Enter a unit price greater than zero." xml:space="preserve">
+    <value>Введите цену за единицу больше нуля.</value>
+  </data>
+  <data name="Every item needs a unit price greater than zero." xml:space="preserve">
+    <value>Для каждой позиции нужна цена за единицу больше нуля.</value>
+  </data>
+  <data name="Edit line" xml:space="preserve">
+    <value>Изменить строку</value>
+  </data>
+  <data name="Refresh" xml:space="preserve">
+    <value>Обновить</value>
+  </data>
+  <data name="Quotation accepted. You can now confirm the order from Orders &gt; Confirm order." xml:space="preserve">
+    <value>Предложение принято. Теперь можно подтвердить заказ: Заказы &gt; Подтвердить заказ.</value>
+  </data>
+  <data name="Missing products" xml:space="preserve">
+    <value>Недостающие товары</value>
+  </data>
+  <data name="Some products are not in stock. Add the quantities below to confirm the order." xml:space="preserve">
+    <value>Некоторых товаров нет на складе. Укажите ниже количества, чтобы подтвердить заказ.</value>
+  </data>
+  <data name="Add stock and confirm" xml:space="preserve">
+    <value>Добавить остаток и подтвердить</value>
+  </data>
+  <data name="Add at least the missing quantity of {0}." xml:space="preserve">
+    <value>Добавьте не меньше недостающего количества для {0}.</value>
+  </data>
+  <data name="Stock entry for quotation {0}" xml:space="preserve">
+    <value>Приход на склад для предложения {0}</value>
+  </data>
+  <data name="This product is not marked as purchasable." xml:space="preserve">
+    <value>Этот товар не отмечен как закупаемый.</value>
+  </data>
+  <data name="Required" xml:space="preserve">
+    <value>Требуется</value>
+  </data>
+  <data name="Missing" xml:space="preserve">
+    <value>Не хватает</value>
+  </data>
+  <data name="Add" xml:space="preserve">
+    <value>Добавить</value>
+  </data>
+  <data name="Verify the load" xml:space="preserve">
+    <value>Проверка погрузки</value>
+  </data>
+  <data name="Check each line against the goods you are loading onto the truck. The quantities come from the invoice and cannot be changed." xml:space="preserve">
+    <value>Сверьте каждую строку с товаром, который загружается в грузовик. Количества берутся из счёта и не изменяются.</value>
+  </data>
+  <data name="Not ready to ship" xml:space="preserve">
+    <value>Не готов к отправке</value>
+  </data>
+  <data name="Verified: {0} of {1}" xml:space="preserve">
+    <value>Проверено: {0} из {1}</value>
+  </data>
+  <data name="Route started." xml:space="preserve">
+    <value>Маршрут начат.</value>
+  </data>
+  <data name="This delivery note is not available for a route sheet (it may already be on one)." xml:space="preserve">
+    <value>Эта накладная недоступна для маршрутного листа (возможно, она уже в одном из них).</value>
+  </data>
+  <data name="Assign to route sheet" xml:space="preserve">
+    <value>Назначить в маршрутный лист</value>
+  </data>
+  <data name="Loaded" xml:space="preserve">
+    <value>Загружено</value>
+  </data>
+  <data name="Incomplete weight" xml:space="preserve">
+    <value>Вес неполный</value>
+  </data>
+  <data name="{0} was made to measure and cannot be returned." xml:space="preserve">
+    <value>{0} изготовлен на заказ и возврату не подлежит.</value>
+  </data>
+  <data name="Delivery and returns policy" xml:space="preserve">
+    <value>Политика доставки и возвратов</value>
+  </data>
+  <data name="Check the goods when you receive them. Once the goods are delivered and the delivery note is signed, no returns are accepted. Only goods rejected or damaged at the time of delivery, noted on the delivery note, can be returned. Made-to-measure orders (custom manufacturing) cannot be returned." xml:space="preserve">
+    <value>Проверьте товар при получении. После доставки и подписания накладной возврат не принимается. Возврату подлежит только товар, отклонённый или повреждённый при доставке, с отметкой в накладной. Заказы на изготовление по размерам возврату не подлежат.</value>
+  </data>
+  <data name="ID / CUIT / CUIL" xml:space="preserve">
+    <value>Документ / CUIT / CUIL</value>
+  </data>
+  <data name="Signature and clarification" xml:space="preserve">
+    <value>Подпись и расшифровка</value>
+  </data>
+  <data name="Product to manufacture" xml:space="preserve">
+    <value>Изготавливаемый товар</value>
+  </data>
+  <data name="There are no products that can be manufactured to measure." xml:space="preserve">
+    <value>Нет товаров, которые можно изготовить на заказ.</value>
+  </data>
+  <data name="Deposit" xml:space="preserve">
+    <value>Аванс</value>
+  </data>
+  <data name="This quotation includes custom manufacturing, which requires a deposit of at least 30%." xml:space="preserve">
+    <value>Это предложение включает изготовление на заказ, для которого требуется аванс не менее 30%.</value>
+  </data>
+  <data name="Created automatically when the order was confirmed." xml:space="preserve">
+    <value>Создано автоматически при подтверждении заказа.</value>
+  </data>
+  <data name="Manufacturing orders created: {0}" xml:space="preserve">
+    <value>Созданные производственные заказы: {0}</value>
+  </data>
+  <data name="Ready to coordinate delivery" xml:space="preserve">
+    <value>Готово к согласованию доставки</value>
+  </data>
+  <data name="Preparation orders" xml:space="preserve">
+    <value>Заказы на комплектацию</value>
+  </data>
+  <data name="Prepared" xml:space="preserve">
+    <value>Подготовлен</value>
+  </data>
+  <data name="Waiting for production" xml:space="preserve">
+    <value>Ожидает производства</value>
+  </data>
+  <data name="To prepare" xml:space="preserve">
+    <value>К подготовке</value>
+  </data>
+  <data name="Products" xml:space="preserve">
+    <value>Товары</value>
+  </data>
+  <data name="Invoice" xml:space="preserve">
+    <value>Счёт</value>
+  </data>
+  <data name="The order was manufactured. Issue the invoice now so Logistics can ship it?" xml:space="preserve">
+    <value>Заказ изготовлен. Выставить счёт сейчас, чтобы логистика могла отправить его?</value>
+  </data>
+  <data name="Invoice {0} issued. The order is ready to coordinate the delivery." xml:space="preserve">
+    <value>Счёт {0} выставлен. Заказ готов к согласованию доставки.</value>
+  </data>
+  <data name="QUOTATION" xml:space="preserve">
+    <value>КОММЕРЧЕСКОЕ ПРЕДЛОЖЕНИЕ</value>
+  </data>
+  <data name="Warehouse" xml:space="preserve">
+    <value>Склад</value>
+  </data>
+  <data name="Quotation {0} issued" xml:space="preserve">
+    <value>Предложение {0} выставлено</value>
+  </data>
+  <data name="Quotation {0} accepted by the customer" xml:space="preserve">
+    <value>Предложение {0} принято клиентом</value>
+  </data>
+  <data name="{0}: progress {1}% ({2})" xml:space="preserve">
+    <value>{0}: ход {1}% ({2})</value>
+  </data>
+  <data name="Stock reserved: {0} x {1}" xml:space="preserve">
+    <value>Остаток зарезервирован: {0} x {1}</value>
+  </data>
+  <data name="{0} assigned to route sheet {1}" xml:space="preserve">
+    <value>{0} назначен в маршрутный лист {1}</value>
+  </data>
+  <data name="Route sheet {0} started" xml:space="preserve">
+    <value>Маршрутный лист {0} начат</value>
+  </data>
+  <data name="Payment details" xml:space="preserve">
+    <value>Данные платежа</value>
+  </data>
+  <data name="The order has a balance of {0}. Register the collection now?" xml:space="preserve">
+    <value>По заказу остаток {0}. Зарегистрировать оплату сейчас?</value>
+  </data>
+  <data name="Departs from" xml:space="preserve">
+    <value>Отправление из</value>
+  </data>
+  <data name="approximate location" xml:space="preserve">
+    <value>примерное местоположение</value>
+  </data>
+  <data name="Deposit paid" xml:space="preserve">
+    <value>Аванс оплачен</value>
+  </data>
+  <data name="Not paid yet" xml:space="preserve">
+    <value>Ещё не оплачено</value>
+  </data>
+  <data name="Paid in full" xml:space="preserve">
+    <value>Оплачено полностью</value>
+  </data>
+  <data name="Accept and manufacture" xml:space="preserve">
+    <value>Принять и изготовить</value>
+  </data>
+  <data name="Accept order {0} and start manufacturing?" xml:space="preserve">
+    <value>Принять заказ {0} и начать изготовление?</value>
+  </data>
+  <data name="Order {0} accepted. It is now in process; follow it in Manufacturing orders." xml:space="preserve">
+    <value>Заказ {0} принят. Он в работе; следите за ним в разделе «Производственные заказы».</value>
+  </data>
+  <data name="Lines without order" xml:space="preserve">
+    <value>Строки без заказа</value>
+  </data>
+  <data name="Pending collections" xml:space="preserve">
+    <value>Ожидаемые платежи</value>
+  </data>
+  <data name="Expected payment method" xml:space="preserve">
+    <value>Предполагаемый способ оплаты</value>
+  </data>
+  <data name="Note how the customer plans to pay the balance. It does not register any collection." xml:space="preserve">
+    <value>Укажите, как клиент планирует оплатить остаток. Платёж не регистрируется.</value>
+  </data>
+  <data name="Cash" xml:space="preserve">
+    <value>Наличные</value>
+  </data>
+  <data name="Bank transfer" xml:space="preserve">
+    <value>Банковский перевод</value>
+  </data>
+  <data name="Check" xml:space="preserve">
+    <value>Чек</value>
+  </data>
+  <data name="Card" xml:space="preserve">
+    <value>Карта</value>
+  </data>
+  <data name="Cash on delivery" xml:space="preserve">
+    <value>Наложенный платёж</value>
+  </data>
+  <data name="Balance due {0}: the customer must pay 100% before shipping" xml:space="preserve">
+    <value>Остаток {0}: клиент должен оплатить 100% до отправки</value>
+  </data>
+  <data name="Customer paid 100% - ready to ship and deliver" xml:space="preserve">
+    <value>Клиент оплатил 100%: готово к отправке и доставке</value>
+  </data>
+  <data name="The customer still owes {0}. The delivery note can be issued once the order is paid in full." xml:space="preserve">
+    <value>Клиент ещё должен {0}. Накладную можно выписать после полной оплаты заказа.</value>
+  </data>
+  <data name="Remaining" xml:space="preserve">
+    <value>Остаток</value>
+  </data>
+  <data name="Payment" xml:space="preserve">
+    <value>Оплата</value>
+  </data>
+  <data name="Document" xml:space="preserve">
+    <value>Документ</value>
+  </data>
+  <data name="Order" xml:space="preserve">
+    <value>Заказ</value>
+  </data>
+  <data name="Authorize / revoke credit" xml:space="preserve">
+    <value>Разрешить / отозвать кредит</value>
+  </data>
+  <data name="Authorize {0} to receive goods without paying 100% beforehand (credit account)?" xml:space="preserve">
+    <value>Разрешить {0} получать товар без 100% предоплаты (кредитный счёт)?</value>
+  </data>
+  <data name="Revoke the credit authorization of {0}? From now on they must pay 100% before delivery." xml:space="preserve">
+    <value>Отозвать кредитное разрешение для {0}? Теперь нужна 100% оплата до доставки.</value>
+  </data>
+  <data name="Authorized customer (credit account) - ready to ship and deliver" xml:space="preserve">
+    <value>Авторизованный клиент (кредитный счёт): готово к отправке и доставке</value>
+  </data>
+  <data name="Authorized" xml:space="preserve">
+    <value>Разрешено</value>
+  </data>
+  <data name="Consumed automatically when sent to quality control." xml:space="preserve">
+    <value>Списано автоматически при отправке на контроль качества.</value>
+  </data>
+  <data name="The order has no materials reserved. Reserve the materials before sending to quality control." xml:space="preserve">
+    <value>У заказа нет зарезервированных материалов. Зарезервируйте их перед отправкой на контроль качества.</value>
+  </data>
+  <data name="Summary" xml:space="preserve">
+    <value>Сводка</value>
+  </data>
+  <data name="Order created" xml:space="preserve">
+    <value>Заказ создан</value>
+  </data>
+  <data name="{0} units" xml:space="preserve">
+    <value>{0} ед.</value>
+  </data>
+  <data name="Accepted and started" xml:space="preserve">
+    <value>Принят и начат</value>
+  </data>
+  <data name="Progress" xml:space="preserve">
+    <value>Ход работ</value>
+  </data>
+  <data name="Quality control" xml:space="preserve">
+    <value>Контроль качества</value>
+  </data>
+  <data name="Finished product delivered to stock." xml:space="preserve">
+    <value>Готовая продукция принята на склад.</value>
+  </data>
+  <data name="Reason: {0}" xml:space="preserve">
+    <value>Причина: {0}</value>
+  </data>
+  <data name="Shipment log" xml:space="preserve">
+    <value>Журнал отправок</value>
+  </data>
+  <data name="Delivery note issued" xml:space="preserve">
+    <value>Накладная выписана</value>
+  </data>
+  <data name="Load verified" xml:space="preserve">
+    <value>Погрузка проверена</value>
+  </data>
+  <data name="Assigned to route sheet" xml:space="preserve">
+    <value>Назначен в маршрутный лист</value>
+  </data>
+  <data name="Route started" xml:space="preserve">
+    <value>Маршрут начат</value>
+  </data>
+  <data name="Delivery result" xml:space="preserve">
+    <value>Результат доставки</value>
+  </data>
+  <data name="Received by {0} (ID {1})" xml:space="preserve">
+    <value>Получил {0} (документ {1})</value>
+  </data>
+  <data name="Rescheduled" xml:space="preserve">
+    <value>Перенесён</value>
+  </data>
+  <data name="Reschedule delivery" xml:space="preserve">
+    <value>Перенести доставку</value>
+  </data>
+  <data name="The delivery note becomes available again for a new route sheet. The failed attempt stays on record." xml:space="preserve">
+    <value>Накладная снова доступна для нового маршрутного листа. Неудачная попытка сохраняется в истории.</value>
+  </data>
+  <data name="Delivery rescheduled. Assign it to a new route sheet from Delivery notes." xml:space="preserve">
+    <value>Доставка перенесена. Назначьте её в новый маршрутный лист в разделе «Накладные».</value>
+  </data>
+  <data name="The reason for rescheduling is required." xml:space="preserve">
+    <value>Необходимо указать причину переноса.</value>
+  </data>
+  <data name="Only rejected or rescheduled deliveries can be rescheduled." xml:space="preserve">
+    <value>Переносить можно только отклонённые или несостоявшиеся доставки.</value>
+  </data>
+  <data name="Event" xml:space="preserve">
+    <value>Событие</value>
+  </data>
+  <data name="Route sheet" xml:space="preserve">
+    <value>Маршрутный лист</value>
+  </data>
+  <data name="Result" xml:space="preserve">
+    <value>Результат</value>
+  </data>
+  <data name="Received by" xml:space="preserve">
+    <value>Получил</value>
+  </data>
+  <data name="Issued" xml:space="preserve">
+    <value>Выписан</value>
+  </data>
+  <data name="Delivery note" xml:space="preserve">
+    <value>Накладная</value>
+  </data>
+  <data name="Ready to accept" xml:space="preserve">
+    <value>Готов к приёму</value>
+  </data>
+  <data name="Waiting for the order to be confirmed and the deposit paid" xml:space="preserve">
+    <value>Ожидает подтверждения заказа и оплаты аванса</value>
+  </data>
+  <data name="Deposit required: {0}" xml:space="preserve">
+    <value>Требуемый аванс: {0}</value>
+  </data>
+  <data name="Quotation {0} is accepted but is not an order yet. Go to Sales &gt; Orders &gt; Confirm order and register the deposit; the manufacturing order will then be ready to accept here." xml:space="preserve">
+    <value>Предложение {0} принято, но ещё не заказ. Откройте Продажи &gt; Заказы &gt; Подтвердить заказ и зарегистрируйте аванс; затем производственный заказ можно будет принять здесь.</value>
+  </data>
+  <data name="Situation" xml:space="preserve">
+    <value>Статус</value>
+  </data>
+  <data name="The deposit entered is below the minimum required by the quotation ({0})." xml:space="preserve">
+    <value>Введённый аванс меньше минимума, требуемого предложением ({0}).</value>
+  </data>
+  <data name="The deposit cannot exceed the total of the quotation." xml:space="preserve">
+    <value>Аванс не может превышать итог предложения.</value>
+  </data>
+  <data name="Enter the deposit the customer actually paid. It cannot be below the minimum shown next to the quotation." xml:space="preserve">
+    <value>Введите аванс, который клиент действительно заплатил. Он не может быть ниже минимума рядом с предложением.</value>
+  </data>
+  <data name="The password cannot be empty." xml:space="preserve">
+    <value>Пароль не может быть пустым.</value>
+  </data>
+  <data name="The password must have at least 8 characters." xml:space="preserve">
+    <value>Пароль должен содержать не менее 8 символов.</value>
+  </data>
+  <data name="Confirm password" xml:space="preserve">
+    <value>Подтвердите пароль</value>
+  </data>
+  <data name="Show password" xml:space="preserve">
+    <value>Показать пароль</value>
+  </data>
+  <data name="The passwords do not match." xml:space="preserve">
+    <value>Пароли не совпадают.</value>
+  </data>
+  <data name="Edit user" xml:space="preserve">
+    <value>Изменить пользователя</value>
+  </data>
+  <data name="The full name and the email are required." xml:space="preserve">
+    <value>Полное имя и email обязательны.</value>
+  </data>
+  <data name="The order does not meet the conditions to be confirmed. Check the deposit and the quotation lines." xml:space="preserve">
+    <value>Заказ не соответствует условиям подтверждения. Проверьте аванс и строки предложения.</value>
+  </data>
+  <data name="To collect (customers)" xml:space="preserve">
+    <value>К получению (клиенты)</value>
+  </data>
+  <data name="To pay (suppliers)" xml:space="preserve">
+    <value>К оплате (поставщики)</value>
+  </data>
+  <data name="Materials of {0} - {1}" xml:space="preserve">
+    <value>Материалы {0} - {1}</value>
+  </data>
+  <data name="The order is at {0}% progress. It cannot be sent to quality control until manufacturing reaches 100%. Keep manufacturing or cancel the order." xml:space="preserve">
+    <value>Заказ выполнен на {0}%. Его нельзя отправить на контроль качества, пока производство не достигнет 100%. Продолжайте производство или отмените заказ.</value>
+  </data>
+  <data name="The order is not complete" xml:space="preserve">
+    <value>Заказ не завершён</value>
+  </data>
+  <data name="{0} is at {1}%. A product cannot go to quality control or enter the stock before manufacturing reaches 100%." xml:space="preserve">
+    <value>{0} выполнен на {1}%. Продукт нельзя отправить на контроль качества или на склад до достижения 100%.</value>
+  </data>
+  <data name="What do you want to do?" xml:space="preserve">
+    <value>Что вы хотите сделать?</value>
+  </data>
+  <data name="Continue manufacturing" xml:space="preserve">
+    <value>Продолжить производство</value>
+  </data>
+  <data name="Cancel the order (missing materials or products)" xml:space="preserve">
+    <value>Отменить заказ (не хватает материалов или продуктов)</value>
+  </data>
+  <data name="Reason for cancelling" xml:space="preserve">
+    <value>Причина отмены</value>
+  </data>
+  <data name="The order stays in process. Use Register progress to keep loading the manufacturing progress." xml:space="preserve">
+    <value>Заказ остаётся в работе. Используйте «Зарегистрировать ход», чтобы продолжить вносить ход производства.</value>
+  </data>
+  <data name="Write the reason for cancelling the order." xml:space="preserve">
+    <value>Укажите причину отмены заказа.</value>
+  </data>
+  <data name="Order {0} cancelled. The reserved materials were released." xml:space="preserve">
+    <value>Заказ {0} отменён. Зарезервированные материалы освобождены.</value>
+  </data>
+  <data name="Valid until" xml:space="preserve">
+    <value>Действительно до</value>
+  </data>
+  <data name="Quotation valid for {0} days (until {1})." xml:space="preserve">
+    <value>ПРЕДЛОЖЕНИЕ ДЕЙСТВИТЕЛЬНО {0} ДНЕЙ (до {1}).</value>
+  </data>
+  <data name="This quotation has expired. Ask for an updated one." xml:space="preserve">
+    <value>Срок действия предложения истёк. Запросите обновлённое.</value>
+  </data>
+  <data name="Prices may vary according to the date. The amounts are guaranteed only until the date of validity." xml:space="preserve">
+    <value>Цены могут меняться в зависимости от даты. Суммы гарантируются только до окончания срока действия.</value>
+  </data>
+  <data name="Made to measure" xml:space="preserve">
+    <value>На заказ</value>
+  </data>
+  <data name="Deposit required to start manufacturing ({0}%)" xml:space="preserve">
+    <value>Аванс для начала производства ({0}%)</value>
+  </data>
+  <data name="Terms and conditions" xml:space="preserve">
+    <value>Условия</value>
+  </data>
+  <data name="This quotation does not reserve stock. Availability is confirmed when the order is placed." xml:space="preserve">
+    <value>Это предложение не резервирует товар. Наличие подтверждается при оформлении заказа.</value>
+  </data>
+  <data name="Made-to-measure items start manufacturing once the deposit is received, and they cannot be returned." xml:space="preserve">
+    <value>Изделия на заказ запускаются в производство после получения аванса и возврату не подлежат.</value>
+  </data>
+  <data name="Amounts in US dollars. Reference exchange rate: {0}." xml:space="preserve">
+    <value>Суммы в долларах США. Справочный курс: {0}.</value>
+  </data>
+  <data name="Delivery times start when the order is confirmed and, for made-to-measure items, when the deposit is received." xml:space="preserve">
+    <value>Сроки поставки начинаются с подтверждения заказа, а для изделий на заказ — с получения аванса.</value>
+  </data>
+  <data name="To accept this quotation, sign below or confirm it to your salesperson within the validity period." xml:space="preserve">
+    <value>Чтобы принять предложение, подпишите ниже или подтвердите его у менеджера в течение срока действия.</value>
+  </data>
+  <data name="Signature" xml:space="preserve">
+    <value>Подпись</value>
+  </data>
+  <data name="Full name" xml:space="preserve">
+    <value>ФИО</value>
+  </data>
+  <data name="ID number" xml:space="preserve">
+    <value>Номер документа</value>
+  </data>
+  <data name="Print quotation" xml:space="preserve">
+    <value>Печать предложения</value>
+  </data>
+  <data name="Rejected in quality control" xml:space="preserve">
+    <value>Отклонено контролем качества</value>
+  </data>
+  <data name="Manufacturing cannot start until the minimum deposit ({0}%) is paid. Deposit received: {1}. Required: {2}." xml:space="preserve">
+    <value>Производство нельзя начать, пока не оплачен минимальный аванс ({0}%). Получено: {1}. Требуется: {2}.</value>
+  </data>
+  <data name="The order was rejected and closed. Its reserved materials were released. Resolve the sales order or ask for a new manufacturing order." xml:space="preserve">
+    <value>Заказ отклонён и закрыт. Зарезервированные материалы освобождены. Решите судьбу заказа клиента или запросите новый производственный заказ.</value>
+  </data>
+  <data name="Every quotation requires a deposit of at least {0}% to become an order." xml:space="preserve">
+    <value>Для превращения в заказ каждое предложение требует аванса не менее {0}%.</value>
+  </data>
+  <data name="Production cannot start until the invoice that records the deposit is issued. Issue it from Sales &gt; Orders." xml:space="preserve">
+    <value>Производство нельзя начать, пока не выставлен счёт с отметкой об авансе. Выставьте его в разделе Продажи &gt; Заказы.</value>
+  </data>
+  <data name="The invoice {0} does not show the minimum deposit ({1}%) as paid. Production cannot start." xml:space="preserve">
+    <value>В счёте {0} минимальный аванс ({1}%) не отмечен как оплаченный. Производство начать нельзя.</value>
+  </data>
+  <data name="Waiting for the invoice that records the deposit" xml:space="preserve">
+    <value>Ожидается счёт с авансом</value>
+  </data>
+  <data name="The deposit is not invoiced yet. Issue the invoice now so the order can go to production?" xml:space="preserve">
+    <value>Аванс ещё не выставлен в счёте. Выставить счёт сейчас, чтобы заказ мог пойти в производство?</value>
+  </data>
+  <data name="Invoice {0} issued, showing the deposit paid." xml:space="preserve">
+    <value>Счёт {0} выставлен, аванс оплачен.</value>
+  </data>
+</root>

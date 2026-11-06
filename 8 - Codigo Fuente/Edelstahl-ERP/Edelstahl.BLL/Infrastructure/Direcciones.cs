@@ -5,7 +5,7 @@ namespace Edelstahl.BLL.Infrastructure
     /// <summary>
     /// Reconoce las direcciones que en realidad no existen (vacias o con el texto de relleno de la carga masiva).
     /// </summary>
-    public static class Direcciones
+    internal static class Direcciones
     {
         public const string SinDireccion = "Address not provided";
 

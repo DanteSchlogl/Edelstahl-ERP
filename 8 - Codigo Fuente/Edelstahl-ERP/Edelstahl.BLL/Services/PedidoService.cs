@@ -7,6 +7,7 @@ using Edelstahl.DAL.Store;
 using Edelstahl.Domain.Catalogo;
 using Edelstahl.DAL.Interfaces;
 using Edelstahl.Domain.Comercial;
+using Edelstahl.Domain.Exceptions;
 
 namespace Edelstahl.BLL.Services
 {
@@ -114,7 +115,7 @@ namespace Edelstahl.BLL.Services
             {
                 pedido.Confirmar();
             }
-            catch (InvalidOperationException)
+            catch (ReglaDeNegocioException)
             {
                 throw Mensajes.Regla("The order does not meet the conditions to be confirmed. Check the deposit and the quotation lines.");
             }
@@ -521,7 +522,7 @@ namespace Edelstahl.BLL.Services
             if (creditoDisponible <
                 creditoNecesario)
             {
-                throw new Edelstahl.BLL.Exceptions.Base.ReglaDeNegocioException(
+                throw new Edelstahl.Domain.Exceptions.ReglaDeNegocioException(
                     Mensajes.T("The available credit of the customer is not enough to confirm the order.") +
                     Environment.NewLine +
                     Environment.NewLine +

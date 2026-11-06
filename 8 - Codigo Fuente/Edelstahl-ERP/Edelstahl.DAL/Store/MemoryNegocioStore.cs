@@ -5,6 +5,8 @@ using System.Linq;
 using System.Linq.Expressions;
 using System.Reflection;
 using Edelstahl.Domain.Common;
+using Edelstahl.Domain.Exceptions;
+using Edelstahl.Services.Localization;
 
 namespace Edelstahl.DAL.Store
 {
@@ -16,7 +18,7 @@ namespace Edelstahl.DAL.Store
     /// (por ejemplo el monitor de stock) no vean estados intermedios.
     /// Si una operación falla, las altas y bajas de registros se revierten.
     /// </summary>
-    public sealed class MemoryNegocioStore : INegocioStore
+    internal sealed class MemoryNegocioStore : INegocioStore
     {
         private static readonly Dictionary<Type, PropertyInfo[]> Colecciones =
             new Dictionary<Type, PropertyInfo[]>();
@@ -237,8 +239,8 @@ namespace Edelstahl.DAL.Store
             {
                 if (_lista.Any(existente => existente.Id == entidad.Id))
                 {
-                    throw new InvalidOperationException(
-                        "Ya existe un registro con el mismo identificador.");
+                    throw new RegistroDuplicadoException(
+                    LanguageService.Translate("A record with the same identifier already exists."));
                 }
 
                 _lista.Add(entidad);

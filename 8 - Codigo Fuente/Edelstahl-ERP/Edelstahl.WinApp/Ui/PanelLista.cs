@@ -317,7 +317,7 @@ namespace Edelstahl.WinApp.Ui
         {
             if (resultado.Value != null)
             {
-                _estado.Text = resultado.Value is Edelstahl.BLL.Exceptions.Base.BusinessRuleException
+                _estado.Text = resultado.Value is Edelstahl.Domain.Exceptions.BusinessRuleException
                     ? resultado.Value.Message
                     : Tr.T("The data could not be loaded.");
                 _datos = new ArrayList();

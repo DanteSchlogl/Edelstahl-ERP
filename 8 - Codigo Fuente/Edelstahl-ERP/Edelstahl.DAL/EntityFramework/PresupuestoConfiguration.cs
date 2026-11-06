@@ -5,7 +5,7 @@ using Edelstahl.Domain.Comercial;
 
 namespace Edelstahl.DAL.EntityFramework
 {
-    public class PresupuestoConfiguration
+    internal class PresupuestoConfiguration
         : EntityTypeConfiguration<Presupuesto>
     {
         public PresupuestoConfiguration()

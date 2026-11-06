@@ -14,7 +14,7 @@ namespace Edelstahl.Services.Integrity
     /// una representación determinística de los
     /// campos protegidos del registro.
     /// </summary>
-    public static class ClienteDvhService
+    internal static class ClienteDvhService
     {
         /// <summary>
         /// Calcula el DVH correspondiente al estado

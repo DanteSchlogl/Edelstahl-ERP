@@ -1,13 +1,22 @@
 ﻿using System;
+using System.Collections;
+using System.Collections.Concurrent;
 using System.Collections.Generic;
+using System.Globalization;
 using System.IO;
+using System.Resources;
 using System.Text;
 
 namespace Edelstahl.Services.Localization
 {
     /// <summary>
-    /// Administra el idioma activo y las traducciones
-    /// de Edelstahl ERP.
+    /// Administra el idioma activo y las traducciones de Edelstahl ERP.
+    ///
+    /// Los textos están en archivos de recursos (.resx) incluidos en este
+    /// ensamblado: Textos.resx (inglés, idioma neutro) y un Textos.[cultura].resx
+    /// por cada idioma, que el compilador convierte en un ensamblado satélite
+    /// por cultura. La clave de cada texto es el texto en inglés; si el idioma
+    /// activo no tiene la traducción se muestra el inglés.
     /// </summary>
     public static class LanguageService
     {
@@ -17,11 +26,38 @@ namespace Edelstahl.Services.Localization
         private const string NombreArchivoConfiguracion =
             "idioma.config";
 
-        private static readonly Dictionary<
-            string,
-            string> Traducciones =
-                new Dictionary<string, string>(
-                    StringComparer.OrdinalIgnoreCase);
+        /// <summary>
+        /// Variable de entorno que cambia la carpeta de preferencias del usuario.
+        /// </summary>
+        public const string VariableCarpetaDatos =
+            "EDELSTAHL_DATOS_LOCALES";
+
+        private static readonly string[] Idiomas =
+        {
+            "es-AR",
+            "es-ES",
+            "en-US",
+            "en-GB",
+            "pt-BR",
+            "de-DE",
+            "ru-RU"
+        };
+
+        private static readonly ResourceManager Recursos =
+            new ResourceManager(
+                "Edelstahl.Services.Localization.Textos",
+                typeof(LanguageService).Assembly);
+
+        /// <summary>
+        /// Textos ya leídos de cada idioma, para no recorrer los recursos en
+        /// cada traducción.
+        /// </summary>
+        private static readonly ConcurrentDictionary<string, Dictionary<string, string>> Cache =
+            new ConcurrentDictionary<string, Dictionary<string, string>>(
+                StringComparer.OrdinalIgnoreCase);
+
+        private static Dictionary<string, string> _traducciones =
+            new Dictionary<string, string>(StringComparer.OrdinalIgnoreCase);
 
         private static string _idiomaActual;
 
@@ -45,7 +81,7 @@ namespace Edelstahl.Services.Localization
         {
             // El programa siempre arranca en ingles (idioma universal).
             _idiomaActual = IdiomaPredeterminado;
-            CargarTraducciones(_idiomaActual);
+            _traducciones = LeerRecursos(_idiomaActual);
         }
 
         /// <summary>
@@ -56,11 +92,11 @@ namespace Edelstahl.Services.Localization
         {
             string guardado = LeerIdiomaGuardado();
 
-            if (ExisteArchivoIdioma(guardado) &&
+            if (ExisteIdioma(guardado) &&
                 !string.Equals(IdiomaActual, guardado, StringComparison.OrdinalIgnoreCase))
             {
                 _idiomaActual = guardado;
-                CargarTraducciones(_idiomaActual);
+                _traducciones = LeerRecursos(_idiomaActual);
 
                 EventHandler manejador = IdiomaCambiado;
 
@@ -85,13 +121,12 @@ namespace Edelstahl.Services.Localization
             string codigoNormalizado =
                 languageCode.Trim();
 
-            if (!ExisteArchivoIdioma(
+            if (!ExisteIdioma(
                 codigoNormalizado))
             {
-                throw new FileNotFoundException(
-                    "The selected language file was not found.",
-                    ObtenerRutaIdioma(
-                        codigoNormalizado));
+                throw new ArgumentException(
+                    "The selected language is not available.",
+                    nameof(languageCode));
             }
 
             if (string.Equals(
@@ -105,8 +140,9 @@ namespace Edelstahl.Services.Localization
             _idiomaActual =
                 codigoNormalizado;
 
-            CargarTraducciones(
-                _idiomaActual);
+            _traducciones =
+                LeerRecursos(
+                    _idiomaActual);
 
             GuardarIdioma(
                 _idiomaActual);
@@ -138,15 +174,38 @@ namespace Edelstahl.Services.Localization
 
             string traduccion;
 
-            if (Traducciones.TryGetValue(
+            if (_traducciones.TryGetValue(
                 key.Trim(),
                 out traduccion))
             {
                 return traduccion;
             }
 
-            return BuscarEnIdiomaRespaldo(
-                key.Trim());
+            return key.Trim();
+        }
+
+        /// <summary>
+        /// Traduce la clave al idioma activo y reemplaza {0}, {1}... por los valores.
+        /// </summary>
+        public static string Format(
+            string key,
+            params object[] valores)
+        {
+            string texto = Translate(key);
+
+            if (valores == null || valores.Length == 0)
+            {
+                return texto;
+            }
+
+            try
+            {
+                return string.Format(texto, valores);
+            }
+            catch (FormatException)
+            {
+                return texto;
+            }
         }
 
         public static string Translate(
@@ -166,7 +225,7 @@ namespace Edelstahl.Services.Localization
 
             Dictionary<string, string>
                 traduccionesIdioma =
-                    LeerArchivoIdioma(
+                    LeerRecursos(
                         languageCode.Trim());
 
             string traduccion;
@@ -190,174 +249,94 @@ namespace Edelstahl.Services.Localization
                 return false;
             }
 
-            return ExisteArchivoIdioma(
-                languageCode.Trim());
+            return Array.Exists(
+                Idiomas,
+                idioma => string.Equals(
+                    idioma,
+                    languageCode.Trim(),
+                    StringComparison.OrdinalIgnoreCase));
         }
 
         public static string[] ObtenerIdiomasDisponibles()
         {
-            return new[]
-            {
-                "es-AR",
-                "es-ES",
-                "en-US",
-                "en-GB",
-                "pt-BR",
-                "de-DE",
-                "ru-RU"
-            };
+            return (string[])Idiomas.Clone();
         }
 
-        private static void CargarTraducciones(
+        /// <summary>
+        /// Lee los textos de un idioma desde los recursos: primero el neutro
+        /// (inglés), luego el idioma general (por ejemplo "es") y al final el
+        /// específico (por ejemplo "es-AR"), de modo que lo más específico
+        /// reemplaza a lo general.
+        /// </summary>
+        private static Dictionary<string, string> LeerRecursos(
             string languageCode)
         {
-            Traducciones.Clear();
-
-            Dictionary<string, string>
-                traduccionesArchivo =
-                    LeerArchivoIdioma(
-                        languageCode);
-
-            foreach (KeyValuePair<string, string>
-                traduccion in traduccionesArchivo)
-            {
-                Traducciones[traduccion.Key] =
-                    traduccion.Value;
-            }
-        }
-
-        private static Dictionary<string, string>
-            LeerArchivoIdioma(
-                string languageCode)
-        {
-            Dictionary<string, string>
-                resultado =
-                    new Dictionary<string, string>(
-                        StringComparer.OrdinalIgnoreCase);
-
-            string rutaArchivo =
-                ObtenerRutaIdioma(
-                    languageCode);
-
-            if (!File.Exists(rutaArchivo))
-            {
-                return resultado;
-            }
-
-            string[] lineas =
-                File.ReadAllLines(
-                    rutaArchivo,
-                    Encoding.UTF8);
-
-            foreach (string lineaOriginal
-                in lineas)
-            {
-                if (string.IsNullOrWhiteSpace(
-                    lineaOriginal))
+            return Cache.GetOrAdd(
+                languageCode,
+                codigo =>
                 {
-                    continue;
-                }
+                    Dictionary<string, string> resultado =
+                        new Dictionary<string, string>(
+                            StringComparer.OrdinalIgnoreCase);
 
-                string linea =
-                    lineaOriginal.Trim();
+                    CultureInfo cultura;
 
-                if (linea.StartsWith("#") ||
-                    linea.StartsWith(";"))
-                {
-                    continue;
-                }
+                    try
+                    {
+                        cultura = new CultureInfo(codigo);
+                    }
+                    catch (CultureNotFoundException)
+                    {
+                        return resultado;
+                    }
 
-                // Los archivos nuevos separan clave y texto con un tabulador
-                // (las claves pueden llevar dos puntos); los antiguos usan ':'.
-                int posicionSeparador =
-                    linea.IndexOf('\t');
+                    List<CultureInfo> cadena = new List<CultureInfo>();
 
-                if (posicionSeparador <= 0)
-                {
-                    posicionSeparador = linea.IndexOf(':');
-                }
+                    for (CultureInfo actual = cultura;
+                        !actual.Equals(CultureInfo.InvariantCulture);
+                        actual = actual.Parent)
+                    {
+                        cadena.Add(actual);
+                    }
 
-                if (posicionSeparador <= 0)
-                {
-                    continue;
-                }
+                    cadena.Add(CultureInfo.InvariantCulture);
+                    cadena.Reverse();
 
-                string clave =
-                    linea
-                        .Substring(
-                            0,
-                            posicionSeparador)
-                        .Trim();
+                    foreach (CultureInfo cadaCultura in cadena)
+                    {
+                        ResourceSet conjunto;
 
-                string valor =
-                    linea
-                        .Substring(
-                            posicionSeparador + 1)
-                        .Trim();
+                        try
+                        {
+                            conjunto = Recursos.GetResourceSet(
+                                cadaCultura,
+                                true,
+                                false);
+                        }
+                        catch (MissingManifestResourceException)
+                        {
+                            continue;
+                        }
 
-                if (string.IsNullOrWhiteSpace(
-                    clave))
-                {
-                    continue;
-                }
+                        if (conjunto == null)
+                        {
+                            continue;
+                        }
 
-                resultado[clave] =
-                    valor;
-            }
+                        foreach (DictionaryEntry entrada in conjunto)
+                        {
+                            string clave = entrada.Key as string;
+                            string valor = entrada.Value as string;
 
-            return resultado;
-        }
+                            if (!string.IsNullOrWhiteSpace(clave) && valor != null)
+                            {
+                                resultado[clave] = valor;
+                            }
+                        }
+                    }
 
-        private static string BuscarEnIdiomaRespaldo(
-            string key)
-        {
-            if (string.Equals(
-                _idiomaActual,
-                IdiomaPredeterminado,
-                StringComparison.OrdinalIgnoreCase))
-            {
-                return key;
-            }
-
-            Dictionary<string, string>
-                traduccionesRespaldo =
-                    LeerArchivoIdioma(
-                        IdiomaPredeterminado);
-
-            string traduccion;
-
-            if (traduccionesRespaldo.TryGetValue(
-                key,
-                out traduccion))
-            {
-                return traduccion;
-            }
-
-            return key;
-        }
-
-        private static bool ExisteArchivoIdioma(
-            string languageCode)
-        {
-            if (string.Equals(languageCode, IdiomaPredeterminado, StringComparison.OrdinalIgnoreCase))
-            {
-                return true;
-            }
-
-            string ruta =
-                ObtenerRutaIdioma(
-                    languageCode);
-
-            return File.Exists(ruta);
-        }
-
-        private static string ObtenerRutaIdioma(
-            string languageCode)
-        {
-            return Path.Combine(
-                AppDomain.CurrentDomain.BaseDirectory,
-                "Languages",
-                "idioma." + languageCode);
+                    return resultado;
+                });
         }
 
         /// <summary>
@@ -366,11 +345,18 @@ namespace Edelstahl.Services.Localization
         /// </summary>
         private static string ObtenerRutaConfiguracion()
         {
-            return Path.Combine(
-                Environment.GetFolderPath(
-                    Environment.SpecialFolder.LocalApplicationData),
-                "Edelstahl ERP",
-                NombreArchivoConfiguracion);
+            // La variable la usan las pruebas automaticas para no tocar las preferencias reales.
+            string carpeta = Environment.GetEnvironmentVariable(VariableCarpetaDatos);
+
+            if (string.IsNullOrWhiteSpace(carpeta))
+            {
+                carpeta = Path.Combine(
+                    Environment.GetFolderPath(
+                        Environment.SpecialFolder.LocalApplicationData),
+                    "Edelstahl ERP");
+            }
+
+            return Path.Combine(carpeta, NombreArchivoConfiguracion);
         }
 
         /// <summary>Ubicacion usada por las versiones anteriores, junto al programa.</summary>

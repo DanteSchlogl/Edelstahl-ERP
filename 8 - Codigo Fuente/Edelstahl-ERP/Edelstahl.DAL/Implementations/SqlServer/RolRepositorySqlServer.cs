@@ -1,17 +1,18 @@
 using System;
 using System.Collections.Generic;
 using System.Data;
-using System.Data.SqlClient;
 using Edelstahl.DAL.Interfaces;
 using Edelstahl.DAL.Tools;
+using Edelstahl.Domain.Exceptions;
 using Edelstahl.Domain.Security;
+using Edelstahl.Services.Localization;
 
 namespace Edelstahl.DAL.Implementations.SqlServer
 {
     /// <summary>
     /// Guarda y recupera roles desde SQL Server.
     /// </summary>
-    public class RolRepositorySqlServer : IRolRepository
+    internal class RolRepositorySqlServer : IRolRepository
     {
         private const string Columnas =
             "Id, Nombre, Descripcion, Activo, FechaAlta";
@@ -27,8 +28,8 @@ namespace Edelstahl.DAL.Implementations.SqlServer
 
             if (ExistsByNombre(entity.Nombre))
             {
-                throw new InvalidOperationException(
-                    "Ya existe un rol con el nombre ingresado.");
+                throw new RegistroDuplicadoException(
+                    LanguageService.Translate("A role with the entered name already exists."));
             }
 
             const string sql =
@@ -37,7 +38,7 @@ namespace Edelstahl.DAL.Implementations.SqlServer
                   VALUES
                   (@Id, @Nombre, @Descripcion, @Activo, @FechaAlta)";
 
-            EjecutarEscritura(sql, entity, false);
+            SqlHelper.EjecutarNoQuery(BaseDeDatos.Servicios, sql, Parametros(entity));
         }
 
         public void Update(Rol entity)
@@ -46,17 +47,16 @@ namespace Edelstahl.DAL.Implementations.SqlServer
 
             if (entity.Id == Guid.Empty)
             {
-                throw new ArgumentException(
-                    "El identificador del rol no es válido.",
-                    nameof(entity));
+                throw new DatoInvalidoException(
+                    LanguageService.Translate("The role identifier is not valid."));
             }
 
             Rol existente = GetByNombre(entity.Nombre);
 
             if (existente != null && existente.Id != entity.Id)
             {
-                throw new InvalidOperationException(
-                    "Ya existe otro rol con el nombre ingresado.");
+                throw new RegistroDuplicadoException(
+                    LanguageService.Translate("Another role with the entered name already exists."));
             }
 
             const string sql =
@@ -67,37 +67,32 @@ namespace Edelstahl.DAL.Implementations.SqlServer
                       FechaAlta = @FechaAlta
                   WHERE Id = @Id";
 
-            EjecutarEscritura(sql, entity, true);
+            int filas = SqlHelper.EjecutarNoQuery(BaseDeDatos.Servicios, sql, Parametros(entity));
+
+            if (filas == 0)
+            {
+                throw new RegistroNoEncontradoException(
+                    LanguageService.Translate("The role to modify was not found."));
+            }
         }
 
         public void Delete(Guid id)
         {
             if (id == Guid.Empty)
             {
-                throw new ArgumentException(
-                    "El identificador del rol no es válido.",
-                    nameof(id));
+                throw new DatoInvalidoException(
+                    LanguageService.Translate("The role identifier is not valid."));
             }
 
-            const string sql =
-                @"UPDATE dbo.Roles SET Activo = 0 WHERE Id = @Id";
+            int filas = SqlHelper.EjecutarNoQuery(
+                BaseDeDatos.Servicios,
+                "UPDATE dbo.Roles SET Activo = 0 WHERE Id = @Id",
+                SqlHelper.Parametro("@Id", SqlDbType.UniqueIdentifier, id));
 
-            using (SqlConnection connection =
-                SqlServerConnection.CreateServicesConnection())
+            if (filas == 0)
             {
-                connection.Open();
-
-                using (SqlCommand command = new SqlCommand(sql, connection))
-                {
-                    command.Parameters.Add(
-                        "@Id", SqlDbType.UniqueIdentifier).Value = id;
-
-                    if (command.ExecuteNonQuery() == 0)
-                    {
-                        throw new InvalidOperationException(
-                            "No se encontró el rol indicado.");
-                    }
-                }
+                throw new RegistroNoEncontradoException(
+                    LanguageService.Translate("The indicated role was not found."));
             }
         }
 
@@ -108,39 +103,19 @@ namespace Edelstahl.DAL.Implementations.SqlServer
                 return null;
             }
 
-            string sql =
-                "SELECT " + Columnas +
-                " FROM dbo.Roles WHERE Id = @Id";
-
-            return ObtenerUno(
-                sql,
-                command => command.Parameters.Add(
-                    "@Id", SqlDbType.UniqueIdentifier).Value = id);
+            return SqlHelper.ConsultarUno(
+                BaseDeDatos.Servicios,
+                "SELECT " + Columnas + " FROM dbo.Roles WHERE Id = @Id",
+                Mapear,
+                SqlHelper.Parametro("@Id", SqlDbType.UniqueIdentifier, id));
         }
 
         public List<Rol> GetAll()
         {
-            List<Rol> roles = new List<Rol>();
-            string sql =
-                "SELECT " + Columnas +
-                " FROM dbo.Roles ORDER BY Nombre";
-
-            using (SqlConnection connection =
-                SqlServerConnection.CreateServicesConnection())
-            {
-                connection.Open();
-
-                using (SqlCommand command = new SqlCommand(sql, connection))
-                using (SqlDataReader reader = command.ExecuteReader())
-                {
-                    while (reader.Read())
-                    {
-                        roles.Add(Mapear(reader));
-                    }
-                }
-            }
-
-            return roles;
+            return SqlHelper.Consultar(
+                BaseDeDatos.Servicios,
+                "SELECT " + Columnas + " FROM dbo.Roles ORDER BY Nombre",
+                Mapear);
         }
 
         public Rol GetByNombre(string nombre)
@@ -150,15 +125,11 @@ namespace Edelstahl.DAL.Implementations.SqlServer
                 return null;
             }
 
-            string sql =
-                "SELECT " + Columnas +
-                " FROM dbo.Roles WHERE Nombre = @Nombre";
-
-            return ObtenerUno(
-                sql,
-                command => command.Parameters.Add(
-                    "@Nombre", SqlDbType.NVarChar, 100).Value =
-                    nombre.Trim());
+            return SqlHelper.ConsultarUno(
+                BaseDeDatos.Servicios,
+                "SELECT " + Columnas + " FROM dbo.Roles WHERE Nombre = @Nombre",
+                Mapear,
+                SqlHelper.Parametro("@Nombre", SqlDbType.NVarChar, 100, nombre.Trim()));
         }
 
         public bool ExistsByNombre(string nombre)
@@ -168,98 +139,34 @@ namespace Edelstahl.DAL.Implementations.SqlServer
                 return false;
             }
 
-            const string sql =
-                @"SELECT COUNT(1) FROM dbo.Roles WHERE Nombre = @Nombre";
-
-            using (SqlConnection connection =
-                SqlServerConnection.CreateServicesConnection())
-            {
-                connection.Open();
-
-                using (SqlCommand command = new SqlCommand(sql, connection))
-                {
-                    command.Parameters.Add(
-                        "@Nombre", SqlDbType.NVarChar, 100).Value =
-                        nombre.Trim();
-
-                    return Convert.ToInt32(command.ExecuteScalar()) > 0;
-                }
-            }
+            return SqlHelper.EjecutarEscalar<int>(
+                BaseDeDatos.Servicios,
+                "SELECT COUNT(1) FROM dbo.Roles WHERE Nombre = @Nombre",
+                SqlHelper.Parametro("@Nombre", SqlDbType.NVarChar, 100, nombre.Trim())) > 0;
         }
 
-        private static Rol ObtenerUno(
-            string sql,
-            Action<SqlCommand> configurar)
+        private static System.Data.SqlClient.SqlParameter[] Parametros(Rol rol)
         {
-            using (SqlConnection connection =
-                SqlServerConnection.CreateServicesConnection())
+            return new[]
             {
-                connection.Open();
-
-                using (SqlCommand command = new SqlCommand(sql, connection))
-                {
-                    configurar(command);
-
-                    using (SqlDataReader reader = command.ExecuteReader())
-                    {
-                        return reader.Read() ? Mapear(reader) : null;
-                    }
-                }
-            }
+                SqlHelper.Parametro("@Id", SqlDbType.UniqueIdentifier, rol.Id),
+                SqlHelper.Parametro("@Nombre", SqlDbType.NVarChar, 100, rol.Nombre.Trim()),
+                SqlHelper.Parametro("@Descripcion", SqlDbType.NVarChar, 300,
+                    string.IsNullOrWhiteSpace(rol.Descripcion) ? string.Empty : rol.Descripcion.Trim()),
+                SqlHelper.Parametro("@Activo", SqlDbType.Bit, rol.Activo),
+                SqlHelper.Parametro("@FechaAlta", SqlDbType.DateTime2, rol.FechaAlta)
+            };
         }
 
-        private static void EjecutarEscritura(
-            string sql,
-            Rol rol,
-            bool exigirFila)
-        {
-            using (SqlConnection connection =
-                SqlServerConnection.CreateServicesConnection())
-            {
-                connection.Open();
-
-                using (SqlCommand command = new SqlCommand(sql, connection))
-                {
-                    AgregarParametros(command, rol);
-                    int filas = command.ExecuteNonQuery();
-
-                    if (exigirFila && filas == 0)
-                    {
-                        throw new InvalidOperationException(
-                            "No se encontró el rol que se desea modificar.");
-                    }
-                }
-            }
-        }
-
-        private static void AgregarParametros(SqlCommand command, Rol rol)
-        {
-            command.Parameters.Add(
-                "@Id", SqlDbType.UniqueIdentifier).Value = rol.Id;
-            command.Parameters.Add(
-                "@Nombre", SqlDbType.NVarChar, 100).Value = rol.Nombre.Trim();
-            command.Parameters.Add(
-                "@Descripcion", SqlDbType.NVarChar, 300).Value =
-                string.IsNullOrWhiteSpace(rol.Descripcion)
-                    ? string.Empty
-                    : rol.Descripcion.Trim();
-            command.Parameters.Add(
-                "@Activo", SqlDbType.Bit).Value = rol.Activo;
-            command.Parameters.Add(
-                "@FechaAlta", SqlDbType.DateTime2).Value = rol.FechaAlta;
-        }
-
-        private static Rol Mapear(SqlDataReader reader)
+        private static Rol Mapear(IDataRecord fila)
         {
             return new Rol
             {
-                Id = reader.GetGuid(reader.GetOrdinal("Id")),
-                Nombre = reader["Nombre"].ToString(),
-                Descripcion = reader["Descripcion"] == DBNull.Value
-                    ? string.Empty
-                    : reader["Descripcion"].ToString(),
-                Activo = Convert.ToBoolean(reader["Activo"]),
-                FechaAlta = Convert.ToDateTime(reader["FechaAlta"])
+                Id = (Guid)fila["Id"],
+                Nombre = fila["Nombre"].ToString(),
+                Descripcion = SqlHelper.Texto(fila, "Descripcion"),
+                Activo = Convert.ToBoolean(fila["Activo"]),
+                FechaAlta = Convert.ToDateTime(fila["FechaAlta"])
             };
         }
 
@@ -272,8 +179,8 @@ namespace Edelstahl.DAL.Implementations.SqlServer
 
             if (string.IsNullOrWhiteSpace(rol.Nombre))
             {
-                throw new InvalidOperationException(
-                    "El nombre del rol es obligatorio.");
+                throw new DatoInvalidoException(
+                    LanguageService.Translate("The role name is required."));
             }
 
             if (rol.FechaAlta == default(DateTime))

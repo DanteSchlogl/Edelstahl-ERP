@@ -1,9 +1,11 @@
-﻿using System;
+using System;
 
-namespace Edelstahl.BLL.Exceptions.Base
+namespace Edelstahl.Domain.Exceptions
 {
     /// <summary>
-    /// Excepción base para las reglas de negocio de Edelstahl.
+    /// Excepción base de todos los errores de negocio de Edelstahl ERP.
+    /// Su mensaje está pensado para mostrarse al usuario tal cual: la
+    /// interfaz atrapa esta clase y no la trata como un error inesperado.
     /// </summary>
     public abstract class BusinessRuleException : Exception
     {

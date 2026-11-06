@@ -1,8 +1,8 @@
-﻿-- Base de servicios (usuarios, roles y bitacora) de Edelstahl ERP
+﻿-- Base de servicios (usuarios, roles, bitacora y respaldos) de Edelstahl ERP
 -- Crear antes la base (CREATE DATABASE EdelstahlServicios;) y ejecutar este script sobre ella.
 USE EdelstahlServicios;
 GO
--- Edelstahl ERP - base de servicios (usuarios, roles y bitacora)
+-- Edelstahl ERP - base de servicios (usuarios, roles, bitacora y respaldos)
 
 IF OBJECT_ID('dbo.Roles', 'U') IS NULL
 CREATE TABLE dbo.Roles (
@@ -61,11 +61,28 @@ CREATE TABLE dbo.Bitacora (
     DetalleTecnico nvarchar(max) NOT NULL
 );
 
+IF OBJECT_ID('dbo.Respaldos', 'U') IS NULL
+CREATE TABLE dbo.Respaldos (
+    Id uniqueidentifier NOT NULL CONSTRAINT PK_Respaldos PRIMARY KEY,
+    FechaHora datetime2 NOT NULL,
+    BaseDatos nvarchar(100) NOT NULL,
+    RutaSql nvarchar(500) NOT NULL,
+    RutaCopia nvarchar(500) NOT NULL CONSTRAINT DF_Respaldos_RutaCopia DEFAULT '',
+    TamanioBytes bigint NOT NULL,
+    Origen nvarchar(30) NOT NULL,
+    Sano bit NOT NULL,
+    Usuario nvarchar(100) NOT NULL CONSTRAINT DF_Respaldos_Usuario DEFAULT '',
+    Observaciones nvarchar(500) NOT NULL CONSTRAINT DF_Respaldos_Observaciones DEFAULT ''
+);
+
 IF NOT EXISTS (SELECT 1 FROM sys.indexes WHERE name = 'UQ_Roles_Nombre' AND object_id = OBJECT_ID('dbo.Roles'))
 CREATE UNIQUE INDEX UQ_Roles_Nombre ON dbo.Roles (Nombre);
 
 IF NOT EXISTS (SELECT 1 FROM sys.indexes WHERE name = 'UQ_Usuarios_NombreUsuario' AND object_id = OBJECT_ID('dbo.Usuarios'))
 CREATE UNIQUE INDEX UQ_Usuarios_NombreUsuario ON dbo.Usuarios (NombreUsuario);
+
+IF NOT EXISTS (SELECT 1 FROM sys.indexes WHERE name = 'IX_Respaldos_FechaHora' AND object_id = OBJECT_ID('dbo.Respaldos'))
+CREATE INDEX IX_Respaldos_FechaHora ON dbo.Respaldos (FechaHora DESC);
 
 IF NOT EXISTS (SELECT 1 FROM sys.indexes WHERE name = 'IX_Bitacora_FechaHora' AND object_id = OBJECT_ID('dbo.Bitacora'))
 CREATE INDEX IX_Bitacora_FechaHora ON dbo.Bitacora (FechaHora DESC);

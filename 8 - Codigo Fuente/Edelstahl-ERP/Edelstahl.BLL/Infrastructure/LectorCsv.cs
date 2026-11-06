@@ -10,7 +10,7 @@ namespace Edelstahl.BLL.Infrastructure
     /// comillas, comillas duplicadas y saltos de línea dentro de un campo.
     /// Detecta si el archivo está en UTF-8 o en Windows-1252.
     /// </summary>
-    public static class LectorCsv
+    internal static class LectorCsv
     {
         public static List<string[]> Leer(string ruta, char separador)
         {

@@ -12,7 +12,7 @@ namespace Edelstahl.BLL.Services
     /// de la unidad de trabajo recibida, de modo que cada servicio decide
     /// qué operaciones se confirman o se revierten juntas.
     /// </summary>
-    public static class InventarioMotor
+    internal static class InventarioMotor
     {
         public static UbicacionDeposito UbicacionPredeterminada(IUnidadDeTrabajo unidad, bool materiales)
         {

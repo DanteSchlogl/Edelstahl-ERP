@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Edelstahl.BLL.DTOs;
-using Edelstahl.BLL.Exceptions.Base;
+using Edelstahl.Domain.Exceptions;
 using Edelstahl.BLL.Infrastructure;
 using Edelstahl.DAL.Factory;
 using Edelstahl.Domain.Catalogo;

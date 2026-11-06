@@ -3,6 +3,7 @@ using System.Windows.Forms;
 using Edelstahl.BLL.Services;
 using Edelstahl.DAL.EntityFramework;
 using Edelstahl.DAL.Factory;
+using Edelstahl.Domain.Integrity;
 using Edelstahl.Services.Configuration;
 using Edelstahl.Services.Cryptography;
 using Edelstahl.Services.Localization;
@@ -46,13 +47,20 @@ namespace Edelstahl.WinApp
                 {
                     if (ApplicationMode.UsesSqlServer)
                     {
-                        InicializadorNegocio.Inicializar();
+                        FactoryDataAccess.PrepararBaseDeDatos();
                     }
 
                     new CargaInicialService().AsegurarDatosBase();
                     CryptographyService.Precalentar();
                     return string.Empty;
                 });
+
+                // Si los digitos verificadores indican una alteracion no se deja entrar
+                // hasta repararla con la pantalla de recuperacion.
+                if (ApplicationMode.UsesSqlServer && !VerificarIntegridad())
+                {
+                    return;
+                }
 
                 if (ApplicationMode.UsesSqlServer)
                 {
@@ -99,6 +107,39 @@ namespace Edelstahl.WinApp
             {
                 SesionActual.Cerrar();
                 ApplicationMode.Reset();
+            }
+        }
+
+        /// <summary>
+        /// Comprueba el DVH de cada cliente y el DVV de la tabla. Si todo esta bien
+        /// hace el respaldo automatico del dia; si hay una alteracion la registra en
+        /// la bitacora y abre la recuperacion. Devuelve false si el usuario se va sin repararla.
+        /// </summary>
+        private static bool VerificarIntegridad()
+        {
+            ResultadoIntegridad resultado = null;
+
+            FrmEspera.Ejecutar("Checking the integrity of the data...", () =>
+            {
+                resultado = new IntegridadService().VerificarYRegistrar("inicio del sistema");
+
+                // El respaldo automatico solo se hace con datos sanos.
+                if (resultado.Correcto)
+                {
+                    new RespaldoService().CrearRespaldoAutomaticoSiCorresponde();
+                }
+
+                return string.Empty;
+            });
+
+            if (resultado.Correcto)
+            {
+                return true;
+            }
+
+            using (FrmRecuperacionIntegridad recuperacion = new FrmRecuperacionIntegridad(resultado))
+            {
+                return recuperacion.ShowDialog() == DialogResult.OK;
             }
         }
 

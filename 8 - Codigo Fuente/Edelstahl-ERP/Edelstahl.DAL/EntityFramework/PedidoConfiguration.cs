@@ -5,7 +5,7 @@ using Edelstahl.Domain.Comercial;
 
 namespace Edelstahl.DAL.EntityFramework
 {
-    public class PedidoConfiguration
+    internal class PedidoConfiguration
         : EntityTypeConfiguration<Pedido>
     {
         public PedidoConfiguration()

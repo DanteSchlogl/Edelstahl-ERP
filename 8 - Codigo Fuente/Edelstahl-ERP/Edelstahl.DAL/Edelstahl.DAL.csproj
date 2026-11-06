@@ -57,6 +57,13 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Backup\RespaldoDatabaseService.cs" />
+    <Compile Include="Integrity\VerificadorIntegridad.cs" />
+    <Compile Include="Interfaces\IRespaldoDatabase.cs" />
+    <Compile Include="Interfaces\IRespaldoRepository.cs" />
+    <Compile Include="Interfaces\IVerificadorIntegridad.cs" />
+    <Compile Include="Implementations\Memory\RespaldoRepositoryMemory.cs" />
+    <Compile Include="Implementations\Memory\ServiciosDemostracionMemory.cs" />
+    <Compile Include="Implementations\SqlServer\RespaldoRepositorySqlServer.cs" />
     <Compile Include="EntityFramework\ClienteConfiguration.cs" />
     <Compile Include="EntityFramework\DetallePedidoConfiguration.cs" />
     <Compile Include="EntityFramework\DetallePresupuestoConfiguration.cs" />
@@ -83,6 +90,7 @@
     <Compile Include="Interfaces\IPedidoRepository.cs" />
     <Compile Include="Interfaces\IPresupuestoRepository.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Tools\SqlHelper.cs" />
     <Compile Include="Tools\SqlServerConnection.cs" />
       <Compile Include="EntityFramework\ModeloNegocioConfiguration.cs" />
     <Compile Include="Store\EfNegocioStore.cs" />

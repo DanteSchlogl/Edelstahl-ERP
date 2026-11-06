@@ -5,6 +5,8 @@ using System.Text;
 using System.Threading.Tasks;
 using Edelstahl.DAL.Interfaces;
 using Edelstahl.Domain.Comercial;
+using Edelstahl.Domain.Exceptions;
+using Edelstahl.Services.Localization;
 
 
 
@@ -13,7 +15,7 @@ namespace Edelstahl.DAL.Implementations.Memory
     /// <summary>
     /// Implementación en memoria del repositorio de pedidos.
     /// </summary>
-    public class PedidoRepositoryMemory
+    internal class PedidoRepositoryMemory
         : IPedidoRepository
     {
         private static readonly List<Pedido> _pedidos =
@@ -35,17 +37,15 @@ namespace Edelstahl.DAL.Implementations.Memory
 
             if (ExistsByNumero(entity.Numero))
             {
-                throw new InvalidOperationException(
-                    "Ya existe un pedido con el número '" +
-                    entity.Numero +
-                    "'.");
+                throw new RegistroDuplicadoException(
+                    LanguageService.Format("An order with the number '{0}' already exists.", entity.Numero));
             }
 
             if (ExistsByPresupuestoId(
                 entity.PresupuestoId))
             {
-                throw new InvalidOperationException(
-                    "El presupuesto ya fue convertido en pedido.");
+                throw new RegistroDuplicadoException(
+                    LanguageService.Translate("The quote was already converted into an order."));
             }
 
             if (entity.Detalles == null)
@@ -82,8 +82,8 @@ namespace Edelstahl.DAL.Implementations.Memory
 
             if (pedidoExistente == null)
             {
-                throw new InvalidOperationException(
-                    "No se encontró el pedido que se desea modificar.");
+                throw new RegistroNoEncontradoException(
+                    LanguageService.Translate("The order to modify was not found."));
             }
 
             Pedido pedidoConMismoNumero =
@@ -92,10 +92,8 @@ namespace Edelstahl.DAL.Implementations.Memory
             if (pedidoConMismoNumero != null &&
                 pedidoConMismoNumero.Id != entity.Id)
             {
-                throw new InvalidOperationException(
-                    "Ya existe otro pedido con el número '" +
-                    entity.Numero +
-                    "'.");
+                throw new RegistroDuplicadoException(
+                    LanguageService.Format("Another order with the number '{0}' already exists.", entity.Numero));
             }
 
             pedidoExistente.Numero =
@@ -176,9 +174,8 @@ namespace Edelstahl.DAL.Implementations.Memory
         {
             if (id == Guid.Empty)
             {
-                throw new ArgumentException(
-                    "El identificador del pedido no es válido.",
-                    nameof(id));
+                throw new DatoInvalidoException(
+                    LanguageService.Translate("The order identifier is not valid."));
             }
 
             Pedido pedido =
@@ -197,8 +194,8 @@ namespace Edelstahl.DAL.Implementations.Memory
 
             if (existente == null)
             {
-                throw new InvalidOperationException(
-                    "No se encontró el pedido indicado.");
+                throw new RegistroNoEncontradoException(
+                    LanguageService.Translate("The indicated order was not found."));
             }
 
             existente.Estado = estado;

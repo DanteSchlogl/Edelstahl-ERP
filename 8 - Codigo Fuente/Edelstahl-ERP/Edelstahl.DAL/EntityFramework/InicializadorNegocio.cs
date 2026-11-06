@@ -17,7 +17,7 @@ namespace Edelstahl.DAL.EntityFramework
     /// También inicializa y verifica los controles
     /// de integridad DVH y DVV de la tabla Clientes.
     /// </summary>
-    public static class InicializadorNegocio
+    internal static class InicializadorNegocio
     {
         public static void Inicializar()
         {
@@ -53,9 +53,9 @@ namespace Edelstahl.DAL.EntityFramework
             MigrarCifradoClientes();
 
             /*
-             * Después se crea o verifica el DVV del conjunto completo de clientes.
+             * Después se crea el DVV del conjunto completo de clientes si todavía no existe.
              */
-            InicializarOVerificarDvvClientes();
+            InicializarDvvClientes();
         }
 
         /// <summary>
@@ -194,78 +194,36 @@ namespace Edelstahl.DAL.EntityFramework
         }
 
         /// <summary>
-        /// Crea el primer DVV de Clientes cuando todavía
-        /// no existe o verifica el valor ya almacenado.
+        /// Crea el primer DVV de Clientes cuando todavía no existe. Comprobar
+        /// que los datos no fueron alterados no es tarea de este método: lo
+        /// hace VerificadorIntegridad, para que el sistema pueda registrar la
+        /// alteración y ofrecer una solución en lugar de no abrir.
         /// </summary>
-        private static void InicializarOVerificarDvvClientes()
+        private static void InicializarDvvClientes()
         {
-            using (EdelstahlNegocioContext contexto =
-                new EdelstahlNegocioContext())
+            using (EdelstahlNegocioContext contexto = new EdelstahlNegocioContext())
             {
-                List<Cliente> clientes =
-                    contexto.Clientes
-                        .AsNoTracking()
-                        .OrderBy(
-                            cliente =>
-                                cliente.Id)
-                        .ToList();
-
-                string dvvCalculado =
-                    ClienteDvvService.Calcular(
-                        clientes);
-
-                IntegridadTabla integridad =
-                    contexto.IntegridadTablas
-                        .SingleOrDefault(
-                            registro =>
-                                registro.NombreTabla ==
-                                ClienteDvvService.NombreTabla);
-
-                /*
-                 * Si todavía no existe un DVV almacenado,
-                 * se crea el registro inicial.
-                 */
-                if (integridad == null)
+                if (contexto.IntegridadTablas.Any(
+                    registro => registro.NombreTabla == ClienteDvvService.NombreTabla))
                 {
-                    integridad =
-                        new IntegridadTabla
-                        {
-                            NombreTabla =
-                                ClienteDvvService.NombreTabla,
-
-                            DVV =
-                                dvvCalculado,
-
-                            FechaActualizacion =
-                                DateTime.Now
-                        };
-
-                    contexto.IntegridadTablas.Add(
-                        integridad);
-
-                    contexto.SaveChanges();
-
                     return;
                 }
 
-                /*
-                 * En los siguientes inicios, el valor
-                 * calculado debe coincidir con el DVV
-                 * almacenado.
-                 */
-                bool integridadValida =
-                    ClienteDvvService.EsValido(
-                        clientes,
-                        integridad.DVV);
+                List<Cliente> clientes = contexto.Clientes
+                    .AsNoTracking()
+                    .OrderBy(cliente => cliente.Id)
+                    .ToList();
 
-                if (!integridadValida)
-                {
-                    throw new CryptographicException(
-                        "Se detectó una alteración en el " +
-                        "conjunto de registros de la tabla " +
-                        "Clientes. El DVV almacenado no " +
-                        "coincide con el valor calculado.");
-                }
+                // Sin ningún cliente con DVH vacío (los genera MigrarDvhClientesExistentes).
+                contexto.IntegridadTablas.Add(
+                    new IntegridadTabla
+                    {
+                        NombreTabla = ClienteDvvService.NombreTabla,
+                        DVV = ClienteDvvService.Calcular(clientes),
+                        FechaActualizacion = DateTime.Now
+                    });
+
+                contexto.SaveChanges();
             }
         }
     }

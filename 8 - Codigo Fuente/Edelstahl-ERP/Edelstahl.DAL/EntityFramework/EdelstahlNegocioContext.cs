@@ -12,7 +12,7 @@ namespace Edelstahl.DAL.EntityFramework
     /// <summary>
     /// Contexto de Entity Framework 6 para la base EdelstahlNegocio.
     /// </summary>
-    public class EdelstahlNegocioContext : DbContext
+    internal class EdelstahlNegocioContext : DbContext
     {
         static EdelstahlNegocioContext()
         {

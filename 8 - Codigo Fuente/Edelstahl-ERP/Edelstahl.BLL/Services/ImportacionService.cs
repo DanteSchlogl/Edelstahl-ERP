@@ -7,7 +7,7 @@ using System.Net.Mail;
 using System.Text;
 using System.Text.RegularExpressions;
 using Edelstahl.BLL.DTOs;
-using Edelstahl.BLL.Exceptions.Commercial;
+using Edelstahl.Domain.Exceptions;
 using Edelstahl.BLL.Infrastructure;
 using Edelstahl.DAL.Factory;
 using Edelstahl.DAL.Store;

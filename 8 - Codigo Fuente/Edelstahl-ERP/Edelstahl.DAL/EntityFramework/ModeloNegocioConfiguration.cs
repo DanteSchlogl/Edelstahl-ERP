@@ -19,7 +19,7 @@ namespace Edelstahl.DAL.EntityFramework
     /// convención sobre las clases de estos módulos; lo particular de cada
     /// tabla (nombre, índices y relaciones padre-hijo) se declara abajo.
     /// </summary>
-    public static class ModeloNegocioConfiguration
+    internal static class ModeloNegocioConfiguration
     {
         private static readonly string[] PrefijosEspacios =
         {

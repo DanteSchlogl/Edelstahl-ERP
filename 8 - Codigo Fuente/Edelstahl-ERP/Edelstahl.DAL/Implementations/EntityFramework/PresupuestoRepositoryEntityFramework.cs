@@ -5,13 +5,15 @@ using System.Linq;
 using Edelstahl.DAL.EntityFramework;
 using Edelstahl.DAL.Interfaces;
 using Edelstahl.Domain.Comercial;
+using Edelstahl.Domain.Exceptions;
+using Edelstahl.Services.Localization;
 
 namespace Edelstahl.DAL.Implementations.EntityFramework
 {
     /// <summary>
     /// Persistencia de presupuestos y detalles mediante Entity Framework 6.
     /// </summary>
-    public class PresupuestoRepositoryEntityFramework
+    internal class PresupuestoRepositoryEntityFramework
         : IPresupuestoRepository
     {
         public void Add(Presupuesto entity)
@@ -35,8 +37,8 @@ namespace Edelstahl.DAL.Implementations.EntityFramework
                     if (context.Presupuestos.Any(
                         presupuesto => presupuesto.Numero == entity.Numero))
                     {
-                        throw new InvalidOperationException(
-                            "Ya existe un presupuesto con el número ingresado.");
+                        throw new RegistroDuplicadoException(
+                    LanguageService.Translate("A quote with the entered number already exists."));
                     }
 
                     context.Presupuestos.Add(entity);
@@ -57,9 +59,8 @@ namespace Edelstahl.DAL.Implementations.EntityFramework
 
             if (entity.Id == Guid.Empty)
             {
-                throw new ArgumentException(
-                    "El identificador del presupuesto no es válido.",
-                    nameof(entity));
+                throw new DatoInvalidoException(
+                    LanguageService.Translate("The quote identifier is not valid."));
             }
 
             PrepararDetalles(entity);
@@ -78,8 +79,8 @@ namespace Edelstahl.DAL.Implementations.EntityFramework
 
                     if (numeroDuplicado)
                     {
-                        throw new InvalidOperationException(
-                            "Ya existe otro presupuesto con ese número.");
+                        throw new RegistroDuplicadoException(
+                    LanguageService.Translate("Another quote with that number already exists."));
                     }
 
                     Presupuesto existente = context.Presupuestos
@@ -89,8 +90,8 @@ namespace Edelstahl.DAL.Implementations.EntityFramework
 
                     if (existente == null)
                     {
-                        throw new InvalidOperationException(
-                            "No se encontró el presupuesto que se desea modificar.");
+                        throw new RegistroNoEncontradoException(
+                    LanguageService.Translate("The quote to modify was not found."));
                     }
 
                     context.DetallesPresupuesto.RemoveRange(
@@ -120,9 +121,8 @@ namespace Edelstahl.DAL.Implementations.EntityFramework
         {
             if (id == Guid.Empty)
             {
-                throw new ArgumentException(
-                    "El identificador del presupuesto no es válido.",
-                    nameof(id));
+                throw new DatoInvalidoException(
+                    LanguageService.Translate("The quote identifier is not valid."));
             }
 
             using (EdelstahlNegocioContext context =
@@ -132,8 +132,8 @@ namespace Edelstahl.DAL.Implementations.EntityFramework
 
                 if (existente == null)
                 {
-                    throw new InvalidOperationException(
-                        "No se encontró el presupuesto que se desea eliminar.");
+                    throw new RegistroNoEncontradoException(
+                    LanguageService.Translate("The quote to delete was not found."));
                 }
 
                 existente.Estado = EstadoPresupuesto.Rechazado;
@@ -286,21 +286,21 @@ namespace Edelstahl.DAL.Implementations.EntityFramework
 
             if (string.IsNullOrWhiteSpace(presupuesto.Numero))
             {
-                throw new InvalidOperationException(
-                    "El número del presupuesto es obligatorio.");
+                throw new DatoInvalidoException(
+                    LanguageService.Translate("The quote number is required."));
             }
 
             if (presupuesto.ClienteId == Guid.Empty)
             {
-                throw new InvalidOperationException(
-                    "El cliente del presupuesto no es válido.");
+                throw new DatoInvalidoException(
+                    LanguageService.Translate("The customer of the quote is not valid."));
             }
 
             if (presupuesto.Detalles == null ||
                 presupuesto.Detalles.Count == 0)
             {
-                throw new InvalidOperationException(
-                    "El presupuesto debe contener al menos un detalle.");
+                throw new DatoInvalidoException(
+                    LanguageService.Translate("The quote must contain at least one line."));
             }
         }
 

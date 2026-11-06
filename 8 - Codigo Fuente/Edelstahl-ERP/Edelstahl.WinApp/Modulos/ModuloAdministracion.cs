@@ -20,7 +20,8 @@ namespace Edelstahl.WinApp.Modulos
             AgregarPestana("Users", CrearUsuarios(), Permiso.UsuariosAdministrar);
             AgregarPestana("Roles and permissions", CrearRoles(), Permiso.RolesAdministrar);
             AgregarPestana("Help requests", CrearPedidosAyuda(), Permiso.UsuariosAdministrar);
-            AgregarPestana("Backup and data", new PanelDatos(), Permiso.RespaldoAdministrar);
+            AgregarPestana("Backups", new PanelRespaldos(), Permiso.RespaldoAdministrar);
+            AgregarPestana("Sample data and imports", new PanelDatos(), Permiso.RespaldoAdministrar);
             CargarPestanaActual();
         }
 
@@ -335,7 +336,266 @@ namespace Edelstahl.WinApp.Modulos
     }
 
     /// <summary>
-    /// Respaldo de bases, carga de datos de ejemplo e importacion de archivos.
+    /// Respaldos de las bases: carpeta de destino, respaldo manual y automatico, lista de
+    /// respaldos hechos (con la marca de si los datos estaban sanos) y restauracion.
+    /// </summary>
+    public class PanelRespaldos : UserControl
+    {
+        private readonly RespaldoService _servicio = new RespaldoService();
+        private readonly IntegridadService _integridad = new IntegridadService();
+        private readonly TextBox _carpeta = new TextBox { ReadOnly = true, Width = 460, BackColor = System.Drawing.Color.White };
+        private readonly CheckBox _automatico = new CheckBox { AutoSize = true, Margin = new Padding(0, 6, 0, 0) };
+        private readonly DataGridView _grilla = Estilo.Grilla();
+        private readonly Label _estado = new Label { Dock = DockStyle.Bottom, Height = 34, Padding = new Padding(10, 8, 10, 0) };
+        private bool _cargando;
+
+        public PanelRespaldos()
+        {
+            Dock = DockStyle.Fill;
+
+            FlowLayoutPanel carpeta = new FlowLayoutPanel { Dock = DockStyle.Top, AutoSize = true, Padding = new Padding(10, 10, 10, 0) };
+            carpeta.Controls.Add(new Label { Text = Tr.T("Backup folder:"), AutoSize = true, Margin = new Padding(0, 6, 6, 0) });
+            carpeta.Controls.Add(_carpeta);
+
+            Button elegir = Estilo.Boton("Choose folder...");
+            elegir.Margin = new Padding(6, 0, 6, 0);
+            elegir.Click += (s, e) => ElegirCarpeta();
+            carpeta.Controls.Add(elegir);
+
+            Button predeterminada = Estilo.Boton("Use the SQL Server folder");
+            predeterminada.Click += (s, e) => GuardarCarpeta(string.Empty);
+            carpeta.Controls.Add(predeterminada);
+
+            FlowLayoutPanel automatico = new FlowLayoutPanel { Dock = DockStyle.Top, AutoSize = true, Padding = new Padding(10, 6, 10, 0) };
+            _automatico.Text = Tr.T("Create a backup automatically once a day when the program starts, only if the data passes the integrity check");
+            _automatico.CheckedChanged += (s, e) => GuardarAutomatico();
+            automatico.Controls.Add(_automatico);
+
+            FlowLayoutPanel botones = new FlowLayoutPanel { Dock = DockStyle.Top, AutoSize = true, Padding = new Padding(10) };
+
+            Button crear = Estilo.Boton("Create backup now");
+            crear.Click += (s, e) => Crear();
+
+            Button restaurar = Estilo.Boton("Restore selected backup");
+            restaurar.Click += (s, e) => Restaurar();
+
+            Button archivo = Estilo.Boton("Restore from file...");
+            archivo.Click += (s, e) => RestaurarDesdeArchivo();
+
+            Button verificar = Estilo.Boton("Check data integrity");
+            verificar.Click += (s, e) => Verificar();
+
+            Button actualizar = Estilo.Boton("Refresh");
+            actualizar.Click += (s, e) => Cargar();
+
+            botones.Controls.AddRange(new Control[] { crear, restaurar, archivo, verificar, actualizar });
+
+            Panel contenedor = new Panel { Dock = DockStyle.Fill, Padding = new Padding(10, 0, 10, 0) };
+            contenedor.Controls.Add(_grilla);
+
+            Controls.Add(contenedor);
+            Controls.Add(_estado);
+            Controls.Add(botones);
+            Controls.Add(automatico);
+            Controls.Add(carpeta);
+            carpeta.BringToFront();
+            automatico.BringToFront();
+            botones.BringToFront();
+            contenedor.BringToFront();
+
+            _estado.Text = Tr.T("Backups are made for the business and services databases. Only the business database is restored from here.");
+
+            Cargar();
+        }
+
+        private void Cargar()
+        {
+            _cargando = true;
+
+            try
+            {
+                string actual = _servicio.Configuracion.Carpeta;
+                _carpeta.Text = string.IsNullOrWhiteSpace(actual) ? Tr.T("(SQL Server default folder)") : actual;
+                _automatico.Checked = _servicio.Configuracion.Automatico;
+
+                Estilo.Ejecutar(this, () =>
+                {
+                    _grilla.DataSource = _servicio.ObtenerRespaldos().Select(RespaldoFila.De).ToList();
+                    Estilo.TitularColumnas(_grilla);
+                });
+            }
+            finally
+            {
+                _cargando = false;
+            }
+        }
+
+        private void ElegirCarpeta()
+        {
+            using (FolderBrowserDialog dialogo = new FolderBrowserDialog())
+            {
+                dialogo.Description = Tr.T("Choose the folder where the backups are saved.");
+
+                if (!string.IsNullOrWhiteSpace(_servicio.Configuracion.Carpeta) &&
+                    System.IO.Directory.Exists(_servicio.Configuracion.Carpeta))
+                {
+                    dialogo.SelectedPath = _servicio.Configuracion.Carpeta;
+                }
+
+                if (dialogo.ShowDialog(this) == DialogResult.OK)
+                {
+                    GuardarCarpeta(dialogo.SelectedPath);
+                }
+            }
+        }
+
+        private void GuardarCarpeta(string carpeta)
+        {
+            _servicio.Configuracion.Carpeta = carpeta;
+            _servicio.Configuracion.Guardar();
+            Cargar();
+        }
+
+        private void GuardarAutomatico()
+        {
+            if (_cargando)
+            {
+                return;
+            }
+
+            _servicio.Configuracion.Automatico = _automatico.Checked;
+            _servicio.Configuracion.Guardar();
+        }
+
+        private void Crear()
+        {
+            List<RegistroRespaldo> creados = null;
+
+            bool correcto = Estilo.Ejecutar(this, () =>
+                FrmEspera.Ejecutar("Creating the backup...", () =>
+                {
+                    creados = _servicio.CrearRespaldoManual();
+                    return string.Empty;
+                }));
+
+            if (!correcto || creados == null)
+            {
+                return;
+            }
+
+            Cargar();
+
+            bool sano = creados.All(r => r.Sano);
+            _estado.Text = Tr.T(sano
+                ? "Backup created. The data passed the integrity check."
+                : "Backup created, but the data did NOT pass the integrity check, so it is not marked as healthy.");
+        }
+
+        private RegistroRespaldo Seleccionado()
+        {
+            Guid? id = _grilla.CurrentRow == null ? null : Estilo.IdDe(_grilla.CurrentRow.DataBoundItem);
+
+            if (!id.HasValue)
+            {
+                Estilo.Avisar(this, Tr.T("Select the backup to restore."));
+                return null;
+            }
+
+            return _servicio.ObtenerRespaldos().FirstOrDefault(r => r.Id == id.Value);
+        }
+
+        private void Restaurar()
+        {
+            RegistroRespaldo respaldo = Seleccionado();
+
+            if (respaldo == null)
+            {
+                return;
+            }
+
+            string aviso = respaldo.Sano
+                ? Tr.T("The business data will be replaced by the backup of {0}. The current data is saved first as a safety copy. Continue?", respaldo.FechaHora.ToString("dd/MM/yyyy HH:mm"))
+                : Tr.T("This backup was NOT verified as healthy. The business data will be replaced by the backup of {0}. Continue anyway?", respaldo.FechaHora.ToString("dd/MM/yyyy HH:mm"));
+
+            if (Estilo.Confirmar(this, aviso))
+            {
+                EjecutarRestauracion(() => _servicio.Restaurar(respaldo));
+            }
+        }
+
+        private void RestaurarDesdeArchivo()
+        {
+            using (OpenFileDialog dialogo = new OpenFileDialog())
+            {
+                dialogo.Filter = "SQL Server backup (*.bak)|*.bak";
+                dialogo.Title = Tr.T("Choose the backup file to restore.");
+
+                if (dialogo.ShowDialog(this) != DialogResult.OK)
+                {
+                    return;
+                }
+
+                string ruta = dialogo.FileName;
+
+                if (Estilo.Confirmar(this, Tr.T("The business data will be replaced by the content of the file '{0}'. The current data is saved first as a safety copy. Continue?", System.IO.Path.GetFileName(ruta))))
+                {
+                    EjecutarRestauracion(() => _servicio.RestaurarDesdeArchivo(ruta));
+                }
+            }
+        }
+
+        private void EjecutarRestauracion(Func<Edelstahl.Domain.Integrity.ResultadoIntegridad> restauracion)
+        {
+            Edelstahl.Domain.Integrity.ResultadoIntegridad resultado = null;
+
+            bool correcto = Estilo.Ejecutar(this, () =>
+                FrmEspera.Ejecutar("Restoring the backup...", () =>
+                {
+                    resultado = restauracion();
+                    return string.Empty;
+                }));
+
+            if (!correcto || resultado == null)
+            {
+                return;
+            }
+
+            Estilo.Informar(this, Tr.T(resultado.Correcto
+                ? "The backup was restored and the data passed the integrity check. The program will close; open it again to continue."
+                : "The backup was restored, but the data still does not pass the integrity check. The program will close; when you open it again the recovery screen will appear."));
+
+            Application.Exit();
+        }
+
+        private void Verificar()
+        {
+            Edelstahl.Domain.Integrity.ResultadoIntegridad resultado = null;
+
+            bool correcto = Estilo.Ejecutar(this, () =>
+                FrmEspera.Ejecutar("Checking the integrity of the data...", () =>
+                {
+                    resultado = _integridad.VerificarYRegistrar("verificacion manual");
+                    return string.Empty;
+                }));
+
+            if (!correcto || resultado == null)
+            {
+                return;
+            }
+
+            if (resultado.Correcto)
+            {
+                Estilo.Informar(this, Tr.T("The data passed the integrity check ({0} customer records checked).", resultado.RegistrosRevisados));
+            }
+            else
+            {
+                Estilo.Avisar(this, Tr.T("The integrity check found {0} altered record(s). The alteration was recorded in the audit log. Close the program and open it again to use the recovery screen.", resultado.RegistrosAlterados));
+            }
+        }
+    }
+
+    /// <summary>
+    /// Carga de datos de ejemplo e importacion de archivos.
     /// Las operaciones largas se ejecutan en un hilo y muestran progreso.
     /// </summary>
     public class PanelDatos : UserControl
@@ -348,13 +608,6 @@ namespace Edelstahl.WinApp.Modulos
         public PanelDatos()
         {
             Dock = DockStyle.Fill;
-
-            Button respaldo = Estilo.Boton("Create full backup");
-            respaldo.Click += (remitente, argumentos) => Hacer("Backup", () =>
-            {
-                List<ResultadoRespaldo> resultados = new RespaldoService().CrearRespaldoCompleto();
-                return string.Join(Environment.NewLine, resultados.Select(r => r.Mensaje));
-            });
 
             Button ejemplo = Estilo.Boton("Load sample data");
             ejemplo.Click += (remitente, argumentos) => Hacer("Sample data", () =>
@@ -369,14 +622,14 @@ namespace Edelstahl.WinApp.Modulos
             Button productos = Estilo.Boton("Import products (CSV)");
             productos.Click += (remitente, argumentos) => Importar(false);
 
-            _botones.Controls.AddRange(new Control[] { respaldo, ejemplo, clientes, productos });
+            _botones.Controls.AddRange(new Control[] { ejemplo, clientes, productos });
 
             Label nota = new Label
             {
                 Dock = DockStyle.Top,
                 Height = 40,
                 Padding = new Padding(10, 6, 10, 0),
-                Text = Tr.T("Backups are saved in the backups folder. Imports skip records that already exist.")
+                Text = Tr.T("Imports skip records that already exist.")
             };
 
             Panel inferior = new Panel { Dock = DockStyle.Bottom, Height = 30, Padding = new Padding(10, 6, 10, 0) };
@@ -452,7 +705,7 @@ namespace Edelstahl.WinApp.Modulos
                 {
                     return trabajo();
                 }
-                catch (Edelstahl.BLL.Exceptions.Base.BusinessRuleException ex)
+                catch (Edelstahl.Domain.Exceptions.BusinessRuleException ex)
                 {
                     return ex.Message;
                 }

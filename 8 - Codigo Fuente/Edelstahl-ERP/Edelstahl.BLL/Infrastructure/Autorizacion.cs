@@ -1,4 +1,4 @@
-using Edelstahl.BLL.Exceptions.Base;
+using Edelstahl.Domain.Exceptions;
 using Edelstahl.BLL.Services;
 using Edelstahl.Domain.Security;
 

@@ -7,7 +7,7 @@ namespace Edelstahl.DAL.EntityFramework
     /// Configuración de Entity Framework para
     /// el control de integridad vertical.
     /// </summary>
-    public class IntegridadTablaConfiguration
+    internal class IntegridadTablaConfiguration
         : EntityTypeConfiguration<IntegridadTabla>
     {
         public IntegridadTablaConfiguration()

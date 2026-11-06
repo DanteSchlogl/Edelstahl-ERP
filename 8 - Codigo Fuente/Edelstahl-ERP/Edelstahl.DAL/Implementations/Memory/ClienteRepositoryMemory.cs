@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using System.Linq;
 using Edelstahl.DAL.Interfaces;
 using Edelstahl.Domain.Comercial;
+using Edelstahl.Domain.Exceptions;
+using Edelstahl.Services.Localization;
 
 namespace Edelstahl.DAL.Implementations.Memory
 {
@@ -10,7 +12,7 @@ namespace Edelstahl.DAL.Implementations.Memory
     /// Implementación temporal del repositorio de clientes.
     /// Mantiene la información en memoria mientras la aplicación está abierta.
     /// </summary>
-    public sealed class ClienteRepositoryMemory : IClienteRepository
+    internal sealed class ClienteRepositoryMemory : IClienteRepository
     {
         private readonly List<Cliente> _clientes;
 
@@ -137,8 +139,8 @@ namespace Edelstahl.DAL.Implementations.Memory
 
             if (clienteExistente == null)
             {
-                throw new InvalidOperationException(
-                    "No se encontró el cliente que se desea modificar.");
+                throw new RegistroNoEncontradoException(
+                    LanguageService.Translate("The customer to modify was not found."));
             }
 
             clienteExistente.CUIT = entity.CUIT;
@@ -163,8 +165,8 @@ namespace Edelstahl.DAL.Implementations.Memory
 
             if (clienteExistente == null)
             {
-                throw new InvalidOperationException(
-                    "No se encontró el cliente que se desea eliminar.");
+                throw new RegistroNoEncontradoException(
+                    LanguageService.Translate("The customer to delete was not found."));
             }
 
             _clientes.Remove(clienteExistente);

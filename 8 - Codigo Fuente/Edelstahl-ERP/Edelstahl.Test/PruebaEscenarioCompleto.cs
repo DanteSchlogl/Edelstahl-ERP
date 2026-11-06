@@ -4,7 +4,7 @@ using System.Diagnostics;
 using System.IO;
 using System.Linq;
 using Edelstahl.BLL.DTOs;
-using Edelstahl.BLL.Exceptions.Base;
+using Edelstahl.Domain.Exceptions;
 using Edelstahl.BLL.Infrastructure;
 using Edelstahl.BLL.Services;
 using Edelstahl.DAL.EntityFramework;
@@ -49,7 +49,7 @@ namespace Edelstahl.Test
 
             if (modo == ExecutionMode.SqlServer)
             {
-                InicializadorNegocio.Inicializar();
+                FactoryDataAccess.PrepararBaseDeDatos();
             }
 
             SesionActual.Iniciar(UsuarioConRol(NombresRol.Administrador));

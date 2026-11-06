@@ -17,7 +17,7 @@ namespace Edelstahl.Services.Cryptography
     /// PBKDF2 completo, lo que tardaba cerca de un segundo. Se sigue
     /// pudiendo leer para no invalidar los datos ya guardados.
     /// </summary>
-    public sealed class AesEncryptionService
+    internal sealed class AesEncryptionService
     {
         public const string PrefijoV2 = "v2:";
 

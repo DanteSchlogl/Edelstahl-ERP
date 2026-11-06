@@ -5,7 +5,7 @@ using System.Diagnostics;
 using System.Drawing;
 using System.IO;
 using System.Windows.Forms;
-using Edelstahl.BLL.Exceptions.Base;
+using Edelstahl.Domain.Exceptions;
 using Edelstahl.WinApp.Infrastructure;
 
 namespace Edelstahl.WinApp.Ui
@@ -77,6 +77,37 @@ namespace Edelstahl.WinApp.Ui
             grilla.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
 
             return grilla;
+        }
+
+        /// <summary>
+        /// Pone a las columnas de una grilla el titulo traducido y oculta las de identificador.
+        /// </summary>
+        public static void TitularColumnas(DataGridView grilla)
+        {
+            foreach (DataGridViewColumn columna in grilla.Columns)
+            {
+                string nombre = columna.DataPropertyName;
+
+                columna.HeaderText = Tr.Columna(nombre);
+                columna.Visible = !(nombre == "Id" || nombre.EndsWith("Id", StringComparison.Ordinal));
+
+                Type real = Nullable.GetUnderlyingType(columna.ValueType) ?? columna.ValueType;
+
+                if (real == typeof(DateTime))
+                {
+                    columna.DefaultCellStyle.Format = "g";
+                }
+            }
+
+            // La ultima columna visible ocupa el ancho que sobra.
+            for (int i = grilla.Columns.Count - 1; i >= 0; i--)
+            {
+                if (grilla.Columns[i].Visible)
+                {
+                    grilla.Columns[i].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+                    break;
+                }
+            }
         }
 
         public static Label Etiqueta(string clave, bool negrita)

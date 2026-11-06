@@ -13,7 +13,7 @@ namespace Edelstahl.DAL.Tools
     /// (EDELSTAHL_SQL_SERVER, EDELSTAHL_NEGOCIO_DB, EDELSTAHL_SERVICIOS_DB),
     /// útiles para ejecutar pruebas sobre bases separadas.
     /// </summary>
-    public static class SqlServerConnection
+    internal static class SqlServerConnection
     {
         private const string BaseNegocioPorDefecto = "EdelstahlNegocio";
         private const string BaseServiciosPorDefecto = "EdelstahlServicios";

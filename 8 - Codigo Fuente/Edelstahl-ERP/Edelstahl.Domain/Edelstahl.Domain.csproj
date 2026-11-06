@@ -55,11 +55,15 @@
     <Compile Include="Comercial\Presupuesto.cs" />
     <Compile Include="Comercial\TipoItemPresupuesto.cs" />
     <Compile Include="Common\Entity.cs" />
+    <Compile Include="Exceptions\BusinessRuleException.cs" />
+    <Compile Include="Exceptions\ExcepcionesDeNegocio.cs" />
     <Compile Include="Integrity\ClienteDvvService.cs" />
+    <Compile Include="Integrity\ResultadoIntegridad.cs" />
     <Compile Include="Integrity\IntegridadTabla.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Security\PruebaSecurity.cs" />
     <Compile Include="Security\RegistroBitacora.cs" />
+    <Compile Include="Security\RegistroRespaldo.cs" />
     <Compile Include="Security\ResultadoRespaldo.cs" />
     <Compile Include="Security\Rol.cs" />
     <Compile Include="Security\Usuario.cs" />

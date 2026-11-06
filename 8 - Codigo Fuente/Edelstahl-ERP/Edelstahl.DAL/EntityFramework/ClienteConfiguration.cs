@@ -9,7 +9,7 @@ namespace Edelstahl.DAL.EntityFramework
     /// Configuración de Entity Framework para la
     /// entidad Cliente.
     /// </summary>
-    public class ClienteConfiguration
+    internal class ClienteConfiguration
         : EntityTypeConfiguration<Cliente>
     {
         public ClienteConfiguration()

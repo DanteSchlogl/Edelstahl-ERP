@@ -1,7 +1,7 @@
 using System;
 using System.Collections.Generic;
 using System.Data.Entity.Infrastructure;
-using System.Data.SqlClient;
+using System.Data;
 using System.Text;
 using System.Text.RegularExpressions;
 using Edelstahl.DAL.Tools;
@@ -17,7 +17,7 @@ namespace Edelstahl.DAL.EntityFramework
     /// referencias entre módulos (claves foráneas) y los índices se
     /// declaran en este archivo.
     /// </summary>
-    public static class EsquemaNegocio
+    internal static class EsquemaNegocio
     {
         /// <summary>Tabla, columna y tabla referenciada.</summary>
         private static readonly string[][] Referencias =
@@ -121,27 +121,13 @@ namespace Edelstahl.DAL.EntityFramework
 
             List<string> sentencias = ObtenerSentenciasModelo();
 
-            using (SqlConnection conexion = SqlServerConnection.CreateBusinessConnection())
+            SqlHelper.EnTransaccion(BaseDeDatos.Negocio, transaccion =>
             {
-                conexion.Open();
-
-                using (SqlTransaction transaccion = conexion.BeginTransaction())
-                {
-                    try
-                    {
-                        HashSet<string> creadas = CrearTablasFaltantes(conexion, transaccion, sentencias);
-                        AgregarColumnasFaltantes(conexion, transaccion, sentencias, creadas);
-                        CrearReferenciasFaltantes(conexion, transaccion);
-                        CrearIndicesFaltantes(conexion, transaccion);
-                        transaccion.Commit();
-                    }
-                    catch
-                    {
-                        transaccion.Rollback();
-                        throw;
-                    }
-                }
-            }
+                HashSet<string> creadas = CrearTablasFaltantes(transaccion, sentencias);
+                AgregarColumnasFaltantes(transaccion, sentencias, creadas);
+                CrearReferenciasFaltantes(transaccion);
+                CrearIndicesFaltantes(transaccion);
+            });
         }
 
         /// <summary>
@@ -201,8 +187,7 @@ namespace Edelstahl.DAL.EntityFramework
         }
 
         private static HashSet<string> CrearTablasFaltantes(
-            SqlConnection conexion,
-            SqlTransaction transaccion,
+            SqlHelper.Transaccion transaccion,
             List<string> sentencias)
         {
             HashSet<string> creadas = new HashSet<string>(StringComparer.OrdinalIgnoreCase);
@@ -221,9 +206,9 @@ namespace Edelstahl.DAL.EntityFramework
 
                 string nombre = tabla.Groups["t"].Value;
 
-                if (!ExisteTabla(conexion, transaccion, nombre))
+                if (!ExisteTabla(transaccion, nombre))
                 {
-                    Ejecutar(conexion, transaccion, sentencia);
+                    Ejecutar(transaccion, sentencia);
                     creadas.Add(nombre);
                 }
             }
@@ -238,7 +223,7 @@ namespace Edelstahl.DAL.EntityFramework
 
                 if (relacion.Success && creadas.Contains(relacion.Groups["t"].Value))
                 {
-                    Ejecutar(conexion, transaccion, sentencia);
+                    Ejecutar(transaccion, sentencia);
                 }
             }
 
@@ -252,8 +237,7 @@ namespace Edelstahl.DAL.EntityFramework
         /// hay filas.
         /// </summary>
         private static void AgregarColumnasFaltantes(
-            SqlConnection conexion,
-            SqlTransaction transaccion,
+            SqlHelper.Transaccion transaccion,
             List<string> sentencias,
             HashSet<string> creadas)
         {
@@ -270,7 +254,7 @@ namespace Edelstahl.DAL.EntityFramework
                 }
 
                 string nombre = tabla.Groups["t"].Value;
-                HashSet<string> existentes = ObtenerColumnas(conexion, transaccion, nombre);
+                HashSet<string> existentes = ObtenerColumnas(transaccion, nombre);
 
                 foreach (Match columna in Regex.Matches(
                     sentencia,
@@ -298,7 +282,7 @@ namespace Edelstahl.DAL.EntityFramework
                         sql += " NULL";
                     }
 
-                    Ejecutar(conexion, transaccion, sql);
+                    Ejecutar(transaccion, sql);
                 }
             }
         }
@@ -325,27 +309,14 @@ namespace Edelstahl.DAL.EntityFramework
             return "0";
         }
 
-        private static HashSet<string> ObtenerColumnas(SqlConnection conexion, SqlTransaction transaccion, string tabla)
+        private static HashSet<string> ObtenerColumnas(SqlHelper.Transaccion transaccion, string tabla)
         {
-            HashSet<string> columnas = new HashSet<string>(StringComparer.OrdinalIgnoreCase);
-
-            using (SqlCommand comando = new SqlCommand(
-                "SELECT COLUMN_NAME FROM INFORMATION_SCHEMA.COLUMNS WHERE TABLE_SCHEMA = 'dbo' AND TABLE_NAME = @t",
-                conexion,
-                transaccion))
-            {
-                comando.Parameters.AddWithValue("@t", tabla);
-
-                using (SqlDataReader lector = comando.ExecuteReader())
-                {
-                    while (lector.Read())
-                    {
-                        columnas.Add(lector.GetString(0));
-                    }
-                }
-            }
-
-            return columnas;
+            return new HashSet<string>(
+                transaccion.Consultar(
+                    "SELECT COLUMN_NAME FROM INFORMATION_SCHEMA.COLUMNS WHERE TABLE_SCHEMA = 'dbo' AND TABLE_NAME = @t",
+                    fila => fila.GetString(0),
+                    SqlHelper.Parametro("@t", SqlDbType.NVarChar, 128, tabla)),
+                StringComparer.OrdinalIgnoreCase);
         }
 
         private static string NombreReferencia(string[] referencia)
@@ -375,84 +346,64 @@ namespace Edelstahl.DAL.EntityFramework
                 + NombreIndice(indice) + "] ON [dbo].[" + indice[0] + "] (" + lista + ")";
         }
 
-        private static void CrearReferenciasFaltantes(SqlConnection conexion, SqlTransaction transaccion)
+        private static void CrearReferenciasFaltantes(SqlHelper.Transaccion transaccion)
         {
             foreach (string[] referencia in Referencias)
             {
-                if (!ExisteTabla(conexion, transaccion, referencia[0])
-                    || !ExisteTabla(conexion, transaccion, referencia[2]))
+                if (!ExisteTabla(transaccion, referencia[0])
+                    || !ExisteTabla(transaccion, referencia[2]))
                 {
                     continue;
                 }
 
-                if (!ExisteRestriccion(conexion, transaccion, NombreReferencia(referencia)))
+                if (!ExisteRestriccion(transaccion, NombreReferencia(referencia)))
                 {
-                    Ejecutar(conexion, transaccion, SentenciaReferencia(referencia));
+                    Ejecutar(transaccion, SentenciaReferencia(referencia));
                 }
             }
         }
 
-        private static void CrearIndicesFaltantes(SqlConnection conexion, SqlTransaction transaccion)
+        private static void CrearIndicesFaltantes(SqlHelper.Transaccion transaccion)
         {
             foreach (string[] indice in Indices)
             {
-                if (!ExisteTabla(conexion, transaccion, indice[0]))
+                if (!ExisteTabla(transaccion, indice[0]))
                 {
                     continue;
                 }
 
-                if (!ExisteIndice(conexion, transaccion, indice[0], NombreIndice(indice)))
+                if (!ExisteIndice(transaccion, indice[0], NombreIndice(indice)))
                 {
-                    Ejecutar(conexion, transaccion, SentenciaIndice(indice));
+                    Ejecutar(transaccion, SentenciaIndice(indice));
                 }
             }
         }
 
-        private static bool ExisteTabla(SqlConnection conexion, SqlTransaction transaccion, string tabla)
+        private static bool ExisteTabla(SqlHelper.Transaccion transaccion, string tabla)
         {
-            using (SqlCommand comando = new SqlCommand(
+            return transaccion.EjecutarEscalar<int>(
                 "SELECT COUNT(*) FROM sys.tables WHERE name = @nombre AND schema_id = SCHEMA_ID('dbo')",
-                conexion,
-                transaccion))
-            {
-                comando.Parameters.AddWithValue("@nombre", tabla);
-                return (int)comando.ExecuteScalar() > 0;
-            }
+                SqlHelper.Parametro("@nombre", SqlDbType.NVarChar, 128, tabla)) > 0;
         }
 
-        private static bool ExisteRestriccion(SqlConnection conexion, SqlTransaction transaccion, string nombre)
+        private static bool ExisteRestriccion(SqlHelper.Transaccion transaccion, string nombre)
         {
-            using (SqlCommand comando = new SqlCommand(
+            return transaccion.EjecutarEscalar<int>(
                 "SELECT COUNT(*) FROM sys.foreign_keys WHERE name = @nombre",
-                conexion,
-                transaccion))
-            {
-                comando.Parameters.AddWithValue("@nombre", nombre);
-                return (int)comando.ExecuteScalar() > 0;
-            }
+                SqlHelper.Parametro("@nombre", SqlDbType.NVarChar, 128, nombre)) > 0;
         }
 
-        private static bool ExisteIndice(
-            SqlConnection conexion, SqlTransaction transaccion, string tabla, string nombre)
+        private static bool ExisteIndice(SqlHelper.Transaccion transaccion, string tabla, string nombre)
         {
-            using (SqlCommand comando = new SqlCommand(
+            return transaccion.EjecutarEscalar<int>(
                 "SELECT COUNT(*) FROM sys.indexes WHERE name = @nombre AND object_id = OBJECT_ID(@tabla)",
-                conexion,
-                transaccion))
-            {
-                comando.Parameters.AddWithValue("@nombre", nombre);
-                comando.Parameters.AddWithValue("@tabla", "dbo." + tabla);
-                return (int)comando.ExecuteScalar() > 0;
-            }
+                SqlHelper.Parametro("@nombre", SqlDbType.NVarChar, 128, nombre),
+                SqlHelper.Parametro("@tabla", SqlDbType.NVarChar, 300, "dbo." + tabla)) > 0;
         }
 
-        private static void Ejecutar(SqlConnection conexion, SqlTransaction transaccion, string sql)
+        private static void Ejecutar(SqlHelper.Transaccion transaccion, string sql)
         {
-            using (SqlCommand comando = new SqlCommand(sql, conexion, transaccion))
-            {
-                comando.CommandTimeout = 120;
-                comando.ExecuteNonQuery();
-            }
+            transaccion.EjecutarNoQuery(sql, 120);
         }
 
         /// <summary>
@@ -460,29 +411,19 @@ namespace Edelstahl.DAL.EntityFramework
         /// </summary>
         public static void AsegurarBase(string nombre)
         {
-            using (SqlConnection conexion = SqlServerConnection.CreateMasterConnection())
+            int existe = SqlHelper.EjecutarEscalar<int>(
+                BaseDeDatos.Master,
+                "SELECT COUNT(*) FROM sys.databases WHERE name = @nombre",
+                SqlHelper.Parametro("@nombre", SqlDbType.NVarChar, 128, nombre));
+
+            if (existe > 0)
             {
-                conexion.Open();
-
-                using (SqlCommand existe = new SqlCommand(
-                    "SELECT COUNT(*) FROM sys.databases WHERE name = @nombre", conexion))
-                {
-                    existe.Parameters.AddWithValue("@nombre", nombre);
-
-                    if ((int)existe.ExecuteScalar() > 0)
-                    {
-                        return;
-                    }
-                }
-
-                string seguro = nombre.Replace("]", "]]");
-
-                using (SqlCommand crear = new SqlCommand("CREATE DATABASE [" + seguro + "]", conexion))
-                {
-                    crear.CommandTimeout = 120;
-                    crear.ExecuteNonQuery();
-                }
+                return;
             }
+
+            string seguro = nombre.Replace("]", "]]");
+
+            SqlHelper.EjecutarNoQuery(BaseDeDatos.Master, 120, "CREATE DATABASE [" + seguro + "]");
         }
     }
 }

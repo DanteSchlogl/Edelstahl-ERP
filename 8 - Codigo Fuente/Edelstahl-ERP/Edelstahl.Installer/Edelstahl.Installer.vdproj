@@ -99,48 +99,6 @@
         }
         "Entry"
         {
-        "MsmKey" = "8:_A58B48A8B2746A60182728F4735A3A42"
-        "OwnerKey" = "8:_UNDEFINED"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
-        "MsmKey" = "8:_30C42C6264C22DEA8776DBA6203B22DF"
-        "OwnerKey" = "8:_UNDEFINED"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
-        "MsmKey" = "8:_C26FBD4AC76547236E3907624B0B672E"
-        "OwnerKey" = "8:_UNDEFINED"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
-        "MsmKey" = "8:_69B1787DEC4302F9BBCCC1146DCCCB90"
-        "OwnerKey" = "8:_UNDEFINED"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
-        "MsmKey" = "8:_C3027FDB926046E833A6DEE5A34E661B"
-        "OwnerKey" = "8:_UNDEFINED"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
-        "MsmKey" = "8:_F508D1563707B7B28FD2F6C84FA281A4"
-        "OwnerKey" = "8:_UNDEFINED"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
-        "MsmKey" = "8:_BA894408F86F2123E780FBFD1A81FDEE"
-        "OwnerKey" = "8:_UNDEFINED"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
         "MsmKey" = "8:_1F1868E9115B10AE788EE2BCEB88A57C"
         "OwnerKey" = "8:_UNDEFINED"
         "MsmSig" = "8:_UNDEFINED"
@@ -454,6 +412,42 @@
         "Entry"
         {
         "MsmKey" = "8:_C94B2536F00E8BA61CF549876755315D"
+        "OwnerKey" = "8:_UNDEFINED"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_905EA9F9F6ADD095B6CD0D4F858544FA"
+        "OwnerKey" = "8:_UNDEFINED"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_C29DB6B879B4A6B08E78A60794DA1F4F"
+        "OwnerKey" = "8:_UNDEFINED"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_11A18330084E6815CBB46399F796AABF"
+        "OwnerKey" = "8:_UNDEFINED"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_6C53AEC793D8E25C3148A8CA4B17E295"
+        "OwnerKey" = "8:_UNDEFINED"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_D6DADC48DE7874113C2B6D1A1E1F5589"
+        "OwnerKey" = "8:_UNDEFINED"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_D723E90E3DDC2C8C9E839FF654006086"
         "OwnerKey" = "8:_UNDEFINED"
         "MsmSig" = "8:_UNDEFINED"
         }
@@ -816,12 +810,12 @@
         "IsDependency" = "11:FALSE"
         "IsolateTo" = "8:"
         }
-        "{A582A373-4685-4296-BEFE-614B80A702C3}:_A58B48A8B2746A60182728F4735A3A42"
+        "{A582A373-4685-4296-BEFE-614B80A702C3}:_905EA9F9F6ADD095B6CD0D4F858544FA"
         {
-        "SourcePath" = "8:..\\Edelstahl.WinApp\\bin\\Release\\Languages\\idioma.de-DE"
-        "TargetName" = "8:idioma.de-DE"
+        "SourcePath" = "8:..\\Edelstahl.WinApp\\bin\\Release\\de-DE\\Edelstahl.Services.resources.dll"
+        "TargetName" = "8:Edelstahl.Services.resources.dll"
         "Tag" = "8:"
-        "Folder" = "8:_69335B6D2F94B14EA49540FA095827C2"
+        "Folder" = "8:_F38F1F2F0CDA27D614840189F16F42C3"
         "Condition" = "8:"
         "Transitive" = "11:FALSE"
         "Vital" = "11:TRUE"
@@ -836,12 +830,12 @@
         "IsDependency" = "11:FALSE"
         "IsolateTo" = "8:"
         }
-        "{A582A373-4685-4296-BEFE-614B80A702C3}:_30C42C6264C22DEA8776DBA6203B22DF"
+        "{A582A373-4685-4296-BEFE-614B80A702C3}:_C29DB6B879B4A6B08E78A60794DA1F4F"
         {
-        "SourcePath" = "8:..\\Edelstahl.WinApp\\bin\\Release\\Languages\\idioma.en-GB"
-        "TargetName" = "8:idioma.en-GB"
+        "SourcePath" = "8:..\\Edelstahl.WinApp\\bin\\Release\\en-GB\\Edelstahl.Services.resources.dll"
+        "TargetName" = "8:Edelstahl.Services.resources.dll"
         "Tag" = "8:"
-        "Folder" = "8:_69335B6D2F94B14EA49540FA095827C2"
+        "Folder" = "8:_71392359E7FDFA8A5F77A2942D0F4D64"
         "Condition" = "8:"
         "Transitive" = "11:FALSE"
         "Vital" = "11:TRUE"
@@ -856,12 +850,12 @@
         "IsDependency" = "11:FALSE"
         "IsolateTo" = "8:"
         }
-        "{A582A373-4685-4296-BEFE-614B80A702C3}:_C26FBD4AC76547236E3907624B0B672E"
+        "{A582A373-4685-4296-BEFE-614B80A702C3}:_11A18330084E6815CBB46399F796AABF"
         {
-        "SourcePath" = "8:..\\Edelstahl.WinApp\\bin\\Release\\Languages\\idioma.en-US"
-        "TargetName" = "8:idioma.en-US"
+        "SourcePath" = "8:..\\Edelstahl.WinApp\\bin\\Release\\es-AR\\Edelstahl.Services.resources.dll"
+        "TargetName" = "8:Edelstahl.Services.resources.dll"
         "Tag" = "8:"
-        "Folder" = "8:_69335B6D2F94B14EA49540FA095827C2"
+        "Folder" = "8:_F4057DE8233C30965AD738AC5A8BFEEE"
         "Condition" = "8:"
         "Transitive" = "11:FALSE"
         "Vital" = "11:TRUE"
@@ -876,12 +870,12 @@
         "IsDependency" = "11:FALSE"
         "IsolateTo" = "8:"
         }
-        "{A582A373-4685-4296-BEFE-614B80A702C3}:_69B1787DEC4302F9BBCCC1146DCCCB90"
+        "{A582A373-4685-4296-BEFE-614B80A702C3}:_6C53AEC793D8E25C3148A8CA4B17E295"
         {
-        "SourcePath" = "8:..\\Edelstahl.WinApp\\bin\\Release\\Languages\\idioma.es-AR"
-        "TargetName" = "8:idioma.es-AR"
+        "SourcePath" = "8:..\\Edelstahl.WinApp\\bin\\Release\\es-ES\\Edelstahl.Services.resources.dll"
+        "TargetName" = "8:Edelstahl.Services.resources.dll"
         "Tag" = "8:"
-        "Folder" = "8:_69335B6D2F94B14EA49540FA095827C2"
+        "Folder" = "8:_7751436018772530A26518FF50E01261"
         "Condition" = "8:"
         "Transitive" = "11:FALSE"
         "Vital" = "11:TRUE"
@@ -896,12 +890,12 @@
         "IsDependency" = "11:FALSE"
         "IsolateTo" = "8:"
         }
-        "{A582A373-4685-4296-BEFE-614B80A702C3}:_C3027FDB926046E833A6DEE5A34E661B"
+        "{A582A373-4685-4296-BEFE-614B80A702C3}:_D6DADC48DE7874113C2B6D1A1E1F5589"
         {
-        "SourcePath" = "8:..\\Edelstahl.WinApp\\bin\\Release\\Languages\\idioma.es-ES"
-        "TargetName" = "8:idioma.es-ES"
+        "SourcePath" = "8:..\\Edelstahl.WinApp\\bin\\Release\\pt-BR\\Edelstahl.Services.resources.dll"
+        "TargetName" = "8:Edelstahl.Services.resources.dll"
         "Tag" = "8:"
-        "Folder" = "8:_69335B6D2F94B14EA49540FA095827C2"
+        "Folder" = "8:_48A5781322FC9CF35ABB2201992E99E1"
         "Condition" = "8:"
         "Transitive" = "11:FALSE"
         "Vital" = "11:TRUE"
@@ -916,32 +910,12 @@
         "IsDependency" = "11:FALSE"
         "IsolateTo" = "8:"
         }
-        "{A582A373-4685-4296-BEFE-614B80A702C3}:_F508D1563707B7B28FD2F6C84FA281A4"
+        "{A582A373-4685-4296-BEFE-614B80A702C3}:_D723E90E3DDC2C8C9E839FF654006086"
         {
-        "SourcePath" = "8:..\\Edelstahl.WinApp\\bin\\Release\\Languages\\idioma.pt-BR"
-        "TargetName" = "8:idioma.pt-BR"
+        "SourcePath" = "8:..\\Edelstahl.WinApp\\bin\\Release\\ru-RU\\Edelstahl.Services.resources.dll"
+        "TargetName" = "8:Edelstahl.Services.resources.dll"
         "Tag" = "8:"
-        "Folder" = "8:_69335B6D2F94B14EA49540FA095827C2"
-        "Condition" = "8:"
-        "Transitive" = "11:FALSE"
-        "Vital" = "11:TRUE"
-        "ReadOnly" = "11:FALSE"
-        "Hidden" = "11:FALSE"
-        "System" = "11:FALSE"
-        "Permanent" = "11:FALSE"
-        "SharedLegacy" = "11:FALSE"
-        "PackageAs" = "3:1"
-        "Register" = "3:1"
-        "Exclude" = "11:FALSE"
-        "IsDependency" = "11:FALSE"
-        "IsolateTo" = "8:"
-        }
-        "{A582A373-4685-4296-BEFE-614B80A702C3}:_BA894408F86F2123E780FBFD1A81FDEE"
-        {
-        "SourcePath" = "8:..\\Edelstahl.WinApp\\bin\\Release\\Languages\\idioma.ru-RU"
-        "TargetName" = "8:idioma.ru-RU"
-        "Tag" = "8:"
-        "Folder" = "8:_69335B6D2F94B14EA49540FA095827C2"
+        "Folder" = "8:_631A487DEA3BD0E20A2476E010A9A7FC"
         "Condition" = "8:"
         "Transitive" = "11:FALSE"
         "Vital" = "11:TRUE"
@@ -2065,13 +2039,68 @@
                         {
                         }
                     }
-                    "{9EF0B969-E518-4E46-987F-47570745A589}:_69335B6D2F94B14EA49540FA095827C2"
+                    "{9EF0B969-E518-4E46-987F-47570745A589}:_F38F1F2F0CDA27D614840189F16F42C3"
                     {
-                    "Name" = "8:Languages"
+                    "Name" = "8:de-DE"
                     "AlwaysCreate" = "11:FALSE"
                     "Condition" = "8:"
                     "Transitive" = "11:FALSE"
-                    "Property" = "8:_69335B6D2F94B14EA49540FA095827C2"
+                    "Property" = "8:_F38F1F2F0CDA27D614840189F16F42C3"
+                        "Folders"
+                        {
+                        }
+                    }
+                    "{9EF0B969-E518-4E46-987F-47570745A589}:_71392359E7FDFA8A5F77A2942D0F4D64"
+                    {
+                    "Name" = "8:en-GB"
+                    "AlwaysCreate" = "11:FALSE"
+                    "Condition" = "8:"
+                    "Transitive" = "11:FALSE"
+                    "Property" = "8:_71392359E7FDFA8A5F77A2942D0F4D64"
+                        "Folders"
+                        {
+                        }
+                    }
+                    "{9EF0B969-E518-4E46-987F-47570745A589}:_F4057DE8233C30965AD738AC5A8BFEEE"
+                    {
+                    "Name" = "8:es-AR"
+                    "AlwaysCreate" = "11:FALSE"
+                    "Condition" = "8:"
+                    "Transitive" = "11:FALSE"
+                    "Property" = "8:_F4057DE8233C30965AD738AC5A8BFEEE"
+                        "Folders"
+                        {
+                        }
+                    }
+                    "{9EF0B969-E518-4E46-987F-47570745A589}:_7751436018772530A26518FF50E01261"
+                    {
+                    "Name" = "8:es-ES"
+                    "AlwaysCreate" = "11:FALSE"
+                    "Condition" = "8:"
+                    "Transitive" = "11:FALSE"
+                    "Property" = "8:_7751436018772530A26518FF50E01261"
+                        "Folders"
+                        {
+                        }
+                    }
+                    "{9EF0B969-E518-4E46-987F-47570745A589}:_48A5781322FC9CF35ABB2201992E99E1"
+                    {
+                    "Name" = "8:pt-BR"
+                    "AlwaysCreate" = "11:FALSE"
+                    "Condition" = "8:"
+                    "Transitive" = "11:FALSE"
+                    "Property" = "8:_48A5781322FC9CF35ABB2201992E99E1"
+                        "Folders"
+                        {
+                        }
+                    }
+                    "{9EF0B969-E518-4E46-987F-47570745A589}:_631A487DEA3BD0E20A2476E010A9A7FC"
+                    {
+                    "Name" = "8:ru-RU"
+                    "AlwaysCreate" = "11:FALSE"
+                    "Condition" = "8:"
+                    "Transitive" = "11:FALSE"
+                    "Property" = "8:_631A487DEA3BD0E20A2476E010A9A7FC"
                         "Folders"
                         {
                         }
@@ -2248,15 +2277,15 @@
         {
         "Name" = "8:Microsoft Visual Studio"
         "ProductName" = "8:Edelstahl ERP"
-        "ProductCode" = "8:{3FF2A7F3-ECE9-45AA-9FDC-CF0031DDE1AC}"
-        "PackageCode" = "8:{9DE47024-9C30-44C3-8A84-3A0BB7080190}"
+        "ProductCode" = "8:{B4A52A8B-1A9A-441B-8EE6-0A3443908F33}"
+        "PackageCode" = "8:{FD822E4A-C3EC-4B71-B3F5-C56D7ED791E5}"
         "UpgradeCode" = "8:{C2874628-A030-4C76-B4B4-70DBCF772886}"
         "AspNetVersion" = "8:"
         "RestartWWWService" = "11:FALSE"
         "RemovePreviousVersions" = "11:TRUE"
         "DetectNewerInstalledVersion" = "11:TRUE"
         "InstallAllUsers" = "11:TRUE"
-        "ProductVersion" = "8:1.1.5"
+        "ProductVersion" = "8:1.2.0"
         "Manufacturer" = "8:Edelstahl"
         "ARPHELPTELEPHONE" = "8:"
         "ARPHELPLINK" = "8:"

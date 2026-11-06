@@ -1,4 +1,5 @@
 ﻿using System;
+using Edelstahl.BLL.Infrastructure;
 using Edelstahl.Domain.Security;
 using Edelstahl.Services.Security;
 
@@ -42,8 +43,7 @@ namespace Edelstahl.BLL.Services
                 UsuarioDemostracion,
                 StringComparison.Ordinal))
             {
-                throw new InvalidOperationException(
-                    "El usuario o la contraseña son incorrectos.");
+                throw Mensajes.Regla("The user name or the password is incorrect.");
             }
 
             bool passwordCorrecto =
@@ -55,8 +55,7 @@ namespace Edelstahl.BLL.Services
 
             if (!passwordCorrecto)
             {
-                throw new InvalidOperationException(
-                    "El usuario o la contraseña son incorrectos.");
+                throw Mensajes.Regla("The user name or the password is incorrect.");
             }
 
             Rol rolDemostracion =

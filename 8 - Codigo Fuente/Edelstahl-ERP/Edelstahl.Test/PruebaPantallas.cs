@@ -52,7 +52,7 @@ namespace Edelstahl.Test
 
             if (modo == ExecutionMode.SqlServer)
             {
-                InicializadorNegocio.Inicializar();
+                FactoryDataAccess.PrepararBaseDeDatos();
             }
 
             SesionActual.Iniciar(new Usuario
@@ -120,15 +120,6 @@ namespace Edelstahl.Test
                 NombreCompleto = "Administrador",
                 Rol = new Rol { Nombre = NombresRol.Administrador }
             });
-
-            string origen = Path.GetFullPath(Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "..", "..", "..", "Edelstahl.WinApp", "Languages"));
-            string destino = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "Languages");
-            Directory.CreateDirectory(destino);
-
-            foreach (string archivo in Directory.GetFiles(origen))
-            {
-                File.Copy(archivo, Path.Combine(destino, Path.GetFileName(archivo)), true);
-            }
 
             AdministracionService admin = new AdministracionService();
 
@@ -491,6 +482,130 @@ namespace Edelstahl.Test
             }
         }
 
+        /// <summary>
+        /// Captura la pantalla de recuperacion (antes y despues de identificarse) y el panel de
+        /// respaldos de Administracion. Usa bases de PRUEBA con una alteracion real.
+        /// </summary>
+        public static void CapturarRecuperacion(string carpeta)
+        {
+            Directory.CreateDirectory(carpeta);
+
+            string baseNegocio = Environment.GetEnvironmentVariable("EDELSTAHL_NEGOCIO_DB");
+
+            if (string.IsNullOrEmpty(baseNegocio) || baseNegocio == "EdelstahlNegocio")
+            {
+                Verificador.Verificar(false, "Defina EDELSTAHL_NEGOCIO_DB y EDELSTAHL_SERVICIOS_DB para capturar sin tocar las bases reales");
+                return;
+            }
+
+            ApplicationMode.Reset();
+            ApplicationMode.Select(ExecutionMode.SqlServer);
+            FactoryDataAccess.Inicializar(ExecutionMode.SqlServer);
+            FactoryDataAccess.PrepararBaseDeDatos();
+            SesionActual.Iniciar(new Usuario { NombreUsuario = "admin", NombreCompleto = "Administrador", Rol = new Rol { Nombre = NombresRol.Administrador } });
+            new CargaInicialService().AsegurarDatosBase();
+            new CargaInicialService().CargarDatosDeEjemplo(null);
+            LanguageService.Inicializar();
+            LanguageService.CambiarIdioma("es-AR");
+
+            string datos = Path.Combine(Path.GetTempPath(), "edelstahl-captura-" + Guid.NewGuid().ToString("N"));
+            Directory.CreateDirectory(datos);
+            Environment.SetEnvironmentVariable(Edelstahl.BLL.Infrastructure.ConfiguracionRespaldo.VariableCarpeta, datos);
+
+            UsuarioService usuarios = new UsuarioService();
+            usuarios.Registrar("administrador", "Administrador del sistema", "administrador@example.test", "Clave-Segura-2026", NombresRol.Administrador, false);
+
+            RespaldoService respaldos = new RespaldoService();
+            respaldos.CrearRespaldoManual();
+            System.Threading.Thread.Sleep(1100);
+            respaldos.CrearRespaldoManual();
+
+            List<string> ids = new ClienteService().ObtenerTodos().Take(3).Select(c => c.Id.ToString()).ToList();
+
+            foreach (string id in ids)
+            {
+                Edelstahl.DAL.Tools.SqlHelper.EjecutarNoQuery(
+                    Edelstahl.DAL.Tools.BaseDeDatos.Negocio,
+                    "UPDATE dbo.Clientes SET Telefono = N'0000' WHERE Id = @Id",
+                    Edelstahl.DAL.Tools.SqlHelper.Parametro("@Id", System.Data.SqlDbType.UniqueIdentifier, Guid.Parse(id)));
+            }
+
+            Edelstahl.Domain.Integrity.ResultadoIntegridad resultado = new IntegridadService().VerificarYRegistrar("inicio del sistema");
+            Verificador.Verificar(!resultado.Correcto, "La alteracion preparada se detecta");
+
+            using (FrmRecuperacionIntegridad ventana = new FrmRecuperacionIntegridad(resultado))
+            {
+                ventana.StartPosition = FormStartPosition.Manual;
+                ventana.Location = new System.Drawing.Point(40, 20);
+                ventana.Show();
+                Bombear(500);
+                CapturarVentana(ventana, Path.Combine(carpeta, "recuperacion_1_alerta.png"));
+
+                const System.Reflection.BindingFlags privado = System.Reflection.BindingFlags.NonPublic | System.Reflection.BindingFlags.Instance;
+                ((TextBox)typeof(FrmRecuperacionIntegridad).GetField("_txtUsuario", privado).GetValue(ventana)).Text = "administrador";
+                ((TextBox)typeof(FrmRecuperacionIntegridad).GetField("_txtPassword", privado).GetValue(ventana)).Text = "Clave-Segura-2026";
+                typeof(FrmRecuperacionIntegridad).GetMethod("Ingresar", privado).Invoke(ventana, null);
+                Bombear(800);
+                CapturarVentana(ventana, Path.Combine(carpeta, "recuperacion_2_respaldos.png"));
+                ventana.Close();
+            }
+
+            using (Form anfitrion = new Form { ClientSize = new System.Drawing.Size(1000, 520), StartPosition = FormStartPosition.Manual, Location = new System.Drawing.Point(40, 20), Text = "Edelstahl ERP" })
+            {
+                Edelstahl.WinApp.Modulos.PanelRespaldos panel = new Edelstahl.WinApp.Modulos.PanelRespaldos();
+                anfitrion.Controls.Add(panel);
+                anfitrion.Show();
+                Bombear(800);
+                CapturarVentana(anfitrion, Path.Combine(carpeta, "respaldos_panel.png"));
+                anfitrion.Close();
+            }
+
+            Environment.SetEnvironmentVariable(Edelstahl.BLL.Infrastructure.ConfiguracionRespaldo.VariableCarpeta, null);
+        }
+
+        [StructLayout(LayoutKind.Sequential)]
+        private struct RectNativo
+        {
+            public int Izquierda;
+            public int Arriba;
+            public int Derecha;
+            public int Abajo;
+        }
+
+        [DllImport("dwmapi.dll")]
+        private static extern int DwmGetWindowAttribute(IntPtr ventana, int atributo, out RectNativo rect, int tamano);
+
+        /// <summary>
+        /// Limites reales de la ventana: Windows suma un borde invisible que, al capturar, dejaria
+        /// restos del escritorio en los costados.
+        /// </summary>
+        private static System.Drawing.Rectangle LimitesVisibles(Form ventana)
+        {
+            RectNativo r;
+
+            if (DwmGetWindowAttribute(ventana.Handle, 9, out r, Marshal.SizeOf(typeof(RectNativo))) == 0)
+            {
+                return System.Drawing.Rectangle.FromLTRB(r.Izquierda, r.Arriba, r.Derecha, r.Abajo);
+            }
+
+            return ventana.Bounds;
+        }
+
+        private static void CapturarVentana(Form ventana, string archivo)
+        {
+            System.Drawing.Rectangle area = LimitesVisibles(ventana);
+
+            using (System.Drawing.Bitmap imagen = new System.Drawing.Bitmap(area.Width, area.Height))
+            {
+                using (System.Drawing.Graphics g = System.Drawing.Graphics.FromImage(imagen))
+                {
+                    g.CopyFromScreen(area.Location, System.Drawing.Point.Empty, area.Size);
+                }
+
+                imagen.Save(archivo, System.Drawing.Imaging.ImageFormat.Png);
+            }
+        }
+
         public static void CapturarFaltantes(string carpeta)
         {
             Directory.CreateDirectory(carpeta);
@@ -618,16 +733,9 @@ namespace Edelstahl.Test
 
         private static void ProbarIdiomas()
         {
-            string origen = Path.GetFullPath(Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "..", "..", "..", "Edelstahl.WinApp", "Languages"));
-            string destino = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "Languages");
-            Directory.CreateDirectory(destino);
-
-            foreach (string archivo in Directory.GetFiles(origen))
-            {
-                File.Copy(archivo, Path.Combine(destino, Path.GetFileName(archivo)), true);
-            }
-
-            string config = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "idioma.config");
+            string carpetaDatos = Environment.GetEnvironmentVariable(LanguageService.VariableCarpetaDatos);
+            Directory.CreateDirectory(carpetaDatos);
+            string config = Path.Combine(carpetaDatos, "idioma.config");
             File.WriteAllText(config, "es-AR");
 
             LanguageService.Inicializar();

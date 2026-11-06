@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using System.Linq;
 using Edelstahl.DAL.Interfaces;
 using Edelstahl.Domain.Security;
+using Edelstahl.Domain.Exceptions;
+using Edelstahl.Services.Localization;
 
 namespace Edelstahl.DAL.Implementations.Memory
 {
@@ -10,7 +12,7 @@ namespace Edelstahl.DAL.Implementations.Memory
     /// Bitácora en memoria para el modo demostración. El acceso está
     /// protegido porque se escribe desde varios hilos.
     /// </summary>
-    public sealed class BitacoraRepositoryMemory : IBitacoraRepository
+    internal sealed class BitacoraRepositoryMemory : IBitacoraRepository
     {
         private static readonly object Candado = new object();
         private static readonly List<RegistroBitacora> Registros = new List<RegistroBitacora>();
@@ -30,12 +32,14 @@ namespace Edelstahl.DAL.Implementations.Memory
 
         public void Update(RegistroBitacora entity)
         {
-            throw new InvalidOperationException("Los registros de la bitácora no pueden modificarse.");
+            throw new ReglaDeNegocioException(
+                    LanguageService.Translate("The audit log records cannot be modified."));
         }
 
         public void Delete(Guid id)
         {
-            throw new InvalidOperationException("Los registros de la bitácora no pueden eliminarse.");
+            throw new ReglaDeNegocioException(
+                    LanguageService.Translate("The audit log records cannot be deleted."));
         }
 
         public RegistroBitacora GetById(Guid id)
@@ -91,7 +95,7 @@ namespace Edelstahl.DAL.Implementations.Memory
         }
     }
 
-    public sealed class RolRepositoryMemory : IRolRepository
+    internal sealed class RolRepositoryMemory : IRolRepository
     {
         private static readonly object Candado = new object();
         private static readonly List<Rol> Roles = new List<Rol>();
@@ -107,7 +111,8 @@ namespace Edelstahl.DAL.Implementations.Memory
             {
                 if (Roles.Any(r => string.Equals(r.Nombre, entity.Nombre, StringComparison.OrdinalIgnoreCase)))
                 {
-                    throw new InvalidOperationException("Ya existe un rol con ese nombre.");
+                    throw new RegistroDuplicadoException(
+                    LanguageService.Translate("A role with that name already exists."));
                 }
 
                 Roles.Add(entity);
@@ -122,7 +127,8 @@ namespace Edelstahl.DAL.Implementations.Memory
 
                 if (actual == null)
                 {
-                    throw new InvalidOperationException("No se encontró el rol.");
+                    throw new RegistroNoEncontradoException(
+                    LanguageService.Translate("The role was not found."));
                 }
 
                 actual.Nombre = entity.Nombre;
@@ -175,7 +181,7 @@ namespace Edelstahl.DAL.Implementations.Memory
         }
     }
 
-    public sealed class UsuarioRepositoryMemory : IUsuarioRepository
+    internal sealed class UsuarioRepositoryMemory : IUsuarioRepository
     {
         private static readonly object Candado = new object();
         private static readonly List<Usuario> Usuarios = new List<Usuario>();
@@ -192,7 +198,8 @@ namespace Edelstahl.DAL.Implementations.Memory
                 if (Usuarios.Any(u => string.Equals(u.NombreUsuario, entity.NombreUsuario,
                     StringComparison.OrdinalIgnoreCase)))
                 {
-                    throw new InvalidOperationException("Ya existe un usuario con ese nombre.");
+                    throw new RegistroDuplicadoException(
+                    LanguageService.Translate("A user with that name already exists."));
                 }
 
                 Usuarios.Add(entity);
@@ -207,7 +214,8 @@ namespace Edelstahl.DAL.Implementations.Memory
 
                 if (actual == null)
                 {
-                    throw new InvalidOperationException("No se encontró el usuario.");
+                    throw new RegistroNoEncontradoException(
+                    LanguageService.Translate("The user was not found."));
                 }
 
                 actual.RolId = entity.RolId;

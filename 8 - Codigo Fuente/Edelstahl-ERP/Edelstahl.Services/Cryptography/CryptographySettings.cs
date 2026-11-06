@@ -6,7 +6,7 @@ namespace Edelstahl.Services.Cryptography
     /// Obtiene la configuración utilizada por los
     /// servicios criptográficos de Edelstahl.
     /// </summary>
-    public static class CryptographySettings
+    internal static class CryptographySettings
     {
         private const string SecretKeyName =
             "AesEncryptionSecret";

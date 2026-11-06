@@ -58,6 +58,7 @@
       <Compile Include="PruebaCifrado.cs" />
     <Compile Include="PruebaCatalogo.cs" />
     <Compile Include="PruebaEscenarioCompleto.cs" />
+    <Compile Include="PruebaIntegridadRespaldo.cs" />
     <Compile Include="PruebaPantallas.cs" />
     <Compile Include="PruebaPreparacion.cs" />
     <Compile Include="Verificador.cs" />

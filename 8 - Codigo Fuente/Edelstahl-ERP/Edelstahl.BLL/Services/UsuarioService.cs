@@ -2,6 +2,7 @@ using System;
 using System.Collections.Generic;
 using Edelstahl.DAL.Factory;
 using Edelstahl.DAL.Interfaces;
+using Edelstahl.Domain.Exceptions;
 using Edelstahl.Domain.Security;
 using Edelstahl.Services.Security;
 using Edelstahl.BLL.Infrastructure;
@@ -375,22 +376,18 @@ namespace Edelstahl.BLL.Services
                     string.Empty,
                     usuario.NombreUsuario);
             }
-            catch (Exception ex)
+            catch (Exception ex) when (!(ex is BusinessRuleException))
             {
-                if (!(ex is InvalidOperationException) ||
-                    ex.Message != "La contrasena actual es incorrecta.")
-                {
-                    _bitacoraService.Registrar(
-                        "Seguridad",
-                        "Cambio de contrasena",
-                        "Usuario",
-                        usuario.Id,
-                        "No fue posible modificar la contrasena.",
-                        "Fallido",
-                        "Error",
-                        ex.ToString(),
-                        usuario.NombreUsuario);
-                }
+                _bitacoraService.Registrar(
+                    "Seguridad",
+                    "Cambio de contrasena",
+                    "Usuario",
+                    usuario.Id,
+                    "No fue posible modificar la contrasena.",
+                    "Fallido",
+                    "Error",
+                    ex.ToString(),
+                    usuario.NombreUsuario);
 
                 throw;
             }

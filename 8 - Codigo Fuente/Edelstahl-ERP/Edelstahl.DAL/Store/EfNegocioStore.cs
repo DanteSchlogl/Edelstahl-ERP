@@ -13,7 +13,7 @@ namespace Edelstahl.DAL.Store
     /// Almacén que persiste en SQL Server mediante Entity Framework.
     /// Cada ejecución usa su propio contexto y una única transacción.
     /// </summary>
-    public sealed class EfNegocioStore : INegocioStore
+    internal sealed class EfNegocioStore : INegocioStore
     {
         public TResultado Ejecutar<TResultado>(Func<IUnidadDeTrabajo, TResultado> trabajo)
         {

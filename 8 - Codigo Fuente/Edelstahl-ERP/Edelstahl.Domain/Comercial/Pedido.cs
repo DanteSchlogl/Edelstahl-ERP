@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Edelstahl.Domain.Common;
+using Edelstahl.Domain.Exceptions;
 
 namespace Edelstahl.Domain.Comercial
 {
@@ -187,7 +188,7 @@ namespace Edelstahl.Domain.Comercial
         {
             if (!PuedeConfirmarse())
             {
-                throw new InvalidOperationException(
+                throw new ReglaDeNegocioException(
                     "El pedido no cumple las condiciones necesarias " +
                     "para ser confirmado.");
             }

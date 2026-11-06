@@ -15,7 +15,7 @@ namespace Edelstahl.BLL.Services
     /// Coordina el proceso completo de confirmación de un pedido.
     /// Mantiene las selecciones realizadas durante el asistente.
     /// </summary>
-    public class ConfirmarPedidoService
+    internal class ConfirmarPedidoService
     {
         private readonly ClienteService _clienteService;
         private readonly PresupuestoService _presupuestoService;

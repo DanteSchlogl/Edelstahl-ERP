@@ -4,14 +4,16 @@ using System.Data;
 using System.Data.SqlClient;
 using Edelstahl.DAL.Interfaces;
 using Edelstahl.DAL.Tools;
+using Edelstahl.Domain.Exceptions;
 using Edelstahl.Domain.Security;
+using Edelstahl.Services.Localization;
 
 namespace Edelstahl.DAL.Implementations.SqlServer
 {
     /// <summary>
     /// Guarda y recupera usuarios y su rol desde SQL Server.
     /// </summary>
-    public class UsuarioRepositorySqlServer : IUsuarioRepository
+    internal class UsuarioRepositorySqlServer : IUsuarioRepository
     {
         private const string ColumnasUsuario =
             @"u.Id, u.RolId, u.NombreUsuario, u.NombreCompleto, u.Email,
@@ -38,14 +40,14 @@ namespace Edelstahl.DAL.Implementations.SqlServer
 
             if (ExistsByNombreUsuario(entity.NombreUsuario))
             {
-                throw new InvalidOperationException(
-                    "Ya existe un usuario con el nombre ingresado.");
+                throw new RegistroDuplicadoException(
+                    LanguageService.Translate("A user with the entered name already exists."));
             }
 
             if (ExistsByEmail(entity.Email))
             {
-                throw new InvalidOperationException(
-                    "Ya existe un usuario con el correo ingresado.");
+                throw new RegistroDuplicadoException(
+                    LanguageService.Translate("A user with the entered email already exists."));
             }
 
             const string sql =
@@ -62,7 +64,7 @@ namespace Edelstahl.DAL.Implementations.SqlServer
                    @FechaAlta, @UltimoAcceso,
                    @PreguntaSeguridad, @RespuestaHash, @RespuestaSalt)";
 
-            EjecutarEscritura(sql, entity, false);
+            SqlHelper.EjecutarNoQuery(BaseDeDatos.Servicios, sql, Parametros(entity));
         }
 
         public void Update(Usuario entity)
@@ -71,23 +73,22 @@ namespace Edelstahl.DAL.Implementations.SqlServer
 
             if (entity.Id == Guid.Empty)
             {
-                throw new ArgumentException(
-                    "El identificador del usuario no es válido.",
-                    nameof(entity));
+                throw new DatoInvalidoException(
+                    LanguageService.Translate("The user identifier is not valid."));
             }
 
             Usuario mismoNombre = GetByNombreUsuario(entity.NombreUsuario);
             if (mismoNombre != null && mismoNombre.Id != entity.Id)
             {
-                throw new InvalidOperationException(
-                    "Ya existe otro usuario con ese nombre.");
+                throw new RegistroDuplicadoException(
+                    LanguageService.Translate("Another user with that name already exists."));
             }
 
             Usuario mismoEmail = GetByEmail(entity.Email);
             if (mismoEmail != null && mismoEmail.Id != entity.Id)
             {
-                throw new InvalidOperationException(
-                    "Ya existe otro usuario con ese correo.");
+                throw new RegistroDuplicadoException(
+                    LanguageService.Translate("Another user with that email already exists."));
             }
 
             const string sql =
@@ -110,37 +111,32 @@ namespace Edelstahl.DAL.Implementations.SqlServer
                       RespuestaSalt = @RespuestaSalt
                   WHERE Id = @Id";
 
-            EjecutarEscritura(sql, entity, true);
+            int filas = SqlHelper.EjecutarNoQuery(BaseDeDatos.Servicios, sql, Parametros(entity));
+
+            if (filas == 0)
+            {
+                throw new RegistroNoEncontradoException(
+                    LanguageService.Translate("The user to modify was not found."));
+            }
         }
 
         public void Delete(Guid id)
         {
             if (id == Guid.Empty)
             {
-                throw new ArgumentException(
-                    "El identificador del usuario no es válido.",
-                    nameof(id));
+                throw new DatoInvalidoException(
+                    LanguageService.Translate("The user identifier is not valid."));
             }
 
-            const string sql =
-                @"UPDATE dbo.Usuarios SET Activo = 0 WHERE Id = @Id";
+            int filas = SqlHelper.EjecutarNoQuery(
+                BaseDeDatos.Servicios,
+                "UPDATE dbo.Usuarios SET Activo = 0 WHERE Id = @Id",
+                SqlHelper.Parametro("@Id", SqlDbType.UniqueIdentifier, id));
 
-            using (SqlConnection connection =
-                SqlServerConnection.CreateServicesConnection())
+            if (filas == 0)
             {
-                connection.Open();
-
-                using (SqlCommand command = new SqlCommand(sql, connection))
-                {
-                    command.Parameters.Add(
-                        "@Id", SqlDbType.UniqueIdentifier).Value = id;
-
-                    if (command.ExecuteNonQuery() == 0)
-                    {
-                        throw new InvalidOperationException(
-                            "No se encontró el usuario indicado.");
-                    }
-                }
+                throw new RegistroNoEncontradoException(
+                    LanguageService.Translate("The indicated user was not found."));
             }
         }
 
@@ -151,23 +147,19 @@ namespace Edelstahl.DAL.Implementations.SqlServer
                 return null;
             }
 
-            string sql =
-                "SELECT " + ColumnasUsuario + DesdeUsuarios +
-                " WHERE u.Id = @Id";
-
-            return ObtenerUno(
-                sql,
-                command => command.Parameters.Add(
-                    "@Id", SqlDbType.UniqueIdentifier).Value = id);
+            return SqlHelper.ConsultarUno(
+                BaseDeDatos.Servicios,
+                "SELECT " + ColumnasUsuario + DesdeUsuarios + " WHERE u.Id = @Id",
+                Mapear,
+                SqlHelper.Parametro("@Id", SqlDbType.UniqueIdentifier, id));
         }
 
         public List<Usuario> GetAll()
         {
-            string sql =
-                "SELECT " + ColumnasUsuario + DesdeUsuarios +
-                " ORDER BY u.NombreUsuario";
-
-            return ObtenerLista(sql, null);
+            return SqlHelper.Consultar(
+                BaseDeDatos.Servicios,
+                "SELECT " + ColumnasUsuario + DesdeUsuarios + " ORDER BY u.NombreUsuario",
+                Mapear);
         }
 
         public Usuario GetByNombreUsuario(string nombreUsuario)
@@ -177,15 +169,12 @@ namespace Edelstahl.DAL.Implementations.SqlServer
                 return null;
             }
 
-            string sql =
-                "SELECT " + ColumnasUsuario + DesdeUsuarios +
-                " WHERE u.NombreUsuario = @NombreUsuario";
-
-            return ObtenerUno(
-                sql,
-                command => command.Parameters.Add(
-                    "@NombreUsuario", SqlDbType.NVarChar, 100).Value =
-                    nombreUsuario.Trim().ToLowerInvariant());
+            return SqlHelper.ConsultarUno(
+                BaseDeDatos.Servicios,
+                "SELECT " + ColumnasUsuario + DesdeUsuarios + " WHERE u.NombreUsuario = @NombreUsuario",
+                Mapear,
+                SqlHelper.Parametro("@NombreUsuario", SqlDbType.NVarChar, 100,
+                    nombreUsuario.Trim().ToLowerInvariant()));
         }
 
         public Usuario GetByEmail(string email)
@@ -195,15 +184,12 @@ namespace Edelstahl.DAL.Implementations.SqlServer
                 return null;
             }
 
-            string sql =
-                "SELECT " + ColumnasUsuario + DesdeUsuarios +
-                " WHERE u.Email = @Email";
-
-            return ObtenerUno(
-                sql,
-                command => command.Parameters.Add(
-                    "@Email", SqlDbType.NVarChar, 250).Value =
-                    email.Trim().ToLowerInvariant());
+            return SqlHelper.ConsultarUno(
+                BaseDeDatos.Servicios,
+                "SELECT " + ColumnasUsuario + DesdeUsuarios + " WHERE u.Email = @Email",
+                Mapear,
+                SqlHelper.Parametro("@Email", SqlDbType.NVarChar, 250,
+                    email.Trim().ToLowerInvariant()));
         }
 
         public List<Usuario> GetByRolId(Guid rolId)
@@ -213,240 +199,99 @@ namespace Edelstahl.DAL.Implementations.SqlServer
                 return new List<Usuario>();
             }
 
-            string sql =
-                "SELECT " + ColumnasUsuario + DesdeUsuarios +
-                " WHERE u.RolId = @RolId ORDER BY u.NombreUsuario";
-
-            return ObtenerLista(
-                sql,
-                command => command.Parameters.Add(
-                    "@RolId", SqlDbType.UniqueIdentifier).Value = rolId);
+            return SqlHelper.Consultar(
+                BaseDeDatos.Servicios,
+                "SELECT " + ColumnasUsuario + DesdeUsuarios + " WHERE u.RolId = @RolId ORDER BY u.NombreUsuario",
+                Mapear,
+                SqlHelper.Parametro("@RolId", SqlDbType.UniqueIdentifier, rolId));
         }
 
         public bool ExistsByNombreUsuario(string nombreUsuario)
         {
-            return Existe(
-                "NombreUsuario",
-                "@Valor",
-                nombreUsuario,
-                100);
+            return Existe("NombreUsuario", nombreUsuario, 100);
         }
 
         public bool ExistsByEmail(string email)
         {
-            return Existe(
-                "Email",
-                "@Valor",
-                email,
-                250);
+            return Existe("Email", email, 250);
         }
 
-        private static bool Existe(
-            string columna,
-            string parametro,
-            string valor,
-            int longitud)
+        private static bool Existe(string columna, string valor, int longitud)
         {
             if (string.IsNullOrWhiteSpace(valor))
             {
                 return false;
             }
 
-            string sql =
-                "SELECT COUNT(1) FROM dbo.Usuarios WHERE " +
-                columna + " = " + parametro;
-
-            using (SqlConnection connection =
-                SqlServerConnection.CreateServicesConnection())
-            {
-                connection.Open();
-
-                using (SqlCommand command = new SqlCommand(sql, connection))
-                {
-                    command.Parameters.Add(
-                        parametro, SqlDbType.NVarChar, longitud).Value =
-                        valor.Trim().ToLowerInvariant();
-
-                    return Convert.ToInt32(command.ExecuteScalar()) > 0;
-                }
-            }
+            return SqlHelper.EjecutarEscalar<int>(
+                BaseDeDatos.Servicios,
+                "SELECT COUNT(1) FROM dbo.Usuarios WHERE " + columna + " = @Valor",
+                SqlHelper.Parametro("@Valor", SqlDbType.NVarChar, longitud,
+                    valor.Trim().ToLowerInvariant())) > 0;
         }
 
-        private static Usuario ObtenerUno(
-            string sql,
-            Action<SqlCommand> configurar)
+        private static SqlParameter[] Parametros(Usuario usuario)
         {
-            using (SqlConnection connection =
-                SqlServerConnection.CreateServicesConnection())
+            return new[]
             {
-                connection.Open();
-
-                using (SqlCommand command = new SqlCommand(sql, connection))
-                {
-                    configurar(command);
-
-                    using (SqlDataReader reader = command.ExecuteReader())
-                    {
-                        return reader.Read() ? Mapear(reader) : null;
-                    }
-                }
-            }
+                SqlHelper.Parametro("@Id", SqlDbType.UniqueIdentifier, usuario.Id),
+                SqlHelper.Parametro("@RolId", SqlDbType.UniqueIdentifier, usuario.RolId),
+                SqlHelper.Parametro("@NombreUsuario", SqlDbType.NVarChar, 100,
+                    usuario.NombreUsuario.Trim().ToLowerInvariant()),
+                SqlHelper.Parametro("@NombreCompleto", SqlDbType.NVarChar, 250,
+                    usuario.NombreCompleto.Trim()),
+                SqlHelper.Parametro("@Email", SqlDbType.NVarChar, 250,
+                    usuario.Email.Trim().ToLowerInvariant()),
+                SqlHelper.Parametro("@PasswordHash", SqlDbType.NVarChar, 500, usuario.PasswordHash),
+                SqlHelper.Parametro("@PasswordSalt", SqlDbType.NVarChar, 500, usuario.PasswordSalt),
+                SqlHelper.Parametro("@Iteraciones", SqlDbType.Int, usuario.Iteraciones),
+                SqlHelper.Parametro("@Activo", SqlDbType.Bit, usuario.Activo),
+                SqlHelper.Parametro("@DebeCambiarPassword", SqlDbType.Bit, usuario.DebeCambiarPassword),
+                SqlHelper.Parametro("@IntentosFallidos", SqlDbType.Int, usuario.IntentosFallidos),
+                SqlHelper.Parametro("@BloqueadoHasta", SqlDbType.DateTime2,
+                    SqlHelper.ONulo(usuario.BloqueadoHasta)),
+                SqlHelper.Parametro("@FechaAlta", SqlDbType.DateTime2, usuario.FechaAlta),
+                SqlHelper.Parametro("@UltimoAcceso", SqlDbType.DateTime2,
+                    SqlHelper.ONulo(usuario.UltimoAcceso)),
+                SqlHelper.Parametro("@PreguntaSeguridad", SqlDbType.NVarChar, 250,
+                    usuario.PreguntaSeguridad ?? string.Empty),
+                SqlHelper.Parametro("@RespuestaHash", SqlDbType.NVarChar, 500,
+                    usuario.RespuestaHash ?? string.Empty),
+                SqlHelper.Parametro("@RespuestaSalt", SqlDbType.NVarChar, 500,
+                    usuario.RespuestaSalt ?? string.Empty)
+            };
         }
 
-        private static List<Usuario> ObtenerLista(
-            string sql,
-            Action<SqlCommand> configurar)
-        {
-            List<Usuario> usuarios = new List<Usuario>();
-
-            using (SqlConnection connection =
-                SqlServerConnection.CreateServicesConnection())
-            {
-                connection.Open();
-
-                using (SqlCommand command = new SqlCommand(sql, connection))
-                {
-                    if (configurar != null)
-                    {
-                        configurar(command);
-                    }
-
-                    using (SqlDataReader reader = command.ExecuteReader())
-                    {
-                        while (reader.Read())
-                        {
-                            usuarios.Add(Mapear(reader));
-                        }
-                    }
-                }
-            }
-
-            return usuarios;
-        }
-
-        private static void EjecutarEscritura(
-            string sql,
-            Usuario usuario,
-            bool exigirFila)
-        {
-            using (SqlConnection connection =
-                SqlServerConnection.CreateServicesConnection())
-            {
-                connection.Open();
-
-                using (SqlCommand command = new SqlCommand(sql, connection))
-                {
-                    AgregarParametros(command, usuario);
-                    int filas = command.ExecuteNonQuery();
-
-                    if (exigirFila && filas == 0)
-                    {
-                        throw new InvalidOperationException(
-                            "No se encontró el usuario que se desea modificar.");
-                    }
-                }
-            }
-        }
-
-        private static void AgregarParametros(
-            SqlCommand command,
-            Usuario usuario)
-        {
-            command.Parameters.Add(
-                "@Id", SqlDbType.UniqueIdentifier).Value = usuario.Id;
-            command.Parameters.Add(
-                "@RolId", SqlDbType.UniqueIdentifier).Value = usuario.RolId;
-            command.Parameters.Add(
-                "@NombreUsuario", SqlDbType.NVarChar, 100).Value =
-                usuario.NombreUsuario.Trim().ToLowerInvariant();
-            command.Parameters.Add(
-                "@NombreCompleto", SqlDbType.NVarChar, 250).Value =
-                usuario.NombreCompleto.Trim();
-            command.Parameters.Add(
-                "@Email", SqlDbType.NVarChar, 250).Value =
-                usuario.Email.Trim().ToLowerInvariant();
-            command.Parameters.Add(
-                "@PasswordHash", SqlDbType.NVarChar, 500).Value =
-                usuario.PasswordHash;
-            command.Parameters.Add(
-                "@PasswordSalt", SqlDbType.NVarChar, 500).Value =
-                usuario.PasswordSalt;
-            command.Parameters.Add(
-                "@Iteraciones", SqlDbType.Int).Value = usuario.Iteraciones;
-            command.Parameters.Add(
-                "@Activo", SqlDbType.Bit).Value = usuario.Activo;
-            command.Parameters.Add(
-                "@DebeCambiarPassword", SqlDbType.Bit).Value =
-                usuario.DebeCambiarPassword;
-            command.Parameters.Add(
-                "@IntentosFallidos", SqlDbType.Int).Value =
-                usuario.IntentosFallidos;
-            command.Parameters.Add(
-                "@BloqueadoHasta", SqlDbType.DateTime2).Value =
-                usuario.BloqueadoHasta.HasValue
-                    ? (object)usuario.BloqueadoHasta.Value
-                    : DBNull.Value;
-            command.Parameters.Add(
-                "@FechaAlta", SqlDbType.DateTime2).Value = usuario.FechaAlta;
-            command.Parameters.Add(
-                "@UltimoAcceso", SqlDbType.DateTime2).Value =
-                usuario.UltimoAcceso.HasValue
-                    ? (object)usuario.UltimoAcceso.Value
-                    : DBNull.Value;
-            command.Parameters.Add(
-                "@PreguntaSeguridad", SqlDbType.NVarChar, 250).Value =
-                usuario.PreguntaSeguridad ?? string.Empty;
-            command.Parameters.Add(
-                "@RespuestaHash", SqlDbType.NVarChar, 500).Value =
-                usuario.RespuestaHash ?? string.Empty;
-            command.Parameters.Add(
-                "@RespuestaSalt", SqlDbType.NVarChar, 500).Value =
-                usuario.RespuestaSalt ?? string.Empty;
-        }
-
-        private static Usuario Mapear(SqlDataReader reader)
+        private static Usuario Mapear(IDataRecord fila)
         {
             Rol rol = new Rol
             {
-                Id = reader.GetGuid(reader.GetOrdinal("Rol_Id")),
-                Nombre = reader["Rol_Nombre"].ToString(),
-                Descripcion = reader["Rol_Descripcion"] == DBNull.Value
-                    ? string.Empty
-                    : reader["Rol_Descripcion"].ToString(),
-                Activo = Convert.ToBoolean(reader["Rol_Activo"]),
-                FechaAlta = Convert.ToDateTime(reader["Rol_FechaAlta"])
+                Id = (Guid)fila["Rol_Id"],
+                Nombre = fila["Rol_Nombre"].ToString(),
+                Descripcion = SqlHelper.Texto(fila, "Rol_Descripcion"),
+                Activo = Convert.ToBoolean(fila["Rol_Activo"]),
+                FechaAlta = Convert.ToDateTime(fila["Rol_FechaAlta"])
             };
 
             return new Usuario
             {
-                Id = reader.GetGuid(reader.GetOrdinal("Id")),
-                RolId = reader.GetGuid(reader.GetOrdinal("RolId")),
-                NombreUsuario = reader["NombreUsuario"].ToString(),
-                NombreCompleto = reader["NombreCompleto"].ToString(),
-                Email = reader["Email"].ToString(),
-                PasswordHash = reader["PasswordHash"].ToString(),
-                PasswordSalt = reader["PasswordSalt"].ToString(),
-                Iteraciones = Convert.ToInt32(reader["Iteraciones"]),
-                Activo = Convert.ToBoolean(reader["Activo"]),
-                DebeCambiarPassword =
-                    Convert.ToBoolean(reader["DebeCambiarPassword"]),
-                IntentosFallidos = Convert.ToInt32(reader["IntentosFallidos"]),
-                BloqueadoHasta = reader["BloqueadoHasta"] == DBNull.Value
-                    ? (DateTime?)null
-                    : Convert.ToDateTime(reader["BloqueadoHasta"]),
-                FechaAlta = Convert.ToDateTime(reader["FechaAlta"]),
-                UltimoAcceso = reader["UltimoAcceso"] == DBNull.Value
-                    ? (DateTime?)null
-                    : Convert.ToDateTime(reader["UltimoAcceso"]),
-                PreguntaSeguridad = reader["PreguntaSeguridad"] == DBNull.Value
-                    ? string.Empty
-                    : reader["PreguntaSeguridad"].ToString(),
-                RespuestaHash = reader["RespuestaHash"] == DBNull.Value
-                    ? string.Empty
-                    : reader["RespuestaHash"].ToString(),
-                RespuestaSalt = reader["RespuestaSalt"] == DBNull.Value
-                    ? string.Empty
-                    : reader["RespuestaSalt"].ToString(),
+                Id = (Guid)fila["Id"],
+                RolId = (Guid)fila["RolId"],
+                NombreUsuario = fila["NombreUsuario"].ToString(),
+                NombreCompleto = fila["NombreCompleto"].ToString(),
+                Email = fila["Email"].ToString(),
+                PasswordHash = fila["PasswordHash"].ToString(),
+                PasswordSalt = fila["PasswordSalt"].ToString(),
+                Iteraciones = Convert.ToInt32(fila["Iteraciones"]),
+                Activo = Convert.ToBoolean(fila["Activo"]),
+                DebeCambiarPassword = Convert.ToBoolean(fila["DebeCambiarPassword"]),
+                IntentosFallidos = Convert.ToInt32(fila["IntentosFallidos"]),
+                BloqueadoHasta = SqlHelper.FechaONula(fila, "BloqueadoHasta"),
+                FechaAlta = Convert.ToDateTime(fila["FechaAlta"]),
+                UltimoAcceso = SqlHelper.FechaONula(fila, "UltimoAcceso"),
+                PreguntaSeguridad = SqlHelper.Texto(fila, "PreguntaSeguridad"),
+                RespuestaHash = SqlHelper.Texto(fila, "RespuestaHash"),
+                RespuestaSalt = SqlHelper.Texto(fila, "RespuestaSalt"),
                 Rol = rol
             };
         }
@@ -460,30 +305,30 @@ namespace Edelstahl.DAL.Implementations.SqlServer
 
             if (usuario.RolId == Guid.Empty)
             {
-                throw new InvalidOperationException(
-                    "El rol del usuario es obligatorio.");
+                throw new DatoInvalidoException(
+                    LanguageService.Translate("The role of the user is required."));
             }
 
             if (string.IsNullOrWhiteSpace(usuario.NombreUsuario) ||
                 string.IsNullOrWhiteSpace(usuario.NombreCompleto) ||
                 string.IsNullOrWhiteSpace(usuario.Email))
             {
-                throw new InvalidOperationException(
-                    "El nombre de usuario, el nombre completo y el correo son obligatorios.");
+                throw new DatoInvalidoException(
+                    LanguageService.Translate("The user name, the full name and the email are required."));
             }
 
             if (string.IsNullOrWhiteSpace(usuario.PasswordHash) ||
                 string.IsNullOrWhiteSpace(usuario.PasswordSalt) ||
                 usuario.Iteraciones <= 0)
             {
-                throw new InvalidOperationException(
-                    "Los datos criptográficos de la contraseña no son válidos.");
+                throw new DatoInvalidoException(
+                    LanguageService.Translate("The cryptographic data of the password is not valid."));
             }
 
             if (usuario.IntentosFallidos < 0)
             {
-                throw new InvalidOperationException(
-                    "Los intentos fallidos no pueden ser negativos.");
+                throw new DatoInvalidoException(
+                    LanguageService.Translate("The failed attempts cannot be negative."));
             }
 
             if (usuario.FechaAlta == default(DateTime))

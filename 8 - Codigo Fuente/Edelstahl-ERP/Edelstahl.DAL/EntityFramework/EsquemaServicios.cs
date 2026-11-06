@@ -1,4 +1,3 @@
-using System.Data.SqlClient;
 using Edelstahl.DAL.Tools;
 
 namespace Edelstahl.DAL.EntityFramework
@@ -7,7 +6,7 @@ namespace Edelstahl.DAL.EntityFramework
     /// Crea la base de servicios (usuarios, roles y bitácora) cuando falta.
     /// Las tablas que ya existen no se modifican, salvo las columnas nuevas de Usuarios (pregunta de seguridad).
     /// </summary>
-    public static class EsquemaServicios
+    internal static class EsquemaServicios
     {
         private const string ScriptTablas = @"
 IF OBJECT_ID('dbo.Roles', 'U') IS NULL
@@ -67,11 +66,28 @@ CREATE TABLE dbo.Bitacora (
     DetalleTecnico nvarchar(max) NOT NULL
 );
 
+IF OBJECT_ID('dbo.Respaldos', 'U') IS NULL
+CREATE TABLE dbo.Respaldos (
+    Id uniqueidentifier NOT NULL CONSTRAINT PK_Respaldos PRIMARY KEY,
+    FechaHora datetime2 NOT NULL,
+    BaseDatos nvarchar(100) NOT NULL,
+    RutaSql nvarchar(500) NOT NULL,
+    RutaCopia nvarchar(500) NOT NULL CONSTRAINT DF_Respaldos_RutaCopia DEFAULT '',
+    TamanioBytes bigint NOT NULL,
+    Origen nvarchar(30) NOT NULL,
+    Sano bit NOT NULL,
+    Usuario nvarchar(100) NOT NULL CONSTRAINT DF_Respaldos_Usuario DEFAULT '',
+    Observaciones nvarchar(500) NOT NULL CONSTRAINT DF_Respaldos_Observaciones DEFAULT ''
+);
+
 IF NOT EXISTS (SELECT 1 FROM sys.indexes WHERE name = 'UQ_Roles_Nombre' AND object_id = OBJECT_ID('dbo.Roles'))
 CREATE UNIQUE INDEX UQ_Roles_Nombre ON dbo.Roles (Nombre);
 
 IF NOT EXISTS (SELECT 1 FROM sys.indexes WHERE name = 'UQ_Usuarios_NombreUsuario' AND object_id = OBJECT_ID('dbo.Usuarios'))
 CREATE UNIQUE INDEX UQ_Usuarios_NombreUsuario ON dbo.Usuarios (NombreUsuario);
+
+IF NOT EXISTS (SELECT 1 FROM sys.indexes WHERE name = 'IX_Respaldos_FechaHora' AND object_id = OBJECT_ID('dbo.Respaldos'))
+CREATE INDEX IX_Respaldos_FechaHora ON dbo.Respaldos (FechaHora DESC);
 
 IF NOT EXISTS (SELECT 1 FROM sys.indexes WHERE name = 'IX_Bitacora_FechaHora' AND object_id = OBJECT_ID('dbo.Bitacora'))
 CREATE INDEX IX_Bitacora_FechaHora ON dbo.Bitacora (FechaHora DESC);
@@ -81,16 +97,7 @@ CREATE INDEX IX_Bitacora_FechaHora ON dbo.Bitacora (FechaHora DESC);
         {
             EsquemaNegocio.AsegurarBase(SqlServerConnection.NombreBaseServicios);
 
-            using (SqlConnection conexion = SqlServerConnection.CreateServicesConnection())
-            {
-                conexion.Open();
-
-                using (SqlCommand comando = new SqlCommand(ScriptTablas, conexion))
-                {
-                    comando.CommandTimeout = 120;
-                    comando.ExecuteNonQuery();
-                }
-            }
+            SqlHelper.EjecutarNoQuery(BaseDeDatos.Servicios, 120, ScriptTablas);
         }
 
         public static string GenerarScript()

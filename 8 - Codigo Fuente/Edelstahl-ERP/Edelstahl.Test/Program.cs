@@ -16,6 +16,11 @@ namespace Edelstahl.Test
         {
             Database.SetInitializer<EdelstahlNegocioContext>(null);
 
+            // Las preferencias (idioma, respaldos) de las pruebas van a una carpeta temporal.
+            Environment.SetEnvironmentVariable(
+                Edelstahl.Services.Localization.LanguageService.VariableCarpetaDatos,
+                System.IO.Path.Combine(System.IO.Path.GetTempPath(), "edelstahl-prueba-datos-" + Guid.NewGuid().ToString("N")));
+
             bool cifrado = args.Length == 0 || Array.IndexOf(args, "cifrado") >= 0;
             bool demo = args.Length == 0 || Array.IndexOf(args, "demo") >= 0;
             bool sql = Array.IndexOf(args, "sql") >= 0;
@@ -33,6 +38,8 @@ namespace Edelstahl.Test
 
                 if (demo)
                 {
+                    PruebaIntegridadRespaldo.Idiomas();
+                    PruebaIntegridadRespaldo.FactoryYExcepciones();
                     PruebaEscenarioCompleto.Ejecutar(ExecutionMode.Demo);
                     PruebaPreparacion.Ejecutar(ExecutionMode.Demo);
                 }
@@ -77,6 +84,13 @@ namespace Edelstahl.Test
                 if (iVer >= 0 && iVer + 1 < args.Length)
                 {
                     PruebaPantallas.CapturarVerificacion(args[iVer + 1]);
+                    return Verificador.Resumen();
+                }
+
+                int iRec = Array.IndexOf(args, "recuperacion");
+                if (iRec >= 0 && iRec + 1 < args.Length)
+                {
+                    PruebaPantallas.CapturarRecuperacion(args[iRec + 1]);
                     return Verificador.Resumen();
                 }
 
@@ -132,6 +146,7 @@ namespace Edelstahl.Test
                 {
                     PruebaEscenarioCompleto.Ejecutar(ExecutionMode.SqlServer);
                     PruebaPreparacion.Ejecutar(ExecutionMode.SqlServer);
+                    PruebaIntegridadRespaldo.IntegridadYRespaldos();
                 }
             }
             catch (Exception ex)

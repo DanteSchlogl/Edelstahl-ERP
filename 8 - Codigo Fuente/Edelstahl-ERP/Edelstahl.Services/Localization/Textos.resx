@@ -1,0 +1,574 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="TituloAplicacion" xml:space="preserve">
+    <value>Edelstahl ERP</value>
+  </data>
+  <data name="ModuloVentas" xml:space="preserve">
+    <value>Commercial Management - Sales</value>
+  </data>
+  <data name="Idioma" xml:space="preserve">
+    <value>Language</value>
+  </data>
+  <data name="NombreEspanolArgentina" xml:space="preserve">
+    <value>Español (Argentina)</value>
+  </data>
+  <data name="NombreEspanolEspana" xml:space="preserve">
+    <value>Español (España)</value>
+  </data>
+  <data name="NombreInglesEstadosUnidos" xml:space="preserve">
+    <value>English (United States)</value>
+  </data>
+  <data name="NombreInglesReinoUnido" xml:space="preserve">
+    <value>English (United Kingdom)</value>
+  </data>
+  <data name="NombrePortuguesBrasil" xml:space="preserve">
+    <value>Português (Brasil)</value>
+  </data>
+  <data name="NombreAleman" xml:space="preserve">
+    <value>Deutsch</value>
+  </data>
+  <data name="NombreRuso" xml:space="preserve">
+    <value>Русский</value>
+  </data>
+  <data name="VentasPedidos" xml:space="preserve">
+    <value>Sales and Orders</value>
+  </data>
+  <data name="Produccion" xml:space="preserve">
+    <value>Production</value>
+  </data>
+  <data name="ComprasStock" xml:space="preserve">
+    <value>Purchasing / Inventory</value>
+  </data>
+  <data name="Logistica" xml:space="preserve">
+    <value>Logistics</value>
+  </data>
+  <data name="Finanzas" xml:space="preserve">
+    <value>Finance</value>
+  </data>
+  <data name="AtencionCliente" xml:space="preserve">
+    <value>Customer Service</value>
+  </data>
+  <data name="ConfirmarPedido" xml:space="preserve">
+    <value>Confirm Order</value>
+  </data>
+  <data name="Cliente" xml:space="preserve">
+    <value>Customer</value>
+  </data>
+  <data name="Presupuesto" xml:space="preserve">
+    <value>Quotation</value>
+  </data>
+  <data name="Productos" xml:space="preserve">
+    <value>Products</value>
+  </data>
+  <data name="Validacion" xml:space="preserve">
+    <value>Validation</value>
+  </data>
+  <data name="Sena" xml:space="preserve">
+    <value>Deposit</value>
+  </data>
+  <data name="Confirmacion" xml:space="preserve">
+    <value>Confirmation</value>
+  </data>
+  <data name="Resultado" xml:space="preserve">
+    <value>Result</value>
+  </data>
+  <data name="Buscar" xml:space="preserve">
+    <value>Search</value>
+  </data>
+  <data name="Actualizar" xml:space="preserve">
+    <value>Refresh</value>
+  </data>
+  <data name="NuevaOperacion" xml:space="preserve">
+    <value>New Operation</value>
+  </data>
+  <data name="QuitarPresupuesto" xml:space="preserve">
+    <value>Remove Quotation</value>
+  </data>
+  <data name="VerComprobante" xml:space="preserve">
+    <value>View Document</value>
+  </data>
+  <data name="GuardarCliente" xml:space="preserve">
+    <value>Save Customer</value>
+  </data>
+  <data name="NuevoCliente" xml:space="preserve">
+    <value>New Customer</value>
+  </data>
+  <data name="SeleccionarCliente" xml:space="preserve">
+    <value>Select Customer</value>
+  </data>
+  <data name="SeleccionarPresupuesto" xml:space="preserve">
+    <value>Select Quotation</value>
+  </data>
+  <data name="RegistrarSena" xml:space="preserve">
+    <value>Register Deposit</value>
+  </data>
+  <data name="Refrescar" xml:space="preserve">
+    <value>Refresh</value>
+  </data>
+  <data name="Limpiar" xml:space="preserve">
+    <value>Clear</value>
+  </data>
+  <data name="Cancelar" xml:space="preserve">
+    <value>Cancel</value>
+  </data>
+  <data name="Aceptar" xml:space="preserve">
+    <value>OK</value>
+  </data>
+  <data name="Cerrar" xml:space="preserve">
+    <value>Close</value>
+  </data>
+  <data name="Estado" xml:space="preserve">
+    <value>Status</value>
+  </data>
+  <data name="EstadoPendiente" xml:space="preserve">
+    <value>Pending</value>
+  </data>
+  <data name="PedidoConfirmado" xml:space="preserve">
+    <value>Order Confirmed</value>
+  </data>
+  <data name="AnticipoRequerido" xml:space="preserve">
+    <value>Deposit Required</value>
+  </data>
+  <data name="ListoConfirmar" xml:space="preserve">
+    <value>Ready to Confirm</value>
+  </data>
+  <data name="SinSeleccionar" xml:space="preserve">
+    <value>Not Selected</value>
+  </data>
+  <data name="CreditoDisponible" xml:space="preserve">
+    <value>Available Credit</value>
+  </data>
+  <data name="Subtotal" xml:space="preserve">
+    <value>Subtotal</value>
+  </data>
+  <data name="IVA" xml:space="preserve">
+    <value>Sales Tax</value>
+  </data>
+  <data name="Anticipo" xml:space="preserve">
+    <value>Deposit</value>
+  </data>
+  <data name="AnticipoRegistrado" xml:space="preserve">
+    <value>Registered Deposit</value>
+  </data>
+  <data name="SaldoFacturar" xml:space="preserve">
+    <value>Balance to Invoice</value>
+  </data>
+  <data name="Items" xml:space="preserve">
+    <value>Items</value>
+  </data>
+  <data name="Total" xml:space="preserve">
+    <value>TOTAL</value>
+  </data>
+  <data name="Codigo" xml:space="preserve">
+    <value>Code</value>
+  </data>
+  <data name="Descripcion" xml:space="preserve">
+    <value>Description</value>
+  </data>
+  <data name="Cantidad" xml:space="preserve">
+    <value>Quantity</value>
+  </data>
+  <data name="Precio" xml:space="preserve">
+    <value>Price</value>
+  </data>
+  <data name="Numero" xml:space="preserve">
+    <value>Number</value>
+  </data>
+  <data name="Fecha" xml:space="preserve">
+    <value>Date</value>
+  </data>
+  <data name="Usuario" xml:space="preserve">
+    <value>User</value>
+  </data>
+  <data name="RazonSocial" xml:space="preserve">
+    <value>Business Name</value>
+  </data>
+  <data name="CUIT" xml:space="preserve">
+    <value>Tax ID</value>
+  </data>
+  <data name="Correo" xml:space="preserve">
+    <value>Email</value>
+  </data>
+  <data name="Telefono" xml:space="preserve">
+    <value>Phone</value>
+  </data>
+  <data name="Localidad" xml:space="preserve">
+    <value>City</value>
+  </data>
+  <data name="Provincia" xml:space="preserve">
+    <value>State</value>
+  </data>
+  <data name="CodigoPostal" xml:space="preserve">
+    <value>ZIP Code</value>
+  </data>
+  <data name="LimiteCredito" xml:space="preserve">
+    <value>Credit Limit</value>
+  </data>
+  <data name="DeudaActual" xml:space="preserve">
+    <value>Current Debt</value>
+  </data>
+  <data name="Activo" xml:space="preserve">
+    <value>Active</value>
+  </data>
+  <data name="MedioPago" xml:space="preserve">
+    <value>Payment Method</value>
+  </data>
+  <data name="NumeroComprobante" xml:space="preserve">
+    <value>Receipt Number</value>
+  </data>
+  <data name="FechaPago" xml:space="preserve">
+    <value>Payment Date</value>
+  </data>
+  <data name="PresupuestosDisponibles" xml:space="preserve">
+    <value>Available Quotations</value>
+  </data>
+  <data name="ClientesRegistrados" xml:space="preserve">
+    <value>Registered Customers</value>
+  </data>
+  <data name="GestionClientes" xml:space="preserve">
+    <value>Customer Management</value>
+  </data>
+  <data name="DatosCliente" xml:space="preserve">
+    <value>Customer Information</value>
+  </data>
+  <data name="ImporteRecibido" xml:space="preserve">
+    <value>Amount Received</value>
+  </data>
+  <data name="ComprobantePedido" xml:space="preserve">
+    <value>Order Document</value>
+  </data>
+  <data name="InformacionComercial" xml:space="preserve">
+    <value>Commercial Information</value>
+  </data>
+  <data name="CondicionPago" xml:space="preserve">
+    <value>Payment Terms</value>
+  </data>
+  <data name="PlazoEntrega" xml:space="preserve">
+    <value>Delivery Time</value>
+  </data>
+  <data name="EntregaIncluida" xml:space="preserve">
+    <value>Delivery Included</value>
+  </data>
+  <data name="Observaciones" xml:space="preserve">
+    <value>Notes</value>
+  </data>
+  <data name="Si" xml:space="preserve">
+    <value>Yes</value>
+  </data>
+  <data name="No" xml:space="preserve">
+    <value>No</value>
+  </data>
+  <data name="RespaldoDatos" xml:space="preserve">
+    <value>Data Backup</value>
+  </data>
+  <data name="IniciarSesion" xml:space="preserve">
+    <value>Sign In</value>
+  </data>
+  <data name="NombreUsuario" xml:space="preserve">
+    <value>Username</value>
+  </data>
+  <data name="Contrasena" xml:space="preserve">
+    <value>Password</value>
+  </data>
+  <data name="CerrarSesion" xml:space="preserve">
+    <value>Sign Out</value>
+  </data>
+  <data name="UsuarioActual" xml:space="preserve">
+    <value>Current User</value>
+  </data>
+  <data name="Bienvenido" xml:space="preserve">
+    <value>Welcome</value>
+  </data>
+  <data name="CredencialesInvalidas" xml:space="preserve">
+    <value>The username or password is incorrect</value>
+  </data>
+  <data name="SeleccionarModoInicio" xml:space="preserve">
+    <value>Select Startup Mode</value>
+  </data>
+  <data name="IniciarConSqlServer" xml:space="preserve">
+    <value>Start with SQL Server</value>
+  </data>
+  <data name="IniciarModoDemostracion" xml:space="preserve">
+    <value>Start Demo Mode</value>
+  </data>
+  <data name="SalirAplicacion" xml:space="preserve">
+    <value>Exit Application</value>
+  </data>
+  <data name="BaseDatosDisponible" xml:space="preserve">
+    <value>Database Available</value>
+  </data>
+  <data name="BaseDatosNoDisponible" xml:space="preserve">
+    <value>Database Unavailable</value>
+  </data>
+  <data name="ModoDemostracion" xml:space="preserve">
+    <value>Demo Mode</value>
+  </data>
+  <data name="BuscarClientes" xml:space="preserve">
+    <value>Search Customers</value>
+  </data>
+  <data name="MostrarTodos" xml:space="preserve">
+    <value>Show All</value>
+  </data>
+  <data name="ClienteRequerido" xml:space="preserve">
+    <value>Please select a customer</value>
+  </data>
+  <data name="ClienteNoEncontrado" xml:space="preserve">
+    <value>Customer not found</value>
+  </data>
+  <data name="BusquedaSinResultados" xml:space="preserve">
+    <value>No results were found</value>
+  </data>
+  <data name="ClienteDuplicado" xml:space="preserve">
+    <value>A customer with the entered Tax ID already exists</value>
+  </data>
+  <data name="ClienteRegistradoCorrectamente" xml:space="preserve">
+    <value>Customer registered successfully</value>
+  </data>
+  <data name="ActualizarListado" xml:space="preserve">
+    <value>Refresh List</value>
+  </data>
+  <data name="SeleccionCliente" xml:space="preserve">
+    <value>Customer Selection</value>
+  </data>
+  <data name="SeleccionPresupuesto" xml:space="preserve">
+    <value>Quotation Selection</value>
+  </data>
+  <data name="RevisionProductos" xml:space="preserve">
+    <value>Product Review</value>
+  </data>
+  <data name="ValidacionCredito" xml:space="preserve">
+    <value>Credit Validation</value>
+  </data>
+  <data name="RegistroSena" xml:space="preserve">
+    <value>Deposit Registration</value>
+  </data>
+  <data name="ResumenConfirmacion" xml:space="preserve">
+    <value>Confirmation Summary</value>
+  </data>
+  <data name="ResultadoOperacion" xml:space="preserve">
+    <value>Operation Result</value>
+  </data>
+  <data name="CreditoSuficiente" xml:space="preserve">
+    <value>Sufficient Credit</value>
+  </data>
+  <data name="CreditoInsuficiente" xml:space="preserve">
+    <value>Insufficient Credit</value>
+  </data>
+  <data name="PresupuestoConfirmable" xml:space="preserve">
+    <value>Quotation available for confirmation</value>
+  </data>
+  <data name="PresupuestoNoConfirmable" xml:space="preserve">
+    <value>The quotation cannot be confirmed</value>
+  </data>
+  <data name="ConfirmarGeneracionPedido" xml:space="preserve">
+    <value>Do you want to confirm the order?</value>
+  </data>
+  <data name="ImportarClientes" xml:space="preserve">
+    <value>Import Customers</value>
+  </data>
+  <data name="SeleccionarArchivo" xml:space="preserve">
+    <value>Select File</value>
+  </data>
+  <data name="ArchivoSeleccionado" xml:space="preserve">
+    <value>File Selected</value>
+  </data>
+  <data name="ArchivoNoSeleccionado" xml:space="preserve">
+    <value>No File Selected</value>
+  </data>
+  <data name="RegistrosDetectados" xml:space="preserve">
+    <value>Records Detected</value>
+  </data>
+  <data name="RegistrosImportados" xml:space="preserve">
+    <value>Records Imported</value>
+  </data>
+  <data name="RegistrosOmitidos" xml:space="preserve">
+    <value>Records Skipped</value>
+  </data>
+  <data name="ImportacionFinalizada" xml:space="preserve">
+    <value>Import Completed</value>
+  </data>
+  <data name="ImportacionConErrores" xml:space="preserve">
+    <value>The import completed with errors</value>
+  </data>
+  <data name="DatosProtegidos" xml:space="preserve">
+    <value>Protected Data</value>
+  </data>
+  <data name="CifradoSimetrico" xml:space="preserve">
+    <value>Symmetric Encryption</value>
+  </data>
+  <data name="CUITCifrado" xml:space="preserve">
+    <value>Encrypted Tax ID</value>
+  </data>
+  <data name="ErrorDescifrado" xml:space="preserve">
+    <value>The data could not be decrypted</value>
+  </data>
+  <data name="IntegridadInvalida" xml:space="preserve">
+    <value>Data integrity validation failed</value>
+  </data>
+  <data name="CrearRespaldo" xml:space="preserve">
+    <value>Create Backup</value>
+  </data>
+  <data name="RestaurarRespaldo" xml:space="preserve">
+    <value>Restore Backup</value>
+  </data>
+  <data name="SeleccionarDestino" xml:space="preserve">
+    <value>Select Destination</value>
+  </data>
+  <data name="RespaldoExitoso" xml:space="preserve">
+    <value>Backup completed successfully</value>
+  </data>
+  <data name="RestauracionExitosa" xml:space="preserve">
+    <value>Restore completed successfully</value>
+  </data>
+  <data name="ErrorBaseDatos" xml:space="preserve">
+    <value>Database Error</value>
+  </data>
+  <data name="ConexionExitosa" xml:space="preserve">
+    <value>Connection completed successfully</value>
+  </data>
+  <data name="DescripcionRegistrarSena" xml:space="preserve">
+    <value>Enter the exact deposit required to confirm the order</value>
+  </data>
+  <data name="SenaPendiente" xml:space="preserve">
+    <value>Deposit pending</value>
+  </data>
+  <data name="TransferenciaBancaria" xml:space="preserve">
+    <value>Bank transfer</value>
+  </data>
+  <data name="DepositoBancario" xml:space="preserve">
+    <value>Bank deposit</value>
+  </data>
+  <data name="Cheque" xml:space="preserve">
+    <value>Check</value>
+  </data>
+  <data name="Efectivo" xml:space="preserve">
+    <value>Cash</value>
+  </data>
+  <data name="Tarjeta" xml:space="preserve">
+    <value>Card</value>
+  </data>
+  <data name="SenaNoRequerida" xml:space="preserve">
+    <value>Deposit not required</value>
+  </data>
+  <data name="PresupuestoSinAnticipo" xml:space="preserve">
+    <value>The selected quotation does not require a deposit</value>
+  </data>
+  <data name="ImporteInsuficiente" xml:space="preserve">
+    <value>Insufficient amount</value>
+  </data>
+  <data name="MensajeImporteInsuficiente" xml:space="preserve">
+    <value>The amount received is insufficient. The required deposit is</value>
+  </data>
+  <data name="ImporteSuperior" xml:space="preserve">
+    <value>Amount exceeds the required deposit</value>
+  </data>
+  <data name="MensajeImporteSuperior" xml:space="preserve">
+    <value>The amount received cannot exceed the required deposit of</value>
+  </data>
+  <data name="MedioPagoRequerido" xml:space="preserve">
+    <value>Payment method required</value>
+  </data>
+  <data name="DebeSeleccionarMedioPago" xml:space="preserve">
+    <value>Please select a payment method</value>
+  </data>
+  <data name="ComprobanteRequerido" xml:space="preserve">
+    <value>Receipt required</value>
+  </data>
+  <data name="ErrorGenerarComprobante" xml:space="preserve">
+    <value>The receipt number could not be generated</value>
+  </data>
+  <data name="FechaIncorrecta" xml:space="preserve">
+    <value>Invalid date</value>
+  </data>
+  <data name="FechaPagoFutura" xml:space="preserve">
+    <value>The payment date cannot be in the future</value>
+  </data>
+  <data name="SenaRegistradaCorrectamente" xml:space="preserve">
+    <value>Deposit registered successfully</value>
+  </data>
+  <data name="MensajeSenaRegistrada" xml:space="preserve">
+    <value>The deposit was registered successfully</value>
+  </data>
+  <data name="Importe" xml:space="preserve">
+    <value>Amount</value>
+  </data>
+  <data name="Comprobante" xml:space="preserve">
+    <value>Receipt</value>
+  </data>
+  <data name="SubtituloLogin" xml:space="preserve">
+    <value>Enter your credentials to continue</value>
+  </data>
+  <data name="MostrarContrasena" xml:space="preserve">
+    <value>Show password</value>
+  </data>
+  <data name="AccesoDenegado" xml:space="preserve">
+    <value>Access denied</value>
+  </data>
+  <data name="DescripcionModoInicio" xml:space="preserve">
+    <value>Select how you want to run Edelstahl ERP</value>
+  </data>
+  <data name="DescripcionModoSql" xml:space="preserve">
+    <value>Uses the databases, sign-in, audit log, persistence, and Tax ID encryption</value>
+  </data>
+  <data name="DescripcionModoDemo" xml:space="preserve">
+    <value>Allows you to explore the interface using temporary data without connecting to SQL Server</value>
+  </data>
+</root>

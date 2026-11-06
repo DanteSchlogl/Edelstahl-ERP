@@ -1,6 +1,6 @@
 ﻿using System;
 using System.Net.Mail;
-using Edelstahl.BLL.Exceptions.Commercial;
+using Edelstahl.Domain.Exceptions;
 using Edelstahl.Domain.Comercial;
 using Edelstahl.BLL.Infrastructure;
 
@@ -9,7 +9,7 @@ namespace Edelstahl.BLL.Validators
     /// <summary>
     /// Centraliza las validaciones aplicables a los clientes.
     /// </summary>
-    public static class ClienteValidator
+    internal static class ClienteValidator
     {
         public static void Validate(Cliente cliente)
         {
@@ -30,7 +30,7 @@ namespace Edelstahl.BLL.Validators
         {
             if (string.IsNullOrWhiteSpace(cuit))
             {
-                throw new CUITInvalidoException(cuit);
+                throw Mensajes.CuitInvalido(cuit);
             }
 
             string cuitNormalizado = cuit
@@ -39,14 +39,14 @@ namespace Edelstahl.BLL.Validators
 
             if (cuitNormalizado.Length != 11)
             {
-                throw new CUITInvalidoException(cuit);
+                throw Mensajes.CuitInvalido(cuit);
             }
 
             foreach (char caracter in cuitNormalizado)
             {
                 if (!char.IsDigit(caracter))
                 {
-                    throw new CUITInvalidoException(cuit);
+                    throw Mensajes.CuitInvalido(cuit);
                 }
             }
         }

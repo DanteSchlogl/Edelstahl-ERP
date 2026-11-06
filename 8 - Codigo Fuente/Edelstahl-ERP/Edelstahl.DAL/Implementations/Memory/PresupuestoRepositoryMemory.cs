@@ -5,6 +5,8 @@ using System.Text;
 using System.Threading.Tasks;
 using Edelstahl.DAL.Interfaces;
 using Edelstahl.Domain.Comercial;
+using Edelstahl.Domain.Exceptions;
+using Edelstahl.Services.Localization;
 
 namespace Edelstahl.DAL.Implementations.Memory
 {
@@ -12,7 +14,7 @@ namespace Edelstahl.DAL.Implementations.Memory
     /// Implementación temporal del repositorio de presupuestos.
     /// Los datos se conservan mientras la aplicación está abierta.
     /// </summary>
-    public sealed class PresupuestoRepositoryMemory
+    internal sealed class PresupuestoRepositoryMemory
         : IPresupuestoRepository
     {
         private readonly List<Presupuesto> _presupuestos;
@@ -44,8 +46,8 @@ namespace Edelstahl.DAL.Implementations.Memory
 
             if (presupuestoExistente == null)
             {
-                throw new InvalidOperationException(
-                    "No se encontró el presupuesto que se desea modificar.");
+                throw new RegistroNoEncontradoException(
+                    LanguageService.Translate("The quote to modify was not found."));
             }
 
             presupuestoExistente.Numero = entity.Numero;
@@ -84,8 +86,8 @@ namespace Edelstahl.DAL.Implementations.Memory
 
             if (presupuestoExistente == null)
             {
-                throw new InvalidOperationException(
-                    "No se encontró el presupuesto que se desea eliminar.");
+                throw new RegistroNoEncontradoException(
+                    LanguageService.Translate("The quote to delete was not found."));
             }
 
             _presupuestos.Remove(presupuestoExistente);

@@ -10,7 +10,7 @@ namespace Edelstahl.BLL.Produccion
     /// qué operaciones admite y a qué estado pasa la orden. Así las etapas
     /// respetan el orden definido y no pueden omitirse.
     /// </summary>
-    public interface IEstadoOrden
+    internal interface IEstadoOrden
     {
         EstadoProduccion Estado { get; }
 
@@ -27,7 +27,7 @@ namespace Edelstahl.BLL.Produccion
         void Cancelar(OrdenFabricacion orden);
     }
 
-    public abstract class EstadoOrdenBase : IEstadoOrden
+    internal abstract class EstadoOrdenBase : IEstadoOrden
     {
         public abstract EstadoProduccion Estado { get; }
 
@@ -70,7 +70,7 @@ namespace Edelstahl.BLL.Produccion
         }
     }
 
-    public sealed class EstadoPendiente : EstadoOrdenBase
+    internal sealed class EstadoPendiente : EstadoOrdenBase
     {
         public override EstadoProduccion Estado
         {
@@ -89,7 +89,7 @@ namespace Edelstahl.BLL.Produccion
         }
     }
 
-    public sealed class EstadoEnProceso : EstadoOrdenBase
+    internal sealed class EstadoEnProceso : EstadoOrdenBase
     {
         public override EstadoProduccion Estado
         {
@@ -133,7 +133,7 @@ namespace Edelstahl.BLL.Produccion
         }
     }
 
-    public sealed class EstadoEnControlCalidad : EstadoOrdenBase
+    internal sealed class EstadoEnControlCalidad : EstadoOrdenBase
     {
         public override EstadoProduccion Estado
         {
@@ -165,7 +165,7 @@ namespace Edelstahl.BLL.Produccion
         }
     }
 
-    public sealed class EstadoFinalizada : EstadoOrdenBase
+    internal sealed class EstadoFinalizada : EstadoOrdenBase
     {
         public override EstadoProduccion Estado
         {
@@ -173,7 +173,7 @@ namespace Edelstahl.BLL.Produccion
         }
     }
 
-    public sealed class EstadoCancelada : EstadoOrdenBase
+    internal sealed class EstadoCancelada : EstadoOrdenBase
     {
         public override EstadoProduccion Estado
         {
@@ -181,7 +181,7 @@ namespace Edelstahl.BLL.Produccion
         }
     }
 
-    public static class EstadosOrden
+    internal static class EstadosOrden
     {
         public static IEstadoOrden Para(EstadoProduccion estado)
         {

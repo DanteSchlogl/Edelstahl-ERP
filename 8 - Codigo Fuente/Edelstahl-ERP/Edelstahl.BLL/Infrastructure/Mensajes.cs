@@ -1,5 +1,5 @@
 using System;
-using Edelstahl.BLL.Exceptions.Base;
+using Edelstahl.Domain.Exceptions;
 using Edelstahl.Services.Localization;
 
 namespace Edelstahl.BLL.Infrastructure
@@ -35,6 +35,20 @@ namespace Edelstahl.BLL.Infrastructure
         public static ReglaDeNegocioException Regla(string clave, params object[] argumentos)
         {
             return new ReglaDeNegocioException(T(clave, argumentos));
+        }
+
+        public static CUITInvalidoException CuitInvalido(string cuit)
+        {
+            return new CUITInvalidoException(
+                cuit,
+                T("The CUIT entered is not valid. It must contain 11 digits."));
+        }
+
+        public static ClienteDuplicadoException ClienteDuplicado(string cuit)
+        {
+            return new ClienteDuplicadoException(
+                cuit,
+                T("There is already a customer registered with the CUIT {0}.", cuit));
         }
     }
 }

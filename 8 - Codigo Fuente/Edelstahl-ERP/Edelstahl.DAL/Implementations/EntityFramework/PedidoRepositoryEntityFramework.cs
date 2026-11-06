@@ -5,13 +5,15 @@ using System.Linq;
 using Edelstahl.DAL.EntityFramework;
 using Edelstahl.DAL.Interfaces;
 using Edelstahl.Domain.Comercial;
+using Edelstahl.Domain.Exceptions;
+using Edelstahl.Services.Localization;
 
 namespace Edelstahl.DAL.Implementations.EntityFramework
 {
     /// <summary>
     /// Persistencia de pedidos y detalles mediante Entity Framework 6.
     /// </summary>
-    public class PedidoRepositoryEntityFramework
+    internal class PedidoRepositoryEntityFramework
         : IPedidoRepository
     {
         public void Add(Pedido entity)
@@ -35,16 +37,16 @@ namespace Edelstahl.DAL.Implementations.EntityFramework
                     if (context.Pedidos.Any(
                         pedido => pedido.Numero == entity.Numero))
                     {
-                        throw new InvalidOperationException(
-                            "Ya existe un pedido con el número ingresado.");
+                        throw new RegistroDuplicadoException(
+                    LanguageService.Translate("An order with the entered number already exists."));
                     }
 
                     if (context.Pedidos.Any(
                         pedido =>
                             pedido.PresupuestoId == entity.PresupuestoId))
                     {
-                        throw new InvalidOperationException(
-                            "El presupuesto ya fue convertido en pedido.");
+                        throw new RegistroDuplicadoException(
+                    LanguageService.Translate("The quote was already converted into an order."));
                     }
 
                     context.Pedidos.Add(entity);
@@ -65,9 +67,8 @@ namespace Edelstahl.DAL.Implementations.EntityFramework
 
             if (entity.Id == Guid.Empty)
             {
-                throw new ArgumentException(
-                    "El identificador del pedido no es válido.",
-                    nameof(entity));
+                throw new DatoInvalidoException(
+                    LanguageService.Translate("The order identifier is not valid."));
             }
 
             PrepararDetalles(entity);
@@ -91,8 +92,8 @@ namespace Edelstahl.DAL.Implementations.EntityFramework
 
                     if (numeroDuplicado || presupuestoDuplicado)
                     {
-                        throw new InvalidOperationException(
-                            "El número o el presupuesto del pedido ya están utilizados.");
+                        throw new RegistroDuplicadoException(
+                    LanguageService.Translate("The order number or its quote is already in use."));
                     }
 
                     Pedido existente = context.Pedidos
@@ -101,8 +102,8 @@ namespace Edelstahl.DAL.Implementations.EntityFramework
 
                     if (existente == null)
                     {
-                        throw new InvalidOperationException(
-                            "No se encontró el pedido que se desea modificar.");
+                        throw new RegistroNoEncontradoException(
+                    LanguageService.Translate("The order to modify was not found."));
                     }
 
                     context.DetallesPedido.RemoveRange(existente.Detalles);
@@ -130,9 +131,8 @@ namespace Edelstahl.DAL.Implementations.EntityFramework
         {
             if (pedidoId == Guid.Empty)
             {
-                throw new ArgumentException(
-                    "El identificador del pedido no es válido.",
-                    nameof(pedidoId));
+                throw new DatoInvalidoException(
+                    LanguageService.Translate("The order identifier is not valid."));
             }
 
             using (EdelstahlNegocioContext context =
@@ -142,8 +142,8 @@ namespace Edelstahl.DAL.Implementations.EntityFramework
 
                 if (existente == null)
                 {
-                    throw new InvalidOperationException(
-                        "No se encontró el pedido indicado.");
+                    throw new RegistroNoEncontradoException(
+                    LanguageService.Translate("The indicated order was not found."));
                 }
 
                 existente.Estado = estado;
@@ -155,9 +155,8 @@ namespace Edelstahl.DAL.Implementations.EntityFramework
         {
             if (id == Guid.Empty)
             {
-                throw new ArgumentException(
-                    "El identificador del pedido no es válido.",
-                    nameof(id));
+                throw new DatoInvalidoException(
+                    LanguageService.Translate("The order identifier is not valid."));
             }
 
             using (EdelstahlNegocioContext context =
@@ -167,8 +166,8 @@ namespace Edelstahl.DAL.Implementations.EntityFramework
 
                 if (existente == null)
                 {
-                    throw new InvalidOperationException(
-                        "No se encontró el pedido que se desea eliminar.");
+                    throw new RegistroNoEncontradoException(
+                    LanguageService.Translate("The order to delete was not found."));
                 }
 
                 existente.Estado = EstadoPedido.Cancelado;
@@ -353,21 +352,21 @@ namespace Edelstahl.DAL.Implementations.EntityFramework
 
             if (string.IsNullOrWhiteSpace(pedido.Numero))
             {
-                throw new InvalidOperationException(
-                    "El número del pedido es obligatorio.");
+                throw new DatoInvalidoException(
+                    LanguageService.Translate("The order number is required."));
             }
 
             if (pedido.ClienteId == Guid.Empty ||
                 pedido.PresupuestoId == Guid.Empty)
             {
-                throw new InvalidOperationException(
-                    "El cliente y el presupuesto del pedido son obligatorios.");
+                throw new DatoInvalidoException(
+                    LanguageService.Translate("The customer and the quote of the order are required."));
             }
 
             if (pedido.Detalles == null || pedido.Detalles.Count == 0)
             {
-                throw new InvalidOperationException(
-                    "El pedido debe contener al menos un detalle.");
+                throw new DatoInvalidoException(
+                    LanguageService.Translate("The order must contain at least one line."));
             }
         }
 

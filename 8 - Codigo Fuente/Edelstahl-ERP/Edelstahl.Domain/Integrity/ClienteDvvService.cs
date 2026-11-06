@@ -5,6 +5,7 @@ using System.Linq;
 using System.Security.Cryptography;
 using System.Text;
 using Edelstahl.Domain.Comercial;
+using Edelstahl.Domain.Exceptions;
 
 namespace Edelstahl.Services.Integrity
 {
@@ -109,13 +110,13 @@ namespace Edelstahl.Services.Integrity
             {
                 if (cliente == null)
                 {
-                    throw new InvalidOperationException(
+                    throw new IntegridadVulneradaException(
                         "La colección contiene un cliente nulo.");
                 }
 
                 if (cliente.Id == Guid.Empty)
                 {
-                    throw new InvalidOperationException(
+                    throw new IntegridadVulneradaException(
                         "No es posible calcular el DVV " +
                         "porque existe un cliente sin " +
                         "identificador válido.");
@@ -124,7 +125,7 @@ namespace Edelstahl.Services.Integrity
                 if (string.IsNullOrWhiteSpace(
                     cliente.DVH))
                 {
-                    throw new InvalidOperationException(
+                    throw new IntegridadVulneradaException(
                         "No es posible calcular el DVV " +
                         "porque el cliente '" +
                         cliente.RazonSocial +

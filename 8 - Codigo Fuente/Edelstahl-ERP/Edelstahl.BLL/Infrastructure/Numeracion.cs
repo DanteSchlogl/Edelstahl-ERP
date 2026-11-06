@@ -7,7 +7,7 @@ namespace Edelstahl.BLL.Infrastructure
     /// <summary>
     /// Genera números correlativos con el formato PREFIJO-AAAA-NNNNNN.
     /// </summary>
-    public static class Numeracion
+    internal static class Numeracion
     {
         public static string Siguiente(string prefijo, IEnumerable<string> existentes)
         {

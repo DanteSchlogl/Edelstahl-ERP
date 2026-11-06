@@ -29,5 +29,8 @@ using System.Runtime.InteropServices;
 //      Número de compilación
 //      Revisión
 //
-[assembly: AssemblyVersion("1.1.5.0")]
-[assembly: AssemblyFileVersion("1.1.5.0")]
+[assembly: AssemblyVersion("1.2.0.0")]
+[assembly: AssemblyFileVersion("1.2.0.0")]
+
+// Las pruebas automaticas (y las capas amigas indicadas) ven los tipos internos; la interfaz de usuario no.
+[assembly: InternalsVisibleTo("Edelstahl.Test")]

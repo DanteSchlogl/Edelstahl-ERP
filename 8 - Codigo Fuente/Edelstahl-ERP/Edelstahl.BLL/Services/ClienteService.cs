@@ -1,6 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
-using Edelstahl.BLL.Exceptions.Commercial;
+using Edelstahl.Domain.Exceptions;
 using Edelstahl.BLL.Validators;
 using Edelstahl.DAL.Factory;
 using Edelstahl.DAL.Interfaces;
@@ -40,7 +40,7 @@ namespace Edelstahl.BLL.Services
 
             if (_clienteRepository.ExistsByCUIT(cliente.CUIT))
             {
-                throw new ClienteDuplicadoException(cliente.CUIT);
+                throw Mensajes.ClienteDuplicado(cliente.CUIT);
             }
 
             cliente.RazonSocial =
@@ -119,8 +119,7 @@ namespace Edelstahl.BLL.Services
             if (clienteConMismoCUIT != null &&
                 clienteConMismoCUIT.Id != cliente.Id)
             {
-                throw new ClienteDuplicadoException(
-                    cliente.CUIT);
+                throw Mensajes.ClienteDuplicado(cliente.CUIT);
             }
 
             _clienteRepository.Update(cliente);

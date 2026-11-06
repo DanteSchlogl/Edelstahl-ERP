@@ -11,6 +11,8 @@ using Edelstahl.Domain.Integrity;
 using Edelstahl.Domain.Security;
 using Edelstahl.Services.Cryptography;
 using Edelstahl.Services.Integrity;
+using Edelstahl.Domain.Exceptions;
+using Edelstahl.Services.Localization;
 
 namespace Edelstahl.DAL.Implementations.EntityFramework
 {
@@ -21,7 +23,7 @@ namespace Edelstahl.DAL.Implementations.EntityFramework
     /// El DVH protege la integridad de cada cliente.
     /// El DVV protege la integridad del conjunto completo.
     /// </summary>
-    public class ClienteRepositoryEntityFramework
+    internal class ClienteRepositoryEntityFramework
         : IClienteRepository
     {
         public void Add(
@@ -37,8 +39,8 @@ namespace Edelstahl.DAL.Implementations.EntityFramework
             if (ExistsByCUIT(
                 cuitNormalizado))
             {
-                throw new InvalidOperationException(
-                    "Ya existe un cliente con el CUIT ingresado.");
+                throw new RegistroDuplicadoException(
+                    LanguageService.Translate("A customer with the entered CUIT already exists."));
             }
 
             if (entity.Id == Guid.Empty)
@@ -113,9 +115,8 @@ namespace Edelstahl.DAL.Implementations.EntityFramework
 
             if (entity.Id == Guid.Empty)
             {
-                throw new ArgumentException(
-                    "El identificador del cliente no es válido.",
-                    nameof(entity));
+                throw new DatoInvalidoException(
+                    LanguageService.Translate("The customer identifier is not valid."));
             }
 
             string cuitNormalizado =
@@ -129,8 +130,8 @@ namespace Edelstahl.DAL.Implementations.EntityFramework
 
             if (clienteConMismoCUIT != null)
             {
-                throw new InvalidOperationException(
-                    "Ya existe otro cliente con el CUIT ingresado.");
+                throw new RegistroDuplicadoException(
+                    LanguageService.Translate("Another customer with the entered CUIT already exists."));
             }
 
             using (EdelstahlNegocioContext context =
@@ -150,9 +151,8 @@ namespace Edelstahl.DAL.Implementations.EntityFramework
 
                         if (existente == null)
                         {
-                            throw new InvalidOperationException(
-                                "No se encontró el cliente " +
-                                "que se desea modificar.");
+                            throw new RegistroNoEncontradoException(
+                    LanguageService.Translate("The customer to modify was not found."));
                         }
 
                         VerificarDvhObligatorio(
@@ -197,9 +197,8 @@ namespace Edelstahl.DAL.Implementations.EntityFramework
         {
             if (id == Guid.Empty)
             {
-                throw new ArgumentException(
-                    "El identificador del cliente no es válido.",
-                    nameof(id));
+                throw new DatoInvalidoException(
+                    LanguageService.Translate("The customer identifier is not valid."));
             }
 
             using (EdelstahlNegocioContext context =
@@ -219,9 +218,8 @@ namespace Edelstahl.DAL.Implementations.EntityFramework
 
                         if (existente == null)
                         {
-                            throw new InvalidOperationException(
-                                "No se encontró el cliente " +
-                                "que se desea eliminar.");
+                            throw new RegistroNoEncontradoException(
+                    LanguageService.Translate("The customer to delete was not found."));
                         }
 
                         VerificarDvhObligatorio(
@@ -311,7 +309,8 @@ namespace Edelstahl.DAL.Implementations.EntityFramework
                         legibles.Add(
                             cliente);
                     }
-                    catch (CryptographicException ex)
+                    catch (Exception ex) when (ex is CryptographicException
+                        || ex is IntegridadVulneradaException)
                     {
                         /*
                          * Un registro alterado o ilegible no debe impedir
@@ -551,9 +550,8 @@ namespace Edelstahl.DAL.Implementations.EntityFramework
                 string.IsNullOrWhiteSpace(
                     integridad.DVV))
             {
-                throw new CryptographicException(
-                    "No se encontró un DVV válido para " +
-                    "la tabla Clientes.");
+                throw new IntegridadVulneradaException(
+                    LanguageService.Translate("The table has no stored check digit (DVV)."));
             }
 
             List<Cliente> clientes =
@@ -578,11 +576,8 @@ namespace Edelstahl.DAL.Implementations.EntityFramework
 
             if (!integridadValida)
             {
-                throw new CryptographicException(
-                    "Se detectó una alteración en el " +
-                    "conjunto de registros de la tabla " +
-                    "Clientes. El DVV almacenado no " +
-                    "coincide con el valor calculado.");
+                throw new IntegridadVulneradaException(
+                    LanguageService.Translate("The check digit of the table (DVV) does not match the set of records."));
             }
         }
 
@@ -743,21 +738,19 @@ namespace Edelstahl.DAL.Implementations.EntityFramework
             if (string.IsNullOrWhiteSpace(
                 cliente.DVH))
             {
-                throw new CryptographicException(
-                    "El cliente '" +
-                    cliente.RazonSocial +
-                    "' no posee un DVH válido.");
+                throw new IntegridadVulneradaException(
+                    LanguageService.Format(
+                        "The customer '{0}' has no valid check digit (DVH).",
+                        cliente.RazonSocial));
             }
 
             if (!ClienteDvhService.EsValido(
                 cliente))
             {
-                throw new CryptographicException(
-                    "Se detectó una alteración en los " +
-                    "datos del cliente '" +
-                    cliente.RazonSocial +
-                    "'. El DVH almacenado no coincide " +
-                    "con el valor calculado.");
+                throw new IntegridadVulneradaException(
+                    LanguageService.Format(
+                        "The data of the customer '{0}' was altered: its check digit (DVH) does not match.",
+                        cliente.RazonSocial));
             }
         }
 
@@ -845,23 +838,22 @@ namespace Edelstahl.DAL.Implementations.EntityFramework
             if (string.IsNullOrWhiteSpace(
                 cliente.CUIT))
             {
-                throw new InvalidOperationException(
-                    "El CUIT es obligatorio.");
+                throw new DatoInvalidoException(
+                    LanguageService.Translate("The CUIT is required."));
             }
 
             if (string.IsNullOrWhiteSpace(
                 cliente.RazonSocial))
             {
-                throw new InvalidOperationException(
-                    "La razón social es obligatoria.");
+                throw new DatoInvalidoException(
+                    LanguageService.Translate("The company name is required."));
             }
 
             if (cliente.LimiteCredito < 0m ||
                 cliente.DeudaActual < 0m)
             {
-                throw new InvalidOperationException(
-                    "El límite de crédito y la deuda " +
-                    "no pueden ser negativos.");
+                throw new DatoInvalidoException(
+                    LanguageService.Translate("The credit limit and the debt cannot be negative."));
             }
         }
 

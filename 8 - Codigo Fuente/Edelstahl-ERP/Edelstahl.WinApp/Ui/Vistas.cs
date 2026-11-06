@@ -154,6 +154,44 @@ namespace Edelstahl.WinApp.Ui
         }
     }
 
+    public class RespaldoFila
+    {
+        public Guid Id { get; set; }
+        public DateTime Fecha { get; set; }
+        public string Origen { get; set; }
+        public string Estado { get; set; }
+        public string Tamanio { get; set; }
+        public string Usuario { get; set; }
+        public string Archivo { get; set; }
+
+        public static RespaldoFila De(Edelstahl.Domain.Security.RegistroRespaldo r)
+        {
+            string estado = r.Origen == RegistroRespaldo.OrigenAntesDeRestaurar
+                ? "Safety copy before a restore"
+                : (r.Sano ? "Healthy" : "Not verified as healthy");
+
+            return new RespaldoFila
+            {
+                Id = r.Id,
+                Fecha = r.FechaHora,
+                Origen = Tr.T(r.Origen == RegistroRespaldo.OrigenAutomatico ? "Automatic"
+                    : (r.Origen == RegistroRespaldo.OrigenManual ? "Manual" : "Before a restore")),
+                Estado = Tr.T(estado),
+                Tamanio = (r.TamanioBytes / 1048576.0).ToString("N2") + " MB",
+                Usuario = r.Usuario,
+                Archivo = System.IO.Path.GetFileName(r.RutaSql)
+            };
+        }
+    }
+
+    public class InconsistenciaFila
+    {
+        public string Tabla { get; set; }
+        public string Tipo { get; set; }
+        public string Registro { get; set; }
+        public string Detalle { get; set; }
+    }
+
     public class RolFila
     {
         public Guid Id { get; set; }
