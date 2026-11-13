@@ -2278,7 +2278,7 @@
         "Name" = "8:Microsoft Visual Studio"
         "ProductName" = "8:Edelstahl ERP"
         "ProductCode" = "8:{856DD809-F3FD-4D64-8542-80215918AF8E}"
-        "PackageCode" = "8:{1F111075-AEF0-4C29-A17C-E18397027A0F}"
+        "PackageCode" = "8:{541FD22B-68CD-4558-AE14-9FB6303E33F7}"
         "UpgradeCode" = "8:{C2874628-A030-4C76-B4B4-70DBCF772886}"
         "AspNetVersion" = "8:"
         "RestartWWWService" = "11:FALSE"
