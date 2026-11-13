@@ -1,0 +1,2830 @@
+﻿"DeployProject"
+{
+"VSVersion" = "3:800"
+"ProjectType" = "8:{978C614F-708E-4E1A-B201-565925725DBA}"
+"IsWebType" = "8:FALSE"
+"ProjectName" = "8:Edelstahl.Installer"
+"LanguageId" = "3:3082"
+"CodePage" = "3:1252"
+"UILanguageId" = "3:3082"
+"SccProjectName" = "8:"
+"SccLocalPath" = "8:"
+"SccAuxPath" = "8:"
+"SccProvider" = "8:"
+    "Hierarchy"
+    {
+        "Entry"
+        {
+        "MsmKey" = "8:_FF06D016D144D36584DC1D5BBAF0C93A"
+        "OwnerKey" = "8:_UNDEFINED"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_7F25348AC0D782FDFFBA04B9D591AFC2"
+        "OwnerKey" = "8:_UNDEFINED"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_9B0B32600E699861D008972BE761F45C"
+        "OwnerKey" = "8:_UNDEFINED"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_F7ACC97E0B07D7AC71092376160E4BA3"
+        "OwnerKey" = "8:_UNDEFINED"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_18C666CDBC7EC2872D2AA8B16595116E"
+        "OwnerKey" = "8:_UNDEFINED"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_D49AA0B22A56CAAC0CAAC7AD72D95ABB"
+        "OwnerKey" = "8:_UNDEFINED"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_D73016DAAAFC3FCE1B150E39944EFDBA"
+        "OwnerKey" = "8:_UNDEFINED"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_A65E102F0A07E53360EDF935ABF1A5EC"
+        "OwnerKey" = "8:_UNDEFINED"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_D34BE84BA0D6FCE96B319AEAC99FCCAD"
+        "OwnerKey" = "8:_UNDEFINED"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_CE8B9255400158CE203592A3EA417E43"
+        "OwnerKey" = "8:_UNDEFINED"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_87A753CE04A0B21163839D5646B3CECB"
+        "OwnerKey" = "8:_UNDEFINED"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_AB97FB42BC7BC2B4A2B2562EE3E6EA53"
+        "OwnerKey" = "8:_UNDEFINED"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_136B29F64CEBE580A7A5CA6E5D8F4144"
+        "OwnerKey" = "8:_UNDEFINED"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_FCE7407DF7F18D7F4607B37ACDF070BE"
+        "OwnerKey" = "8:_UNDEFINED"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_1F1868E9115B10AE788EE2BCEB88A57C"
+        "OwnerKey" = "8:_UNDEFINED"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_A794E8C709F27851773230DF82C74B8D"
+        "OwnerKey" = "8:_UNDEFINED"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_F0A3BC50D5421B775725F3CC2A114CFC"
+        "OwnerKey" = "8:_UNDEFINED"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_BE93031163EF7D0CD5157928D1290CE7"
+        "OwnerKey" = "8:_UNDEFINED"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_119B0F9DF2625029A877AEDB6A0B9717"
+        "OwnerKey" = "8:_UNDEFINED"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_E32F33AC655B531C0F4804E3918C3CA0"
+        "OwnerKey" = "8:_UNDEFINED"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_ED601CD04D39AD93AC4BF4BAEC76BA08"
+        "OwnerKey" = "8:_UNDEFINED"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_8BEE125D92EF4C0359E9A3FB00CD5805"
+        "OwnerKey" = "8:_UNDEFINED"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_09AFE518E7E3B5D298B8032A906E4DCB"
+        "OwnerKey" = "8:_UNDEFINED"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_C4397CB48A47E3E77B5DDF44EF41DEEF"
+        "OwnerKey" = "8:_UNDEFINED"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_F17B418C04FFBC3708B41566ABBF6B85"
+        "OwnerKey" = "8:_UNDEFINED"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_61844CF321D4B93F3A1A44096CE2D380"
+        "OwnerKey" = "8:_UNDEFINED"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_DDF3A0C681BEFCD56835C9595674DE8E"
+        "OwnerKey" = "8:_UNDEFINED"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_AA864ED930EB72EDBB985FF3E78E764D"
+        "OwnerKey" = "8:_UNDEFINED"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_D17E007C3222E7C82988A4E086E58F3E"
+        "OwnerKey" = "8:_UNDEFINED"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_B64B208B277D80EE16D97AC697179996"
+        "OwnerKey" = "8:_UNDEFINED"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_705802C49AB6E426B6600638DF6B9DAD"
+        "OwnerKey" = "8:_UNDEFINED"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_D499366A109AB46F290D00CFB6AE404A"
+        "OwnerKey" = "8:_UNDEFINED"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_CB1B1D1CF0E07CD70DB6ECF6D8E910FB"
+        "OwnerKey" = "8:_UNDEFINED"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_EB28D3680DE011250DA8BB853CECA0D1"
+        "OwnerKey" = "8:_UNDEFINED"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_70456577AC105D098AB89493953C0B9D"
+        "OwnerKey" = "8:_UNDEFINED"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_25D6996CA9BD5AA4277A98C87D41925B"
+        "OwnerKey" = "8:_UNDEFINED"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_30F2E0B0436E344B20604EE78B3C6C4F"
+        "OwnerKey" = "8:_UNDEFINED"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_474649B312D36086ECD540CE2270CAAF"
+        "OwnerKey" = "8:_UNDEFINED"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_CCE12BD01C5CD4CEDAF59F0AE6941984"
+        "OwnerKey" = "8:_UNDEFINED"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_3C6C19C5C43FC2E7AD859C804B4A4252"
+        "OwnerKey" = "8:_UNDEFINED"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_0CDC7C48D879B90B690A947C6A722A5C"
+        "OwnerKey" = "8:_UNDEFINED"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_4EFE14FAA9316368ED459F97A9503627"
+        "OwnerKey" = "8:_UNDEFINED"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_CCADA207A473986F945F41677882F989"
+        "OwnerKey" = "8:_UNDEFINED"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_31792A932685C89DF16AF9788ADCA236"
+        "OwnerKey" = "8:_UNDEFINED"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_804745BF2C7EE68612461F70BA74EC96"
+        "OwnerKey" = "8:_UNDEFINED"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_E35DBE9D8E7296928449E67523E0E4F5"
+        "OwnerKey" = "8:_UNDEFINED"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_12B8CF34C1399017E7442F521020E1B7"
+        "OwnerKey" = "8:_UNDEFINED"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_6908227FE17937B7E33726D1B0E220FE"
+        "OwnerKey" = "8:_UNDEFINED"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_DEC8A78270AC07FFD8B2B150E252EE38"
+        "OwnerKey" = "8:_UNDEFINED"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_F91493DF3734C351797C120CBD0662A5"
+        "OwnerKey" = "8:_UNDEFINED"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_BCCC125DC4027D86230671925C262443"
+        "OwnerKey" = "8:_UNDEFINED"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_B2D43B3CBE523ABA4C4357B560E1347D"
+        "OwnerKey" = "8:_UNDEFINED"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_30A4078726612D2D5AE7DA89035F2722"
+        "OwnerKey" = "8:_UNDEFINED"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_8DEE988E9D152B20716C8022509B60E4"
+        "OwnerKey" = "8:_UNDEFINED"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_54AA388C76A61CC609E8BA0BAA8BCFFB"
+        "OwnerKey" = "8:_UNDEFINED"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_228C6120B3CBAFF3F270B7E195F0A222"
+        "OwnerKey" = "8:_UNDEFINED"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_B62D9D0E6D344DC4DDE0A8BD2F2D0DBD"
+        "OwnerKey" = "8:_UNDEFINED"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_817BC0C3B383AA2F8717812B6C592A05"
+        "OwnerKey" = "8:_UNDEFINED"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_2912415327203B6136D18F65D8ED34B1"
+        "OwnerKey" = "8:_UNDEFINED"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_0811F19BBA99B240EBBCCA22E6E29511"
+        "OwnerKey" = "8:_UNDEFINED"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_5588F9BC9A349E07F35B4A03CF715445"
+        "OwnerKey" = "8:_UNDEFINED"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_E43B18F1593BDDBB5381E71DE864CD89"
+        "OwnerKey" = "8:_UNDEFINED"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_59D7826161F59FDB6D4E4E7762E78242"
+        "OwnerKey" = "8:_UNDEFINED"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_9143B3DCFFC9A2EC5EE9E87C9E7D648D"
+        "OwnerKey" = "8:_UNDEFINED"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_8413990A2DF69D0F2E410EFB45C695DA"
+        "OwnerKey" = "8:_UNDEFINED"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_B0A988214DC4631141D86601769174DC"
+        "OwnerKey" = "8:_UNDEFINED"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_C94B2536F00E8BA61CF549876755315D"
+        "OwnerKey" = "8:_UNDEFINED"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_905EA9F9F6ADD095B6CD0D4F858544FA"
+        "OwnerKey" = "8:_UNDEFINED"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_C29DB6B879B4A6B08E78A60794DA1F4F"
+        "OwnerKey" = "8:_UNDEFINED"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_11A18330084E6815CBB46399F796AABF"
+        "OwnerKey" = "8:_UNDEFINED"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_6C53AEC793D8E25C3148A8CA4B17E295"
+        "OwnerKey" = "8:_UNDEFINED"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_D6DADC48DE7874113C2B6D1A1E1F5589"
+        "OwnerKey" = "8:_UNDEFINED"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_D723E90E3DDC2C8C9E839FF654006086"
+        "OwnerKey" = "8:_UNDEFINED"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+    }
+    "Configurations"
+    {
+        "Debug"
+        {
+        "DisplayName" = "8:Debug"
+        "IsDebugOnly" = "11:TRUE"
+        "IsReleaseOnly" = "11:FALSE"
+        "OutputFilename" = "8:Debug\\Edelstahl ERP.msi"
+        "PackageFilesAs" = "3:2"
+        "PackageFileSize" = "3:-2147483648"
+        "CabType" = "3:1"
+        "Compression" = "3:2"
+        "SignOutput" = "11:FALSE"
+        "CertificateFile" = "8:"
+        "PrivateKeyFile" = "8:"
+        "TimeStampServer" = "8:"
+        "InstallerBootstrapper" = "3:2"
+            "BootstrapperCfg:{63ACBE69-63AA-4F98-B2B6-99F9E24495F2}"
+            {
+            "Enabled" = "11:TRUE"
+            "PromptEnabled" = "11:TRUE"
+            "PrerequisitesLocation" = "2:1"
+            "Url" = "8:"
+            "ComponentsUrl" = "8:"
+            }
+        }
+        "Release"
+        {
+        "DisplayName" = "8:Release"
+        "IsDebugOnly" = "11:FALSE"
+        "IsReleaseOnly" = "11:TRUE"
+        "OutputFilename" = "8:Release\\Edelstahl ERP.msi"
+        "PackageFilesAs" = "3:2"
+        "PackageFileSize" = "3:-2147483648"
+        "CabType" = "3:1"
+        "Compression" = "3:2"
+        "SignOutput" = "11:FALSE"
+        "CertificateFile" = "8:"
+        "PrivateKeyFile" = "8:"
+        "TimeStampServer" = "8:"
+        "InstallerBootstrapper" = "3:2"
+            "BootstrapperCfg:{63ACBE69-63AA-4F98-B2B6-99F9E24495F2}"
+            {
+            "Enabled" = "11:TRUE"
+            "PromptEnabled" = "11:TRUE"
+            "PrerequisitesLocation" = "2:1"
+            "Url" = "8:"
+            "ComponentsUrl" = "8:"
+            }
+        }
+    }
+    "Deployable"
+    {
+        "CustomAction"
+        {
+        }
+        "DefaultFeature"
+        {
+        "Name" = "8:DefaultFeature"
+        "Title" = "8:"
+        "Description" = "8:"
+        }
+        "ExternalPersistence"
+        {
+            "LaunchCondition"
+            {
+                "{A06ECF26-33A3-4562-8140-9B0E340D4F24}:_B0116965D608260A0A460CD3BB9A8F2F"
+                {
+                "Name" = "8:.NET Framework"
+                "Message" = "8:[VSDNETMSG]"
+                "FrameworkVersion" = "8:.NETFramework,Version=v4.8"
+                "AllowLaterVersions" = "11:FALSE"
+                "InstallUrl" = "8:http://go.microsoft.com/fwlink/?LinkId=2085155"
+                }
+            }
+        }
+        "File"
+        {
+        "{A582A373-4685-4296-BEFE-614B80A702C3}:_FF06D016D144D36584DC1D5BBAF0C93A"
+        {
+        "SourcePath" = "8:..\\Edelstahl.WinApp\\bin\\Release\\Datos\\clientes.csv"
+        "TargetName" = "8:clientes.csv"
+        "Tag" = "8:"
+        "Folder" = "8:_F0EE686258CAEE39EBAFC28B2B31B2D7"
+        "Condition" = "8:"
+        "Transitive" = "11:FALSE"
+        "Vital" = "11:TRUE"
+        "ReadOnly" = "11:FALSE"
+        "Hidden" = "11:FALSE"
+        "System" = "11:FALSE"
+        "Permanent" = "11:FALSE"
+        "SharedLegacy" = "11:FALSE"
+        "PackageAs" = "3:1"
+        "Register" = "3:1"
+        "Exclude" = "11:FALSE"
+        "IsDependency" = "11:FALSE"
+        "IsolateTo" = "8:"
+        }
+        "{A582A373-4685-4296-BEFE-614B80A702C3}:_7F25348AC0D782FDFFBA04B9D591AFC2"
+        {
+        "SourcePath" = "8:..\\Edelstahl.WinApp\\bin\\Release\\Datos\\productos.csv"
+        "TargetName" = "8:productos.csv"
+        "Tag" = "8:"
+        "Folder" = "8:_F0EE686258CAEE39EBAFC28B2B31B2D7"
+        "Condition" = "8:"
+        "Transitive" = "11:FALSE"
+        "Vital" = "11:TRUE"
+        "ReadOnly" = "11:FALSE"
+        "Hidden" = "11:FALSE"
+        "System" = "11:FALSE"
+        "Permanent" = "11:FALSE"
+        "SharedLegacy" = "11:FALSE"
+        "PackageAs" = "3:1"
+        "Register" = "3:1"
+        "Exclude" = "11:FALSE"
+        "IsDependency" = "11:FALSE"
+        "IsolateTo" = "8:"
+        }
+        "{A582A373-4685-4296-BEFE-614B80A702C3}:_9B0B32600E699861D008972BE761F45C"
+        {
+        "SourcePath" = "8:..\\Edelstahl.WinApp\\bin\\Release\\Edelstahl.BLL.dll"
+        "TargetName" = "8:Edelstahl.BLL.dll"
+        "Tag" = "8:"
+        "Folder" = "8:_125BAEC6A678D393F85B3A7DF5F8DEB1"
+        "Condition" = "8:"
+        "Transitive" = "11:FALSE"
+        "Vital" = "11:TRUE"
+        "ReadOnly" = "11:FALSE"
+        "Hidden" = "11:FALSE"
+        "System" = "11:FALSE"
+        "Permanent" = "11:FALSE"
+        "SharedLegacy" = "11:FALSE"
+        "PackageAs" = "3:1"
+        "Register" = "3:1"
+        "Exclude" = "11:FALSE"
+        "IsDependency" = "11:FALSE"
+        "IsolateTo" = "8:"
+        }
+        "{A582A373-4685-4296-BEFE-614B80A702C3}:_F7ACC97E0B07D7AC71092376160E4BA3"
+        {
+        "SourcePath" = "8:..\\Edelstahl.WinApp\\bin\\Release\\Edelstahl.BLL.dll.config"
+        "TargetName" = "8:Edelstahl.BLL.dll.config"
+        "Tag" = "8:"
+        "Folder" = "8:_125BAEC6A678D393F85B3A7DF5F8DEB1"
+        "Condition" = "8:"
+        "Transitive" = "11:FALSE"
+        "Vital" = "11:TRUE"
+        "ReadOnly" = "11:FALSE"
+        "Hidden" = "11:FALSE"
+        "System" = "11:FALSE"
+        "Permanent" = "11:FALSE"
+        "SharedLegacy" = "11:FALSE"
+        "PackageAs" = "3:1"
+        "Register" = "3:1"
+        "Exclude" = "11:FALSE"
+        "IsDependency" = "11:FALSE"
+        "IsolateTo" = "8:"
+        }
+        "{A582A373-4685-4296-BEFE-614B80A702C3}:_18C666CDBC7EC2872D2AA8B16595116E"
+        {
+        "SourcePath" = "8:..\\Edelstahl.WinApp\\bin\\Release\\Edelstahl.DAL.dll"
+        "TargetName" = "8:Edelstahl.DAL.dll"
+        "Tag" = "8:"
+        "Folder" = "8:_125BAEC6A678D393F85B3A7DF5F8DEB1"
+        "Condition" = "8:"
+        "Transitive" = "11:FALSE"
+        "Vital" = "11:TRUE"
+        "ReadOnly" = "11:FALSE"
+        "Hidden" = "11:FALSE"
+        "System" = "11:FALSE"
+        "Permanent" = "11:FALSE"
+        "SharedLegacy" = "11:FALSE"
+        "PackageAs" = "3:1"
+        "Register" = "3:1"
+        "Exclude" = "11:FALSE"
+        "IsDependency" = "11:FALSE"
+        "IsolateTo" = "8:"
+        }
+        "{A582A373-4685-4296-BEFE-614B80A702C3}:_D49AA0B22A56CAAC0CAAC7AD72D95ABB"
+        {
+        "SourcePath" = "8:..\\Edelstahl.WinApp\\bin\\Release\\Edelstahl.DAL.dll.config"
+        "TargetName" = "8:Edelstahl.DAL.dll.config"
+        "Tag" = "8:"
+        "Folder" = "8:_125BAEC6A678D393F85B3A7DF5F8DEB1"
+        "Condition" = "8:"
+        "Transitive" = "11:FALSE"
+        "Vital" = "11:TRUE"
+        "ReadOnly" = "11:FALSE"
+        "Hidden" = "11:FALSE"
+        "System" = "11:FALSE"
+        "Permanent" = "11:FALSE"
+        "SharedLegacy" = "11:FALSE"
+        "PackageAs" = "3:1"
+        "Register" = "3:1"
+        "Exclude" = "11:FALSE"
+        "IsDependency" = "11:FALSE"
+        "IsolateTo" = "8:"
+        }
+        "{A582A373-4685-4296-BEFE-614B80A702C3}:_D73016DAAAFC3FCE1B150E39944EFDBA"
+        {
+        "SourcePath" = "8:..\\Edelstahl.WinApp\\bin\\Release\\Edelstahl.Domain.dll"
+        "TargetName" = "8:Edelstahl.Domain.dll"
+        "Tag" = "8:"
+        "Folder" = "8:_125BAEC6A678D393F85B3A7DF5F8DEB1"
+        "Condition" = "8:"
+        "Transitive" = "11:FALSE"
+        "Vital" = "11:TRUE"
+        "ReadOnly" = "11:FALSE"
+        "Hidden" = "11:FALSE"
+        "System" = "11:FALSE"
+        "Permanent" = "11:FALSE"
+        "SharedLegacy" = "11:FALSE"
+        "PackageAs" = "3:1"
+        "Register" = "3:1"
+        "Exclude" = "11:FALSE"
+        "IsDependency" = "11:FALSE"
+        "IsolateTo" = "8:"
+        }
+        "{A582A373-4685-4296-BEFE-614B80A702C3}:_A65E102F0A07E53360EDF935ABF1A5EC"
+        {
+        "SourcePath" = "8:..\\Edelstahl.WinApp\\bin\\Release\\Edelstahl.Services.dll"
+        "TargetName" = "8:Edelstahl.Services.dll"
+        "Tag" = "8:"
+        "Folder" = "8:_125BAEC6A678D393F85B3A7DF5F8DEB1"
+        "Condition" = "8:"
+        "Transitive" = "11:FALSE"
+        "Vital" = "11:TRUE"
+        "ReadOnly" = "11:FALSE"
+        "Hidden" = "11:FALSE"
+        "System" = "11:FALSE"
+        "Permanent" = "11:FALSE"
+        "SharedLegacy" = "11:FALSE"
+        "PackageAs" = "3:1"
+        "Register" = "3:1"
+        "Exclude" = "11:FALSE"
+        "IsDependency" = "11:FALSE"
+        "IsolateTo" = "8:"
+        }
+        "{A582A373-4685-4296-BEFE-614B80A702C3}:_D34BE84BA0D6FCE96B319AEAC99FCCAD"
+        {
+        "SourcePath" = "8:..\\Edelstahl.WinApp\\bin\\Release\\Edelstahl.Services.dll.config"
+        "TargetName" = "8:Edelstahl.Services.dll.config"
+        "Tag" = "8:"
+        "Folder" = "8:_125BAEC6A678D393F85B3A7DF5F8DEB1"
+        "Condition" = "8:"
+        "Transitive" = "11:FALSE"
+        "Vital" = "11:TRUE"
+        "ReadOnly" = "11:FALSE"
+        "Hidden" = "11:FALSE"
+        "System" = "11:FALSE"
+        "Permanent" = "11:FALSE"
+        "SharedLegacy" = "11:FALSE"
+        "PackageAs" = "3:1"
+        "Register" = "3:1"
+        "Exclude" = "11:FALSE"
+        "IsDependency" = "11:FALSE"
+        "IsolateTo" = "8:"
+        }
+        "{A582A373-4685-4296-BEFE-614B80A702C3}:_CE8B9255400158CE203592A3EA417E43"
+        {
+        "SourcePath" = "8:..\\Edelstahl.WinApp\\bin\\Release\\Edelstahl.WinApp.exe"
+        "TargetName" = "8:Edelstahl.WinApp.exe"
+        "Tag" = "8:"
+        "Folder" = "8:_125BAEC6A678D393F85B3A7DF5F8DEB1"
+        "Condition" = "8:"
+        "Transitive" = "11:FALSE"
+        "Vital" = "11:TRUE"
+        "ReadOnly" = "11:FALSE"
+        "Hidden" = "11:FALSE"
+        "System" = "11:FALSE"
+        "Permanent" = "11:FALSE"
+        "SharedLegacy" = "11:FALSE"
+        "PackageAs" = "3:1"
+        "Register" = "3:1"
+        "Exclude" = "11:FALSE"
+        "IsDependency" = "11:FALSE"
+        "IsolateTo" = "8:"
+        }
+        "{A582A373-4685-4296-BEFE-614B80A702C3}:_87A753CE04A0B21163839D5646B3CECB"
+        {
+        "SourcePath" = "8:..\\Edelstahl.WinApp\\bin\\Release\\Edelstahl.WinApp.exe.config"
+        "TargetName" = "8:Edelstahl.WinApp.exe.config"
+        "Tag" = "8:"
+        "Folder" = "8:_125BAEC6A678D393F85B3A7DF5F8DEB1"
+        "Condition" = "8:"
+        "Transitive" = "11:FALSE"
+        "Vital" = "11:TRUE"
+        "ReadOnly" = "11:FALSE"
+        "Hidden" = "11:FALSE"
+        "System" = "11:FALSE"
+        "Permanent" = "11:FALSE"
+        "SharedLegacy" = "11:FALSE"
+        "PackageAs" = "3:1"
+        "Register" = "3:1"
+        "Exclude" = "11:FALSE"
+        "IsDependency" = "11:FALSE"
+        "IsolateTo" = "8:"
+        }
+        "{A582A373-4685-4296-BEFE-614B80A702C3}:_AB97FB42BC7BC2B4A2B2562EE3E6EA53"
+        {
+        "SourcePath" = "8:..\\Edelstahl.WinApp\\bin\\Release\\Edelstahl-Ayuda.chm"
+        "TargetName" = "8:Edelstahl-Ayuda.chm"
+        "Tag" = "8:"
+        "Folder" = "8:_125BAEC6A678D393F85B3A7DF5F8DEB1"
+        "Condition" = "8:"
+        "Transitive" = "11:FALSE"
+        "Vital" = "11:TRUE"
+        "ReadOnly" = "11:FALSE"
+        "Hidden" = "11:FALSE"
+        "System" = "11:FALSE"
+        "Permanent" = "11:FALSE"
+        "SharedLegacy" = "11:FALSE"
+        "PackageAs" = "3:1"
+        "Register" = "3:1"
+        "Exclude" = "11:FALSE"
+        "IsDependency" = "11:FALSE"
+        "IsolateTo" = "8:"
+        }
+        "{A582A373-4685-4296-BEFE-614B80A702C3}:_136B29F64CEBE580A7A5CA6E5D8F4144"
+        {
+        "SourcePath" = "8:..\\Edelstahl.WinApp\\bin\\Release\\EntityFramework.dll"
+        "TargetName" = "8:EntityFramework.dll"
+        "Tag" = "8:"
+        "Folder" = "8:_125BAEC6A678D393F85B3A7DF5F8DEB1"
+        "Condition" = "8:"
+        "Transitive" = "11:FALSE"
+        "Vital" = "11:TRUE"
+        "ReadOnly" = "11:FALSE"
+        "Hidden" = "11:FALSE"
+        "System" = "11:FALSE"
+        "Permanent" = "11:FALSE"
+        "SharedLegacy" = "11:FALSE"
+        "PackageAs" = "3:1"
+        "Register" = "3:1"
+        "Exclude" = "11:FALSE"
+        "IsDependency" = "11:FALSE"
+        "IsolateTo" = "8:"
+        }
+        "{A582A373-4685-4296-BEFE-614B80A702C3}:_FCE7407DF7F18D7F4607B37ACDF070BE"
+        {
+        "SourcePath" = "8:..\\Edelstahl.WinApp\\bin\\Release\\EntityFramework.SqlServer.dll"
+        "TargetName" = "8:EntityFramework.SqlServer.dll"
+        "Tag" = "8:"
+        "Folder" = "8:_125BAEC6A678D393F85B3A7DF5F8DEB1"
+        "Condition" = "8:"
+        "Transitive" = "11:FALSE"
+        "Vital" = "11:TRUE"
+        "ReadOnly" = "11:FALSE"
+        "Hidden" = "11:FALSE"
+        "System" = "11:FALSE"
+        "Permanent" = "11:FALSE"
+        "SharedLegacy" = "11:FALSE"
+        "PackageAs" = "3:1"
+        "Register" = "3:1"
+        "Exclude" = "11:FALSE"
+        "IsDependency" = "11:FALSE"
+        "IsolateTo" = "8:"
+        }
+        "{A582A373-4685-4296-BEFE-614B80A702C3}:_905EA9F9F6ADD095B6CD0D4F858544FA"
+        {
+        "SourcePath" = "8:..\\Edelstahl.WinApp\\bin\\Release\\de-DE\\Edelstahl.Services.resources.dll"
+        "TargetName" = "8:Edelstahl.Services.resources.dll"
+        "Tag" = "8:"
+        "Folder" = "8:_F38F1F2F0CDA27D614840189F16F42C3"
+        "Condition" = "8:"
+        "Transitive" = "11:FALSE"
+        "Vital" = "11:TRUE"
+        "ReadOnly" = "11:FALSE"
+        "Hidden" = "11:FALSE"
+        "System" = "11:FALSE"
+        "Permanent" = "11:FALSE"
+        "SharedLegacy" = "11:FALSE"
+        "PackageAs" = "3:1"
+        "Register" = "3:1"
+        "Exclude" = "11:FALSE"
+        "IsDependency" = "11:FALSE"
+        "IsolateTo" = "8:"
+        }
+        "{A582A373-4685-4296-BEFE-614B80A702C3}:_C29DB6B879B4A6B08E78A60794DA1F4F"
+        {
+        "SourcePath" = "8:..\\Edelstahl.WinApp\\bin\\Release\\en-GB\\Edelstahl.Services.resources.dll"
+        "TargetName" = "8:Edelstahl.Services.resources.dll"
+        "Tag" = "8:"
+        "Folder" = "8:_71392359E7FDFA8A5F77A2942D0F4D64"
+        "Condition" = "8:"
+        "Transitive" = "11:FALSE"
+        "Vital" = "11:TRUE"
+        "ReadOnly" = "11:FALSE"
+        "Hidden" = "11:FALSE"
+        "System" = "11:FALSE"
+        "Permanent" = "11:FALSE"
+        "SharedLegacy" = "11:FALSE"
+        "PackageAs" = "3:1"
+        "Register" = "3:1"
+        "Exclude" = "11:FALSE"
+        "IsDependency" = "11:FALSE"
+        "IsolateTo" = "8:"
+        }
+        "{A582A373-4685-4296-BEFE-614B80A702C3}:_11A18330084E6815CBB46399F796AABF"
+        {
+        "SourcePath" = "8:..\\Edelstahl.WinApp\\bin\\Release\\es-AR\\Edelstahl.Services.resources.dll"
+        "TargetName" = "8:Edelstahl.Services.resources.dll"
+        "Tag" = "8:"
+        "Folder" = "8:_F4057DE8233C30965AD738AC5A8BFEEE"
+        "Condition" = "8:"
+        "Transitive" = "11:FALSE"
+        "Vital" = "11:TRUE"
+        "ReadOnly" = "11:FALSE"
+        "Hidden" = "11:FALSE"
+        "System" = "11:FALSE"
+        "Permanent" = "11:FALSE"
+        "SharedLegacy" = "11:FALSE"
+        "PackageAs" = "3:1"
+        "Register" = "3:1"
+        "Exclude" = "11:FALSE"
+        "IsDependency" = "11:FALSE"
+        "IsolateTo" = "8:"
+        }
+        "{A582A373-4685-4296-BEFE-614B80A702C3}:_6C53AEC793D8E25C3148A8CA4B17E295"
+        {
+        "SourcePath" = "8:..\\Edelstahl.WinApp\\bin\\Release\\es-ES\\Edelstahl.Services.resources.dll"
+        "TargetName" = "8:Edelstahl.Services.resources.dll"
+        "Tag" = "8:"
+        "Folder" = "8:_7751436018772530A26518FF50E01261"
+        "Condition" = "8:"
+        "Transitive" = "11:FALSE"
+        "Vital" = "11:TRUE"
+        "ReadOnly" = "11:FALSE"
+        "Hidden" = "11:FALSE"
+        "System" = "11:FALSE"
+        "Permanent" = "11:FALSE"
+        "SharedLegacy" = "11:FALSE"
+        "PackageAs" = "3:1"
+        "Register" = "3:1"
+        "Exclude" = "11:FALSE"
+        "IsDependency" = "11:FALSE"
+        "IsolateTo" = "8:"
+        }
+        "{A582A373-4685-4296-BEFE-614B80A702C3}:_D6DADC48DE7874113C2B6D1A1E1F5589"
+        {
+        "SourcePath" = "8:..\\Edelstahl.WinApp\\bin\\Release\\pt-BR\\Edelstahl.Services.resources.dll"
+        "TargetName" = "8:Edelstahl.Services.resources.dll"
+        "Tag" = "8:"
+        "Folder" = "8:_48A5781322FC9CF35ABB2201992E99E1"
+        "Condition" = "8:"
+        "Transitive" = "11:FALSE"
+        "Vital" = "11:TRUE"
+        "ReadOnly" = "11:FALSE"
+        "Hidden" = "11:FALSE"
+        "System" = "11:FALSE"
+        "Permanent" = "11:FALSE"
+        "SharedLegacy" = "11:FALSE"
+        "PackageAs" = "3:1"
+        "Register" = "3:1"
+        "Exclude" = "11:FALSE"
+        "IsDependency" = "11:FALSE"
+        "IsolateTo" = "8:"
+        }
+        "{A582A373-4685-4296-BEFE-614B80A702C3}:_D723E90E3DDC2C8C9E839FF654006086"
+        {
+        "SourcePath" = "8:..\\Edelstahl.WinApp\\bin\\Release\\ru-RU\\Edelstahl.Services.resources.dll"
+        "TargetName" = "8:Edelstahl.Services.resources.dll"
+        "Tag" = "8:"
+        "Folder" = "8:_631A487DEA3BD0E20A2476E010A9A7FC"
+        "Condition" = "8:"
+        "Transitive" = "11:FALSE"
+        "Vital" = "11:TRUE"
+        "ReadOnly" = "11:FALSE"
+        "Hidden" = "11:FALSE"
+        "System" = "11:FALSE"
+        "Permanent" = "11:FALSE"
+        "SharedLegacy" = "11:FALSE"
+        "PackageAs" = "3:1"
+        "Register" = "3:1"
+        "Exclude" = "11:FALSE"
+        "IsDependency" = "11:FALSE"
+        "IsolateTo" = "8:"
+        }
+        "{A582A373-4685-4296-BEFE-614B80A702C3}:_1F1868E9115B10AE788EE2BCEB88A57C"
+        {
+        "SourcePath" = "8:..\\Edelstahl.WinApp\\bin\\Release\\LatoFont\\Lato-Black.ttf"
+        "TargetName" = "8:Lato-Black.ttf"
+        "Tag" = "8:"
+        "Folder" = "8:_6E4D210F4741E2B322881064ED1044E3"
+        "Condition" = "8:"
+        "Transitive" = "11:FALSE"
+        "Vital" = "11:TRUE"
+        "ReadOnly" = "11:FALSE"
+        "Hidden" = "11:FALSE"
+        "System" = "11:FALSE"
+        "Permanent" = "11:FALSE"
+        "SharedLegacy" = "11:FALSE"
+        "PackageAs" = "3:1"
+        "Register" = "3:1"
+        "Exclude" = "11:FALSE"
+        "IsDependency" = "11:FALSE"
+        "IsolateTo" = "8:"
+        }
+        "{A582A373-4685-4296-BEFE-614B80A702C3}:_A794E8C709F27851773230DF82C74B8D"
+        {
+        "SourcePath" = "8:..\\Edelstahl.WinApp\\bin\\Release\\LatoFont\\Lato-BlackItalic.ttf"
+        "TargetName" = "8:Lato-BlackItalic.ttf"
+        "Tag" = "8:"
+        "Folder" = "8:_6E4D210F4741E2B322881064ED1044E3"
+        "Condition" = "8:"
+        "Transitive" = "11:FALSE"
+        "Vital" = "11:TRUE"
+        "ReadOnly" = "11:FALSE"
+        "Hidden" = "11:FALSE"
+        "System" = "11:FALSE"
+        "Permanent" = "11:FALSE"
+        "SharedLegacy" = "11:FALSE"
+        "PackageAs" = "3:1"
+        "Register" = "3:1"
+        "Exclude" = "11:FALSE"
+        "IsDependency" = "11:FALSE"
+        "IsolateTo" = "8:"
+        }
+        "{A582A373-4685-4296-BEFE-614B80A702C3}:_F0A3BC50D5421B775725F3CC2A114CFC"
+        {
+        "SourcePath" = "8:..\\Edelstahl.WinApp\\bin\\Release\\LatoFont\\Lato-Bold.ttf"
+        "TargetName" = "8:Lato-Bold.ttf"
+        "Tag" = "8:"
+        "Folder" = "8:_6E4D210F4741E2B322881064ED1044E3"
+        "Condition" = "8:"
+        "Transitive" = "11:FALSE"
+        "Vital" = "11:TRUE"
+        "ReadOnly" = "11:FALSE"
+        "Hidden" = "11:FALSE"
+        "System" = "11:FALSE"
+        "Permanent" = "11:FALSE"
+        "SharedLegacy" = "11:FALSE"
+        "PackageAs" = "3:1"
+        "Register" = "3:1"
+        "Exclude" = "11:FALSE"
+        "IsDependency" = "11:FALSE"
+        "IsolateTo" = "8:"
+        }
+        "{A582A373-4685-4296-BEFE-614B80A702C3}:_BE93031163EF7D0CD5157928D1290CE7"
+        {
+        "SourcePath" = "8:..\\Edelstahl.WinApp\\bin\\Release\\LatoFont\\Lato-BoldItalic.ttf"
+        "TargetName" = "8:Lato-BoldItalic.ttf"
+        "Tag" = "8:"
+        "Folder" = "8:_6E4D210F4741E2B322881064ED1044E3"
+        "Condition" = "8:"
+        "Transitive" = "11:FALSE"
+        "Vital" = "11:TRUE"
+        "ReadOnly" = "11:FALSE"
+        "Hidden" = "11:FALSE"
+        "System" = "11:FALSE"
+        "Permanent" = "11:FALSE"
+        "SharedLegacy" = "11:FALSE"
+        "PackageAs" = "3:1"
+        "Register" = "3:1"
+        "Exclude" = "11:FALSE"
+        "IsDependency" = "11:FALSE"
+        "IsolateTo" = "8:"
+        }
+        "{A582A373-4685-4296-BEFE-614B80A702C3}:_119B0F9DF2625029A877AEDB6A0B9717"
+        {
+        "SourcePath" = "8:..\\Edelstahl.WinApp\\bin\\Release\\LatoFont\\Lato-ExtraBold.ttf"
+        "TargetName" = "8:Lato-ExtraBold.ttf"
+        "Tag" = "8:"
+        "Folder" = "8:_6E4D210F4741E2B322881064ED1044E3"
+        "Condition" = "8:"
+        "Transitive" = "11:FALSE"
+        "Vital" = "11:TRUE"
+        "ReadOnly" = "11:FALSE"
+        "Hidden" = "11:FALSE"
+        "System" = "11:FALSE"
+        "Permanent" = "11:FALSE"
+        "SharedLegacy" = "11:FALSE"
+        "PackageAs" = "3:1"
+        "Register" = "3:1"
+        "Exclude" = "11:FALSE"
+        "IsDependency" = "11:FALSE"
+        "IsolateTo" = "8:"
+        }
+        "{A582A373-4685-4296-BEFE-614B80A702C3}:_E32F33AC655B531C0F4804E3918C3CA0"
+        {
+        "SourcePath" = "8:..\\Edelstahl.WinApp\\bin\\Release\\LatoFont\\Lato-ExtraBoldItalic.ttf"
+        "TargetName" = "8:Lato-ExtraBoldItalic.ttf"
+        "Tag" = "8:"
+        "Folder" = "8:_6E4D210F4741E2B322881064ED1044E3"
+        "Condition" = "8:"
+        "Transitive" = "11:FALSE"
+        "Vital" = "11:TRUE"
+        "ReadOnly" = "11:FALSE"
+        "Hidden" = "11:FALSE"
+        "System" = "11:FALSE"
+        "Permanent" = "11:FALSE"
+        "SharedLegacy" = "11:FALSE"
+        "PackageAs" = "3:1"
+        "Register" = "3:1"
+        "Exclude" = "11:FALSE"
+        "IsDependency" = "11:FALSE"
+        "IsolateTo" = "8:"
+        }
+        "{A582A373-4685-4296-BEFE-614B80A702C3}:_ED601CD04D39AD93AC4BF4BAEC76BA08"
+        {
+        "SourcePath" = "8:..\\Edelstahl.WinApp\\bin\\Release\\LatoFont\\Lato-ExtraLight.ttf"
+        "TargetName" = "8:Lato-ExtraLight.ttf"
+        "Tag" = "8:"
+        "Folder" = "8:_6E4D210F4741E2B322881064ED1044E3"
+        "Condition" = "8:"
+        "Transitive" = "11:FALSE"
+        "Vital" = "11:TRUE"
+        "ReadOnly" = "11:FALSE"
+        "Hidden" = "11:FALSE"
+        "System" = "11:FALSE"
+        "Permanent" = "11:FALSE"
+        "SharedLegacy" = "11:FALSE"
+        "PackageAs" = "3:1"
+        "Register" = "3:1"
+        "Exclude" = "11:FALSE"
+        "IsDependency" = "11:FALSE"
+        "IsolateTo" = "8:"
+        }
+        "{A582A373-4685-4296-BEFE-614B80A702C3}:_8BEE125D92EF4C0359E9A3FB00CD5805"
+        {
+        "SourcePath" = "8:..\\Edelstahl.WinApp\\bin\\Release\\LatoFont\\Lato-ExtraLightItalic.ttf"
+        "TargetName" = "8:Lato-ExtraLightItalic.ttf"
+        "Tag" = "8:"
+        "Folder" = "8:_6E4D210F4741E2B322881064ED1044E3"
+        "Condition" = "8:"
+        "Transitive" = "11:FALSE"
+        "Vital" = "11:TRUE"
+        "ReadOnly" = "11:FALSE"
+        "Hidden" = "11:FALSE"
+        "System" = "11:FALSE"
+        "Permanent" = "11:FALSE"
+        "SharedLegacy" = "11:FALSE"
+        "PackageAs" = "3:1"
+        "Register" = "3:1"
+        "Exclude" = "11:FALSE"
+        "IsDependency" = "11:FALSE"
+        "IsolateTo" = "8:"
+        }
+        "{A582A373-4685-4296-BEFE-614B80A702C3}:_09AFE518E7E3B5D298B8032A906E4DCB"
+        {
+        "SourcePath" = "8:..\\Edelstahl.WinApp\\bin\\Release\\LatoFont\\Lato-Italic.ttf"
+        "TargetName" = "8:Lato-Italic.ttf"
+        "Tag" = "8:"
+        "Folder" = "8:_6E4D210F4741E2B322881064ED1044E3"
+        "Condition" = "8:"
+        "Transitive" = "11:FALSE"
+        "Vital" = "11:TRUE"
+        "ReadOnly" = "11:FALSE"
+        "Hidden" = "11:FALSE"
+        "System" = "11:FALSE"
+        "Permanent" = "11:FALSE"
+        "SharedLegacy" = "11:FALSE"
+        "PackageAs" = "3:1"
+        "Register" = "3:1"
+        "Exclude" = "11:FALSE"
+        "IsDependency" = "11:FALSE"
+        "IsolateTo" = "8:"
+        }
+        "{A582A373-4685-4296-BEFE-614B80A702C3}:_C4397CB48A47E3E77B5DDF44EF41DEEF"
+        {
+        "SourcePath" = "8:..\\Edelstahl.WinApp\\bin\\Release\\LatoFont\\Lato-Light.ttf"
+        "TargetName" = "8:Lato-Light.ttf"
+        "Tag" = "8:"
+        "Folder" = "8:_6E4D210F4741E2B322881064ED1044E3"
+        "Condition" = "8:"
+        "Transitive" = "11:FALSE"
+        "Vital" = "11:TRUE"
+        "ReadOnly" = "11:FALSE"
+        "Hidden" = "11:FALSE"
+        "System" = "11:FALSE"
+        "Permanent" = "11:FALSE"
+        "SharedLegacy" = "11:FALSE"
+        "PackageAs" = "3:1"
+        "Register" = "3:1"
+        "Exclude" = "11:FALSE"
+        "IsDependency" = "11:FALSE"
+        "IsolateTo" = "8:"
+        }
+        "{A582A373-4685-4296-BEFE-614B80A702C3}:_F17B418C04FFBC3708B41566ABBF6B85"
+        {
+        "SourcePath" = "8:..\\Edelstahl.WinApp\\bin\\Release\\LatoFont\\Lato-LightItalic.ttf"
+        "TargetName" = "8:Lato-LightItalic.ttf"
+        "Tag" = "8:"
+        "Folder" = "8:_6E4D210F4741E2B322881064ED1044E3"
+        "Condition" = "8:"
+        "Transitive" = "11:FALSE"
+        "Vital" = "11:TRUE"
+        "ReadOnly" = "11:FALSE"
+        "Hidden" = "11:FALSE"
+        "System" = "11:FALSE"
+        "Permanent" = "11:FALSE"
+        "SharedLegacy" = "11:FALSE"
+        "PackageAs" = "3:1"
+        "Register" = "3:1"
+        "Exclude" = "11:FALSE"
+        "IsDependency" = "11:FALSE"
+        "IsolateTo" = "8:"
+        }
+        "{A582A373-4685-4296-BEFE-614B80A702C3}:_61844CF321D4B93F3A1A44096CE2D380"
+        {
+        "SourcePath" = "8:..\\Edelstahl.WinApp\\bin\\Release\\LatoFont\\Lato-Medium.ttf"
+        "TargetName" = "8:Lato-Medium.ttf"
+        "Tag" = "8:"
+        "Folder" = "8:_6E4D210F4741E2B322881064ED1044E3"
+        "Condition" = "8:"
+        "Transitive" = "11:FALSE"
+        "Vital" = "11:TRUE"
+        "ReadOnly" = "11:FALSE"
+        "Hidden" = "11:FALSE"
+        "System" = "11:FALSE"
+        "Permanent" = "11:FALSE"
+        "SharedLegacy" = "11:FALSE"
+        "PackageAs" = "3:1"
+        "Register" = "3:1"
+        "Exclude" = "11:FALSE"
+        "IsDependency" = "11:FALSE"
+        "IsolateTo" = "8:"
+        }
+        "{A582A373-4685-4296-BEFE-614B80A702C3}:_DDF3A0C681BEFCD56835C9595674DE8E"
+        {
+        "SourcePath" = "8:..\\Edelstahl.WinApp\\bin\\Release\\LatoFont\\Lato-MediumItalic.ttf"
+        "TargetName" = "8:Lato-MediumItalic.ttf"
+        "Tag" = "8:"
+        "Folder" = "8:_6E4D210F4741E2B322881064ED1044E3"
+        "Condition" = "8:"
+        "Transitive" = "11:FALSE"
+        "Vital" = "11:TRUE"
+        "ReadOnly" = "11:FALSE"
+        "Hidden" = "11:FALSE"
+        "System" = "11:FALSE"
+        "Permanent" = "11:FALSE"
+        "SharedLegacy" = "11:FALSE"
+        "PackageAs" = "3:1"
+        "Register" = "3:1"
+        "Exclude" = "11:FALSE"
+        "IsDependency" = "11:FALSE"
+        "IsolateTo" = "8:"
+        }
+        "{A582A373-4685-4296-BEFE-614B80A702C3}:_AA864ED930EB72EDBB985FF3E78E764D"
+        {
+        "SourcePath" = "8:..\\Edelstahl.WinApp\\bin\\Release\\LatoFont\\Lato-Regular.ttf"
+        "TargetName" = "8:Lato-Regular.ttf"
+        "Tag" = "8:"
+        "Folder" = "8:_6E4D210F4741E2B322881064ED1044E3"
+        "Condition" = "8:"
+        "Transitive" = "11:FALSE"
+        "Vital" = "11:TRUE"
+        "ReadOnly" = "11:FALSE"
+        "Hidden" = "11:FALSE"
+        "System" = "11:FALSE"
+        "Permanent" = "11:FALSE"
+        "SharedLegacy" = "11:FALSE"
+        "PackageAs" = "3:1"
+        "Register" = "3:1"
+        "Exclude" = "11:FALSE"
+        "IsDependency" = "11:FALSE"
+        "IsolateTo" = "8:"
+        }
+        "{A582A373-4685-4296-BEFE-614B80A702C3}:_D17E007C3222E7C82988A4E086E58F3E"
+        {
+        "SourcePath" = "8:..\\Edelstahl.WinApp\\bin\\Release\\LatoFont\\Lato-SemiBold.ttf"
+        "TargetName" = "8:Lato-SemiBold.ttf"
+        "Tag" = "8:"
+        "Folder" = "8:_6E4D210F4741E2B322881064ED1044E3"
+        "Condition" = "8:"
+        "Transitive" = "11:FALSE"
+        "Vital" = "11:TRUE"
+        "ReadOnly" = "11:FALSE"
+        "Hidden" = "11:FALSE"
+        "System" = "11:FALSE"
+        "Permanent" = "11:FALSE"
+        "SharedLegacy" = "11:FALSE"
+        "PackageAs" = "3:1"
+        "Register" = "3:1"
+        "Exclude" = "11:FALSE"
+        "IsDependency" = "11:FALSE"
+        "IsolateTo" = "8:"
+        }
+        "{A582A373-4685-4296-BEFE-614B80A702C3}:_B64B208B277D80EE16D97AC697179996"
+        {
+        "SourcePath" = "8:..\\Edelstahl.WinApp\\bin\\Release\\LatoFont\\Lato-SemiBoldItalic.ttf"
+        "TargetName" = "8:Lato-SemiBoldItalic.ttf"
+        "Tag" = "8:"
+        "Folder" = "8:_6E4D210F4741E2B322881064ED1044E3"
+        "Condition" = "8:"
+        "Transitive" = "11:FALSE"
+        "Vital" = "11:TRUE"
+        "ReadOnly" = "11:FALSE"
+        "Hidden" = "11:FALSE"
+        "System" = "11:FALSE"
+        "Permanent" = "11:FALSE"
+        "SharedLegacy" = "11:FALSE"
+        "PackageAs" = "3:1"
+        "Register" = "3:1"
+        "Exclude" = "11:FALSE"
+        "IsDependency" = "11:FALSE"
+        "IsolateTo" = "8:"
+        }
+        "{A582A373-4685-4296-BEFE-614B80A702C3}:_705802C49AB6E426B6600638DF6B9DAD"
+        {
+        "SourcePath" = "8:..\\Edelstahl.WinApp\\bin\\Release\\LatoFont\\Lato-Thin.ttf"
+        "TargetName" = "8:Lato-Thin.ttf"
+        "Tag" = "8:"
+        "Folder" = "8:_6E4D210F4741E2B322881064ED1044E3"
+        "Condition" = "8:"
+        "Transitive" = "11:FALSE"
+        "Vital" = "11:TRUE"
+        "ReadOnly" = "11:FALSE"
+        "Hidden" = "11:FALSE"
+        "System" = "11:FALSE"
+        "Permanent" = "11:FALSE"
+        "SharedLegacy" = "11:FALSE"
+        "PackageAs" = "3:1"
+        "Register" = "3:1"
+        "Exclude" = "11:FALSE"
+        "IsDependency" = "11:FALSE"
+        "IsolateTo" = "8:"
+        }
+        "{A582A373-4685-4296-BEFE-614B80A702C3}:_D499366A109AB46F290D00CFB6AE404A"
+        {
+        "SourcePath" = "8:..\\Edelstahl.WinApp\\bin\\Release\\LatoFont\\Lato-ThinItalic.ttf"
+        "TargetName" = "8:Lato-ThinItalic.ttf"
+        "Tag" = "8:"
+        "Folder" = "8:_6E4D210F4741E2B322881064ED1044E3"
+        "Condition" = "8:"
+        "Transitive" = "11:FALSE"
+        "Vital" = "11:TRUE"
+        "ReadOnly" = "11:FALSE"
+        "Hidden" = "11:FALSE"
+        "System" = "11:FALSE"
+        "Permanent" = "11:FALSE"
+        "SharedLegacy" = "11:FALSE"
+        "PackageAs" = "3:1"
+        "Register" = "3:1"
+        "Exclude" = "11:FALSE"
+        "IsDependency" = "11:FALSE"
+        "IsolateTo" = "8:"
+        }
+        "{A582A373-4685-4296-BEFE-614B80A702C3}:_CB1B1D1CF0E07CD70DB6ECF6D8E910FB"
+        {
+        "SourcePath" = "8:..\\Edelstahl.WinApp\\bin\\Release\\LatoFont\\OFL.txt"
+        "TargetName" = "8:OFL.txt"
+        "Tag" = "8:"
+        "Folder" = "8:_6E4D210F4741E2B322881064ED1044E3"
+        "Condition" = "8:"
+        "Transitive" = "11:FALSE"
+        "Vital" = "11:TRUE"
+        "ReadOnly" = "11:FALSE"
+        "Hidden" = "11:FALSE"
+        "System" = "11:FALSE"
+        "Permanent" = "11:FALSE"
+        "SharedLegacy" = "11:FALSE"
+        "PackageAs" = "3:1"
+        "Register" = "3:1"
+        "Exclude" = "11:FALSE"
+        "IsDependency" = "11:FALSE"
+        "IsolateTo" = "8:"
+        }
+        "{A582A373-4685-4296-BEFE-614B80A702C3}:_EB28D3680DE011250DA8BB853CECA0D1"
+        {
+        "SourcePath" = "8:..\\Edelstahl.WinApp\\bin\\Release\\Mapa\\leaflet.css"
+        "TargetName" = "8:leaflet.css"
+        "Tag" = "8:"
+        "Folder" = "8:_69F8FC274AF73C24CCF2151523C6CC8E"
+        "Condition" = "8:"
+        "Transitive" = "11:FALSE"
+        "Vital" = "11:TRUE"
+        "ReadOnly" = "11:FALSE"
+        "Hidden" = "11:FALSE"
+        "System" = "11:FALSE"
+        "Permanent" = "11:FALSE"
+        "SharedLegacy" = "11:FALSE"
+        "PackageAs" = "3:1"
+        "Register" = "3:1"
+        "Exclude" = "11:FALSE"
+        "IsDependency" = "11:FALSE"
+        "IsolateTo" = "8:"
+        }
+        "{A582A373-4685-4296-BEFE-614B80A702C3}:_70456577AC105D098AB89493953C0B9D"
+        {
+        "SourcePath" = "8:..\\Edelstahl.WinApp\\bin\\Release\\Mapa\\leaflet.js"
+        "TargetName" = "8:leaflet.js"
+        "Tag" = "8:"
+        "Folder" = "8:_69F8FC274AF73C24CCF2151523C6CC8E"
+        "Condition" = "8:"
+        "Transitive" = "11:FALSE"
+        "Vital" = "11:TRUE"
+        "ReadOnly" = "11:FALSE"
+        "Hidden" = "11:FALSE"
+        "System" = "11:FALSE"
+        "Permanent" = "11:FALSE"
+        "SharedLegacy" = "11:FALSE"
+        "PackageAs" = "3:1"
+        "Register" = "3:1"
+        "Exclude" = "11:FALSE"
+        "IsDependency" = "11:FALSE"
+        "IsolateTo" = "8:"
+        }
+        "{A582A373-4685-4296-BEFE-614B80A702C3}:_25D6996CA9BD5AA4277A98C87D41925B"
+        {
+        "SourcePath" = "8:..\\Edelstahl.WinApp\\bin\\Release\\Mapa\\LICENSE-Leaflet.txt"
+        "TargetName" = "8:LICENSE-Leaflet.txt"
+        "Tag" = "8:"
+        "Folder" = "8:_69F8FC274AF73C24CCF2151523C6CC8E"
+        "Condition" = "8:"
+        "Transitive" = "11:FALSE"
+        "Vital" = "11:TRUE"
+        "ReadOnly" = "11:FALSE"
+        "Hidden" = "11:FALSE"
+        "System" = "11:FALSE"
+        "Permanent" = "11:FALSE"
+        "SharedLegacy" = "11:FALSE"
+        "PackageAs" = "3:1"
+        "Register" = "3:1"
+        "Exclude" = "11:FALSE"
+        "IsDependency" = "11:FALSE"
+        "IsolateTo" = "8:"
+        }
+        "{A582A373-4685-4296-BEFE-614B80A702C3}:_30F2E0B0436E344B20604EE78B3C6C4F"
+        {
+        "SourcePath" = "8:..\\Edelstahl.WinApp\\bin\\Release\\Mapa\\mapa.html"
+        "TargetName" = "8:mapa.html"
+        "Tag" = "8:"
+        "Folder" = "8:_69F8FC274AF73C24CCF2151523C6CC8E"
+        "Condition" = "8:"
+        "Transitive" = "11:FALSE"
+        "Vital" = "11:TRUE"
+        "ReadOnly" = "11:FALSE"
+        "Hidden" = "11:FALSE"
+        "System" = "11:FALSE"
+        "Permanent" = "11:FALSE"
+        "SharedLegacy" = "11:FALSE"
+        "PackageAs" = "3:1"
+        "Register" = "3:1"
+        "Exclude" = "11:FALSE"
+        "IsDependency" = "11:FALSE"
+        "IsolateTo" = "8:"
+        }
+        "{A582A373-4685-4296-BEFE-614B80A702C3}:_474649B312D36086ECD540CE2270CAAF"
+        {
+        "SourcePath" = "8:..\\Edelstahl.WinApp\\bin\\Release\\Microsoft.Web.WebView2.Core.dll"
+        "TargetName" = "8:Microsoft.Web.WebView2.Core.dll"
+        "Tag" = "8:"
+        "Folder" = "8:_125BAEC6A678D393F85B3A7DF5F8DEB1"
+        "Condition" = "8:"
+        "Transitive" = "11:FALSE"
+        "Vital" = "11:TRUE"
+        "ReadOnly" = "11:FALSE"
+        "Hidden" = "11:FALSE"
+        "System" = "11:FALSE"
+        "Permanent" = "11:FALSE"
+        "SharedLegacy" = "11:FALSE"
+        "PackageAs" = "3:1"
+        "Register" = "3:1"
+        "Exclude" = "11:FALSE"
+        "IsDependency" = "11:FALSE"
+        "IsolateTo" = "8:"
+        }
+        "{A582A373-4685-4296-BEFE-614B80A702C3}:_CCE12BD01C5CD4CEDAF59F0AE6941984"
+        {
+        "SourcePath" = "8:..\\Edelstahl.WinApp\\bin\\Release\\Microsoft.Web.WebView2.WinForms.dll"
+        "TargetName" = "8:Microsoft.Web.WebView2.WinForms.dll"
+        "Tag" = "8:"
+        "Folder" = "8:_125BAEC6A678D393F85B3A7DF5F8DEB1"
+        "Condition" = "8:"
+        "Transitive" = "11:FALSE"
+        "Vital" = "11:TRUE"
+        "ReadOnly" = "11:FALSE"
+        "Hidden" = "11:FALSE"
+        "System" = "11:FALSE"
+        "Permanent" = "11:FALSE"
+        "SharedLegacy" = "11:FALSE"
+        "PackageAs" = "3:1"
+        "Register" = "3:1"
+        "Exclude" = "11:FALSE"
+        "IsDependency" = "11:FALSE"
+        "IsolateTo" = "8:"
+        }
+        "{A582A373-4685-4296-BEFE-614B80A702C3}:_3C6C19C5C43FC2E7AD859C804B4A4252"
+        {
+        "SourcePath" = "8:..\\Edelstahl.WinApp\\bin\\Release\\QuestPDF.dll"
+        "TargetName" = "8:QuestPDF.dll"
+        "Tag" = "8:"
+        "Folder" = "8:_125BAEC6A678D393F85B3A7DF5F8DEB1"
+        "Condition" = "8:"
+        "Transitive" = "11:FALSE"
+        "Vital" = "11:TRUE"
+        "ReadOnly" = "11:FALSE"
+        "Hidden" = "11:FALSE"
+        "System" = "11:FALSE"
+        "Permanent" = "11:FALSE"
+        "SharedLegacy" = "11:FALSE"
+        "PackageAs" = "3:1"
+        "Register" = "3:1"
+        "Exclude" = "11:FALSE"
+        "IsDependency" = "11:FALSE"
+        "IsolateTo" = "8:"
+        }
+        "{A582A373-4685-4296-BEFE-614B80A702C3}:_0CDC7C48D879B90B690A947C6A722A5C"
+        {
+        "SourcePath" = "8:..\\Edelstahl.WinApp\\bin\\Release\\Resources\\Flags\\flag_ar.png"
+        "TargetName" = "8:flag_ar.png"
+        "Tag" = "8:"
+        "Folder" = "8:_315D705BE271965542B4073BE92F21DA"
+        "Condition" = "8:"
+        "Transitive" = "11:FALSE"
+        "Vital" = "11:TRUE"
+        "ReadOnly" = "11:FALSE"
+        "Hidden" = "11:FALSE"
+        "System" = "11:FALSE"
+        "Permanent" = "11:FALSE"
+        "SharedLegacy" = "11:FALSE"
+        "PackageAs" = "3:1"
+        "Register" = "3:1"
+        "Exclude" = "11:FALSE"
+        "IsDependency" = "11:FALSE"
+        "IsolateTo" = "8:"
+        }
+        "{A582A373-4685-4296-BEFE-614B80A702C3}:_4EFE14FAA9316368ED459F97A9503627"
+        {
+        "SourcePath" = "8:..\\Edelstahl.WinApp\\bin\\Release\\Resources\\Flags\\flag_br.png"
+        "TargetName" = "8:flag_br.png"
+        "Tag" = "8:"
+        "Folder" = "8:_315D705BE271965542B4073BE92F21DA"
+        "Condition" = "8:"
+        "Transitive" = "11:FALSE"
+        "Vital" = "11:TRUE"
+        "ReadOnly" = "11:FALSE"
+        "Hidden" = "11:FALSE"
+        "System" = "11:FALSE"
+        "Permanent" = "11:FALSE"
+        "SharedLegacy" = "11:FALSE"
+        "PackageAs" = "3:1"
+        "Register" = "3:1"
+        "Exclude" = "11:FALSE"
+        "IsDependency" = "11:FALSE"
+        "IsolateTo" = "8:"
+        }
+        "{A582A373-4685-4296-BEFE-614B80A702C3}:_CCADA207A473986F945F41677882F989"
+        {
+        "SourcePath" = "8:..\\Edelstahl.WinApp\\bin\\Release\\Resources\\Flags\\flag_de.png"
+        "TargetName" = "8:flag_de.png"
+        "Tag" = "8:"
+        "Folder" = "8:_315D705BE271965542B4073BE92F21DA"
+        "Condition" = "8:"
+        "Transitive" = "11:FALSE"
+        "Vital" = "11:TRUE"
+        "ReadOnly" = "11:FALSE"
+        "Hidden" = "11:FALSE"
+        "System" = "11:FALSE"
+        "Permanent" = "11:FALSE"
+        "SharedLegacy" = "11:FALSE"
+        "PackageAs" = "3:1"
+        "Register" = "3:1"
+        "Exclude" = "11:FALSE"
+        "IsDependency" = "11:FALSE"
+        "IsolateTo" = "8:"
+        }
+        "{A582A373-4685-4296-BEFE-614B80A702C3}:_31792A932685C89DF16AF9788ADCA236"
+        {
+        "SourcePath" = "8:..\\Edelstahl.WinApp\\bin\\Release\\Resources\\Flags\\flag_es.png"
+        "TargetName" = "8:flag_es.png"
+        "Tag" = "8:"
+        "Folder" = "8:_315D705BE271965542B4073BE92F21DA"
+        "Condition" = "8:"
+        "Transitive" = "11:FALSE"
+        "Vital" = "11:TRUE"
+        "ReadOnly" = "11:FALSE"
+        "Hidden" = "11:FALSE"
+        "System" = "11:FALSE"
+        "Permanent" = "11:FALSE"
+        "SharedLegacy" = "11:FALSE"
+        "PackageAs" = "3:1"
+        "Register" = "3:1"
+        "Exclude" = "11:FALSE"
+        "IsDependency" = "11:FALSE"
+        "IsolateTo" = "8:"
+        }
+        "{A582A373-4685-4296-BEFE-614B80A702C3}:_804745BF2C7EE68612461F70BA74EC96"
+        {
+        "SourcePath" = "8:..\\Edelstahl.WinApp\\bin\\Release\\Resources\\Flags\\flag_gb.png"
+        "TargetName" = "8:flag_gb.png"
+        "Tag" = "8:"
+        "Folder" = "8:_315D705BE271965542B4073BE92F21DA"
+        "Condition" = "8:"
+        "Transitive" = "11:FALSE"
+        "Vital" = "11:TRUE"
+        "ReadOnly" = "11:FALSE"
+        "Hidden" = "11:FALSE"
+        "System" = "11:FALSE"
+        "Permanent" = "11:FALSE"
+        "SharedLegacy" = "11:FALSE"
+        "PackageAs" = "3:1"
+        "Register" = "3:1"
+        "Exclude" = "11:FALSE"
+        "IsDependency" = "11:FALSE"
+        "IsolateTo" = "8:"
+        }
+        "{A582A373-4685-4296-BEFE-614B80A702C3}:_E35DBE9D8E7296928449E67523E0E4F5"
+        {
+        "SourcePath" = "8:..\\Edelstahl.WinApp\\bin\\Release\\Resources\\Flags\\flag_ru.png"
+        "TargetName" = "8:flag_ru.png"
+        "Tag" = "8:"
+        "Folder" = "8:_315D705BE271965542B4073BE92F21DA"
+        "Condition" = "8:"
+        "Transitive" = "11:FALSE"
+        "Vital" = "11:TRUE"
+        "ReadOnly" = "11:FALSE"
+        "Hidden" = "11:FALSE"
+        "System" = "11:FALSE"
+        "Permanent" = "11:FALSE"
+        "SharedLegacy" = "11:FALSE"
+        "PackageAs" = "3:1"
+        "Register" = "3:1"
+        "Exclude" = "11:FALSE"
+        "IsDependency" = "11:FALSE"
+        "IsolateTo" = "8:"
+        }
+        "{A582A373-4685-4296-BEFE-614B80A702C3}:_12B8CF34C1399017E7442F521020E1B7"
+        {
+        "SourcePath" = "8:..\\Edelstahl.WinApp\\bin\\Release\\Resources\\Flags\\flag_us.png"
+        "TargetName" = "8:flag_us.png"
+        "Tag" = "8:"
+        "Folder" = "8:_315D705BE271965542B4073BE92F21DA"
+        "Condition" = "8:"
+        "Transitive" = "11:FALSE"
+        "Vital" = "11:TRUE"
+        "ReadOnly" = "11:FALSE"
+        "Hidden" = "11:FALSE"
+        "System" = "11:FALSE"
+        "Permanent" = "11:FALSE"
+        "SharedLegacy" = "11:FALSE"
+        "PackageAs" = "3:1"
+        "Register" = "3:1"
+        "Exclude" = "11:FALSE"
+        "IsDependency" = "11:FALSE"
+        "IsolateTo" = "8:"
+        }
+        "{A582A373-4685-4296-BEFE-614B80A702C3}:_6908227FE17937B7E33726D1B0E220FE"
+        {
+        "SourcePath" = "8:..\\Edelstahl.WinApp\\bin\\Release\\Resources\\Login\\logo_login.png"
+        "TargetName" = "8:logo_login.png"
+        "Tag" = "8:"
+        "Folder" = "8:_EC9638EE22EA2CBA8224C3016DDA52DF"
+        "Condition" = "8:"
+        "Transitive" = "11:FALSE"
+        "Vital" = "11:TRUE"
+        "ReadOnly" = "11:FALSE"
+        "Hidden" = "11:FALSE"
+        "System" = "11:FALSE"
+        "Permanent" = "11:FALSE"
+        "SharedLegacy" = "11:FALSE"
+        "PackageAs" = "3:1"
+        "Register" = "3:1"
+        "Exclude" = "11:FALSE"
+        "IsDependency" = "11:FALSE"
+        "IsolateTo" = "8:"
+        }
+        "{A582A373-4685-4296-BEFE-614B80A702C3}:_DEC8A78270AC07FFD8B2B150E252EE38"
+        {
+        "SourcePath" = "8:..\\Edelstahl.WinApp\\bin\\Release\\Resources\\Logo\\logo_edelstahl.png"
+        "TargetName" = "8:logo_edelstahl.png"
+        "Tag" = "8:"
+        "Folder" = "8:_EBA063AC7348B5C1CAFA5BE917E78ABC"
+        "Condition" = "8:"
+        "Transitive" = "11:FALSE"
+        "Vital" = "11:TRUE"
+        "ReadOnly" = "11:FALSE"
+        "Hidden" = "11:FALSE"
+        "System" = "11:FALSE"
+        "Permanent" = "11:FALSE"
+        "SharedLegacy" = "11:FALSE"
+        "PackageAs" = "3:1"
+        "Register" = "3:1"
+        "Exclude" = "11:FALSE"
+        "IsDependency" = "11:FALSE"
+        "IsolateTo" = "8:"
+        }
+        "{A582A373-4685-4296-BEFE-614B80A702C3}:_F91493DF3734C351797C120CBD0662A5"
+        {
+        "SourcePath" = "8:..\\Edelstahl.WinApp\\bin\\Release\\runtimes\\win-arm64\\native\\qpdf.dll"
+        "TargetName" = "8:qpdf.dll"
+        "Tag" = "8:"
+        "Folder" = "8:_2F40815E4E308DF18C6CCFD373A5751A"
+        "Condition" = "8:"
+        "Transitive" = "11:FALSE"
+        "Vital" = "11:TRUE"
+        "ReadOnly" = "11:FALSE"
+        "Hidden" = "11:FALSE"
+        "System" = "11:FALSE"
+        "Permanent" = "11:FALSE"
+        "SharedLegacy" = "11:FALSE"
+        "PackageAs" = "3:1"
+        "Register" = "3:1"
+        "Exclude" = "11:FALSE"
+        "IsDependency" = "11:FALSE"
+        "IsolateTo" = "8:"
+        }
+        "{A582A373-4685-4296-BEFE-614B80A702C3}:_BCCC125DC4027D86230671925C262443"
+        {
+        "SourcePath" = "8:..\\Edelstahl.WinApp\\bin\\Release\\runtimes\\win-arm64\\native\\QuestPdfSkia.dll"
+        "TargetName" = "8:QuestPdfSkia.dll"
+        "Tag" = "8:"
+        "Folder" = "8:_2F40815E4E308DF18C6CCFD373A5751A"
+        "Condition" = "8:"
+        "Transitive" = "11:FALSE"
+        "Vital" = "11:TRUE"
+        "ReadOnly" = "11:FALSE"
+        "Hidden" = "11:FALSE"
+        "System" = "11:FALSE"
+        "Permanent" = "11:FALSE"
+        "SharedLegacy" = "11:FALSE"
+        "PackageAs" = "3:1"
+        "Register" = "3:1"
+        "Exclude" = "11:FALSE"
+        "IsDependency" = "11:FALSE"
+        "IsolateTo" = "8:"
+        }
+        "{A582A373-4685-4296-BEFE-614B80A702C3}:_B2D43B3CBE523ABA4C4357B560E1347D"
+        {
+        "SourcePath" = "8:..\\Edelstahl.WinApp\\bin\\Release\\runtimes\\win-x64\\native\\qpdf.dll"
+        "TargetName" = "8:qpdf.dll"
+        "Tag" = "8:"
+        "Folder" = "8:_60739598EB5CFECFECFD23454CBDEFFF"
+        "Condition" = "8:"
+        "Transitive" = "11:FALSE"
+        "Vital" = "11:TRUE"
+        "ReadOnly" = "11:FALSE"
+        "Hidden" = "11:FALSE"
+        "System" = "11:FALSE"
+        "Permanent" = "11:FALSE"
+        "SharedLegacy" = "11:FALSE"
+        "PackageAs" = "3:1"
+        "Register" = "3:1"
+        "Exclude" = "11:FALSE"
+        "IsDependency" = "11:FALSE"
+        "IsolateTo" = "8:"
+        }
+        "{A582A373-4685-4296-BEFE-614B80A702C3}:_30A4078726612D2D5AE7DA89035F2722"
+        {
+        "SourcePath" = "8:..\\Edelstahl.WinApp\\bin\\Release\\runtimes\\win-x64\\native\\QuestPdfSkia.dll"
+        "TargetName" = "8:QuestPdfSkia.dll"
+        "Tag" = "8:"
+        "Folder" = "8:_60739598EB5CFECFECFD23454CBDEFFF"
+        "Condition" = "8:"
+        "Transitive" = "11:FALSE"
+        "Vital" = "11:TRUE"
+        "ReadOnly" = "11:FALSE"
+        "Hidden" = "11:FALSE"
+        "System" = "11:FALSE"
+        "Permanent" = "11:FALSE"
+        "SharedLegacy" = "11:FALSE"
+        "PackageAs" = "3:1"
+        "Register" = "3:1"
+        "Exclude" = "11:FALSE"
+        "IsDependency" = "11:FALSE"
+        "IsolateTo" = "8:"
+        }
+        "{A582A373-4685-4296-BEFE-614B80A702C3}:_8DEE988E9D152B20716C8022509B60E4"
+        {
+        "SourcePath" = "8:..\\Edelstahl.WinApp\\bin\\Release\\runtimes\\win-x64\\native\\WebView2Loader.dll"
+        "TargetName" = "8:WebView2Loader.dll"
+        "Tag" = "8:"
+        "Folder" = "8:_60739598EB5CFECFECFD23454CBDEFFF"
+        "Condition" = "8:"
+        "Transitive" = "11:FALSE"
+        "Vital" = "11:TRUE"
+        "ReadOnly" = "11:FALSE"
+        "Hidden" = "11:FALSE"
+        "System" = "11:FALSE"
+        "Permanent" = "11:FALSE"
+        "SharedLegacy" = "11:FALSE"
+        "PackageAs" = "3:1"
+        "Register" = "3:1"
+        "Exclude" = "11:FALSE"
+        "IsDependency" = "11:FALSE"
+        "IsolateTo" = "8:"
+        }
+        "{A582A373-4685-4296-BEFE-614B80A702C3}:_54AA388C76A61CC609E8BA0BAA8BCFFB"
+        {
+        "SourcePath" = "8:..\\Edelstahl.WinApp\\bin\\Release\\runtimes\\win-x86\\native\\qpdf.dll"
+        "TargetName" = "8:qpdf.dll"
+        "Tag" = "8:"
+        "Folder" = "8:_A8D53AAE328254B26E853F83C04508E0"
+        "Condition" = "8:"
+        "Transitive" = "11:FALSE"
+        "Vital" = "11:TRUE"
+        "ReadOnly" = "11:FALSE"
+        "Hidden" = "11:FALSE"
+        "System" = "11:FALSE"
+        "Permanent" = "11:FALSE"
+        "SharedLegacy" = "11:FALSE"
+        "PackageAs" = "3:1"
+        "Register" = "3:1"
+        "Exclude" = "11:FALSE"
+        "IsDependency" = "11:FALSE"
+        "IsolateTo" = "8:"
+        }
+        "{A582A373-4685-4296-BEFE-614B80A702C3}:_228C6120B3CBAFF3F270B7E195F0A222"
+        {
+        "SourcePath" = "8:..\\Edelstahl.WinApp\\bin\\Release\\runtimes\\win-x86\\native\\QuestPdfSkia.dll"
+        "TargetName" = "8:QuestPdfSkia.dll"
+        "Tag" = "8:"
+        "Folder" = "8:_A8D53AAE328254B26E853F83C04508E0"
+        "Condition" = "8:"
+        "Transitive" = "11:FALSE"
+        "Vital" = "11:TRUE"
+        "ReadOnly" = "11:FALSE"
+        "Hidden" = "11:FALSE"
+        "System" = "11:FALSE"
+        "Permanent" = "11:FALSE"
+        "SharedLegacy" = "11:FALSE"
+        "PackageAs" = "3:1"
+        "Register" = "3:1"
+        "Exclude" = "11:FALSE"
+        "IsDependency" = "11:FALSE"
+        "IsolateTo" = "8:"
+        }
+        "{A582A373-4685-4296-BEFE-614B80A702C3}:_B62D9D0E6D344DC4DDE0A8BD2F2D0DBD"
+        {
+        "SourcePath" = "8:..\\Edelstahl.WinApp\\bin\\Release\\runtimes\\win-x86\\native\\WebView2Loader.dll"
+        "TargetName" = "8:WebView2Loader.dll"
+        "Tag" = "8:"
+        "Folder" = "8:_A8D53AAE328254B26E853F83C04508E0"
+        "Condition" = "8:"
+        "Transitive" = "11:FALSE"
+        "Vital" = "11:TRUE"
+        "ReadOnly" = "11:FALSE"
+        "Hidden" = "11:FALSE"
+        "System" = "11:FALSE"
+        "Permanent" = "11:FALSE"
+        "SharedLegacy" = "11:FALSE"
+        "PackageAs" = "3:1"
+        "Register" = "3:1"
+        "Exclude" = "11:FALSE"
+        "IsDependency" = "11:FALSE"
+        "IsolateTo" = "8:"
+        }
+        "{A582A373-4685-4296-BEFE-614B80A702C3}:_817BC0C3B383AA2F8717812B6C592A05"
+        {
+        "SourcePath" = "8:..\\Edelstahl.WinApp\\bin\\Release\\System.Buffers.dll"
+        "TargetName" = "8:System.Buffers.dll"
+        "Tag" = "8:"
+        "Folder" = "8:_125BAEC6A678D393F85B3A7DF5F8DEB1"
+        "Condition" = "8:"
+        "Transitive" = "11:FALSE"
+        "Vital" = "11:TRUE"
+        "ReadOnly" = "11:FALSE"
+        "Hidden" = "11:FALSE"
+        "System" = "11:FALSE"
+        "Permanent" = "11:FALSE"
+        "SharedLegacy" = "11:FALSE"
+        "PackageAs" = "3:1"
+        "Register" = "3:1"
+        "Exclude" = "11:FALSE"
+        "IsDependency" = "11:FALSE"
+        "IsolateTo" = "8:"
+        }
+        "{A582A373-4685-4296-BEFE-614B80A702C3}:_2912415327203B6136D18F65D8ED34B1"
+        {
+        "SourcePath" = "8:..\\Edelstahl.WinApp\\bin\\Release\\System.Memory.dll"
+        "TargetName" = "8:System.Memory.dll"
+        "Tag" = "8:"
+        "Folder" = "8:_125BAEC6A678D393F85B3A7DF5F8DEB1"
+        "Condition" = "8:"
+        "Transitive" = "11:FALSE"
+        "Vital" = "11:TRUE"
+        "ReadOnly" = "11:FALSE"
+        "Hidden" = "11:FALSE"
+        "System" = "11:FALSE"
+        "Permanent" = "11:FALSE"
+        "SharedLegacy" = "11:FALSE"
+        "PackageAs" = "3:1"
+        "Register" = "3:1"
+        "Exclude" = "11:FALSE"
+        "IsDependency" = "11:FALSE"
+        "IsolateTo" = "8:"
+        }
+        "{A582A373-4685-4296-BEFE-614B80A702C3}:_0811F19BBA99B240EBBCCA22E6E29511"
+        {
+        "SourcePath" = "8:..\\Edelstahl.WinApp\\bin\\Release\\System.Numerics.Vectors.dll"
+        "TargetName" = "8:System.Numerics.Vectors.dll"
+        "Tag" = "8:"
+        "Folder" = "8:_125BAEC6A678D393F85B3A7DF5F8DEB1"
+        "Condition" = "8:"
+        "Transitive" = "11:FALSE"
+        "Vital" = "11:TRUE"
+        "ReadOnly" = "11:FALSE"
+        "Hidden" = "11:FALSE"
+        "System" = "11:FALSE"
+        "Permanent" = "11:FALSE"
+        "SharedLegacy" = "11:FALSE"
+        "PackageAs" = "3:1"
+        "Register" = "3:1"
+        "Exclude" = "11:FALSE"
+        "IsDependency" = "11:FALSE"
+        "IsolateTo" = "8:"
+        }
+        "{A582A373-4685-4296-BEFE-614B80A702C3}:_5588F9BC9A349E07F35B4A03CF715445"
+        {
+        "SourcePath" = "8:..\\Edelstahl.WinApp\\bin\\Release\\System.Runtime.CompilerServices.Unsafe.dll"
+        "TargetName" = "8:System.Runtime.CompilerServices.Unsafe.dll"
+        "Tag" = "8:"
+        "Folder" = "8:_125BAEC6A678D393F85B3A7DF5F8DEB1"
+        "Condition" = "8:"
+        "Transitive" = "11:FALSE"
+        "Vital" = "11:TRUE"
+        "ReadOnly" = "11:FALSE"
+        "Hidden" = "11:FALSE"
+        "System" = "11:FALSE"
+        "Permanent" = "11:FALSE"
+        "SharedLegacy" = "11:FALSE"
+        "PackageAs" = "3:1"
+        "Register" = "3:1"
+        "Exclude" = "11:FALSE"
+        "IsDependency" = "11:FALSE"
+        "IsolateTo" = "8:"
+        }
+        "{A582A373-4685-4296-BEFE-614B80A702C3}:_E43B18F1593BDDBB5381E71DE864CD89"
+        {
+        "SourcePath" = "8:..\\Scripts\\01_EdelstahlNegocio.sql"
+        "TargetName" = "8:01_EdelstahlNegocio.sql"
+        "Tag" = "8:"
+        "Folder" = "8:_32BCE65854F94DF3B67097D5E8848487"
+        "Condition" = "8:"
+        "Transitive" = "11:FALSE"
+        "Vital" = "11:TRUE"
+        "ReadOnly" = "11:FALSE"
+        "Hidden" = "11:FALSE"
+        "System" = "11:FALSE"
+        "Permanent" = "11:FALSE"
+        "SharedLegacy" = "11:FALSE"
+        "PackageAs" = "3:1"
+        "Register" = "3:1"
+        "Exclude" = "11:FALSE"
+        "IsDependency" = "11:FALSE"
+        "IsolateTo" = "8:"
+        }
+        "{A582A373-4685-4296-BEFE-614B80A702C3}:_59D7826161F59FDB6D4E4E7762E78242"
+        {
+        "SourcePath" = "8:..\\Scripts\\02_EdelstahlServicios.sql"
+        "TargetName" = "8:02_EdelstahlServicios.sql"
+        "Tag" = "8:"
+        "Folder" = "8:_32BCE65854F94DF3B67097D5E8848487"
+        "Condition" = "8:"
+        "Transitive" = "11:FALSE"
+        "Vital" = "11:TRUE"
+        "ReadOnly" = "11:FALSE"
+        "Hidden" = "11:FALSE"
+        "System" = "11:FALSE"
+        "Permanent" = "11:FALSE"
+        "SharedLegacy" = "11:FALSE"
+        "PackageAs" = "3:1"
+        "Register" = "3:1"
+        "Exclude" = "11:FALSE"
+        "IsDependency" = "11:FALSE"
+        "IsolateTo" = "8:"
+        }
+        "{A582A373-4685-4296-BEFE-614B80A702C3}:_9143B3DCFFC9A2EC5EE9E87C9E7D648D"
+        {
+        "SourcePath" = "8:..\\Scripts\\03_EdelstahlNegocio_datos.sql"
+        "TargetName" = "8:03_EdelstahlNegocio_datos.sql"
+        "Tag" = "8:"
+        "Folder" = "8:_32BCE65854F94DF3B67097D5E8848487"
+        "Condition" = "8:"
+        "Transitive" = "11:FALSE"
+        "Vital" = "11:TRUE"
+        "ReadOnly" = "11:FALSE"
+        "Hidden" = "11:FALSE"
+        "System" = "11:FALSE"
+        "Permanent" = "11:FALSE"
+        "SharedLegacy" = "11:FALSE"
+        "PackageAs" = "3:1"
+        "Register" = "3:1"
+        "Exclude" = "11:FALSE"
+        "IsDependency" = "11:FALSE"
+        "IsolateTo" = "8:"
+        }
+        "{A582A373-4685-4296-BEFE-614B80A702C3}:_8413990A2DF69D0F2E410EFB45C695DA"
+        {
+        "SourcePath" = "8:..\\Scripts\\04_EdelstahlServicios_datos.sql"
+        "TargetName" = "8:04_EdelstahlServicios_datos.sql"
+        "Tag" = "8:"
+        "Folder" = "8:_32BCE65854F94DF3B67097D5E8848487"
+        "Condition" = "8:"
+        "Transitive" = "11:FALSE"
+        "Vital" = "11:TRUE"
+        "ReadOnly" = "11:FALSE"
+        "Hidden" = "11:FALSE"
+        "System" = "11:FALSE"
+        "Permanent" = "11:FALSE"
+        "SharedLegacy" = "11:FALSE"
+        "PackageAs" = "3:1"
+        "Register" = "3:1"
+        "Exclude" = "11:FALSE"
+        "IsDependency" = "11:FALSE"
+        "IsolateTo" = "8:"
+        }
+        "{A582A373-4685-4296-BEFE-614B80A702C3}:_B0A988214DC4631141D86601769174DC"
+        {
+        "SourcePath" = "8:..\\Scripts\\05_Recuperar_Administrador.sql"
+        "TargetName" = "8:05_Recuperar_Administrador.sql"
+        "Tag" = "8:"
+        "Folder" = "8:_32BCE65854F94DF3B67097D5E8848487"
+        "Condition" = "8:"
+        "Transitive" = "11:FALSE"
+        "Vital" = "11:TRUE"
+        "ReadOnly" = "11:FALSE"
+        "Hidden" = "11:FALSE"
+        "System" = "11:FALSE"
+        "Permanent" = "11:FALSE"
+        "SharedLegacy" = "11:FALSE"
+        "PackageAs" = "3:1"
+        "Register" = "3:1"
+        "Exclude" = "11:FALSE"
+        "IsDependency" = "11:FALSE"
+        "IsolateTo" = "8:"
+        }
+        "{A582A373-4685-4296-BEFE-614B80A702C3}:_C94B2536F00E8BA61CF549876755315D"
+        {
+        "SourcePath" = "8:..\\Edelstahl.WinApp\\Resources\\Icono\\edelstahl.ico"
+        "TargetName" = "8:edelstahl.ico"
+        "Tag" = "8:"
+        "Folder" = "8:_125BAEC6A678D393F85B3A7DF5F8DEB1"
+        "Condition" = "8:"
+        "Transitive" = "11:FALSE"
+        "Vital" = "11:TRUE"
+        "ReadOnly" = "11:FALSE"
+        "Hidden" = "11:FALSE"
+        "System" = "11:FALSE"
+        "Permanent" = "11:FALSE"
+        "SharedLegacy" = "11:FALSE"
+        "PackageAs" = "3:1"
+        "Register" = "3:1"
+        "Exclude" = "11:FALSE"
+        "IsDependency" = "11:FALSE"
+        "IsolateTo" = "8:"
+        }
+        }
+        "FileType"
+        {
+        }
+        "Folder"
+        {
+            "{1525181F-901A-416C-8A58-119130FE478E}:_8E31EDADAD21AE92058DC581447AB13A"
+            {
+            "Name" = "8:#1916"
+            "AlwaysCreate" = "11:FALSE"
+            "Condition" = "8:"
+            "Transitive" = "11:FALSE"
+            "Property" = "8:DesktopFolder"
+                "Folders"
+                {
+                }
+            }
+            "{1525181F-901A-416C-8A58-119130FE478E}:_4024B9B3F1AE5F57562EFD3A64FAA35C"
+            {
+            "Name" = "8:#1919"
+            "AlwaysCreate" = "11:FALSE"
+            "Condition" = "8:"
+            "Transitive" = "11:FALSE"
+            "Property" = "8:ProgramMenuFolder"
+                "Folders"
+                {
+                }
+            }
+            "{3C67513D-01DD-4637-8A68-80971EB9504F}:_125BAEC6A678D393F85B3A7DF5F8DEB1"
+            {
+            "DefaultLocation" = "8:[ProgramFilesFolder][Manufacturer]\\[ProductName]"
+            "Name" = "8:#1925"
+            "AlwaysCreate" = "11:FALSE"
+            "Condition" = "8:"
+            "Transitive" = "11:FALSE"
+            "Property" = "8:TARGETDIR"
+                "Folders"
+                {
+                    "{9EF0B969-E518-4E46-987F-47570745A589}:_F0EE686258CAEE39EBAFC28B2B31B2D7"
+                    {
+                    "Name" = "8:Datos"
+                    "AlwaysCreate" = "11:FALSE"
+                    "Condition" = "8:"
+                    "Transitive" = "11:FALSE"
+                    "Property" = "8:_F0EE686258CAEE39EBAFC28B2B31B2D7"
+                        "Folders"
+                        {
+                        }
+                    }
+                    "{9EF0B969-E518-4E46-987F-47570745A589}:_F38F1F2F0CDA27D614840189F16F42C3"
+                    {
+                    "Name" = "8:de-DE"
+                    "AlwaysCreate" = "11:FALSE"
+                    "Condition" = "8:"
+                    "Transitive" = "11:FALSE"
+                    "Property" = "8:_F38F1F2F0CDA27D614840189F16F42C3"
+                        "Folders"
+                        {
+                        }
+                    }
+                    "{9EF0B969-E518-4E46-987F-47570745A589}:_71392359E7FDFA8A5F77A2942D0F4D64"
+                    {
+                    "Name" = "8:en-GB"
+                    "AlwaysCreate" = "11:FALSE"
+                    "Condition" = "8:"
+                    "Transitive" = "11:FALSE"
+                    "Property" = "8:_71392359E7FDFA8A5F77A2942D0F4D64"
+                        "Folders"
+                        {
+                        }
+                    }
+                    "{9EF0B969-E518-4E46-987F-47570745A589}:_F4057DE8233C30965AD738AC5A8BFEEE"
+                    {
+                    "Name" = "8:es-AR"
+                    "AlwaysCreate" = "11:FALSE"
+                    "Condition" = "8:"
+                    "Transitive" = "11:FALSE"
+                    "Property" = "8:_F4057DE8233C30965AD738AC5A8BFEEE"
+                        "Folders"
+                        {
+                        }
+                    }
+                    "{9EF0B969-E518-4E46-987F-47570745A589}:_7751436018772530A26518FF50E01261"
+                    {
+                    "Name" = "8:es-ES"
+                    "AlwaysCreate" = "11:FALSE"
+                    "Condition" = "8:"
+                    "Transitive" = "11:FALSE"
+                    "Property" = "8:_7751436018772530A26518FF50E01261"
+                        "Folders"
+                        {
+                        }
+                    }
+                    "{9EF0B969-E518-4E46-987F-47570745A589}:_48A5781322FC9CF35ABB2201992E99E1"
+                    {
+                    "Name" = "8:pt-BR"
+                    "AlwaysCreate" = "11:FALSE"
+                    "Condition" = "8:"
+                    "Transitive" = "11:FALSE"
+                    "Property" = "8:_48A5781322FC9CF35ABB2201992E99E1"
+                        "Folders"
+                        {
+                        }
+                    }
+                    "{9EF0B969-E518-4E46-987F-47570745A589}:_631A487DEA3BD0E20A2476E010A9A7FC"
+                    {
+                    "Name" = "8:ru-RU"
+                    "AlwaysCreate" = "11:FALSE"
+                    "Condition" = "8:"
+                    "Transitive" = "11:FALSE"
+                    "Property" = "8:_631A487DEA3BD0E20A2476E010A9A7FC"
+                        "Folders"
+                        {
+                        }
+                    }
+                    "{9EF0B969-E518-4E46-987F-47570745A589}:_6E4D210F4741E2B322881064ED1044E3"
+                    {
+                    "Name" = "8:LatoFont"
+                    "AlwaysCreate" = "11:FALSE"
+                    "Condition" = "8:"
+                    "Transitive" = "11:FALSE"
+                    "Property" = "8:_6E4D210F4741E2B322881064ED1044E3"
+                        "Folders"
+                        {
+                        }
+                    }
+                    "{9EF0B969-E518-4E46-987F-47570745A589}:_69F8FC274AF73C24CCF2151523C6CC8E"
+                    {
+                    "Name" = "8:Mapa"
+                    "AlwaysCreate" = "11:FALSE"
+                    "Condition" = "8:"
+                    "Transitive" = "11:FALSE"
+                    "Property" = "8:_69F8FC274AF73C24CCF2151523C6CC8E"
+                        "Folders"
+                        {
+                        }
+                    }
+                    "{9EF0B969-E518-4E46-987F-47570745A589}:_1FC7F773D5BA00583BE6B57C0B499B64"
+                    {
+                    "Name" = "8:Resources"
+                    "AlwaysCreate" = "11:FALSE"
+                    "Condition" = "8:"
+                    "Transitive" = "11:FALSE"
+                    "Property" = "8:_1FC7F773D5BA00583BE6B57C0B499B64"
+                        "Folders"
+                        {
+                            "{9EF0B969-E518-4E46-987F-47570745A589}:_315D705BE271965542B4073BE92F21DA"
+                            {
+                            "Name" = "8:Flags"
+                            "AlwaysCreate" = "11:FALSE"
+                            "Condition" = "8:"
+                            "Transitive" = "11:FALSE"
+                            "Property" = "8:_315D705BE271965542B4073BE92F21DA"
+                                "Folders"
+                                {
+                                }
+                            }
+                            "{9EF0B969-E518-4E46-987F-47570745A589}:_EC9638EE22EA2CBA8224C3016DDA52DF"
+                            {
+                            "Name" = "8:Login"
+                            "AlwaysCreate" = "11:FALSE"
+                            "Condition" = "8:"
+                            "Transitive" = "11:FALSE"
+                            "Property" = "8:_EC9638EE22EA2CBA8224C3016DDA52DF"
+                                "Folders"
+                                {
+                                }
+                            }
+                            "{9EF0B969-E518-4E46-987F-47570745A589}:_EBA063AC7348B5C1CAFA5BE917E78ABC"
+                            {
+                            "Name" = "8:Logo"
+                            "AlwaysCreate" = "11:FALSE"
+                            "Condition" = "8:"
+                            "Transitive" = "11:FALSE"
+                            "Property" = "8:_EBA063AC7348B5C1CAFA5BE917E78ABC"
+                                "Folders"
+                                {
+                                }
+                            }
+                        }
+                    }
+                    "{9EF0B969-E518-4E46-987F-47570745A589}:_1435A6471C38A2E0B1B31D9A9066059B"
+                    {
+                    "Name" = "8:runtimes"
+                    "AlwaysCreate" = "11:FALSE"
+                    "Condition" = "8:"
+                    "Transitive" = "11:FALSE"
+                    "Property" = "8:_1435A6471C38A2E0B1B31D9A9066059B"
+                        "Folders"
+                        {
+                            "{9EF0B969-E518-4E46-987F-47570745A589}:_D180350B975D5B25883C4D164CA5ABEA"
+                            {
+                            "Name" = "8:win-arm64"
+                            "AlwaysCreate" = "11:FALSE"
+                            "Condition" = "8:"
+                            "Transitive" = "11:FALSE"
+                            "Property" = "8:_D180350B975D5B25883C4D164CA5ABEA"
+                                "Folders"
+                                {
+                                    "{9EF0B969-E518-4E46-987F-47570745A589}:_2F40815E4E308DF18C6CCFD373A5751A"
+                                    {
+                                    "Name" = "8:native"
+                                    "AlwaysCreate" = "11:FALSE"
+                                    "Condition" = "8:"
+                                    "Transitive" = "11:FALSE"
+                                    "Property" = "8:_2F40815E4E308DF18C6CCFD373A5751A"
+                                        "Folders"
+                                        {
+                                        }
+                                    }
+                                }
+                            }
+                            "{9EF0B969-E518-4E46-987F-47570745A589}:_75871295A2EED98B1F04232B76B2B29D"
+                            {
+                            "Name" = "8:win-x64"
+                            "AlwaysCreate" = "11:FALSE"
+                            "Condition" = "8:"
+                            "Transitive" = "11:FALSE"
+                            "Property" = "8:_75871295A2EED98B1F04232B76B2B29D"
+                                "Folders"
+                                {
+                                    "{9EF0B969-E518-4E46-987F-47570745A589}:_60739598EB5CFECFECFD23454CBDEFFF"
+                                    {
+                                    "Name" = "8:native"
+                                    "AlwaysCreate" = "11:FALSE"
+                                    "Condition" = "8:"
+                                    "Transitive" = "11:FALSE"
+                                    "Property" = "8:_60739598EB5CFECFECFD23454CBDEFFF"
+                                        "Folders"
+                                        {
+                                        }
+                                    }
+                                }
+                            }
+                            "{9EF0B969-E518-4E46-987F-47570745A589}:_3B0DF4023E27E2859729C07120A53FAD"
+                            {
+                            "Name" = "8:win-x86"
+                            "AlwaysCreate" = "11:FALSE"
+                            "Condition" = "8:"
+                            "Transitive" = "11:FALSE"
+                            "Property" = "8:_3B0DF4023E27E2859729C07120A53FAD"
+                                "Folders"
+                                {
+                                    "{9EF0B969-E518-4E46-987F-47570745A589}:_A8D53AAE328254B26E853F83C04508E0"
+                                    {
+                                    "Name" = "8:native"
+                                    "AlwaysCreate" = "11:FALSE"
+                                    "Condition" = "8:"
+                                    "Transitive" = "11:FALSE"
+                                    "Property" = "8:_A8D53AAE328254B26E853F83C04508E0"
+                                        "Folders"
+                                        {
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                    "{9EF0B969-E518-4E46-987F-47570745A589}:_32BCE65854F94DF3B67097D5E8848487"
+                    {
+                    "Name" = "8:Scripts"
+                    "AlwaysCreate" = "11:FALSE"
+                    "Condition" = "8:"
+                    "Transitive" = "11:FALSE"
+                    "Property" = "8:_32BCE65854F94DF3B67097D5E8848487"
+                        "Folders"
+                        {
+                        }
+                    }
+                }
+            }
+        }
+        "LaunchCondition"
+        {
+        }
+        "Locator"
+        {
+        }
+        "MsiBootstrapper"
+        {
+        "LangId" = "3:3082"
+        "RequiresElevation" = "11:FALSE"
+        }
+        "Product"
+        {
+        "Name" = "8:Microsoft Visual Studio"
+        "ProductName" = "8:Edelstahl ERP"
+        "ProductCode" = "8:{856DD809-F3FD-4D64-8542-80215918AF8E}"
+        "PackageCode" = "8:{1F111075-AEF0-4C29-A17C-E18397027A0F}"
+        "UpgradeCode" = "8:{C2874628-A030-4C76-B4B4-70DBCF772886}"
+        "AspNetVersion" = "8:"
+        "RestartWWWService" = "11:FALSE"
+        "RemovePreviousVersions" = "11:TRUE"
+        "DetectNewerInstalledVersion" = "11:TRUE"
+        "InstallAllUsers" = "11:TRUE"
+        "ProductVersion" = "8:1.2.4"
+        "Manufacturer" = "8:Edelstahl"
+        "ARPHELPTELEPHONE" = "8:"
+        "ARPHELPLINK" = "8:"
+        "Title" = "8:Edelstahl ERP"
+        "Subject" = "8:"
+        "ARPCONTACT" = "8:Dante Schlogl"
+        "Keywords" = "8:"
+        "ARPCOMMENTS" = "8:Sistema de gestion para una empresa de acero inoxidable"
+        "ARPURLINFOABOUT" = "8:"
+        "ARPPRODUCTICON" = "8:_C94B2536F00E8BA61CF549876755315D"
+        "ARPIconIndex" = "3:0"
+        "SearchPath" = "8:"
+        "UseSystemSearchPath" = "11:TRUE"
+        "TargetPlatform" = "3:0"
+        "PreBuildEvent" = "8:"
+        "PostBuildEvent" = "8:"
+        "RunPostBuildEvent" = "3:0"
+        }
+        "Registry"
+        {
+            "HKLM"
+            {
+                "Keys"
+                {
+                    "{60EA8692-D2D5-43EB-80DC-7906BF13D6EF}:_7A49C2F1ED8143269ED7E5FA2D9B4A50"
+                    {
+                    "Name" = "8:Software"
+                    "Condition" = "8:"
+                    "AlwaysCreate" = "11:FALSE"
+                    "DeleteAtUninstall" = "11:FALSE"
+                    "Transitive" = "11:FALSE"
+                        "Keys"
+                        {
+                            "{60EA8692-D2D5-43EB-80DC-7906BF13D6EF}:_DC0A381EA0B646EE99C55210F9FD0D4E"
+                            {
+                            "Name" = "8:[Manufacturer]"
+                            "Condition" = "8:"
+                            "AlwaysCreate" = "11:FALSE"
+                            "DeleteAtUninstall" = "11:FALSE"
+                            "Transitive" = "11:FALSE"
+                                "Keys"
+                                {
+                                }
+                                "Values"
+                                {
+                                }
+                            }
+                        }
+                        "Values"
+                        {
+                        }
+                    }
+                }
+            }
+            "HKCU"
+            {
+                "Keys"
+                {
+                    "{60EA8692-D2D5-43EB-80DC-7906BF13D6EF}:_E9DF517AA4A4432084E52857709E6D48"
+                    {
+                    "Name" = "8:Software"
+                    "Condition" = "8:"
+                    "AlwaysCreate" = "11:FALSE"
+                    "DeleteAtUninstall" = "11:FALSE"
+                    "Transitive" = "11:FALSE"
+                        "Keys"
+                        {
+                            "{60EA8692-D2D5-43EB-80DC-7906BF13D6EF}:_E827E823183540C785F6634C4634A8C9"
+                            {
+                            "Name" = "8:[Manufacturer]"
+                            "Condition" = "8:"
+                            "AlwaysCreate" = "11:FALSE"
+                            "DeleteAtUninstall" = "11:FALSE"
+                            "Transitive" = "11:FALSE"
+                                "Keys"
+                                {
+                                }
+                                "Values"
+                                {
+                                }
+                            }
+                        }
+                        "Values"
+                        {
+                        }
+                    }
+                }
+            }
+            "HKCR"
+            {
+                "Keys"
+                {
+                }
+            }
+            "HKU"
+            {
+                "Keys"
+                {
+                }
+            }
+            "HKPU"
+            {
+                "Keys"
+                {
+                }
+            }
+        }
+        "Sequences"
+        {
+        }
+        "Shortcut"
+        {
+        "{970C0BB2-C7D0-45D7-ABFA-7EC378858BC0}:_63DD01EFFD427D635851F276F21ACA44"
+        {
+        "Name" = "8:Edelstahl ERP"
+        "Arguments" = "8:"
+        "Description" = "8:Sistema de gestion Edelstahl ERP"
+        "ShowCmd" = "3:1"
+        "IconIndex" = "3:0"
+        "Transitive" = "11:FALSE"
+        "Target" = "8:_CE8B9255400158CE203592A3EA417E43"
+        "Folder" = "8:_8E31EDADAD21AE92058DC581447AB13A"
+        "WorkingFolder" = "8:_125BAEC6A678D393F85B3A7DF5F8DEB1"
+        "Icon" = "8:_C94B2536F00E8BA61CF549876755315D"
+        "Feature" = "8:"
+        }
+        "{970C0BB2-C7D0-45D7-ABFA-7EC378858BC0}:_19AC437B00E1EA408A249CE98E15F6A1"
+        {
+        "Name" = "8:Edelstahl ERP"
+        "Arguments" = "8:"
+        "Description" = "8:Sistema de gestion Edelstahl ERP"
+        "ShowCmd" = "3:1"
+        "IconIndex" = "3:0"
+        "Transitive" = "11:FALSE"
+        "Target" = "8:_CE8B9255400158CE203592A3EA417E43"
+        "Folder" = "8:_4024B9B3F1AE5F57562EFD3A64FAA35C"
+        "WorkingFolder" = "8:_125BAEC6A678D393F85B3A7DF5F8DEB1"
+        "Icon" = "8:_C94B2536F00E8BA61CF549876755315D"
+        "Feature" = "8:"
+        }
+        }
+        "UserInterface"
+        {
+            "{DF760B10-853B-4699-99F2-AFF7185B4A62}:_1365ECC43B014BF0BA8F67A700F6AB99"
+            {
+            "Name" = "8:#1902"
+            "Sequence" = "3:2"
+            "Attributes" = "3:3"
+                "Dialogs"
+                {
+                    "{688940B3-5CA9-4162-8DEE-2993FA9D8CBC}:_C803258D695645B68D30E4531B25DB78"
+                    {
+                    "Sequence" = "3:100"
+                    "DisplayName" = "8:Finalizado"
+                    "UseDynamicProperties" = "11:TRUE"
+                    "IsDependency" = "11:FALSE"
+                    "SourcePath" = "8:<VsdDialogDir>\\VsdAdminFinishedDlg.wid"
+                        "Properties"
+                        {
+                            "BannerBitmap"
+                            {
+                            "Name" = "8:BannerBitmap"
+                            "DisplayName" = "8:#1001"
+                            "Description" = "8:#1101"
+                            "Type" = "3:8"
+                            "ContextData" = "8:Bitmap"
+                            "Attributes" = "3:4"
+                            "Setting" = "3:1"
+                            "UsePlugInResources" = "11:TRUE"
+                            }
+                        }
+                    }
+                }
+            }
+            "{DF760B10-853B-4699-99F2-AFF7185B4A62}:_18DBA5E060DC4F7D897C8BAE1619C42F"
+            {
+            "Name" = "8:#1900"
+            "Sequence" = "3:1"
+            "Attributes" = "3:1"
+                "Dialogs"
+                {
+                    "{688940B3-5CA9-4162-8DEE-2993FA9D8CBC}:_2A5CCF7E0BD84435A501024D12D0F42F"
+                    {
+                    "Sequence" = "3:200"
+                    "DisplayName" = "8:Carpeta de instalación"
+                    "UseDynamicProperties" = "11:TRUE"
+                    "IsDependency" = "11:FALSE"
+                    "SourcePath" = "8:<VsdDialogDir>\\VsdFolderDlg.wid"
+                        "Properties"
+                        {
+                            "BannerBitmap"
+                            {
+                            "Name" = "8:BannerBitmap"
+                            "DisplayName" = "8:#1001"
+                            "Description" = "8:#1101"
+                            "Type" = "3:8"
+                            "ContextData" = "8:Bitmap"
+                            "Attributes" = "3:4"
+                            "Setting" = "3:1"
+                            "UsePlugInResources" = "11:TRUE"
+                            }
+                            "InstallAllUsersVisible"
+                            {
+                            "Name" = "8:InstallAllUsersVisible"
+                            "DisplayName" = "8:#1059"
+                            "Description" = "8:#1159"
+                            "Type" = "3:5"
+                            "ContextData" = "8:1;True=1;False=0"
+                            "Attributes" = "3:0"
+                            "Setting" = "3:0"
+                            "Value" = "3:1"
+                            "DefaultValue" = "3:1"
+                            "UsePlugInResources" = "11:TRUE"
+                            }
+                        }
+                    }
+                    "{688940B3-5CA9-4162-8DEE-2993FA9D8CBC}:_43C11E3056384F9A99067737E0512D87"
+                    {
+                    "Sequence" = "3:100"
+                    "DisplayName" = "8:Pantalla de bienvenida"
+                    "UseDynamicProperties" = "11:TRUE"
+                    "IsDependency" = "11:FALSE"
+                    "SourcePath" = "8:<VsdDialogDir>\\VsdWelcomeDlg.wid"
+                        "Properties"
+                        {
+                            "BannerBitmap"
+                            {
+                            "Name" = "8:BannerBitmap"
+                            "DisplayName" = "8:#1001"
+                            "Description" = "8:#1101"
+                            "Type" = "3:8"
+                            "ContextData" = "8:Bitmap"
+                            "Attributes" = "3:4"
+                            "Setting" = "3:1"
+                            "UsePlugInResources" = "11:TRUE"
+                            }
+                            "CopyrightWarning"
+                            {
+                            "Name" = "8:CopyrightWarning"
+                            "DisplayName" = "8:#1002"
+                            "Description" = "8:#1102"
+                            "Type" = "3:3"
+                            "ContextData" = "8:"
+                            "Attributes" = "3:0"
+                            "Setting" = "3:1"
+                            "Value" = "8:#1202"
+                            "DefaultValue" = "8:#1202"
+                            "UsePlugInResources" = "11:TRUE"
+                            }
+                            "Welcome"
+                            {
+                            "Name" = "8:Welcome"
+                            "DisplayName" = "8:#1003"
+                            "Description" = "8:#1103"
+                            "Type" = "3:3"
+                            "ContextData" = "8:"
+                            "Attributes" = "3:0"
+                            "Setting" = "3:1"
+                            "Value" = "8:#1203"
+                            "DefaultValue" = "8:#1203"
+                            "UsePlugInResources" = "11:TRUE"
+                            }
+                        }
+                    }
+                    "{688940B3-5CA9-4162-8DEE-2993FA9D8CBC}:_5D832F05D16845069D1FB884E0060609"
+                    {
+                    "Sequence" = "3:300"
+                    "DisplayName" = "8:Confirmar instalación"
+                    "UseDynamicProperties" = "11:TRUE"
+                    "IsDependency" = "11:FALSE"
+                    "SourcePath" = "8:<VsdDialogDir>\\VsdConfirmDlg.wid"
+                        "Properties"
+                        {
+                            "BannerBitmap"
+                            {
+                            "Name" = "8:BannerBitmap"
+                            "DisplayName" = "8:#1001"
+                            "Description" = "8:#1101"
+                            "Type" = "3:8"
+                            "ContextData" = "8:Bitmap"
+                            "Attributes" = "3:4"
+                            "Setting" = "3:1"
+                            "UsePlugInResources" = "11:TRUE"
+                            }
+                        }
+                    }
+                }
+            }
+            "{2479F3F5-0309-486D-8047-8187E2CE5BA0}:_3837FCFC68F34F8EB4BF3C1434B9AA7C"
+            {
+            "UseDynamicProperties" = "11:FALSE"
+            "IsDependency" = "11:FALSE"
+            "SourcePath" = "8:<VsdDialogDir>\\VsdBasicDialogs.wim"
+            }
+            "{DF760B10-853B-4699-99F2-AFF7185B4A62}:_445E33105E344699939164D707D3D636"
+            {
+            "Name" = "8:#1902"
+            "Sequence" = "3:1"
+            "Attributes" = "3:3"
+                "Dialogs"
+                {
+                    "{688940B3-5CA9-4162-8DEE-2993FA9D8CBC}:_7D9596FB7448492E93331A6834C1696E"
+                    {
+                    "Sequence" = "3:100"
+                    "DisplayName" = "8:Finalizado"
+                    "UseDynamicProperties" = "11:TRUE"
+                    "IsDependency" = "11:FALSE"
+                    "SourcePath" = "8:<VsdDialogDir>\\VsdFinishedDlg.wid"
+                        "Properties"
+                        {
+                            "BannerBitmap"
+                            {
+                            "Name" = "8:BannerBitmap"
+                            "DisplayName" = "8:#1001"
+                            "Description" = "8:#1101"
+                            "Type" = "3:8"
+                            "ContextData" = "8:Bitmap"
+                            "Attributes" = "3:4"
+                            "Setting" = "3:1"
+                            "UsePlugInResources" = "11:TRUE"
+                            }
+                            "UpdateText"
+                            {
+                            "Name" = "8:UpdateText"
+                            "DisplayName" = "8:#1058"
+                            "Description" = "8:#1158"
+                            "Type" = "3:15"
+                            "ContextData" = "8:"
+                            "Attributes" = "3:0"
+                            "Setting" = "3:1"
+                            "Value" = "8:#1258"
+                            "DefaultValue" = "8:#1258"
+                            "UsePlugInResources" = "11:TRUE"
+                            }
+                        }
+                    }
+                }
+            }
+            "{DF760B10-853B-4699-99F2-AFF7185B4A62}:_6DE8F50EF15341B080A8FFBCAAADDB8A"
+            {
+            "Name" = "8:#1900"
+            "Sequence" = "3:2"
+            "Attributes" = "3:1"
+                "Dialogs"
+                {
+                    "{688940B3-5CA9-4162-8DEE-2993FA9D8CBC}:_0A1EF874BC494BF4B644582CF3BE84FC"
+                    {
+                    "Sequence" = "3:300"
+                    "DisplayName" = "8:Confirmar instalación"
+                    "UseDynamicProperties" = "11:TRUE"
+                    "IsDependency" = "11:FALSE"
+                    "SourcePath" = "8:<VsdDialogDir>\\VsdAdminConfirmDlg.wid"
+                        "Properties"
+                        {
+                            "BannerBitmap"
+                            {
+                            "Name" = "8:BannerBitmap"
+                            "DisplayName" = "8:#1001"
+                            "Description" = "8:#1101"
+                            "Type" = "3:8"
+                            "ContextData" = "8:Bitmap"
+                            "Attributes" = "3:4"
+                            "Setting" = "3:1"
+                            "UsePlugInResources" = "11:TRUE"
+                            }
+                        }
+                    }
+                    "{688940B3-5CA9-4162-8DEE-2993FA9D8CBC}:_4B76293F10144F259C7DAE1C7FC28455"
+                    {
+                    "Sequence" = "3:200"
+                    "DisplayName" = "8:Carpeta de instalación"
+                    "UseDynamicProperties" = "11:TRUE"
+                    "IsDependency" = "11:FALSE"
+                    "SourcePath" = "8:<VsdDialogDir>\\VsdAdminFolderDlg.wid"
+                        "Properties"
+                        {
+                            "BannerBitmap"
+                            {
+                            "Name" = "8:BannerBitmap"
+                            "DisplayName" = "8:#1001"
+                            "Description" = "8:#1101"
+                            "Type" = "3:8"
+                            "ContextData" = "8:Bitmap"
+                            "Attributes" = "3:4"
+                            "Setting" = "3:1"
+                            "UsePlugInResources" = "11:TRUE"
+                            }
+                        }
+                    }
+                    "{688940B3-5CA9-4162-8DEE-2993FA9D8CBC}:_986B12FF04AA493B8CDDD768B16A2C83"
+                    {
+                    "Sequence" = "3:100"
+                    "DisplayName" = "8:Pantalla de bienvenida"
+                    "UseDynamicProperties" = "11:TRUE"
+                    "IsDependency" = "11:FALSE"
+                    "SourcePath" = "8:<VsdDialogDir>\\VsdAdminWelcomeDlg.wid"
+                        "Properties"
+                        {
+                            "BannerBitmap"
+                            {
+                            "Name" = "8:BannerBitmap"
+                            "DisplayName" = "8:#1001"
+                            "Description" = "8:#1101"
+                            "Type" = "3:8"
+                            "ContextData" = "8:Bitmap"
+                            "Attributes" = "3:4"
+                            "Setting" = "3:1"
+                            "UsePlugInResources" = "11:TRUE"
+                            }
+                            "CopyrightWarning"
+                            {
+                            "Name" = "8:CopyrightWarning"
+                            "DisplayName" = "8:#1002"
+                            "Description" = "8:#1102"
+                            "Type" = "3:3"
+                            "ContextData" = "8:"
+                            "Attributes" = "3:0"
+                            "Setting" = "3:1"
+                            "Value" = "8:#1202"
+                            "DefaultValue" = "8:#1202"
+                            "UsePlugInResources" = "11:TRUE"
+                            }
+                            "Welcome"
+                            {
+                            "Name" = "8:Welcome"
+                            "DisplayName" = "8:#1003"
+                            "Description" = "8:#1103"
+                            "Type" = "3:3"
+                            "ContextData" = "8:"
+                            "Attributes" = "3:0"
+                            "Setting" = "3:1"
+                            "Value" = "8:#1203"
+                            "DefaultValue" = "8:#1203"
+                            "UsePlugInResources" = "11:TRUE"
+                            }
+                        }
+                    }
+                }
+            }
+            "{2479F3F5-0309-486D-8047-8187E2CE5BA0}:_7379856BE999469BAAEBC45459B1661B"
+            {
+            "UseDynamicProperties" = "11:FALSE"
+            "IsDependency" = "11:FALSE"
+            "SourcePath" = "8:<VsdDialogDir>\\VsdUserInterface.wim"
+            }
+            "{DF760B10-853B-4699-99F2-AFF7185B4A62}:_81060BA745B84608AD76F4A7D5DFDEF1"
+            {
+            "Name" = "8:#1901"
+            "Sequence" = "3:2"
+            "Attributes" = "3:2"
+                "Dialogs"
+                {
+                    "{688940B3-5CA9-4162-8DEE-2993FA9D8CBC}:_534D129C332D42D5A2D9DA4A6E872A1A"
+                    {
+                    "Sequence" = "3:100"
+                    "DisplayName" = "8:Progreso"
+                    "UseDynamicProperties" = "11:TRUE"
+                    "IsDependency" = "11:FALSE"
+                    "SourcePath" = "8:<VsdDialogDir>\\VsdAdminProgressDlg.wid"
+                        "Properties"
+                        {
+                            "BannerBitmap"
+                            {
+                            "Name" = "8:BannerBitmap"
+                            "DisplayName" = "8:#1001"
+                            "Description" = "8:#1101"
+                            "Type" = "3:8"
+                            "ContextData" = "8:Bitmap"
+                            "Attributes" = "3:4"
+                            "Setting" = "3:1"
+                            "UsePlugInResources" = "11:TRUE"
+                            }
+                            "ShowProgress"
+                            {
+                            "Name" = "8:ShowProgress"
+                            "DisplayName" = "8:#1009"
+                            "Description" = "8:#1109"
+                            "Type" = "3:5"
+                            "ContextData" = "8:1;True=1;False=0"
+                            "Attributes" = "3:0"
+                            "Setting" = "3:0"
+                            "Value" = "3:1"
+                            "DefaultValue" = "3:1"
+                            "UsePlugInResources" = "11:TRUE"
+                            }
+                        }
+                    }
+                }
+            }
+            "{DF760B10-853B-4699-99F2-AFF7185B4A62}:_ABBCDD1C1D55476F87610F065D584CE2"
+            {
+            "Name" = "8:#1901"
+            "Sequence" = "3:1"
+            "Attributes" = "3:2"
+                "Dialogs"
+                {
+                    "{688940B3-5CA9-4162-8DEE-2993FA9D8CBC}:_472367E313C540B8B91E8AA6FD69C8F7"
+                    {
+                    "Sequence" = "3:100"
+                    "DisplayName" = "8:Progreso"
+                    "UseDynamicProperties" = "11:TRUE"
+                    "IsDependency" = "11:FALSE"
+                    "SourcePath" = "8:<VsdDialogDir>\\VsdProgressDlg.wid"
+                        "Properties"
+                        {
+                            "BannerBitmap"
+                            {
+                            "Name" = "8:BannerBitmap"
+                            "DisplayName" = "8:#1001"
+                            "Description" = "8:#1101"
+                            "Type" = "3:8"
+                            "ContextData" = "8:Bitmap"
+                            "Attributes" = "3:4"
+                            "Setting" = "3:1"
+                            "UsePlugInResources" = "11:TRUE"
+                            }
+                            "ShowProgress"
+                            {
+                            "Name" = "8:ShowProgress"
+                            "DisplayName" = "8:#1009"
+                            "Description" = "8:#1109"
+                            "Type" = "3:5"
+                            "ContextData" = "8:1;True=1;False=0"
+                            "Attributes" = "3:0"
+                            "Setting" = "3:0"
+                            "Value" = "3:1"
+                            "DefaultValue" = "3:1"
+                            "UsePlugInResources" = "11:TRUE"
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        "MergeModule"
+        {
+        }
+        "ProjectOutput"
+        {
+        }
+    }
+}

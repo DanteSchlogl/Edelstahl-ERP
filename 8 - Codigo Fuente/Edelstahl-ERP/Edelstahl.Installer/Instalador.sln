@@ -1,0 +1,14 @@
+﻿Microsoft Visual Studio Solution File, Format Version 12.00
+Project("{978C614F-708E-4E1A-B201-565925725DBA}") = "Edelstahl.Installer", "Edelstahl.Installer.vdproj", "{B07C6750-5468-40E1-83D9-5B86D7641719}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{B07C6750-5468-40E1-83D9-5B86D7641719}.Debug|Any CPU.ActiveCfg = Debug
+		{B07C6750-5468-40E1-83D9-5B86D7641719}.Release|Any CPU.ActiveCfg = Release
+		{B07C6750-5468-40E1-83D9-5B86D7641719}.Release|Any CPU.Build.0 = Release
+	EndGlobalSection
+EndGlobal

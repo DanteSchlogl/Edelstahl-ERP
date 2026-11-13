@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<link rel="stylesheet" href="leaflet.css" />
+<style>
+  html, body, #mapa { height: 100%; margin: 0; padding: 0; font-family: "Segoe UI", Arial, sans-serif; }
+  .marca { width: 28px; height: 28px; border-radius: 50%; border: 2px solid #fff; color: #fff; font-weight: 700;
+           font-size: 13px; line-height: 24px; text-align: center; box-shadow: 0 1px 4px rgba(0,0,0,.5); }
+  .sede { border-radius: 4px; background: #2b2b2b; font-size: 11px; width: 34px; }
+  .resumen { background: rgba(255,255,255,.93); padding: 6px 10px; border-radius: 4px; box-shadow: 0 1px 5px rgba(0,0,0,.3);
+             font-size: 12px; line-height: 1.5; max-width: 320px; }
+  .resumen b { font-size: 13px; }
+  .leyenda i { display: inline-block; width: 10px; height: 10px; border-radius: 50%; margin-right: 4px; }
+</style>
+</head>
+<body>
+<div id="mapa"></div>
+<script src="leaflet.js"></script>
+<script>
+  var colores = { Pendiente: '#e08a00', Entregada: '#2e8b57', NoEntregada: '#c0392b' };
+  var mapa = L.map('mapa', { zoomControl: true }).setView([-34.6118, -58.4173], 12);
+  L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
+    maxZoom: 19,
+    attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+  }).addTo(mapa);
+
+  var capa = L.layerGroup().addTo(mapa);
+  var resumen = L.control({ position: 'topright' });
+  var cuadro;
+  resumen.onAdd = function () { cuadro = L.DomUtil.create('div', 'resumen'); cuadro.style.display = 'none'; return cuadro; };
+  resumen.addTo(mapa);
+
+  function icono(texto, color, esSede) {
+    return L.divIcon({ className: '', iconSize: esSede ? [34, 28] : [28, 28], iconAnchor: esSede ? [17, 14] : [14, 14],
+      html: '<div class="marca' + (esSede ? ' sede' : '') + '" style="' + (esSede ? '' : 'background:' + color) + '">' + texto + '</div>' });
+  }
+
+  function escapar(t) { return String(t || '').replace(/[&<>"]/g, function (c) { return { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]; }); }
+
+  // datos = { titulo, sede:{nombre,lat,lon}, paradas:[{orden,titulo,detalle,estado,lat,lon}], textos:{...} }
+  window.cargar = function (datos) {
+    capa.clearLayers();
+    var t = datos.textos || {};
+    var puntos = [];
+    var sede = datos.sede;
+    puntos.push([sede.lat, sede.lon]);
+    L.marker([sede.lat, sede.lon], { icon: icono('HQ', '#2b2b2b', true), zIndexOffset: 1000 })
+      .bindPopup('<b>' + escapar(sede.nombre) + '</b>').addTo(capa);
+
+    var ordenadas = (datos.paradas || []).slice().sort(function (a, b) { return a.orden - b.orden; });
+    ordenadas.forEach(function (p) {
+      puntos.push([p.lat, p.lon]);
+      L.marker([p.lat, p.lon], { icon: icono(p.orden, colores[p.estado] || '#555') })
+        .bindPopup('<b>' + escapar(p.titulo) + '</b><br>' + escapar(p.detalle) + (p.aprox ? '<br><i>' + escapar(t.aproximada || 'approximate location') + '</i>' : '')).addTo(capa);
+    });
+
+    var recta = puntos.concat([[sede.lat, sede.lon]]);
+    var dibujo = null;
+    function pintarRecta(nota) {
+      if (dibujo) { capa.removeLayer(dibujo); }
+      dibujo = L.polyline(recta, { color: '#1f5fa8', weight: 4, opacity: .8, dashArray: '8 6' }).addTo(capa);
+      mostrar(null, null, nota);
+    }
+    function mostrar(km, min, nota) {
+      var h = '<b>' + escapar(datos.titulo) + '</b><br>' + escapar(t.parte || 'Departs from') + ': ' + escapar(datos.sede.nombre);
+      var aprox = (datos.paradas || []).filter(function (p) { return p.aprox; }).map(function (p) { return p.orden; });
+      if (aprox.length) { h += '<br><i>' + aprox.join(', ') + ': ' + escapar(t.aproximada || 'approximate location') + '</i>'; }
+      if (km !== null) { h += '<br>' + escapar(t.distancia || 'Distance') + ': ' + km.toFixed(1) + ' km &middot; ' + escapar(t.tiempo || 'Time') + ': ' + Math.round(min) + ' min'; }
+      if (nota) { h += '<br><i>' + escapar(nota) + '</i>'; }
+      h += '<div class="leyenda"><i style="background:' + colores.Pendiente + '"></i>' + escapar(t.pendiente || 'Pending')
+        + ' <i style="background:' + colores.Entregada + '"></i>' + escapar(t.entregada || 'Delivered')
+        + ' <i style="background:' + colores.NoEntregada + '"></i>' + escapar(t.noEntregada || 'Not delivered') + '</div>';
+      cuadro.innerHTML = h; cuadro.style.display = 'block';
+    }
+
+    if (ordenadas.length === 0) { mostrar(null, null, t.sinParadas || ''); mapa.setView([sede.lat, sede.lon], 13); return; }
+    mapa.fitBounds(L.latLngBounds(recta), { padding: [40, 40], maxZoom: 15 });
+    pintarRecta(t.calculando || '');
+
+    // Ruta por calles reales (servicio publico de OSRM); si no responde queda la linea punteada.
+    var coords = recta.map(function (c) { return c[1] + ',' + c[0]; }).join(';');
+    var ctl = new AbortController();
+    var espera = setTimeout(function () { ctl.abort(); }, 8000);
+    fetch('https://router.project-osrm.org/route/v1/driving/' + coords + '?overview=full&geometries=geojson', { signal: ctl.signal })
+      .then(function (r) { return r.json(); })
+      .then(function (j) {
+        clearTimeout(espera);
+        if (!j.routes || !j.routes.length) { pintarRecta(t.rectas || ''); return; }
+        var r = j.routes[0];
+        if (dibujo) { capa.removeLayer(dibujo); }
+        dibujo = L.geoJSON(r.geometry, { style: { color: '#1f5fa8', weight: 5, opacity: .85 } }).addTo(capa);
+        mostrar(r.distance / 1000, r.duration / 60, '');
+      })
+      .catch(function () { clearTimeout(espera); pintarRecta(t.rectas || ''); });
+  };
+
+  if (window.chrome && window.chrome.webview) { window.chrome.webview.postMessage('listo'); }
+</script>
+</body>
+</html>
