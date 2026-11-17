@@ -60,6 +60,9 @@
     <Compile Include="Documents\ComprobantePedidoPdfService.cs" />
     <Compile Include="Documents\PresupuestoPdfService.cs" />
     <Compile Include="Validators\Crear ClienteValidator.cs" />
+    <Compile Include="Exceptions\ClienteBusinessException.cs" />
+    <Compile Include="Exceptions\ClienteDuplicadoException.cs" />
+    <Compile Include="Exceptions\CUITInvalidoException.cs" />
     <Compile Include="Infrastructure\Numeracion.cs" />
     <Compile Include="Infrastructure\Direcciones.cs" />
     <Compile Include="Services\FaltantesService.cs" />

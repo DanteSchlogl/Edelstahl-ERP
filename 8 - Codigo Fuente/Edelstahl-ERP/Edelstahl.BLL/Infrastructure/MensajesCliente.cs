@@ -1,4 +1,4 @@
-using Edelstahl.Domain.Exceptions;
+using Edelstahl.BLL.Exceptions;
 using Edelstahl.Services.Logic.Infrastructure;
 
 namespace Edelstahl.BLL.Infrastructure

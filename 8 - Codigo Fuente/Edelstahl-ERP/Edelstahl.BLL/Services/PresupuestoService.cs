@@ -7,7 +7,6 @@ using System.Text;
 using System.Threading.Tasks;
 using Edelstahl.BLL.DTOs;
 using Edelstahl.Services.DomainModel.Exceptions;
-using Edelstahl.Domain.Exceptions;
 using Edelstahl.BLL.Infrastructure;
 using Edelstahl.DAL.Factory;
 using Edelstahl.Domain.Catalogo;

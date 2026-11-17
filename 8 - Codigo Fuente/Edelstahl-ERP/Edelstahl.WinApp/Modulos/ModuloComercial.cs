@@ -7,7 +7,6 @@ using System.Linq;
 using System.Windows.Forms;
 using Edelstahl.BLL.DTOs;
 using Edelstahl.Services.DomainModel.Exceptions;
-using Edelstahl.Domain.Exceptions;
 using Edelstahl.BLL.Infrastructure;
 using Edelstahl.BLL.Services;
 using Edelstahl.Domain.Comercial;

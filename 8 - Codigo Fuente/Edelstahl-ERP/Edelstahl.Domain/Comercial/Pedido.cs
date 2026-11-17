@@ -5,7 +5,6 @@ using System.Text;
 using System.Threading.Tasks;
 using Edelstahl.Domain.Common;
 using Edelstahl.Services.DomainModel.Exceptions;
-using Edelstahl.Domain.Exceptions;
 
 namespace Edelstahl.Domain.Comercial
 {

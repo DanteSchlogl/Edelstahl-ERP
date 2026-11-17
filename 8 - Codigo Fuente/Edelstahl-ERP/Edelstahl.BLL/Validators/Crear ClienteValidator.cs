@@ -2,7 +2,6 @@ using System;
 using Edelstahl.Services.Logic.Infrastructure;
 using System.Net.Mail;
 using Edelstahl.Services.DomainModel.Exceptions;
-using Edelstahl.Domain.Exceptions;
 using Edelstahl.Domain.Comercial;
 using Edelstahl.BLL.Infrastructure;
 

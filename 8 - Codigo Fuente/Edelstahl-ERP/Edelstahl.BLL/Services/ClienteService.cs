@@ -3,7 +3,6 @@ using Edelstahl.Services.Logic.Infrastructure;
 using Edelstahl.Services.Logic;
 using System.Collections.Generic;
 using Edelstahl.Services.DomainModel.Exceptions;
-using Edelstahl.Domain.Exceptions;
 using Edelstahl.BLL.Validators;
 using Edelstahl.DAL.Factory;
 using Edelstahl.DAL.Interfaces;

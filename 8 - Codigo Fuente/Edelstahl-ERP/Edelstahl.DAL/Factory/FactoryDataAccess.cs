@@ -6,7 +6,6 @@ using System.Reflection;
 using Edelstahl.DAL.EntityFramework;
 using Edelstahl.DAL.Interfaces;
 using Edelstahl.DAL.Store;
-using Edelstahl.Domain.Exceptions;
 using Edelstahl.Services.Configuration;
 using Edelstahl.Services.DataAccess.Factory;
 using Edelstahl.Services.DomainModel.Exceptions;

@@ -10,7 +10,7 @@ using System.Text;
 using System.Text.RegularExpressions;
 using Edelstahl.BLL.DTOs;
 using Edelstahl.Services.DomainModel.Exceptions;
-using Edelstahl.Domain.Exceptions;
+using Edelstahl.BLL.Exceptions;
 using Edelstahl.BLL.Infrastructure;
 using Edelstahl.DAL.Factory;
 using Edelstahl.DAL.Store;

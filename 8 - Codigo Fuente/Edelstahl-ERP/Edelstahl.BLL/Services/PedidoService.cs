@@ -10,7 +10,6 @@ using Edelstahl.Domain.Catalogo;
 using Edelstahl.DAL.Interfaces;
 using Edelstahl.Domain.Comercial;
 using Edelstahl.Services.DomainModel.Exceptions;
-using Edelstahl.Domain.Exceptions;
 
 namespace Edelstahl.BLL.Services
 {

@@ -4,7 +4,6 @@ using System.Linq;
 using Edelstahl.DAL.Interfaces;
 using Edelstahl.Domain.Comercial;
 using Edelstahl.Services.DomainModel.Exceptions;
-using Edelstahl.Domain.Exceptions;
 using Edelstahl.Services.Localization;
 
 namespace Edelstahl.DAL.Implementations.Memory

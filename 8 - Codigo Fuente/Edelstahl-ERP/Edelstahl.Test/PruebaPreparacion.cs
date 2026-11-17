@@ -5,7 +5,6 @@ using System.IO;
 using System.Linq;
 using Edelstahl.BLL.DTOs;
 using Edelstahl.Services.DomainModel.Exceptions;
-using Edelstahl.Domain.Exceptions;
 using Edelstahl.BLL.Services;
 using Edelstahl.DAL.EntityFramework;
 using Edelstahl.DAL.Factory;

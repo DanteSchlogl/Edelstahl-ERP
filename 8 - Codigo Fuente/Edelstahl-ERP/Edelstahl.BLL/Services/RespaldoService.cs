@@ -10,7 +10,6 @@ using Edelstahl.BLL.Infrastructure;
 using Edelstahl.DAL.Factory;
 using Edelstahl.DAL.Interfaces;
 using Edelstahl.Services.DomainModel.Exceptions;
-using Edelstahl.Domain.Exceptions;
 using Edelstahl.Domain.Integrity;
 using Edelstahl.Services.DomainModel.Security;
 

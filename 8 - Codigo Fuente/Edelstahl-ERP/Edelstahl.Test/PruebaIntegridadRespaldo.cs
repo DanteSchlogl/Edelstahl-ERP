@@ -17,7 +17,6 @@ using Edelstahl.DAL.Interfaces;
 using Edelstahl.Services.DataAccess.Tools;
 using Edelstahl.Domain.Comercial;
 using Edelstahl.Services.DomainModel.Exceptions;
-using Edelstahl.Domain.Exceptions;
 using Edelstahl.Domain.Integrity;
 using Edelstahl.Services.DomainModel.Security;
 using Edelstahl.Services.Configuration;

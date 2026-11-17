@@ -13,7 +13,6 @@ using Edelstahl.Services.DomainModel.Security;
 using Edelstahl.Services.Cryptography;
 using Edelstahl.DAL.Integrity;
 using Edelstahl.Services.DomainModel.Exceptions;
-using Edelstahl.Domain.Exceptions;
 using Edelstahl.Services.Localization;
 
 namespace Edelstahl.DAL.Implementations.EntityFramework
