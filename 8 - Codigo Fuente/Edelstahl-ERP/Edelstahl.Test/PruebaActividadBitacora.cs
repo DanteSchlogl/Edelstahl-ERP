@@ -1,4 +1,5 @@
 using System;
+using Edelstahl.Services.Logic;
 using System.Collections.Generic;
 using System.Linq;
 using Edelstahl.BLL.DTOs;
@@ -9,7 +10,7 @@ using Edelstahl.Domain.Comercial;
 using Edelstahl.Domain.Compras;
 using Edelstahl.Domain.Finanzas;
 using Edelstahl.Domain.Logistica;
-using Edelstahl.Domain.Security;
+using Edelstahl.Services.DomainModel.Security;
 using Edelstahl.Services.Configuration;
 
 namespace Edelstahl.Test
@@ -527,7 +528,7 @@ namespace Edelstahl.Test
             Paso("Se imprime el presupuesto aceptado", () =>
             {
                 Presupuesto p = presupuestos.ObtenerPorId(aceptado.Id);
-                new Edelstahl.Services.Documents.PresupuestoPdfService().Generar(p, clientes.ObtenerPorId(cliente.Id));
+                new Edelstahl.BLL.Documents.PresupuestoPdfService().Generar(p, clientes.ObtenerPorId(cliente.Id));
             });
         }
 

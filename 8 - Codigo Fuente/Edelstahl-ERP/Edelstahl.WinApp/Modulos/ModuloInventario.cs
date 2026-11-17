@@ -7,7 +7,7 @@ using Edelstahl.BLL.Infrastructure;
 using Edelstahl.BLL.Services;
 using Edelstahl.Domain.Catalogo;
 using Edelstahl.Domain.Compras;
-using Edelstahl.Domain.Security;
+using Edelstahl.Services.DomainModel.Security;
 using Edelstahl.WinApp.Ui;
 
 namespace Edelstahl.WinApp.Modulos

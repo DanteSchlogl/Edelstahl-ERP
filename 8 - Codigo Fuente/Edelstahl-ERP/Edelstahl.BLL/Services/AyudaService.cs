@@ -1,9 +1,11 @@
 using System;
+using Edelstahl.Services.Logic.Infrastructure;
+using Edelstahl.Services.Logic;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text.RegularExpressions;
 using Edelstahl.BLL.Infrastructure;
-using Edelstahl.Domain.Security;
+using Edelstahl.Services.DomainModel.Security;
 
 namespace Edelstahl.BLL.Services
 {

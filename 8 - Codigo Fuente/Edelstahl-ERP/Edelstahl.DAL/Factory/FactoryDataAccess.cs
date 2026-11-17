@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Configuration;
 using System.IO;
@@ -8,20 +8,22 @@ using Edelstahl.DAL.Interfaces;
 using Edelstahl.DAL.Store;
 using Edelstahl.Domain.Exceptions;
 using Edelstahl.Services.Configuration;
+using Edelstahl.Services.DataAccess.Factory;
+using Edelstahl.Services.DomainModel.Exceptions;
 using Edelstahl.Services.Localization;
 
 namespace Edelstahl.DAL.Factory
 {
     /// <summary>
-    /// Centraliza los repositorios utilizados por Edelstahl ERP.
+    /// Centraliza los repositorios del NEGOCIO de Edelstahl ERP (clientes, presupuestos, pedidos,
+    /// almacén de datos e integridad). Los repositorios de Sistema (usuarios, roles, bitácora,
+    /// respaldos) los crea su propia fábrica, FactoryServicios, en Edelstahl.Services.
     ///
-    /// La clase concreta de cada repositorio no se escribe con "new": se
-    /// busca por nombre mediante reflexión según el modo de ejecución y se
-    /// valida antes de crearla (que exista, que sea una clase concreta, que
-    /// implemente la interfaz pedida y que tenga un constructor sin
-    /// parámetros). Los nombres salen de una tabla propia y pueden
-    /// reemplazarse en App.config con la clave
-    /// "Repositorio.[Modo].[Interfaz]" (por ejemplo
+    /// La clase concreta de cada repositorio no se escribe con "new": se busca por nombre mediante
+    /// reflexión según el modo de ejecución y se valida antes de crearla (que exista, que sea una
+    /// clase concreta, que implemente la interfaz pedida y que tenga un constructor sin
+    /// parámetros). Los nombres salen de una tabla propia y pueden reemplazarse en App.config con
+    /// la clave "Repositorio.[Modo].[Interfaz]" (por ejemplo
     /// "Repositorio.SqlServer.IClienteRepository").
     ///
     /// En modo SQL Server utiliza Entity Framework y ADO.NET.
@@ -29,7 +31,6 @@ namespace Edelstahl.DAL.Factory
     /// </summary>
     public static class FactoryDataAccess
     {
-        private const string Sql = "Edelstahl.DAL.Implementations.SqlServer.";
         private const string Ef = "Edelstahl.DAL.Implementations.EntityFramework.";
         private const string Mem = "Edelstahl.DAL.Implementations.Memory.";
 
@@ -43,12 +44,6 @@ namespace Edelstahl.DAL.Factory
                         { typeof(IClienteRepository), Ef + "ClienteRepositoryEntityFramework" },
                         { typeof(IPresupuestoRepository), Ef + "PresupuestoRepositoryEntityFramework" },
                         { typeof(IPedidoRepository), Ef + "PedidoRepositoryEntityFramework" },
-                        { typeof(IUsuarioRepository), Sql + "UsuarioRepositorySqlServer" },
-                        { typeof(IRolRepository), Sql + "RolRepositorySqlServer" },
-                        { typeof(IPermisoUsuarioRepository), Sql + "PermisoUsuarioRepositorySqlServer" },
-                        { typeof(IBitacoraRepository), Sql + "BitacoraRepositorySqlServer" },
-                        { typeof(IRespaldoRepository), Sql + "RespaldoRepositorySqlServer" },
-                        { typeof(IRespaldoDatabase), "Edelstahl.DAL.Backup.RespaldoDatabaseService" },
                         { typeof(IVerificadorIntegridad), "Edelstahl.DAL.Integrity.VerificadorIntegridad" },
                         { typeof(INegocioStore), "Edelstahl.DAL.Store.EfNegocioStore" }
                     }
@@ -60,12 +55,6 @@ namespace Edelstahl.DAL.Factory
                         { typeof(IClienteRepository), Mem + "ClienteRepositoryMemory" },
                         { typeof(IPresupuestoRepository), Mem + "PresupuestoRepositoryMemory" },
                         { typeof(IPedidoRepository), Mem + "PedidoRepositoryMemory" },
-                        { typeof(IUsuarioRepository), Mem + "UsuarioRepositoryMemory" },
-                        { typeof(IRolRepository), Mem + "RolRepositoryMemory" },
-                        { typeof(IPermisoUsuarioRepository), Mem + "PermisoUsuarioRepositoryMemory" },
-                        { typeof(IBitacoraRepository), Mem + "BitacoraRepositoryMemory" },
-                        { typeof(IRespaldoRepository), Mem + "RespaldoRepositoryMemory" },
-                        { typeof(IRespaldoDatabase), Mem + "RespaldoDatabaseMemory" },
                         { typeof(IVerificadorIntegridad), Mem + "VerificadorIntegridadMemory" },
                         { typeof(INegocioStore), "Edelstahl.DAL.Store.MemoryNegocioStore" }
                     }
@@ -81,22 +70,6 @@ namespace Edelstahl.DAL.Factory
 
         public static IPedidoRepository PedidoRepository { get; private set; }
 
-        public static IUsuarioRepository UsuarioRepository { get; private set; }
-
-        public static IRolRepository RolRepository { get; private set; }
-
-        /// <summary>Permisos que el administrador agregó o quitó a un usuario puntual.</summary>
-        public static IPermisoUsuarioRepository PermisoUsuarioRepository { get; private set; }
-
-        public static IBitacoraRepository BitacoraRepository { get; private set; }
-
-        public static IRespaldoRepository RespaldoRepository { get; private set; }
-
-        /// <summary>
-        /// Crear, comprobar y restaurar respaldos de las bases.
-        /// </summary>
-        public static IRespaldoDatabase RespaldoDatabase { get; private set; }
-
         /// <summary>
         /// Verificación de los dígitos verificadores (DVH y DVV).
         /// </summary>
@@ -110,7 +83,8 @@ namespace Edelstahl.DAL.Factory
 
         /// <summary>
         /// Inicializa los repositorios según el modo de ejecución
-        /// seleccionado al comenzar la aplicación.
+        /// seleccionado al comenzar la aplicación. También inicializa
+        /// los de Sistema (FactoryServicios).
         /// </summary>
         public static void Inicializar(ExecutionMode modo)
         {
@@ -125,24 +99,14 @@ namespace Edelstahl.DAL.Factory
             IClienteRepository cliente = Crear<IClienteRepository>(modo);
             IPresupuestoRepository presupuesto = Crear<IPresupuestoRepository>(modo);
             IPedidoRepository pedido = Crear<IPedidoRepository>(modo);
-            IUsuarioRepository usuario = Crear<IUsuarioRepository>(modo);
-            IRolRepository rol = Crear<IRolRepository>(modo);
-            IPermisoUsuarioRepository permisoUsuario = Crear<IPermisoUsuarioRepository>(modo);
-            IBitacoraRepository bitacora = Crear<IBitacoraRepository>(modo);
-            IRespaldoRepository respaldo = Crear<IRespaldoRepository>(modo);
-            IRespaldoDatabase respaldoDatabase = Crear<IRespaldoDatabase>(modo);
             IVerificadorIntegridad integridad = Crear<IVerificadorIntegridad>(modo);
             INegocioStore almacen = Crear<INegocioStore>(modo);
+
+            FactoryServicios.Inicializar(modo);
 
             ClienteRepository = cliente;
             PresupuestoRepository = presupuesto;
             PedidoRepository = pedido;
-            UsuarioRepository = usuario;
-            RolRepository = rol;
-            PermisoUsuarioRepository = permisoUsuario;
-            BitacoraRepository = bitacora;
-            RespaldoRepository = respaldo;
-            RespaldoDatabase = respaldoDatabase;
             VerificadorIntegridad = integridad;
             _modo = modo;
             NegocioStore = almacen;

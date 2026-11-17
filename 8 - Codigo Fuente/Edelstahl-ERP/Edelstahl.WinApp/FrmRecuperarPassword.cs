@@ -1,4 +1,6 @@
 using System;
+using Edelstahl.Services.Logic;
+using System.ComponentModel;
 using System.Drawing;
 using System.Windows.Forms;
 using Edelstahl.BLL.Services;
@@ -9,145 +11,51 @@ namespace Edelstahl.WinApp
     /// <summary>
     /// Recuperar la contrasena desde el inicio de sesion: el usuario ve su pregunta de seguridad,
     /// la responde y elige una contrasena nueva. Si no puede, se muestran los datos del administrador.
+    /// La distribución de los controles está en FrmRecuperarPassword.Designer.cs.
     /// </summary>
-    public sealed class FrmRecuperarPassword : Form
+    public sealed partial class FrmRecuperarPassword : Form
     {
-        private readonly UsuarioService _usuarios = new UsuarioService();
+        private readonly UsuarioService _usuarios;
 
-        private TextBox txtUsuario;
-        private Button btnVerPregunta;
-        private Label lblPregunta;
-        private TextBox txtRespuesta;
-        private TextBox txtNueva;
-        private TextBox txtConfirmar;
-        private CheckBox chkMostrar;
-        private Button btnCambiar;
-
-        public FrmRecuperarPassword(string usuarioInicial)
+        // Constructor sin parámetros: lo usa el diseñador de Visual Studio.
+        public FrmRecuperarPassword()
         {
+            InitializeComponent();
+        }
+
+        public FrmRecuperarPassword(string usuarioInicial) : this()
+        {
+            _usuarios = new UsuarioService();
+
             Text = Tr.T("Recover password");
-            ClientSize = new Size(560, 600);
-            StartPosition = FormStartPosition.CenterParent;
-            FormBorderStyle = FormBorderStyle.FixedDialog;
-            MaximizeBox = false;
-            MinimizeBox = false;
-            ShowInTaskbar = false;
-            BackColor = Color.White;
-            Font = new Font("Segoe UI", 9f);
             Marca.AplicarIcono(this);
 
-            Controls.Add(new Label
-            {
-                Text = Tr.T("Recover password"),
-                Font = new Font("Segoe UI", 16f, FontStyle.Bold),
-                ForeColor = Estilo.Principal,
-                AutoSize = true,
-                Location = new Point(24, 16)
-            });
-
-            Controls.Add(Etiqueta("User name", 64));
-            txtUsuario = new TextBox { Location = new Point(24, 86), Size = new Size(330, 26), Font = new Font("Segoe UI", 11f), Text = usuarioInicial ?? string.Empty };
-            Controls.Add(txtUsuario);
-
-            btnVerPregunta = Boton("View security question", new Point(366, 84), 170);
+            lblTitulo.Text = Tr.T("Recover password");
+            lblUsuarioCaption.Text = Tr.T("User name");
+            txtUsuario.Text = usuarioInicial ?? string.Empty;
+            btnVerPregunta.Text = Tr.T("View security question");
             btnVerPregunta.Click += BtnVerPregunta_Click;
-            Controls.Add(btnVerPregunta);
 
-            lblPregunta = new Label
-            {
-                Font = new Font("Segoe UI", 10f, FontStyle.Bold),
-                ForeColor = Estilo.Principal,
-                AutoSize = false,
-                Size = new Size(512, 40),
-                Location = new Point(24, 126)
-            };
-            Controls.Add(lblPregunta);
+            lblRespuestaCaption.Text = Tr.T("Answer");
+            lblNuevaCaption.Text = Tr.T("New password");
+            lblConfirmarCaption.Text = Tr.T("Confirm password");
 
-            Controls.Add(Etiqueta("Answer", 176));
-            txtRespuesta = Campo(198);
-
-            Controls.Add(Etiqueta("New password", 244));
-            txtNueva = Campo(266);
-
-            Controls.Add(Etiqueta("Confirm password", 312));
-            txtConfirmar = Campo(334);
-
-            chkMostrar = new CheckBox { Text = Tr.T("Show password"), AutoSize = true, Location = new Point(24, 372) };
+            chkMostrar.Text = Tr.T("Show password");
             chkMostrar.CheckedChanged += (s, e) =>
             {
                 txtRespuesta.UseSystemPasswordChar = !chkMostrar.Checked;
                 txtNueva.UseSystemPasswordChar = !chkMostrar.Checked;
                 txtConfirmar.UseSystemPasswordChar = !chkMostrar.Checked;
             };
-            Controls.Add(chkMostrar);
 
-            btnCambiar = Boton("Change password", new Point(24, 412), 190);
+            btnCambiar.Text = Tr.T("Change password");
             btnCambiar.Click += BtnCambiar_Click;
-            Controls.Add(btnCambiar);
+            btnCancelar.Text = Tr.T("Cancel");
 
-            Button cancelar = Boton("Cancel", new Point(226, 412), 110);
-            cancelar.BackColor = Color.FromArgb(120, 125, 135);
-            cancelar.DialogResult = DialogResult.Cancel;
-            Controls.Add(cancelar);
-            CancelButton = cancelar;
-
-            Panel linea = new Panel { BackColor = Color.FromArgb(215, 220, 230), Location = new Point(24, 462), Size = new Size(512, 1) };
-            Controls.Add(linea);
-
-            Controls.Add(new Label
-            {
-                Text = Tr.T("If you cannot recover it, contact the administrator:"),
-                Font = new Font("Segoe UI", 9f, FontStyle.Bold),
-                AutoSize = true,
-                Location = new Point(24, 476)
-            });
-
-            Controls.Add(new Label
-            {
-                Text = ContactoAdministrador.Texto(),
-                AutoSize = true,
-                Location = new Point(24, 500)
-            });
+            lblContactoTitulo.Text = Tr.T("If you cannot recover it, contact the administrator:");
+            lblContacto.Text = ContactoAdministrador.Texto();
 
             HabilitarRespuesta(false);
-            AcceptButton = btnVerPregunta;
-        }
-
-        private static Label Etiqueta(string clave, int y)
-        {
-            return new Label { Text = Tr.T(clave), Font = new Font("Segoe UI", 9f, FontStyle.Bold), AutoSize = true, Location = new Point(24, y) };
-        }
-
-        private TextBox Campo(int y)
-        {
-            TextBox cuadro = new TextBox
-            {
-                Location = new Point(24, y),
-                Size = new Size(512, 26),
-                Font = new Font("Segoe UI", 11f),
-                UseSystemPasswordChar = true
-            };
-
-            Controls.Add(cuadro);
-            return cuadro;
-        }
-
-        private static Button Boton(string clave, Point lugar, int ancho)
-        {
-            Button boton = new Button
-            {
-                Text = Tr.T(clave),
-                Location = lugar,
-                Size = new Size(ancho, 34),
-                FlatStyle = FlatStyle.Flat,
-                BackColor = Color.FromArgb(103, 120, 166),
-                ForeColor = Color.White,
-                Font = new Font("Segoe UI", 9f, FontStyle.Bold),
-                Cursor = Cursors.Hand
-            };
-
-            boton.FlatAppearance.BorderSize = 0;
-            return boton;
         }
 
         private void HabilitarRespuesta(bool habilitar)

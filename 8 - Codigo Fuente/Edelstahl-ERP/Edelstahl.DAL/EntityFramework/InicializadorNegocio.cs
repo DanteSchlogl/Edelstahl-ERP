@@ -1,4 +1,5 @@
-﻿using System;
+using System;
+using Edelstahl.Services.DataAccess.Tools;
 using System.Collections.Generic;
 using System.Data.Entity;
 using System.Linq;
@@ -6,7 +7,7 @@ using System.Security.Cryptography;
 using Edelstahl.Domain.Comercial;
 using Edelstahl.Domain.Integrity;
 using Edelstahl.Services.Cryptography;
-using Edelstahl.Services.Integrity;
+using Edelstahl.DAL.Integrity;
 
 namespace Edelstahl.DAL.EntityFramework
 {

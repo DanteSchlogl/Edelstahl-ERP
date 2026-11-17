@@ -149,7 +149,7 @@ namespace Edelstahl.Services.Documents
     /// <summary>
     /// Formatos comunes a todos los documentos.
     /// </summary>
-    internal static class FormatoDocumento
+    public static class FormatoDocumento
     {
         private static readonly CultureInfo Cultura = new CultureInfo("es-AR");
 

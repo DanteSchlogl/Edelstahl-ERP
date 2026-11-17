@@ -1,4 +1,5 @@
 using System;
+using Edelstahl.Services.Logic.Infrastructure;
 using System.Collections.Generic;
 
 namespace Edelstahl.BLL.Infrastructure

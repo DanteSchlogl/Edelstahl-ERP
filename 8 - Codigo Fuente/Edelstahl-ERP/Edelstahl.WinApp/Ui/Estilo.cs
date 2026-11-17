@@ -5,6 +5,7 @@ using System.Diagnostics;
 using System.Drawing;
 using System.IO;
 using System.Windows.Forms;
+using Edelstahl.Services.DomainModel.Exceptions;
 using Edelstahl.Domain.Exceptions;
 using Edelstahl.WinApp.Infrastructure;
 

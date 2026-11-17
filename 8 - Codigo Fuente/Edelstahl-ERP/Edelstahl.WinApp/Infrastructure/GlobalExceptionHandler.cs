@@ -1,4 +1,6 @@
 using System;
+using Edelstahl.Services.Logic.Infrastructure;
+using Edelstahl.Services.Logic;
 using Edelstahl.WinApp.Ui;
 using System.Threading;
 using System.Windows.Forms;

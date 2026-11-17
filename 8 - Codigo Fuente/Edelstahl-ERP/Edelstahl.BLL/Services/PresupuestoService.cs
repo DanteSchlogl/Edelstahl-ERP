@@ -1,14 +1,17 @@
-﻿using System;
+using System;
+using Edelstahl.Services.Logic.Infrastructure;
+using Edelstahl.Services.Logic;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Edelstahl.BLL.DTOs;
+using Edelstahl.Services.DomainModel.Exceptions;
 using Edelstahl.Domain.Exceptions;
 using Edelstahl.BLL.Infrastructure;
 using Edelstahl.DAL.Factory;
 using Edelstahl.Domain.Catalogo;
-using Edelstahl.Domain.Security;
+using Edelstahl.Services.DomainModel.Security;
 using Edelstahl.DAL.Interfaces;
 using Edelstahl.Domain.Comercial;
 

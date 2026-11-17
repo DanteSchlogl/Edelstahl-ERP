@@ -1,10 +1,11 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Edelstahl.DAL.Interfaces;
 using Edelstahl.Domain.Comercial;
+using Edelstahl.Services.DomainModel.Exceptions;
 using Edelstahl.Domain.Exceptions;
 using Edelstahl.Services.Localization;
 

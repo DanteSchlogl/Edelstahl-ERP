@@ -5,9 +5,10 @@ using System.Linq;
 using Edelstahl.DAL.EntityFramework;
 using Edelstahl.DAL.Interfaces;
 using Edelstahl.Domain.Comercial;
+using Edelstahl.Services.DomainModel.Exceptions;
 using Edelstahl.Domain.Exceptions;
 using Edelstahl.Domain.Integrity;
-using Edelstahl.Services.Integrity;
+using Edelstahl.DAL.Integrity;
 using Edelstahl.Services.Localization;
 
 namespace Edelstahl.DAL.Integrity

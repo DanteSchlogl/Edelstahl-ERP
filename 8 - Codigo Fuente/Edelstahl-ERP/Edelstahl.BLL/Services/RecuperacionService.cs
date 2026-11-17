@@ -1,9 +1,12 @@
 using System;
+using Edelstahl.Services.Logic.Infrastructure;
+using Edelstahl.Services.Logic;
 using System.Collections.Generic;
 using Edelstahl.BLL.Infrastructure;
+using Edelstahl.Services.DomainModel.Exceptions;
 using Edelstahl.Domain.Exceptions;
 using Edelstahl.Domain.Integrity;
-using Edelstahl.Domain.Security;
+using Edelstahl.Services.DomainModel.Security;
 
 namespace Edelstahl.BLL.Services
 {

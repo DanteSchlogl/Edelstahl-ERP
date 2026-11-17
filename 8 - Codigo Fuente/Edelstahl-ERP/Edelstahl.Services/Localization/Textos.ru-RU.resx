@@ -4930,4 +4930,34 @@
   <data name="The permissions of {0} were set back to those of their role." xml:space="preserve">
     <value>Разрешения пользователя {0} возвращены к разрешениям его роли.</value>
   </data>
+  <data name="Families of {0}" xml:space="preserve">
+    <value>Семейства пользователя {0}</value>
+  </data>
+  <data name="Available families" xml:space="preserve">
+    <value>Доступные семейства</value>
+  </data>
+  <data name="Assigned families" xml:space="preserve">
+    <value>Назначенные семейства</value>
+  </data>
+  <data name="Assign" xml:space="preserve">
+    <value>Назначить</value>
+  </data>
+  <data name="Remove" xml:space="preserve">
+    <value>Убрать</value>
+  </data>
+  <data name="Permissions this user receives through families and direct permissions" xml:space="preserve">
+    <value>Права пользователя через семейства и прямые права</value>
+  </data>
+  <data name="Families" xml:space="preserve">
+    <value>Семейства</value>
+  </data>
+  <data name="Select a family first." xml:space="preserve">
+    <value>Сначала выберите семейство.</value>
+  </data>
+  <data name="Families can only be used with the SQL Server database." xml:space="preserve">
+    <value>Семейства можно использовать только с базой данных SQL Server.</value>
+  </data>
+  <data name="The family was not found." xml:space="preserve">
+    <value>Семейство не найдено.</value>
+  </data>
 </root>

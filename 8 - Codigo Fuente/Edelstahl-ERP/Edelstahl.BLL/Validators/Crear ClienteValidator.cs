@@ -1,5 +1,7 @@
-﻿using System;
+using System;
+using Edelstahl.Services.Logic.Infrastructure;
 using System.Net.Mail;
+using Edelstahl.Services.DomainModel.Exceptions;
 using Edelstahl.Domain.Exceptions;
 using Edelstahl.Domain.Comercial;
 using Edelstahl.BLL.Infrastructure;
@@ -30,7 +32,7 @@ namespace Edelstahl.BLL.Validators
         {
             if (string.IsNullOrWhiteSpace(cuit))
             {
-                throw Mensajes.CuitInvalido(cuit);
+                throw MensajesCliente.CuitInvalido(cuit);
             }
 
             string cuitNormalizado = cuit
@@ -39,14 +41,14 @@ namespace Edelstahl.BLL.Validators
 
             if (cuitNormalizado.Length != 11)
             {
-                throw Mensajes.CuitInvalido(cuit);
+                throw MensajesCliente.CuitInvalido(cuit);
             }
 
             foreach (char caracter in cuitNormalizado)
             {
                 if (!char.IsDigit(caracter))
                 {
-                    throw Mensajes.CuitInvalido(cuit);
+                    throw MensajesCliente.CuitInvalido(cuit);
                 }
             }
         }

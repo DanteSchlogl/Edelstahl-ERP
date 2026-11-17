@@ -1,4 +1,6 @@
 using System;
+using Edelstahl.Services.Logic.Infrastructure;
+using Edelstahl.Services.Logic;
 using System.Collections.Generic;
 using System.Linq;
 using Edelstahl.BLL.DTOs;
@@ -6,7 +8,7 @@ using Edelstahl.BLL.Infrastructure;
 using Edelstahl.DAL.Factory;
 using Edelstahl.DAL.Store;
 using Edelstahl.Domain.Catalogo;
-using Edelstahl.Domain.Security;
+using Edelstahl.Services.DomainModel.Security;
 
 namespace Edelstahl.BLL.Services
 {

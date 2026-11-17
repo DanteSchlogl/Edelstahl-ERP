@@ -1,8 +1,10 @@
 using System;
+using Edelstahl.Services.Logic;
+using System.ComponentModel;
 using System.Drawing;
 using System.Windows.Forms;
 using Edelstahl.BLL.Services;
-using Edelstahl.Domain.Security;
+using Edelstahl.Services.DomainModel.Security;
 using Edelstahl.WinApp.Ui;
 
 namespace Edelstahl.WinApp
@@ -10,114 +12,64 @@ namespace Edelstahl.WinApp
     /// <summary>
     /// Mi perfil: datos del usuario, cambio de contrasena, pregunta de seguridad
     /// y datos de contacto del administrador.
+    /// La distribución de los controles está en FrmPerfil.Designer.cs (editable
+    /// en el diseñador); aquí solo se cargan los datos y las traducciones.
     /// </summary>
-    public sealed class FrmPerfil : Form
+    public sealed partial class FrmPerfil : Form
     {
-        private Label lblPregunta;
-        private Label lblUltimoAcceso;
-
         public FrmPerfil()
         {
+            InitializeComponent();
+
+            // En el diseñador de Visual Studio no hay sesión ni base de datos:
+            // se muestra la distribución sin cargar datos.
+            if (LicenseManager.UsageMode == LicenseUsageMode.Designtime)
+            {
+                return;
+            }
+
             Usuario usuario = new UsuarioService().ObtenerPorId(SesionActual.Usuario.Id);
 
             Text = Tr.T("My profile");
-            ClientSize = new Size(560, 470);
-            StartPosition = FormStartPosition.CenterParent;
-            FormBorderStyle = FormBorderStyle.FixedDialog;
-            MaximizeBox = false;
-            MinimizeBox = false;
-            ShowInTaskbar = false;
-            BackColor = Estilo.Superficie;
-            Font = Estilo.Normal;
             Marca.AplicarIcono(this);
 
-            Label titulo = new Label
-            {
-                Text = Tr.T("My profile"),
-                Font = Estilo.Titulo,
-                ForeColor = Estilo.Principal,
-                AutoSize = true,
-                Location = new Point(20, 14)
-            };
+            lblTitulo.Text = Tr.T("My profile");
 
-            Controls.Add(titulo);
-
-            int y = 62;
-            Fila("Full name", usuario.NombreCompleto, ref y);
-            Fila("User name", usuario.NombreUsuario, ref y);
-            Fila("Email", usuario.Email, ref y);
-            Fila("Role", usuario.Rol == null ? string.Empty : usuario.Rol.Nombre, ref y);
-            lblUltimoAcceso = Fila("Last access",
-                usuario.UltimoAcceso.HasValue ? usuario.UltimoAcceso.Value.ToString("dd/MM/yyyy HH:mm") : "-", ref y);
-            lblPregunta = Fila("Security question", string.Empty, ref y);
+            lblNombreCaption.Text = Tr.T("Full name");
+            lblNombre.Text = usuario.NombreCompleto;
+            lblUsuarioCaption.Text = Tr.T("User name");
+            lblUsuario.Text = usuario.NombreUsuario;
+            lblEmailCaption.Text = Tr.T("Email");
+            lblEmail.Text = usuario.Email;
+            lblRolCaption.Text = Tr.T("Role");
+            lblRol.Text = usuario.Rol == null ? string.Empty : usuario.Rol.Nombre;
+            lblUltimoAccesoCaption.Text = Tr.T("Last access");
+            lblUltimoAcceso.Text = usuario.UltimoAcceso.HasValue
+                ? usuario.UltimoAcceso.Value.ToString("dd/MM/yyyy HH:mm")
+                : "-";
+            lblPreguntaCaption.Text = Tr.T("Security question");
             ActualizarPregunta(usuario);
 
-            Button cambiarClave = Estilo.Boton("Change password");
-            cambiarClave.Location = new Point(20, y + 8);
-            cambiarClave.Click += (s, e) => DialogosUsuario.CambiarPassword(this);
-            Controls.Add(cambiarClave);
+            btnCambiarClave.Text = Tr.T("Change password");
+            btnCambiarClave.Click += (s, e) => DialogosUsuario.CambiarPassword(this);
 
-            Button cambiarPregunta = Estilo.Boton("Security question");
-            cambiarPregunta.Location = new Point(cambiarClave.Right + 12, y + 8);
-            cambiarPregunta.Click += (s, e) =>
+            btnCambiarPregunta.Text = Tr.T("Security question");
+            btnCambiarPregunta.Location = new Point(btnCambiarClave.Right + 12, btnCambiarPregunta.Top);
+            btnCambiarPregunta.Click += (s, e) =>
             {
                 if (DialogosUsuario.CambiarPregunta(this))
                 {
                     ActualizarPregunta(new UsuarioService().ObtenerPorId(SesionActual.Usuario.Id));
                 }
             };
-            Controls.Add(cambiarPregunta);
 
-            Label contactoTitulo = new Label
-            {
-                Text = Tr.T("Your administrator"),
-                Font = Estilo.Negrita,
-                ForeColor = Estilo.Principal,
-                AutoSize = true,
-                Location = new Point(20, y + 62)
-            };
+            lblAdminTitulo.Text = Tr.T("Your administrator");
+            lblContacto.Text = ContactoAdministrador.Texto();
 
-            Controls.Add(contactoTitulo);
-
-            Label contacto = new Label
-            {
-                Text = ContactoAdministrador.Texto(),
-                AutoSize = true,
-                Location = new Point(20, y + 84)
-            };
-
-            Controls.Add(contacto);
-
-            Button cerrar = Estilo.Boton("Close");
-            cerrar.Location = new Point(ClientSize.Width - cerrar.PreferredSize.Width - 36, ClientSize.Height - 50);
-            cerrar.DialogResult = DialogResult.OK;
-            Controls.Add(cerrar);
-            AcceptButton = cerrar;
-            CancelButton = cerrar;
-        }
-
-        private Label Fila(string etiqueta, string valor, ref int y)
-        {
-            Controls.Add(new Label
-            {
-                Text = Tr.T(etiqueta),
-                Font = Estilo.Negrita,
-                AutoSize = false,
-                Size = new Size(140, 22),
-                Location = new Point(20, y)
-            });
-
-            Label contenido = new Label
-            {
-                Text = valor,
-                AutoSize = false,
-                Size = new Size(380, 36),
-                Location = new Point(165, y)
-            };
-
-            Controls.Add(contenido);
-            y += 36;
-            return contenido;
+            btnCerrar.Text = Tr.T("Close");
+            btnCerrar.Location = new Point(
+                ClientSize.Width - btnCerrar.PreferredSize.Width - 36,
+                ClientSize.Height - 50);
         }
 
         private void ActualizarPregunta(Usuario usuario)

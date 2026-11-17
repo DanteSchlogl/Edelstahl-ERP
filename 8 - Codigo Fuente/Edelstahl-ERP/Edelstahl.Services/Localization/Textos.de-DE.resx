@@ -4981,4 +4981,34 @@
   <data name="The permissions of {0} were set back to those of their role." xml:space="preserve">
     <value>Die Berechtigungen von {0} wurden auf die seiner Rolle zurückgesetzt.</value>
   </data>
+  <data name="Families of {0}" xml:space="preserve">
+    <value>Familien von {0}</value>
+  </data>
+  <data name="Available families" xml:space="preserve">
+    <value>Verfügbare Familien</value>
+  </data>
+  <data name="Assigned families" xml:space="preserve">
+    <value>Zugewiesene Familien</value>
+  </data>
+  <data name="Assign" xml:space="preserve">
+    <value>Zuweisen</value>
+  </data>
+  <data name="Remove" xml:space="preserve">
+    <value>Entfernen</value>
+  </data>
+  <data name="Permissions this user receives through families and direct permissions" xml:space="preserve">
+    <value>Berechtigungen dieses Benutzers über Familien und direkte Berechtigungen</value>
+  </data>
+  <data name="Families" xml:space="preserve">
+    <value>Familien</value>
+  </data>
+  <data name="Select a family first." xml:space="preserve">
+    <value>Wählen Sie zuerst eine Familie aus.</value>
+  </data>
+  <data name="Families can only be used with the SQL Server database." xml:space="preserve">
+    <value>Familien können nur mit der SQL-Server-Datenbank verwendet werden.</value>
+  </data>
+  <data name="The family was not found." xml:space="preserve">
+    <value>Die Familie wurde nicht gefunden.</value>
+  </data>
 </root>

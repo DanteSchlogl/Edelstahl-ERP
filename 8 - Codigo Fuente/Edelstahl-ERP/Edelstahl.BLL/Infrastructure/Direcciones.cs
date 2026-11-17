@@ -1,4 +1,5 @@
-﻿using System;
+using System;
+using Edelstahl.Services.Logic.Infrastructure;
 
 namespace Edelstahl.BLL.Infrastructure
 {

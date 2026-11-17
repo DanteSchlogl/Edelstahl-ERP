@@ -1,4 +1,6 @@
 using System;
+using Edelstahl.Services.Logic.Infrastructure;
+using Edelstahl.Services.Logic;
 using System.Collections.Generic;
 using System.Linq;
 using System.Net.Mail;
@@ -9,7 +11,7 @@ using Edelstahl.DAL.Store;
 using Edelstahl.Domain.Catalogo;
 using Edelstahl.Domain.Compras;
 using Edelstahl.Domain.Finanzas;
-using Edelstahl.Domain.Security;
+using Edelstahl.Services.DomainModel.Security;
 
 namespace Edelstahl.BLL.Services
 {

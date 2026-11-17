@@ -1,0 +1,1 @@
+UPDATE EdelstahlNegocio.dbo.Clientes SET RazonSocial = 'DragonBall' WHERE Id = (SELECT MIN(Id) FROM EdelstahlNegocio.dbo.Clientes);

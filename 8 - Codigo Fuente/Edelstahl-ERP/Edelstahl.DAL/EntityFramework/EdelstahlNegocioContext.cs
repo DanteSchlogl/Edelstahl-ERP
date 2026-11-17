@@ -1,4 +1,5 @@
 using System.Data.Entity;
+using Edelstahl.Services.DataAccess.Tools;
 using Edelstahl.Domain.Catalogo;
 using Edelstahl.Domain.Comercial;
 using Edelstahl.Domain.Compras;
@@ -21,7 +22,7 @@ namespace Edelstahl.DAL.EntityFramework
         }
 
         public EdelstahlNegocioContext()
-            : base(Edelstahl.DAL.Tools.SqlServerConnection.CadenaNegocio)
+            : base(Edelstahl.Services.DataAccess.Tools.SqlServerConnection.CadenaNegocio)
         {
             Configuration.LazyLoadingEnabled = false;
             Configuration.ProxyCreationEnabled = false;

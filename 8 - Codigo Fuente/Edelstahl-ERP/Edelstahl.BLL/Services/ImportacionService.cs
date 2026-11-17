@@ -1,4 +1,6 @@
 using System;
+using Edelstahl.Services.Logic.Infrastructure;
+using Edelstahl.Services.Logic;
 using System.Collections.Generic;
 using System.Globalization;
 using System.Linq;
@@ -7,13 +9,14 @@ using System.Net.Mail;
 using System.Text;
 using System.Text.RegularExpressions;
 using Edelstahl.BLL.DTOs;
+using Edelstahl.Services.DomainModel.Exceptions;
 using Edelstahl.Domain.Exceptions;
 using Edelstahl.BLL.Infrastructure;
 using Edelstahl.DAL.Factory;
 using Edelstahl.DAL.Store;
 using Edelstahl.Domain.Catalogo;
 using Edelstahl.Domain.Comercial;
-using Edelstahl.Domain.Security;
+using Edelstahl.Services.DomainModel.Security;
 
 namespace Edelstahl.BLL.Services
 {

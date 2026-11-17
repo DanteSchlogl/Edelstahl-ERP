@@ -1,8 +1,10 @@
 using System;
+using Edelstahl.Services.Logic;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using Edelstahl.BLL.DTOs;
+using Edelstahl.Services.DomainModel.Exceptions;
 using Edelstahl.Domain.Exceptions;
 using Edelstahl.BLL.Services;
 using Edelstahl.DAL.EntityFramework;
@@ -11,7 +13,7 @@ using Edelstahl.Domain.Catalogo;
 using Edelstahl.Domain.Comercial;
 using Edelstahl.Domain.Finanzas;
 using Edelstahl.Domain.Produccion;
-using Edelstahl.Domain.Security;
+using Edelstahl.Services.DomainModel.Security;
 using Edelstahl.Services.Configuration;
 
 namespace Edelstahl.Test

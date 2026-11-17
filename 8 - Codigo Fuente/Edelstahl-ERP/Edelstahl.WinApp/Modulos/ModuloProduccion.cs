@@ -1,8 +1,10 @@
 using System;
+using Edelstahl.Services.Logic.Infrastructure;
 using System.Collections.Generic;
 using System.Linq;
 using System.Windows.Forms;
 using Edelstahl.BLL.DTOs;
+using Edelstahl.Services.DomainModel.Exceptions;
 using Edelstahl.Domain.Exceptions;
 using Edelstahl.BLL.Infrastructure;
 using Edelstahl.DAL.Factory;
@@ -10,7 +12,7 @@ using Edelstahl.BLL.Services;
 using Edelstahl.Domain.Comercial;
 using Edelstahl.Domain.Finanzas;
 using Edelstahl.Domain.Produccion;
-using Edelstahl.Domain.Security;
+using Edelstahl.Services.DomainModel.Security;
 using Edelstahl.WinApp.Ui;
 
 namespace Edelstahl.WinApp.Modulos

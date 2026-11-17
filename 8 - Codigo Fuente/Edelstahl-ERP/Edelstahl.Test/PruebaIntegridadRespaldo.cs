@@ -1,4 +1,7 @@
 using System;
+using Edelstahl.Services.Logic.Infrastructure;
+using Edelstahl.Services.Logic;
+using Edelstahl.Services.DataAccess.Factory;
 using System.Collections.Generic;
 using System.Data;
 using System.IO;
@@ -7,15 +10,16 @@ using System.Linq;
 using System.Resources;
 using Edelstahl.BLL.Infrastructure;
 using Edelstahl.BLL.Services;
-using Edelstahl.DAL.Backup;
+using Edelstahl.Services.DataAccess.Backup;
 using Edelstahl.DAL.EntityFramework;
 using Edelstahl.DAL.Factory;
 using Edelstahl.DAL.Interfaces;
-using Edelstahl.DAL.Tools;
+using Edelstahl.Services.DataAccess.Tools;
 using Edelstahl.Domain.Comercial;
+using Edelstahl.Services.DomainModel.Exceptions;
 using Edelstahl.Domain.Exceptions;
 using Edelstahl.Domain.Integrity;
-using Edelstahl.Domain.Security;
+using Edelstahl.Services.DomainModel.Security;
 using Edelstahl.Services.Configuration;
 using Edelstahl.Services.Localization;
 using Edelstahl.WinApp.Ui;
@@ -221,7 +225,7 @@ namespace Edelstahl.Test
                 "Modificar un cliente inexistente da RegistroNoEncontradoException");
 
             Verificador.Falla<ReglaDeNegocioException>(
-                () => FactoryDataAccess.BitacoraRepository.Delete(Guid.NewGuid()),
+                () => FactoryServicios.BitacoraRepository.Delete(Guid.NewGuid()),
                 "Los registros de la bitacora no se pueden borrar (ReglaDeNegocioException)");
 
             Pedido pedido = new Pedido();
@@ -346,7 +350,7 @@ namespace Edelstahl.Test
                 primero.All(r => File.Exists(r.RutaCopia) || File.Exists(r.RutaSql)),
                 "El archivo quedo en la carpeta elegida (o en la de SQL Server)");
 
-            RegistroRespaldo sano = respaldos.ObtenerRespaldos().First(r => r.Id == primero.First(p => p.BaseDatos == FactoryDataAccess.RespaldoDatabase.BaseNegocio).Id);
+            RegistroRespaldo sano = respaldos.ObtenerRespaldos().First(r => r.Id == primero.First(p => p.BaseDatos == FactoryServicios.RespaldoDatabase.BaseNegocio).Id);
 
             // --- Alteracion de un registro (DVH)
             string nombreOriginal = uno.RazonSocial;
@@ -363,9 +367,9 @@ namespace Edelstahl.Test
             Verificador.Verificar(!alterada.AlteradaLaTabla,
                 "El DVV no cambia porque guarda los DVH, que no se tocaron");
 
-            int antesBitacora = FactoryDataAccess.BitacoraRepository.GetByModulo("Integridad").Count;
+            int antesBitacora = FactoryServicios.BitacoraRepository.GetByModulo("Integridad").Count;
             integridad.VerificarYRegistrar("prueba");
-            List<RegistroBitacora> enBitacora = FactoryDataAccess.BitacoraRepository.GetByModulo("Integridad");
+            List<RegistroBitacora> enBitacora = FactoryServicios.BitacoraRepository.GetByModulo("Integridad");
             Verificador.Verificar(enBitacora.Count > antesBitacora, "La alteracion queda registrada en la bitacora");
             RegistroBitacora ultimo = enBitacora.OrderByDescending(b => b.FechaHora).First();
             Verificador.Verificar(ultimo.TipoEvento == "Seguridad" && ultimo.Resultado == "Fallido"
@@ -383,7 +387,7 @@ namespace Edelstahl.Test
                 Carpeta = string.Empty
             };
             RespaldoService automatico = new RespaldoService(
-                FactoryDataAccess.RespaldoDatabase, new BitacoraService(), FactoryDataAccess.RespaldoRepository, integridad, sinEspera);
+                FactoryServicios.RespaldoDatabase, new BitacoraService(), FactoryServicios.RespaldoRepository, integridad, sinEspera);
             Verificador.Verificar(!automatico.CrearRespaldoAutomaticoSiCorresponde(),
                 "El respaldo automatico no se hace cuando los datos estan alterados");
 
@@ -415,7 +419,7 @@ namespace Edelstahl.Test
             List<RegistroRespaldo> lista = recuperacion.ObtenerRespaldos();
             Verificador.Verificar(lista.Any(r => r.Id == sano.Id) && lista.Any(r => !r.Sano),
                 "Autorizado, ve todos los respaldos (sanos y no sanos)");
-            Verificador.Verificar(lista.All(r => r.BaseDatos == FactoryDataAccess.RespaldoDatabase.BaseNegocio),
+            Verificador.Verificar(lista.All(r => r.BaseDatos == FactoryServicios.RespaldoDatabase.BaseNegocio),
                 "La lista es de la base de negocio, la que se restaura");
 
             // --- Restaurar el respaldo sano
@@ -428,7 +432,7 @@ namespace Edelstahl.Test
                 recuperacion.ObtenerRespaldos().Any(r => r.Origen == RegistroRespaldo.OrigenAntesDeRestaurar && !r.Sano),
                 "Antes de restaurar se guardo una copia del estado anterior");
             Verificador.Verificar(
-                FactoryDataAccess.BitacoraRepository.GetByModulo("Respaldo").Any(b => b.Accion == "Restaurar respaldo" && b.Resultado == "Correcto"),
+                FactoryServicios.BitacoraRepository.GetByModulo("Respaldo").Any(b => b.Accion == "Restaurar respaldo" && b.Resultado == "Correcto"),
                 "La restauracion queda en la bitacora");
 
             // --- Restaurar un archivo elegido por el usuario
@@ -442,7 +446,7 @@ namespace Edelstahl.Test
             Verificador.Verificar(recuperacion.RestaurarArchivo(archivo).Correcto,
                 "Tambien se puede restaurar un archivo .bak elegido a mano");
 
-            string archivoServicios = primero.First(r => r.BaseDatos == FactoryDataAccess.RespaldoDatabase.BaseServicios).RutaSql;
+            string archivoServicios = primero.First(r => r.BaseDatos == FactoryServicios.RespaldoDatabase.BaseServicios).RutaSql;
             Verificador.Falla<ReglaDeNegocioException>(
                 () => recuperacion.RestaurarArchivo(archivoServicios),
                 "El respaldo de otra base no se acepta para restaurar el negocio");
@@ -455,7 +459,7 @@ namespace Edelstahl.Test
             Verificador.Verificar(!integridad.Verificar().Correcto, "Un cambio mas se detecta");
             Verificador.Verificar(recuperacion.RecalcularDigitos().Correcto, "Recalcular los digitos acepta los datos actuales");
             Verificador.Verificar(
-                FactoryDataAccess.BitacoraRepository.GetByModulo("Integridad").Any(b => b.Accion == "Digitos verificadores recalculados"),
+                FactoryServicios.BitacoraRepository.GetByModulo("Integridad").Any(b => b.Accion == "Digitos verificadores recalculados"),
                 "El recalculo queda en la bitacora");
 
             // --- DVV: un registro borrado por fuera
@@ -482,12 +486,12 @@ namespace Edelstahl.Test
                 HorasEntreRespaldos = 24
             };
             RespaldoService unPorDia = new RespaldoService(
-                FactoryDataAccess.RespaldoDatabase, new BitacoraService(), FactoryDataAccess.RespaldoRepository, integridad, conEspera);
+                FactoryServicios.RespaldoDatabase, new BitacoraService(), FactoryServicios.RespaldoRepository, integridad, conEspera);
             Verificador.Verificar(!unPorDia.CrearRespaldoAutomaticoSiCorresponde(),
                 "No se repite el respaldo automatico dentro de las horas configuradas");
 
             ConfiguracionRespaldo apagado = new ConfiguracionRespaldo(Path.Combine(carpetaDatos, "auto3.config")) { Automatico = false, HorasEntreRespaldos = 0 };
-            Verificador.Verificar(!new RespaldoService(FactoryDataAccess.RespaldoDatabase, new BitacoraService(), FactoryDataAccess.RespaldoRepository, integridad, apagado).CrearRespaldoAutomaticoSiCorresponde(),
+            Verificador.Verificar(!new RespaldoService(FactoryServicios.RespaldoDatabase, new BitacoraService(), FactoryServicios.RespaldoRepository, integridad, apagado).CrearRespaldoAutomaticoSiCorresponde(),
                 "Con el respaldo automatico apagado no se hace");
 
             // --- Configuracion persistente

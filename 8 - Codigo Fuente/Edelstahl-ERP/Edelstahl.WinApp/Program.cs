@@ -1,4 +1,5 @@
-﻿using System;
+using System;
+using Edelstahl.Services.Logic;
 using System.Windows.Forms;
 using Edelstahl.BLL.Services;
 using Edelstahl.DAL.EntityFramework;
@@ -174,7 +175,7 @@ namespace Edelstahl.WinApp
         {
             CargaInicialService carga = new CargaInicialService();
 
-            if (!SesionActual.Tiene(Edelstahl.Domain.Security.Permiso.CatalogoEditar) || carga.TieneCatalogo())
+            if (!SesionActual.Tiene(Edelstahl.Services.DomainModel.Security.Permiso.CatalogoEditar) || carga.TieneCatalogo())
             {
                 return;
             }

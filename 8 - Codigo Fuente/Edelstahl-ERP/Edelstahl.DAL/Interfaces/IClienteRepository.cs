@@ -1,4 +1,5 @@
-﻿using Edelstahl.Domain.Comercial;
+using Edelstahl.Domain.Comercial;
+using Edelstahl.Services.DataAccess.Interfaces;
 
 namespace Edelstahl.DAL.Interfaces
 {

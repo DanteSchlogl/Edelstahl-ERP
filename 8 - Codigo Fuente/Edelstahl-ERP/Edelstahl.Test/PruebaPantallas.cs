@@ -1,4 +1,7 @@
 using System;
+using Edelstahl.Services.Logic.Infrastructure;
+using Edelstahl.Services.Logic;
+using Edelstahl.Services.DataAccess.Tools;
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.IO;
@@ -14,7 +17,7 @@ using Edelstahl.Domain.Finanzas;
 using Edelstahl.BLL.Services;
 using Edelstahl.DAL.EntityFramework;
 using Edelstahl.DAL.Factory;
-using Edelstahl.Domain.Security;
+using Edelstahl.Services.DomainModel.Security;
 using Edelstahl.Services.Configuration;
 using Edelstahl.Services.Localization;
 using System.Text;
@@ -429,8 +432,8 @@ namespace Edelstahl.Test
                 Codigo = "AECT-25", Descripcion = "Abrazadera tipo T AISI 304 (2 1/2\")", DescripcionTecnica = "Largo 120 mm, espesor 2 mm, pulido sanitario",
                 TipoItem = Edelstahl.Domain.Comercial.TipoItemPresupuesto.FabricacionEspecial, Cantidad = 10m, PrecioUnitario = 2000m
             });
-            string rutaPresupuesto = new Edelstahl.Services.Documents.PresupuestoPdfService().Generar(presupuesto, clienteDemo);
-            new Edelstahl.Services.Documents.PresupuestoPdfService().GenerarImagenes(presupuesto, clienteDemo, Path.Combine(carpeta, "presupuesto"));
+            string rutaPresupuesto = new Edelstahl.BLL.Documents.PresupuestoPdfService().Generar(presupuesto, clienteDemo);
+            new Edelstahl.BLL.Documents.PresupuestoPdfService().GenerarImagenes(presupuesto, clienteDemo, Path.Combine(carpeta, "presupuesto"));
             Verificador.Verificar(File.Exists(rutaPresupuesto), "Se genero el presupuesto imprimible de ejemplo");
         }
 
@@ -512,7 +515,7 @@ namespace Edelstahl.Test
 
             string datos = Path.Combine(Path.GetTempPath(), "edelstahl-captura-" + Guid.NewGuid().ToString("N"));
             Directory.CreateDirectory(datos);
-            Environment.SetEnvironmentVariable(Edelstahl.BLL.Infrastructure.ConfiguracionRespaldo.VariableCarpeta, datos);
+            Environment.SetEnvironmentVariable(Edelstahl.Services.Logic.Infrastructure.ConfiguracionRespaldo.VariableCarpeta, datos);
 
             UsuarioService usuarios = new UsuarioService();
             usuarios.Registrar("administrador", "Administrador del sistema", "administrador@example.test", "Clave-Segura-2026", NombresRol.Administrador, false);
@@ -526,10 +529,10 @@ namespace Edelstahl.Test
 
             foreach (string id in ids)
             {
-                Edelstahl.DAL.Tools.SqlHelper.EjecutarNoQuery(
-                    Edelstahl.DAL.Tools.BaseDeDatos.Negocio,
+                Edelstahl.Services.DataAccess.Tools.SqlHelper.EjecutarNoQuery(
+                    Edelstahl.Services.DataAccess.Tools.BaseDeDatos.Negocio,
                     "UPDATE dbo.Clientes SET Telefono = N'0000' WHERE Id = @Id",
-                    Edelstahl.DAL.Tools.SqlHelper.Parametro("@Id", System.Data.SqlDbType.UniqueIdentifier, Guid.Parse(id)));
+                    Edelstahl.Services.DataAccess.Tools.SqlHelper.Parametro("@Id", System.Data.SqlDbType.UniqueIdentifier, Guid.Parse(id)));
             }
 
             Edelstahl.Domain.Integrity.ResultadoIntegridad resultado = new IntegridadService().VerificarYRegistrar("inicio del sistema");
@@ -562,7 +565,7 @@ namespace Edelstahl.Test
                 anfitrion.Close();
             }
 
-            Environment.SetEnvironmentVariable(Edelstahl.BLL.Infrastructure.ConfiguracionRespaldo.VariableCarpeta, null);
+            Environment.SetEnvironmentVariable(Edelstahl.Services.Logic.Infrastructure.ConfiguracionRespaldo.VariableCarpeta, null);
         }
 
         [StructLayout(LayoutKind.Sequential)]

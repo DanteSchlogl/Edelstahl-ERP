@@ -6,7 +6,7 @@ using Edelstahl.Domain.Catalogo;
 using Edelstahl.Domain.Comercial;
 using Edelstahl.Domain.Compras;
 using Edelstahl.Domain.Logistica;
-using Edelstahl.Domain.Security;
+using Edelstahl.Services.DomainModel.Security;
 
 namespace Edelstahl.WinApp.Ui
 {
@@ -164,7 +164,7 @@ namespace Edelstahl.WinApp.Ui
         public string Usuario { get; set; }
         public string Archivo { get; set; }
 
-        public static RespaldoFila De(Edelstahl.Domain.Security.RegistroRespaldo r)
+        public static RespaldoFila De(Edelstahl.Services.DomainModel.Security.RegistroRespaldo r)
         {
             string estado = r.Origen == RegistroRespaldo.OrigenAntesDeRestaurar
                 ? "Safety copy before a restore"

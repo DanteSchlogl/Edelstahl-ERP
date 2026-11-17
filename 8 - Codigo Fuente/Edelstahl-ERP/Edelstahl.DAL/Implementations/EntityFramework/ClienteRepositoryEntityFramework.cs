@@ -1,4 +1,5 @@
-﻿using System;
+using System;
+using Edelstahl.Services.DataAccess.Factory;
 using System.Collections.Generic;
 using System.Data.Entity;
 using System.Linq;
@@ -8,9 +9,10 @@ using Edelstahl.DAL.Factory;
 using Edelstahl.DAL.Interfaces;
 using Edelstahl.Domain.Comercial;
 using Edelstahl.Domain.Integrity;
-using Edelstahl.Domain.Security;
+using Edelstahl.Services.DomainModel.Security;
 using Edelstahl.Services.Cryptography;
-using Edelstahl.Services.Integrity;
+using Edelstahl.DAL.Integrity;
+using Edelstahl.Services.DomainModel.Exceptions;
 using Edelstahl.Domain.Exceptions;
 using Edelstahl.Services.Localization;
 
@@ -333,7 +335,7 @@ namespace Edelstahl.DAL.Implementations.EntityFramework
         {
             try
             {
-                FactoryDataAccess.BitacoraRepository.Add(
+                FactoryServicios.BitacoraRepository.Add(
                     new RegistroBitacora
                     {
                         Id = Guid.NewGuid(),

@@ -1,4 +1,6 @@
 using System;
+using Edelstahl.Services.Logic.Infrastructure;
+using Edelstahl.Services.Logic;
 using System.Collections;
 using System.Collections.Generic;
 using System.Drawing;
@@ -10,7 +12,7 @@ using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using Edelstahl.BLL.Services;
-using Edelstahl.Domain.Security;
+using Edelstahl.Services.DomainModel.Security;
 using Edelstahl.Services.Export;
 using Edelstahl.Services.Localization;
 
@@ -263,7 +265,7 @@ namespace Edelstahl.WinApp.Ui
 
         private static bool Autorizacion_Tiene(Permiso permiso)
         {
-            return Edelstahl.BLL.Infrastructure.Autorizacion.Tiene(permiso);
+            return Edelstahl.Services.Logic.Infrastructure.Autorizacion.Tiene(permiso);
         }
 
         public void Recargar()
@@ -317,7 +319,7 @@ namespace Edelstahl.WinApp.Ui
         {
             if (resultado.Value != null)
             {
-                _estado.Text = resultado.Value is Edelstahl.Domain.Exceptions.BusinessRuleException
+                _estado.Text = resultado.Value is Edelstahl.Services.DomainModel.Exceptions.BusinessRuleException
                     ? resultado.Value.Message
                     : Tr.T("The data could not be loaded.");
                 _datos = new ArrayList();

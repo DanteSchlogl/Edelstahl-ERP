@@ -1,7 +1,8 @@
 using System;
+using Edelstahl.Services.Logic.Infrastructure;
 using System.Windows.Forms;
 using Edelstahl.BLL.Infrastructure;
-using Edelstahl.Domain.Security;
+using Edelstahl.Services.DomainModel.Security;
 using Edelstahl.Services.Localization;
 
 namespace Edelstahl.WinApp.Ui

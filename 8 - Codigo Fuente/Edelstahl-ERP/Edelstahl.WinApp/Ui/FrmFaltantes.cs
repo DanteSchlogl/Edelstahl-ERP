@@ -25,24 +25,24 @@ namespace Edelstahl.WinApp.Ui
     /// <summary>
     /// Lista en rojo de los productos que faltan, con un contador por fila para ingresar el stock.
     /// Se usa al confirmar un pedido: se agrega lo que falta y se sigue sin salir de la pantalla.
+    /// La distribución de los controles está en FrmFaltantes.Designer.cs.
     /// </summary>
-    public class FrmFaltantes : Form
+    public partial class FrmFaltantes : Form
     {
         private readonly BindingList<FilaFaltante> _filas = new BindingList<FilaFaltante>();
-        private readonly DataGridView _grilla = Estilo.Grilla();
-        private readonly bool _puedeIngresar;
+        private bool _puedeIngresar;
 
-        public FrmFaltantes(string titulo, string explicacion, IEnumerable<FaltanteDto> faltantes, bool puedeIngresar)
+        // Constructor sin parámetros: lo usa el diseñador de Visual Studio.
+        public FrmFaltantes()
+        {
+            InitializeComponent();
+        }
+
+        public FrmFaltantes(string titulo, string explicacion, IEnumerable<FaltanteDto> faltantes, bool puedeIngresar) : this()
         {
             _puedeIngresar = puedeIngresar;
             Text = Tr.T(titulo);
-            Size = new Size(920, 520);
-            StartPosition = FormStartPosition.CenterParent;
             Edelstahl.WinApp.Ui.Marca.AplicarIcono(this);
-            Font = Estilo.Normal;
-            BackColor = Estilo.Superficie;
-            MinimizeBox = false;
-            ShowInTaskbar = false;
 
             foreach (FaltanteDto f in faltantes)
             {
@@ -58,26 +58,13 @@ namespace Edelstahl.WinApp.Ui
                 });
             }
 
-            Label aviso = new Label
-            {
-                Dock = DockStyle.Top,
-                Height = 58,
-                Padding = new Padding(12, 10, 12, 0),
-                Font = Estilo.Negrita,
-                ForeColor = Color.FromArgb(150, 30, 30),
-                BackColor = Color.FromArgb(255, 226, 224),
-                Text = Tr.T(explicacion)
-            };
+            lblAviso.Text = Tr.T(explicacion);
 
-            _grilla.DataSource = _filas;
-            _grilla.ReadOnly = !puedeIngresar;
-            _grilla.EditMode = DataGridViewEditMode.EditOnEnter;
-            _grilla.DefaultCellStyle.BackColor = Color.FromArgb(255, 238, 236);
-            _grilla.DefaultCellStyle.ForeColor = Color.FromArgb(120, 20, 20);
-            _grilla.AlternatingRowsDefaultCellStyle.BackColor = Color.FromArgb(255, 230, 227);
-            _grilla.DataBindingComplete += (remitente, argumentos) =>
+            grilla.DataSource = _filas;
+            grilla.ReadOnly = !puedeIngresar;
+            grilla.DataBindingComplete += (remitente, argumentos) =>
             {
-                foreach (DataGridViewColumn columna in _grilla.Columns)
+                foreach (DataGridViewColumn columna in grilla.Columns)
                 {
                     columna.HeaderText = Tr.Columna(columna.DataPropertyName);
                     columna.Visible = columna.DataPropertyName != "ProductoId";
@@ -97,40 +84,21 @@ namespace Edelstahl.WinApp.Ui
                     }
                 }
             };
-            _grilla.DataError += (remitente, argumentos) => { argumentos.ThrowException = false; };
+            grilla.DataError += (remitente, argumentos) => { argumentos.ThrowException = false; };
 
-            Button mas = Estilo.Boton("+ 1");
-            mas.MinimumSize = new Size(44, 30);
-            mas.Click += (remitente, argumentos) => Sumar(1m);
-            Button menos = Estilo.Boton("- 1");
-            menos.MinimumSize = new Size(44, 30);
-            menos.Click += (remitente, argumentos) => Sumar(-1m);
+            btnMas.Click += (remitente, argumentos) => Sumar(1m);
+            btnMenos.Click += (remitente, argumentos) => Sumar(-1m);
 
-            Button aceptar = Estilo.Boton("Add stock and confirm");
-            aceptar.BackColor = Color.FromArgb(46, 125, 50);
-            aceptar.Enabled = puedeIngresar;
-            aceptar.Click += (remitente, argumentos) => Aceptar();
-            Button cancelar = Estilo.Boton("Cancel");
-            cancelar.BackColor = Color.Gray;
-            cancelar.DialogResult = DialogResult.Cancel;
+            btnAceptar.Text = Tr.T("Add stock and confirm");
+            btnAceptar.Enabled = puedeIngresar;
+            btnAceptar.Click += (remitente, argumentos) => Aceptar();
+            btnCancelar.Text = Tr.T("Cancel");
 
-            FlowLayoutPanel pie = new FlowLayoutPanel { Dock = DockStyle.Bottom, Height = 52, Padding = new Padding(10, 10, 10, 4) };
-
-            if (puedeIngresar)
+            if (!puedeIngresar)
             {
-                pie.Controls.Add(mas);
-                pie.Controls.Add(menos);
+                flpPie.Controls.Remove(btnMas);
+                flpPie.Controls.Remove(btnMenos);
             }
-
-            pie.Controls.Add(aceptar);
-            pie.Controls.Add(cancelar);
-
-            Controls.Add(_grilla);
-            Controls.Add(aviso);
-            Controls.Add(pie);
-            aviso.BringToFront();
-            _grilla.BringToFront();
-            CancelButton = cancelar;
         }
 
         /// <summary>Cantidades elegidas para ingresar, por producto.</summary>
@@ -144,13 +112,13 @@ namespace Edelstahl.WinApp.Ui
 
         private void Sumar(decimal diferencia)
         {
-            if (_grilla.CurrentRow == null)
+            if (grilla.CurrentRow == null)
             {
                 return;
             }
 
-            FilaFaltante fila = (FilaFaltante)_grilla.CurrentRow.DataBoundItem;
-            _grilla.EndEdit();
+            FilaFaltante fila = (FilaFaltante)grilla.CurrentRow.DataBoundItem;
+            grilla.EndEdit();
             decimal nueva = fila.Agregar + diferencia;
             fila.Agregar = nueva < 0m ? 0m : nueva;
             _filas.ResetItem(_filas.IndexOf(fila));
@@ -158,7 +126,7 @@ namespace Edelstahl.WinApp.Ui
 
         private void Aceptar()
         {
-            _grilla.EndEdit();
+            grilla.EndEdit();
 
             foreach (FilaFaltante fila in _filas)
             {

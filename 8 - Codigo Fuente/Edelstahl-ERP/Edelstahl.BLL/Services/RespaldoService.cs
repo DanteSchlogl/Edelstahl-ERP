@@ -1,13 +1,18 @@
 using System;
+using Edelstahl.Services.Logic.Infrastructure;
+using Edelstahl.Services.Logic;
+using Edelstahl.Services.DataAccess.Interfaces;
+using Edelstahl.Services.DataAccess.Factory;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using Edelstahl.BLL.Infrastructure;
 using Edelstahl.DAL.Factory;
 using Edelstahl.DAL.Interfaces;
+using Edelstahl.Services.DomainModel.Exceptions;
 using Edelstahl.Domain.Exceptions;
 using Edelstahl.Domain.Integrity;
-using Edelstahl.Domain.Security;
+using Edelstahl.Services.DomainModel.Security;
 
 namespace Edelstahl.BLL.Services
 {
@@ -32,9 +37,9 @@ namespace Edelstahl.BLL.Services
 
         public RespaldoService()
             : this(
-                FactoryDataAccess.RespaldoDatabase,
+                FactoryServicios.RespaldoDatabase,
                 new BitacoraService(),
-                FactoryDataAccess.RespaldoRepository,
+                FactoryServicios.RespaldoRepository,
                 new IntegridadService(),
                 new ConfiguracionRespaldo())
         {

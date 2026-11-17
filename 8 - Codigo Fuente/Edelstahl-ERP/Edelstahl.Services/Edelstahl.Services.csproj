@@ -64,14 +64,73 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="DomainModel\Composite\Component.cs" />
+    <Compile Include="DomainModel\Composite\Familia.cs" />
+    <Compile Include="DomainModel\Composite\Patente.cs" />
+    <Compile Include="DomainModel\Composite\UsuarioPrivilegios.cs" />
+    <Compile Include="DataAccess\Tools\SqlHelper.cs" />
+    <Compile Include="DataAccess\Tools\EsquemaComposite.cs" />
+    <Compile Include="DataAccess\Interfaces\Interfaces.cs" />
+    <Compile Include="DataAccess\Implementations\Adapters\Adapters.cs" />
+    <Compile Include="DataAccess\Implementations\PatenteRepository.cs" />
+    <Compile Include="DataAccess\Implementations\FamiliaRepository.cs" />
+    <Compile Include="DataAccess\Implementations\FamiliaFamiliaRepository.cs" />
+    <Compile Include="DataAccess\Implementations\FamiliaPatenteRepository.cs" />
+    <Compile Include="DataAccess\Implementations\UsuarioFamiliaRepository.cs" />
+    <Compile Include="DataAccess\Implementations\UsuarioPatenteRepository.cs" />
+    <Compile Include="Logic\FamiliaLogic.cs" />
+    <Compile Include="Logic\PatenteLogic.cs" />
+    <Compile Include="Logic\PrivilegiosLogic.cs" />
+    <Compile Include="Logic\RolesPermisosLogic.cs" />
+    <Compile Include="Facade\FamiliaService.cs" />
+    <Compile Include="Facade\PatenteService.cs" />
+    <Compile Include="Facade\PrivilegiosService.cs" />
+    <Compile Include="Facade\RolesPermisosService.cs" />
+    <Compile Include="DomainModel\Security\PermisoIndividual.cs" />
+    <Compile Include="DomainModel\Security\Permisos.cs" />
+    <Compile Include="DomainModel\Security\PruebaSecurity.cs" />
+    <Compile Include="DomainModel\Security\RegistroBitacora.cs" />
+    <Compile Include="DomainModel\Security\RegistroRespaldo.cs" />
+    <Compile Include="DomainModel\Security\ResultadoRespaldo.cs" />
+    <Compile Include="DomainModel\Security\Rol.cs" />
+    <Compile Include="DomainModel\Security\Usuario.cs" />
+    <Compile Include="DomainModel\Exceptions\BusinessRuleException.cs" />
+    <Compile Include="DomainModel\Exceptions\ExcepcionesDeNegocio.cs" />
+    <Compile Include="DataAccess\Tools\SqlServerConnection.cs" />
+    <Compile Include="DataAccess\Tools\AdministradorDeBases.cs" />
+    <Compile Include="DataAccess\Tools\EsquemaServicios.cs" />
+    <Compile Include="DataAccess\Interfaces\IBitacoraRepository.cs" />
+    <Compile Include="DataAccess\Interfaces\IPermisoUsuarioRepository.cs" />
+    <Compile Include="DataAccess\Interfaces\IRespaldoDatabase.cs" />
+    <Compile Include="DataAccess\Interfaces\IRespaldoRepository.cs" />
+    <Compile Include="DataAccess\Interfaces\IRolRepository.cs" />
+    <Compile Include="DataAccess\Interfaces\IUsuarioRepository.cs" />
+    <Compile Include="DataAccess\Implementations\SqlServer\BitacoraRepositorySqlServer.cs" />
+    <Compile Include="DataAccess\Implementations\SqlServer\PermisoUsuarioRepositorySqlServer.cs" />
+    <Compile Include="DataAccess\Implementations\SqlServer\RespaldoRepositorySqlServer.cs" />
+    <Compile Include="DataAccess\Implementations\SqlServer\RolRepositorySqlServer.cs" />
+    <Compile Include="DataAccess\Implementations\SqlServer\UsuarioRepositorySqlServer.cs" />
+    <Compile Include="DataAccess\Implementations\Memory\RepositoriosSeguridadMemory.cs" />
+    <Compile Include="DataAccess\Implementations\Memory\RespaldoRepositoryMemory.cs" />
+    <Compile Include="DataAccess\Implementations\Memory\RespaldoDatabaseMemory.cs" />
+    <Compile Include="DataAccess\Backup\RespaldoDatabaseService.cs" />
+    <Compile Include="DataAccess\Factory\FactoryServicios.cs" />
+    <Compile Include="Logic\UsuarioService.cs" />
+    <Compile Include="Logic\BitacoraService.cs" />
+    <Compile Include="Logic\AdministracionService.cs" />
+    <Compile Include="Logic\DemoAuthenticationService.cs" />
+    <Compile Include="Logic\SesionActual.cs" />
+    <Compile Include="Logic\Infrastructure\Autorizacion.cs" />
+    <Compile Include="Logic\Infrastructure\PermisosEfectivos.cs" />
+    <Compile Include="Logic\Infrastructure\ConfiguracionRespaldo.cs" />
+    <Compile Include="Logic\Infrastructure\Mensajes.cs" />
+    <Compile Include="Logic\DTOs\PermisosDtos.cs" />
+    <Compile Include="Logic\DTOs\FamiliasDtos.cs" />
     <Compile Include="Configuration\ApplicationMode.cs" />
     <Compile Include="Configuration\ExecutionMode.cs" />
     <Compile Include="Cryptography\AesEncryptionService.cs" />
     <Compile Include="Cryptography\CryptographyService.cs" />
     <Compile Include="Cryptography\CryptographySettings.cs" />
-    <Compile Include="Documents\ComprobantePedidoPdfService.cs" />
-    <Compile Include="Documents\PresupuestoPdfService.cs" />
-    <Compile Include="Integrity\ClienteDvhService.cs" />
     <Compile Include="Localization\LanguageService.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -102,10 +161,6 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\Edelstahl.Domain\Edelstahl.Domain.csproj">
-      <Project>{6d81c64f-0027-47a6-9b46-a54c2999458e}</Project>
-      <Name>Edelstahl.Domain</Name>
-    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Import Project="..\packages\QuestPDF.2026.8.0\build\net4\QuestPDF.targets" Condition="Exists('..\packages\QuestPDF.2026.8.0\build\net4\QuestPDF.targets')" />

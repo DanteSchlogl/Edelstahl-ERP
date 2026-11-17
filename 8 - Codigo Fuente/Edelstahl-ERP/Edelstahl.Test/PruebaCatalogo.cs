@@ -1,15 +1,17 @@
 using System;
+using Edelstahl.Services.Logic;
 using System.IO;
 using System.Linq;
 using System.Collections.Generic;
 using Edelstahl.BLL.DTOs;
+using Edelstahl.Services.DomainModel.Exceptions;
 using Edelstahl.Domain.Exceptions;
 using Edelstahl.BLL.Services;
 using Edelstahl.DAL.EntityFramework;
 using Edelstahl.DAL.Factory;
 using Edelstahl.Domain.Catalogo;
 using Edelstahl.Domain.Compras;
-using Edelstahl.Domain.Security;
+using Edelstahl.Services.DomainModel.Security;
 using Edelstahl.Services.Configuration;
 
 namespace Edelstahl.Test

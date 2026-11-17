@@ -1,4 +1,6 @@
 using System;
+using Edelstahl.Services.Logic;
+using System.ComponentModel;
 using System.Drawing;
 using System.IO;
 using System.Windows.Forms;
@@ -9,380 +11,44 @@ using Edelstahl.WinApp.Ui;
 
 namespace Edelstahl.WinApp
 {
-    public sealed class FrmLogin : Form
+    /// <summary>
+    /// Inicio de sesión. La distribución de los controles está en FrmLogin.Designer.cs
+    /// (editable en el diseñador); aquí solo hay textos traducidos y lógica.
+    /// </summary>
+    public sealed partial class FrmLogin : Form
     {
-        private readonly UsuarioService _usuarioService;
+        private UsuarioService _usuarioService;
 
-        private readonly DemoAuthenticationService
-            _demoAuthenticationService;
-
-        private Label lblMarca;
-        private Label lblTitulo;
-        private Label lblSubtitulo;
-        private Label lblUsuario;
-        private Label lblPassword;
-        private Label lblModo;
-
-        private TextBox txtUsuario;
-        private TextBox txtPassword;
-
-        private Button btnIngresar;
-
-        private CheckBox chkMostrarPassword;
-
-        private LinkLabel lnkOlvido;
+        private DemoAuthenticationService _demoAuthenticationService;
 
         public FrmLogin()
         {
-            _usuarioService =
-                ApplicationMode.UsesSqlServer
-                    ? new UsuarioService()
-                    : null;
+            InitializeComponent();
 
-            _demoAuthenticationService =
-                ApplicationMode.IsDemo
-                    ? new DemoAuthenticationService()
-                    : null;
+            // En el diseñador de Visual Studio solo se muestra la distribución.
+            if (LicenseManager.UsageMode == LicenseUsageMode.Designtime)
+            {
+                return;
+            }
+
+            _usuarioService = ApplicationMode.UsesSqlServer ? new UsuarioService() : null;
+
+            _demoAuthenticationService = ApplicationMode.IsDemo ? new DemoAuthenticationService() : null;
 
             LanguageService.Inicializar();
 
-            CrearInterfaz();
+            Edelstahl.WinApp.Ui.Marca.AplicarIcono(this);
+            pbLogo.Image = CargarLogo();
+
+            btnIngresar.Click += BtnIngresar_Click;
+            chkMostrarPassword.CheckedChanged += ChkMostrarPassword_CheckedChanged;
+            lnkOlvido.LinkClicked += LnkOlvido_LinkClicked;
+            Shown += FrmLogin_Shown;
+
             ConfigurarEventosIdioma();
             AplicarIdioma();
             PrepararModoActual();
         }
-
-        private void CrearInterfaz()
-        {
-            ClientSize =
-                new Size(900, 570);
-
-            StartPosition =
-                FormStartPosition.CenterScreen;
-
-            Edelstahl.WinApp.Ui.Marca.AplicarIcono(this);
-
-            FormBorderStyle =
-                FormBorderStyle.FixedDialog;
-
-            MaximizeBox =
-                false;
-
-            MinimizeBox =
-                false;
-
-            BackColor =
-                Color.White;
-
-            Panel panelImagen =
-                new Panel
-                {
-                    Dock =
-                        DockStyle.Left,
-
-                    Width =
-                        450,
-
-                    BackColor =
-                        Color.FromArgb(
-                            103,
-                            120,
-                            166)
-                };
-
-            Controls.Add(
-                panelImagen);
-
-            PictureBox logo =
-                new PictureBox
-                {
-                    Location =
-                        new Point(30, 45),
-
-                    Size =
-                        new Size(390, 390),
-
-                    SizeMode =
-                        PictureBoxSizeMode.Zoom,
-
-                    Image =
-                        CargarLogo()
-                };
-
-            panelImagen.Controls.Add(
-                logo);
-
-            lblMarca =
-                new Label
-                {
-                    ForeColor =
-                        Color.White,
-
-                    Font =
-                        new Font(
-                            "Segoe UI",
-                            18,
-                            FontStyle.Bold),
-
-                    AutoSize =
-                        true,
-
-                    Location =
-                        new Point(120, 475)
-                };
-
-            panelImagen.Controls.Add(
-                lblMarca);
-
-            lblTitulo =
-                new Label
-                {
-                    ForeColor =
-                        Color.FromArgb(
-                            54,
-                            69,
-                            98),
-
-                    Font =
-                        new Font(
-                            "Segoe UI",
-                            20,
-                            FontStyle.Bold),
-
-                    AutoSize =
-                        true,
-
-                    Location =
-                        new Point(510, 55)
-                };
-
-            Controls.Add(
-                lblTitulo);
-
-            lblSubtitulo =
-                new Label
-                {
-                    ForeColor =
-                        Color.DimGray,
-
-                    AutoSize =
-                        true,
-
-                    Location =
-                        new Point(513, 100)
-                };
-
-            Controls.Add(
-                lblSubtitulo);
-
-            lblModo =
-                new Label
-                {
-                    Font =
-                        new Font(
-                            "Segoe UI",
-                            9,
-                            FontStyle.Bold),
-
-                    ForeColor =
-                        Color.FromArgb(
-                            70,
-                            85,
-                            115),
-
-                    BackColor =
-                        Color.FromArgb(
-                            225,
-                            231,
-                            240),
-
-                    TextAlign =
-                        ContentAlignment.MiddleCenter,
-
-                    Location =
-                        new Point(515, 130),
-
-                    Size =
-                        new Size(320, 32)
-                };
-
-            Controls.Add(
-                lblModo);
-
-            lblUsuario =
-                new Label
-                {
-                    Font =
-                        new Font(
-                            "Segoe UI",
-                            9,
-                            FontStyle.Bold),
-
-                    AutoSize =
-                        true,
-
-                    Location =
-                        new Point(515, 185)
-                };
-
-            Controls.Add(
-                lblUsuario);
-
-            txtUsuario =
-                new TextBox
-                {
-                    Name =
-                        "txtUsuario",
-
-                    Location =
-                        new Point(515, 210),
-
-                    Size =
-                        new Size(320, 32),
-
-                    Font =
-                        new Font(
-                            "Segoe UI",
-                            11)
-                };
-
-            Controls.Add(
-                txtUsuario);
-
-            lblPassword =
-                new Label
-                {
-                    Font =
-                        new Font(
-                            "Segoe UI",
-                            9,
-                            FontStyle.Bold),
-
-                    AutoSize =
-                        true,
-
-                    Location =
-                        new Point(515, 265)
-                };
-
-            Controls.Add(
-                lblPassword);
-
-            txtPassword =
-                new TextBox
-                {
-                    Name =
-                        "txtPassword",
-
-                    Location =
-                        new Point(515, 290),
-
-                    Size =
-                        new Size(320, 32),
-
-                    Font =
-                        new Font(
-                            "Segoe UI",
-                            11),
-
-                    UseSystemPasswordChar =
-                        true
-                };
-
-            Controls.Add(
-                txtPassword);
-
-            chkMostrarPassword =
-                new CheckBox
-                {
-                    Name =
-                        "chkMostrarPassword",
-
-                    AutoSize =
-                        true,
-
-                    Location =
-                        new Point(515, 335)
-                };
-
-            chkMostrarPassword.CheckedChanged +=
-                ChkMostrarPassword_CheckedChanged;
-
-            Controls.Add(
-                chkMostrarPassword);
-
-            btnIngresar =
-                new Button
-                {
-                    Name =
-                        "btnIngresar",
-
-                    Location =
-                        new Point(515, 390),
-
-                    Size =
-                        new Size(320, 48),
-
-                    BackColor =
-                        Color.FromArgb(
-                            103,
-                            120,
-                            166),
-
-                    ForeColor =
-                        Color.White,
-
-                    FlatStyle =
-                        FlatStyle.Flat,
-
-                    Font =
-                        new Font(
-                            "Segoe UI",
-                            10,
-                            FontStyle.Bold),
-
-                    Cursor =
-                        Cursors.Hand
-                };
-
-            btnIngresar.FlatAppearance.BorderSize =
-                0;
-
-            btnIngresar.Click +=
-                BtnIngresar_Click;
-
-            Controls.Add(
-                btnIngresar);
-
-            lnkOlvido =
-                new LinkLabel
-                {
-                    Name =
-                        "lnkOlvido",
-
-                    AutoSize =
-                        true,
-
-                    Location =
-                        new Point(515, 455),
-
-                    Cursor =
-                        Cursors.Hand
-                };
-
-            lnkOlvido.LinkClicked +=
-                LnkOlvido_LinkClicked;
-
-            Controls.Add(
-                lnkOlvido);
-
-            AcceptButton =
-                btnIngresar;
-
-            Shown +=
-                FrmLogin_Shown;
-        }
-
         private void ConfigurarEventosIdioma()
         {
             LanguageService.IdiomaCambiado +=
@@ -542,7 +208,7 @@ namespace Edelstahl.WinApp
                 btnIngresar.Enabled =
                     false;
 
-                Domain.Security.Usuario usuario;
+                Edelstahl.Services.DomainModel.Security.Usuario usuario;
 
                 if (ApplicationMode.IsDemo)
                 {
@@ -609,7 +275,7 @@ namespace Edelstahl.WinApp
         /// <summary>
         /// Pide la clave nueva hasta que sea valida. Devuelve false si el usuario cancela.
         /// </summary>
-        private bool ElegirPasswordPropia(Domain.Security.Usuario usuario)
+        private bool ElegirPasswordPropia(Edelstahl.Services.DomainModel.Security.Usuario usuario)
         {
             while (true)
             {

@@ -1,9 +1,13 @@
 using System;
+using Edelstahl.Services.Logic.DTOs;
+using Edelstahl.Services.Logic;
+using Edelstahl.Services.DataAccess.Factory;
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.IO;
 using System.Linq;
 using Edelstahl.BLL.DTOs;
+using Edelstahl.Services.DomainModel.Exceptions;
 using Edelstahl.Domain.Exceptions;
 using Edelstahl.BLL.Infrastructure;
 using Edelstahl.BLL.Services;
@@ -15,7 +19,7 @@ using Edelstahl.Domain.Compras;
 using Edelstahl.Domain.Finanzas;
 using Edelstahl.Domain.Logistica;
 using Edelstahl.Domain.Produccion;
-using Edelstahl.Domain.Security;
+using Edelstahl.Services.DomainModel.Security;
 using Edelstahl.Services.Configuration;
 
 namespace Edelstahl.Test
@@ -246,7 +250,7 @@ namespace Edelstahl.Test
             Verificador.Verificar(admin.ObtenerPermisosDeUsuario(u.Id).All(p => p.Individual == null),
                 "Al cambiar de rol se borran los permisos individuales");
 
-            List<string> acciones = FactoryDataAccess.BitacoraRepository.GetAll()
+            List<string> acciones = FactoryServicios.BitacoraRepository.GetAll()
                 .Where(r => r.Descripcion != null && r.Descripcion.Contains(nombre)).Select(r => r.Accion).ToList();
             Verificador.Verificar(acciones.Contains("Permiso agregado") && acciones.Contains("Permiso quitado") && acciones.Contains("Permisos restablecidos"),
                 "Cada permiso agregado, quitado o restablecido queda en la bitácora");

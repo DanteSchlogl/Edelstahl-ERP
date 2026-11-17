@@ -24,6 +24,7 @@ namespace Edelstahl.Test
             bool cifrado = args.Length == 0 || Array.IndexOf(args, "cifrado") >= 0;
             bool demo = args.Length == 0 || Array.IndexOf(args, "demo") >= 0;
             bool sql = Array.IndexOf(args, "sql") >= 0;
+            bool composite = Array.IndexOf(args, "composite") >= 0;
             bool pantallas = Array.IndexOf(args, "pantallas") >= 0;
             bool preparacion = Array.IndexOf(args, "prep") >= 0;
             bool pantallasSql = Array.IndexOf(args, "pantallassql") >= 0;
@@ -32,6 +33,12 @@ namespace Edelstahl.Test
 
             try
             {
+                if (composite)
+                {
+                    PruebaComposite.Ejecutar();
+                    return 0;
+                }
+
                 if (cifrado)
                 {
                     PruebaCifrado.Ejecutar();

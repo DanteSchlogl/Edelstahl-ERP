@@ -1,4 +1,5 @@
 using System;
+using Edelstahl.Services.Logic;
 using System.Linq;
 using System.Text;
 using Edelstahl.DAL.Factory;

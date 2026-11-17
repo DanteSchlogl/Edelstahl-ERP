@@ -73,20 +73,38 @@
     <Compile Include="Forms\Startup\FrmSeleccionModo.cs">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="Forms\Startup\FrmSeleccionModo.Designer.cs">
+      <DependentUpon>FrmSeleccionModo.cs</DependentUpon>
+    </Compile>
     <Compile Include="FrmCrearAdministradorInicial.cs">
       <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmCrearAdministradorInicial.Designer.cs">
+      <DependentUpon>FrmCrearAdministradorInicial.cs</DependentUpon>
     </Compile>
     <Compile Include="FrmLogin.cs">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="FrmLogin.Designer.cs">
+      <DependentUpon>FrmLogin.cs</DependentUpon>
+    </Compile>
     <Compile Include="FrmPerfil.cs">
       <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmPerfil.Designer.cs">
+      <DependentUpon>FrmPerfil.cs</DependentUpon>
     </Compile>
     <Compile Include="FrmRecuperacionIntegridad.cs">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="FrmRecuperacionIntegridad.Designer.cs">
+      <DependentUpon>FrmRecuperacionIntegridad.cs</DependentUpon>
+    </Compile>
     <Compile Include="FrmRecuperarPassword.cs">
       <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmRecuperarPassword.Designer.cs">
+      <DependentUpon>FrmRecuperarPassword.cs</DependentUpon>
     </Compile>
     <Compile Include="FrmPrincipalV2.cs">
       <SubType>Form</SubType>
@@ -174,29 +192,75 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
-      <Compile Include="Modulos\ModuloAdministracion.cs" />
-    <Compile Include="Modulos\ModuloComercial.cs" />
-    <Compile Include="Modulos\ModuloFinanzas.cs" />
-    <Compile Include="Modulos\ModuloInventario.cs" />
-    <Compile Include="Modulos\ModuloLogistica.cs" />
-    <Compile Include="Modulos\ModuloProduccion.cs" />
+    <Compile Include="Modulos\ModuloAdministracion.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Modulos\ModuloComercial.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Modulos\ModuloFinanzas.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Modulos\ModuloInventario.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Modulos\ModuloLogistica.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Modulos\ModuloProduccion.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
     <Compile Include="Ui\Dialogo.cs" />
     <Compile Include="Ui\BitacoraTraduccion.cs" />
-    <Compile Include="Ui\FrmPermisosUsuario.cs" />
-    <Compile Include="Ui\EditorLineas.cs" />
+    <Compile Include="Ui\FrmPermisosUsuario.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Ui\FrmPermisosUsuario.Designer.cs">
+      <DependentUpon>FrmPermisosUsuario.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Ui\EditorLineas.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Ui\Estilo.cs" />
-    <Compile Include="Ui\FrmEspera.cs" />
-    <Compile Include="Ui\MapaWeb.cs" />
+    <Compile Include="Ui\FrmFamiliasUsuario.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Ui\FrmFamiliasUsuario.Designer.cs">
+      <DependentUpon>FrmFamiliasUsuario.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Ui\FrmEspera.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Ui\FrmEspera.Designer.cs">
+      <DependentUpon>FrmEspera.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Ui\MapaWeb.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
     <Compile Include="Ui\Marca.cs" />
     <Compile Include="Ui\DialogoCobro.cs" />
-    <Compile Include="Ui\FrmFaltantes.cs" />
-    <Compile Include="Ui\FrmVerificarCarga.cs" />
-    <Compile Include="Ui\ModuloBase.cs" />
-    <Compile Include="Ui\PanelLista.cs" />
+    <Compile Include="Ui\FrmFaltantes.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Ui\FrmFaltantes.Designer.cs">
+      <DependentUpon>FrmFaltantes.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Ui\FrmVerificarCarga.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Ui\FrmVerificarCarga.Designer.cs">
+      <DependentUpon>FrmVerificarCarga.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Ui\ModuloBase.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Ui\PanelLista.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
     <Compile Include="Ui\Tr.cs" />
     <Compile Include="Ui\Vistas.cs" />
-      <Compile Include="Ui\Nombres.cs" />
-      <Compile Include="Ui\GeoFicticio.cs" />
+    <Compile Include="Ui\Nombres.cs" />
+    <Compile Include="Ui\GeoFicticio.cs" />
     <Compile Include="Ui\MapaRuta.cs" />
   </ItemGroup>
   <ItemGroup>

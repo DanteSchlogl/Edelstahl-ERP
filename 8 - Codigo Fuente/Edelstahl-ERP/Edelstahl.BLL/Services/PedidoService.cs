@@ -1,4 +1,6 @@
-﻿using System;
+using System;
+using Edelstahl.Services.Logic.Infrastructure;
+using Edelstahl.Services.Logic;
 using System.Collections.Generic;
 using System.Linq;
 using Edelstahl.BLL.Infrastructure;
@@ -7,6 +9,7 @@ using Edelstahl.DAL.Store;
 using Edelstahl.Domain.Catalogo;
 using Edelstahl.DAL.Interfaces;
 using Edelstahl.Domain.Comercial;
+using Edelstahl.Services.DomainModel.Exceptions;
 using Edelstahl.Domain.Exceptions;
 
 namespace Edelstahl.BLL.Services
@@ -215,7 +218,7 @@ namespace Edelstahl.BLL.Services
         /// </summary>
         public void Cancelar(Guid pedidoId, string motivo)
         {
-            Autorizacion.Exigir(Edelstahl.Domain.Security.Permiso.PedidosConfirmar);
+            Autorizacion.Exigir(Edelstahl.Services.DomainModel.Security.Permiso.PedidosConfirmar);
 
             if (string.IsNullOrWhiteSpace(motivo))
             {
@@ -525,7 +528,7 @@ namespace Edelstahl.BLL.Services
             if (creditoDisponible <
                 creditoNecesario)
             {
-                throw new Edelstahl.Domain.Exceptions.ReglaDeNegocioException(
+                throw new Edelstahl.Services.DomainModel.Exceptions.ReglaDeNegocioException(
                     Mensajes.T("The available credit of the customer is not enough to confirm the order.") +
                     Environment.NewLine +
                     Environment.NewLine +

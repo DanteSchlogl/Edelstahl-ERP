@@ -1,4 +1,6 @@
 using System;
+using Edelstahl.Services.Logic.Infrastructure;
+using Edelstahl.Services.Logic;
 using System.Collections.Generic;
 using System.Linq;
 using Edelstahl.BLL.DTOs;
@@ -10,7 +12,7 @@ using Edelstahl.Domain.Catalogo;
 using Edelstahl.Domain.Comercial;
 using Edelstahl.Domain.Finanzas;
 using Edelstahl.Domain.Produccion;
-using Edelstahl.Domain.Security;
+using Edelstahl.Services.DomainModel.Security;
 
 namespace Edelstahl.BLL.Services
 {

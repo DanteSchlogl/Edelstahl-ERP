@@ -1,13 +1,14 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Globalization;
 using System.Linq;
 using System.Security.Cryptography;
 using System.Text;
 using Edelstahl.Domain.Comercial;
+using Edelstahl.Services.DomainModel.Exceptions;
 using Edelstahl.Domain.Exceptions;
 
-namespace Edelstahl.Services.Integrity
+namespace Edelstahl.Domain.Integrity
 {
     /// <summary>
     /// Calcula y verifica el Dígito Verificador

@@ -7,47 +7,36 @@ namespace Edelstahl.WinApp.Ui
 {
     /// <summary>
     /// Ventana modal con barra de progreso que ejecuta un trabajo en un hilo aparte.
+    /// La distribución de los controles está en FrmEspera.Designer.cs.
     /// </summary>
-    public sealed class FrmEspera : Form
+    public sealed partial class FrmEspera : Form
     {
-        private readonly Func<string> _trabajo;
+        private Func<string> _trabajo;
         private Exception _error;
 
-        private FrmEspera(string mensajeClave, Func<string> trabajo)
+        // Constructor sin parámetros: lo usa el diseñador de Visual Studio.
+        public FrmEspera()
+        {
+            InitializeComponent();
+        }
+
+        private FrmEspera(string mensajeClave, Func<string> trabajo) : this()
         {
             _trabajo = trabajo;
 
             Text = Tr.T("Edelstahl ERP");
-            FormBorderStyle = FormBorderStyle.FixedDialog;
-            StartPosition = FormStartPosition.CenterScreen;
             Edelstahl.WinApp.Ui.Marca.AplicarIcono(this);
-            ControlBox = false;
-            ShowInTaskbar = false;
-            ClientSize = new Size(420, 90);
-            Font = Estilo.Normal;
-
-            Label mensaje = new Label
-            {
-                Text = Tr.T(mensajeClave),
-                AutoSize = false,
-                Location = new Point(16, 14),
-                Size = new Size(388, 24)
-            };
-
-            ProgressBar barra = new ProgressBar
-            {
-                Style = ProgressBarStyle.Marquee,
-                Location = new Point(16, 46),
-                Size = new Size(388, 20)
-            };
-
-            Controls.Add(mensaje);
-            Controls.Add(barra);
+            lblMensaje.Text = Tr.T(mensajeClave);
         }
 
         protected override void OnShown(EventArgs e)
         {
             base.OnShown(e);
+
+            if (_trabajo == null)
+            {
+                return;
+            }
 
             Task.Run(() =>
             {

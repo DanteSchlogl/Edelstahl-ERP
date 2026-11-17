@@ -1,4 +1,6 @@
-﻿using System;
+using System;
+using Edelstahl.Services.Logic.Infrastructure;
+using Edelstahl.Services.Logic;
 using System.Collections.Generic;
 using System.Drawing;
 using System.IO;
@@ -6,7 +8,7 @@ using System.Linq;
 using System.Windows.Forms;
 using Edelstahl.BLL.Infrastructure;
 using Edelstahl.BLL.Services;
-using Edelstahl.Domain.Security;
+using Edelstahl.Services.DomainModel.Security;
 using Edelstahl.Services.Localization;
 using Edelstahl.WinApp.Modulos;
 using Edelstahl.WinApp.Ui;

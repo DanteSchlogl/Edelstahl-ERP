@@ -1,11 +1,12 @@
 using System;
+using Edelstahl.Services.Logic;
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using System.Windows.Forms;
 using Edelstahl.BLL.DTOs;
 using Edelstahl.BLL.Services;
-using Edelstahl.Domain.Security;
+using Edelstahl.Services.DomainModel.Security;
 using Edelstahl.WinApp.Ui;
 
 namespace Edelstahl.WinApp.Modulos
@@ -176,6 +177,15 @@ namespace Edelstahl.WinApp.Modulos
             lista.Agregar("Permissions", fila =>
             {
                 using (FrmPermisosUsuario ventana = new FrmPermisosUsuario(
+                    Estilo.IdDe(fila).Value, Estilo.Valor<string>(fila, "Usuario"), Estilo.Valor<string>(fila, "Rol")))
+                {
+                    ventana.ShowDialog(this);
+                }
+            }, true, Permiso.RolesAdministrar);
+
+            lista.Agregar("Families", fila =>
+            {
+                using (FrmFamiliasUsuario ventana = new FrmFamiliasUsuario(
                     Estilo.IdDe(fila).Value, Estilo.Valor<string>(fila, "Usuario"), Estilo.Valor<string>(fila, "Rol")))
                 {
                     ventana.ShowDialog(this);
@@ -714,7 +724,7 @@ namespace Edelstahl.WinApp.Modulos
                 {
                     return trabajo();
                 }
-                catch (Edelstahl.Domain.Exceptions.BusinessRuleException ex)
+                catch (Edelstahl.Services.DomainModel.Exceptions.BusinessRuleException ex)
                 {
                     return ex.Message;
                 }

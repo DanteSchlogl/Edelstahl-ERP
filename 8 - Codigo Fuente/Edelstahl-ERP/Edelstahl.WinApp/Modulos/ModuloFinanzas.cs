@@ -6,7 +6,7 @@ using System.Windows.Forms;
 using Edelstahl.BLL.DTOs;
 using Edelstahl.BLL.Services;
 using Edelstahl.Domain.Finanzas;
-using Edelstahl.Domain.Security;
+using Edelstahl.Services.DomainModel.Security;
 using Edelstahl.WinApp.Ui;
 
 namespace Edelstahl.WinApp.Modulos

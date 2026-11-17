@@ -26,25 +26,22 @@ namespace Edelstahl.WinApp.Ui
     /// <summary>
     /// Muestra lo que va a salir en el remito y obliga a verificarlo linea por linea al cargar el camion.
     /// Las cantidades vienen de lo facturado y reservado: no se pueden modificar.
+    /// La distribución de los controles está en FrmVerificarCarga.Designer.cs.
     /// </summary>
-    public class FrmVerificarCarga : Form
+    public partial class FrmVerificarCarga : Form
     {
         private readonly BindingList<FilaCarga> _filas = new BindingList<FilaCarga>();
-        private readonly DataGridView _grilla = Estilo.Grilla();
-        private readonly Label _resumen = new Label { AutoSize = true, Font = Estilo.Negrita, ForeColor = Estilo.Principal };
-        private readonly TextBox _observaciones = new TextBox { Width = 560 };
-        private readonly Button _generar;
 
-        public FrmVerificarCarga(string pedido, string cliente, IEnumerable<LineaPendienteRemitoDto> lineas)
+        // Constructor sin parámetros: lo usa el diseñador de Visual Studio.
+        public FrmVerificarCarga()
+        {
+            InitializeComponent();
+        }
+
+        public FrmVerificarCarga(string pedido, string cliente, IEnumerable<LineaPendienteRemitoDto> lineas) : this()
         {
             Text = Tr.T("Verify the load") + " - " + pedido;
-            Size = new Size(900, 560);
-            StartPosition = FormStartPosition.CenterParent;
             Edelstahl.WinApp.Ui.Marca.AplicarIcono(this);
-            Font = Estilo.Normal;
-            BackColor = Estilo.Superficie;
-            MinimizeBox = false;
-            ShowInTaskbar = false;
 
             foreach (LineaPendienteRemitoDto l in lineas)
             {
@@ -61,23 +58,14 @@ namespace Edelstahl.WinApp.Ui
                 });
             }
 
-            Label explicacion = new Label
-            {
-                Dock = DockStyle.Top,
-                Height = 62,
-                Padding = new Padding(12, 8, 12, 0),
-                ForeColor = Estilo.Principal,
-                BackColor = Color.FromArgb(226, 234, 247),
-                Text = Tr.T("Customer") + ": " + cliente + Environment.NewLine
-                    + Tr.T("Check each line against the goods you are loading onto the truck. The quantities come from the invoice and cannot be changed.")
-            };
+            lblExplicacion.Text = Tr.T("Customer") + ": " + cliente + Environment.NewLine
+                + Tr.T("Check each line against the goods you are loading onto the truck. The quantities come from the invoice and cannot be changed.");
 
-            _grilla.DataSource = _filas;
-            _grilla.ReadOnly = false;
-            _grilla.EditMode = DataGridViewEditMode.EditOnEnter;
-            _grilla.DataBindingComplete += (remitente, argumentos) =>
+            grilla.DataSource = _filas;
+            grilla.ReadOnly = false;
+            grilla.DataBindingComplete += (remitente, argumentos) =>
             {
-                foreach (DataGridViewColumn columna in _grilla.Columns)
+                foreach (DataGridViewColumn columna in grilla.Columns)
                 {
                     columna.HeaderText = Tr.Columna(columna.DataPropertyName);
                     columna.ReadOnly = columna.DataPropertyName != "Cargado";
@@ -89,7 +77,7 @@ namespace Edelstahl.WinApp.Ui
                     }
                 }
 
-                foreach (DataGridViewRow fila in _grilla.Rows)
+                foreach (DataGridViewRow fila in grilla.Rows)
                 {
                     FilaCarga carga = (FilaCarga)fila.DataBoundItem;
 
@@ -103,42 +91,21 @@ namespace Edelstahl.WinApp.Ui
             };
 
             // La casilla se aplica al instante, sin esperar a salir de la celda.
-            _grilla.CurrentCellDirtyStateChanged += (remitente, argumentos) =>
+            grilla.CurrentCellDirtyStateChanged += (remitente, argumentos) =>
             {
-                if (_grilla.IsCurrentCellDirty)
+                if (grilla.IsCurrentCellDirty)
                 {
-                    _grilla.CommitEdit(DataGridViewDataErrorContexts.Commit);
+                    grilla.CommitEdit(DataGridViewDataErrorContexts.Commit);
                 }
             };
-            _grilla.CellValueChanged += (remitente, argumentos) => Actualizar();
-            _grilla.DataError += (remitente, argumentos) => { argumentos.ThrowException = false; };
+            grilla.CellValueChanged += (remitente, argumentos) => Actualizar();
+            grilla.DataError += (remitente, argumentos) => { argumentos.ThrowException = false; };
 
-            _generar = Estilo.Boton("Create delivery note");
-            _generar.BackColor = Color.FromArgb(46, 125, 50);
-            _generar.Click += (remitente, argumentos) => DialogResult = DialogResult.OK;
-            Button cancelar = Estilo.Boton("Cancel");
-            cancelar.BackColor = Color.Gray;
-            cancelar.DialogResult = DialogResult.Cancel;
+            btnGenerar.Text = Tr.T("Create delivery note");
+            btnGenerar.Click += (remitente, argumentos) => DialogResult = DialogResult.OK;
+            btnCancelar.Text = Tr.T("Cancel");
+            lblNotas.Text = Tr.T("Notes");
 
-            FlowLayoutPanel pie = new FlowLayoutPanel { Dock = DockStyle.Bottom, Height = 96, Padding = new Padding(10, 6, 10, 4) };
-            FlowLayoutPanel notas = new FlowLayoutPanel { AutoSize = true, WrapContents = false, Margin = new Padding(0) };
-            notas.Controls.Add(new Label { Text = Tr.T("Notes"), AutoSize = true, Margin = new Padding(0, 6, 8, 0) });
-            notas.Controls.Add(_observaciones);
-            FlowLayoutPanel acciones = new FlowLayoutPanel { AutoSize = true, WrapContents = false, Margin = new Padding(0, 6, 0, 0) };
-            acciones.Controls.Add(_generar);
-            acciones.Controls.Add(cancelar);
-            acciones.Controls.Add(_resumen);
-            _resumen.Margin = new Padding(16, 8, 0, 0);
-            pie.FlowDirection = FlowDirection.TopDown;
-            pie.Controls.Add(notas);
-            pie.Controls.Add(acciones);
-
-            Controls.Add(_grilla);
-            Controls.Add(explicacion);
-            Controls.Add(pie);
-            explicacion.BringToFront();
-            _grilla.BringToFront();
-            CancelButton = cancelar;
             Actualizar();
         }
 
@@ -154,7 +121,7 @@ namespace Edelstahl.WinApp.Ui
 
         public string Observaciones
         {
-            get { return _observaciones.Text.Trim(); }
+            get { return txtObservaciones.Text.Trim(); }
         }
 
         private void Actualizar()
@@ -162,9 +129,9 @@ namespace Edelstahl.WinApp.Ui
             int listas = _filas.Count(f => f.Lista);
             int verificadas = _filas.Count(f => f.Lista && f.Cargado);
 
-            _resumen.Text = Tr.T("Verified: {0} of {1}", verificadas, listas);
-            _resumen.ForeColor = verificadas == listas && listas > 0 ? Color.FromArgb(46, 125, 50) : Color.FromArgb(176, 58, 46);
-            _generar.Enabled = listas > 0 && verificadas == listas;
+            lblResumen.Text = Tr.T("Verified: {0} of {1}", verificadas, listas);
+            lblResumen.ForeColor = verificadas == listas && listas > 0 ? Color.FromArgb(46, 125, 50) : Color.FromArgb(176, 58, 46);
+            btnGenerar.Enabled = listas > 0 && verificadas == listas;
         }
     }
 }

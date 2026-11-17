@@ -1,4 +1,5 @@
 using System;
+using Edelstahl.Services.Logic.Infrastructure;
 using System.Collections.Generic;
 using System.Drawing;
 using System.Drawing.Drawing2D;
@@ -204,7 +205,7 @@ namespace Edelstahl.WinApp.Ui
                 return 0;
             }
 
-            string idioma = Edelstahl.BLL.Infrastructure.Mensajes.T("Pending");
+            string idioma = Edelstahl.Services.Logic.Infrastructure.Mensajes.T("Pending");
 
             if (_tonos == null || idioma != _idiomaDeTonos)
             {

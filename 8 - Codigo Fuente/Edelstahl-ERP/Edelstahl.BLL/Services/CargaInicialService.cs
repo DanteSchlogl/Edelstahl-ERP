@@ -1,4 +1,7 @@
 using System;
+using Edelstahl.Services.Logic;
+using Edelstahl.Services.DataAccess.Interfaces;
+using Edelstahl.Services.DataAccess.Factory;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
@@ -10,7 +13,7 @@ using Edelstahl.Domain.Catalogo;
 using Edelstahl.Domain.Compras;
 using Edelstahl.Domain.Finanzas;
 using Edelstahl.Domain.Logistica;
-using Edelstahl.Domain.Security;
+using Edelstahl.Services.DomainModel.Security;
 
 namespace Edelstahl.BLL.Services
 {
@@ -48,7 +51,7 @@ namespace Edelstahl.BLL.Services
 
         private static void AsegurarRoles()
         {
-            Edelstahl.DAL.Interfaces.IRolRepository repositorio = FactoryDataAccess.RolRepository;
+            Edelstahl.Services.DataAccess.Interfaces.IRolRepository repositorio = FactoryServicios.RolRepository;
 
             if (repositorio == null)
             {

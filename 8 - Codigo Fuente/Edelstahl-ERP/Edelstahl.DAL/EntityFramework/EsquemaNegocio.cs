@@ -4,7 +4,7 @@ using System.Data.Entity.Infrastructure;
 using System.Data;
 using System.Text;
 using System.Text.RegularExpressions;
-using Edelstahl.DAL.Tools;
+using Edelstahl.Services.DataAccess.Tools;
 
 namespace Edelstahl.DAL.EntityFramework
 {
@@ -411,19 +411,7 @@ namespace Edelstahl.DAL.EntityFramework
         /// </summary>
         public static void AsegurarBase(string nombre)
         {
-            int existe = SqlHelper.EjecutarEscalar<int>(
-                BaseDeDatos.Master,
-                "SELECT COUNT(*) FROM sys.databases WHERE name = @nombre",
-                SqlHelper.Parametro("@nombre", SqlDbType.NVarChar, 128, nombre));
-
-            if (existe > 0)
-            {
-                return;
-            }
-
-            string seguro = nombre.Replace("]", "]]");
-
-            SqlHelper.EjecutarNoQuery(BaseDeDatos.Master, 120, "CREATE DATABASE [" + seguro + "]");
+            Edelstahl.Services.DataAccess.Tools.AdministradorDeBases.AsegurarBase(nombre);
         }
     }
 }

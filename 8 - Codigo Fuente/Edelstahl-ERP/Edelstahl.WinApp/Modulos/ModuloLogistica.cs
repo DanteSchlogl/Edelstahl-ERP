@@ -1,4 +1,5 @@
 using System;
+using Edelstahl.Services.Logic;
 using System.Collections.Generic;
 using System.Linq;
 using System.Windows.Forms;
@@ -7,7 +8,7 @@ using Edelstahl.BLL.Infrastructure;
 using Edelstahl.BLL.Services;
 using Edelstahl.Domain.Finanzas;
 using Edelstahl.Domain.Logistica;
-using Edelstahl.Domain.Security;
+using Edelstahl.Services.DomainModel.Security;
 using Edelstahl.WinApp.Ui;
 
 namespace Edelstahl.WinApp.Modulos
