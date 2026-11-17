@@ -31,23 +31,9 @@ namespace Edelstahl.WinApp
         private readonly List<EntradaMenu> _menu = new List<EntradaMenu>();
         private readonly MonitorDeStock _monitor = new MonitorDeStock(TimeSpan.FromSeconds(60));
 
-        private Panel pnlSidebar;
-        private Panel pnlHeader;
-        private Panel pnlWorkspace;
-        private Label lblTituloAplicacion;
-        private Label lblModulo;
-        private Label lblIdioma;
-        private Label lblUsuario;
-        private Label lblAlertas;
         private int _cantidadAlertas;
         private int _cantidadPedidos;
-        private Label lblPedidos;
         private System.Windows.Forms.Timer _timerPedidos;
-        private ComboBox cboIdioma;
-        private Button btnPerfil;
-        private Button btnPedirAyuda;
-        private Button btnAyuda;
-        private Button btnCerrarSesion;
         private EntradaMenu _actual;
         private bool _cambiandoIdioma;
 
@@ -59,9 +45,8 @@ namespace Edelstahl.WinApp
             InitializeComponent();
 
             ConfigurarFormulario();
-            CrearWorkspace();
-            CrearHeader();
-            CrearSidebar();
+            ConfigurarSidebar();
+            ConfigurarHeader();
 
             // El panel central debe quedar al frente del orden de apilado para que
             // el acoplamiento (Fill) lo calcule despues del encabezado y del menu.
@@ -91,35 +76,9 @@ namespace Edelstahl.WinApp
             Font = Estilo.Normal;
         }
 
-        private void CrearSidebar()
+        private void ConfigurarSidebar()
         {
-            pnlSidebar = new Panel { Dock = DockStyle.Left, Width = 250, BackColor = Estilo.Lateral };
-            Controls.Add(pnlSidebar);
-
-            PictureBox emblema = new PictureBox { Image = Marca.Emblema(56), SizeMode = PictureBoxSizeMode.Zoom, Size = new Size(56, 56), Location = new Point(16, 14), BackColor = Color.Transparent };
-            lblTituloAplicacion = new Label
-            {
-                Text = "EDELSTAHL",
-                ForeColor = Color.White,
-                Font = new Font("Segoe UI", 15, FontStyle.Bold),
-                AutoSize = true,
-                BackColor = Color.Transparent,
-                Location = new Point(78, 18)
-            };
-            Label lema = new Label
-            {
-                Text = "ERP  |  STAINLESS STEEL",
-                ForeColor = Color.FromArgb(214, 224, 247),
-                Font = new Font("Segoe UI", 8f, FontStyle.Bold),
-                AutoSize = true,
-                BackColor = Color.Transparent,
-                Location = new Point(80, 46)
-            };
-
-            pnlSidebar.Controls.Add(emblema);
-            pnlSidebar.Controls.Add(lblTituloAplicacion);
-            pnlSidebar.Controls.Add(lema);
-            pnlSidebar.Controls.Add(new PanelAcero { Dock = DockStyle.Bottom, Height = 300 });
+            pbEmblema.Image = Marca.Emblema(56);
 
             Agregar("Dashboard", Permiso.ReportesVer, () => new ModuloReportes());
             Agregar("Sales", Permiso.PedidosVer, () => new ModuloComercial());
@@ -217,124 +176,42 @@ namespace Edelstahl.WinApp
             lblModulo.Text = Tr.T(entrada.Clave);
         }
 
-        private void CrearHeader()
+        private void ConfigurarHeader()
         {
-            pnlHeader = new PanelEncabezado { Dock = DockStyle.Top, Height = 106, BackColor = Estilo.Superficie };
-            Controls.Add(pnlHeader);
-            pnlHeader.BringToFront();
+            // En modo demostracion no hay usuarios reales: no tiene sentido el perfil ni pedir ayuda al administrador.
+            btnPerfil.Visible = !Edelstahl.Services.Configuration.ApplicationMode.IsDemo;
+            btnPedirAyuda.Visible = !Edelstahl.Services.Configuration.ApplicationMode.IsDemo;
+        }
 
-            lblModulo = new Label
-            {
-                ForeColor = Color.White,
-                Font = new Font("Segoe UI", 18, FontStyle.Bold),
-                AutoSize = true,
-                Location = new Point(84, 20),
-                BackColor = Color.Transparent
-            };
+        private void PnlHeader_Resize(object remitente, EventArgs argumentos)
+        {
+            Distribuir();
+        }
 
-            lblUsuario = new Label
-            {
-                ForeColor = Color.FromArgb(222, 232, 252),
-                BackColor = Color.Transparent,
-                Font = new Font("Segoe UI", 9),
-                AutoSize = true,
-                Anchor = AnchorStyles.Top | AnchorStyles.Right
-            };
-
-            lblAlertas = new Label
-            {
-                ForeColor = Color.FromArgb(255, 220, 110),
-                BackColor = Color.Transparent,
-                Font = new Font("Segoe UI", 9, FontStyle.Bold),
-                AutoSize = true,
-                Anchor = AnchorStyles.Top | AnchorStyles.Right,
-                Visible = false
-            };
-
-            lblPedidos = new Label
-            {
-                ForeColor = Color.FromArgb(255, 190, 120),
-                BackColor = Color.Transparent,
-                Font = new Font("Segoe UI", 9, FontStyle.Bold),
-                AutoSize = true,
-                Cursor = Cursors.Hand,
-                Anchor = AnchorStyles.Top | AnchorStyles.Right,
-                Visible = false
-            };
-
-            lblPedidos.Click += (s, e) => AbrirPedidosDeAyuda();
-
-            lblIdioma = new Label
-            {
-                ForeColor = Color.White,
-                BackColor = Color.Transparent,
-                Font = new Font("Segoe UI", 9, FontStyle.Bold),
-                AutoSize = true,
-                Anchor = AnchorStyles.Top | AnchorStyles.Right
-            };
-
-            cboIdioma = new ComboBox
-            {
-                DropDownStyle = ComboBoxStyle.DropDownList,
-                DrawMode = DrawMode.OwnerDrawFixed,
-                ItemHeight = 24,
-                Font = new Font("Segoe UI", 9),
-                Size = new Size(230, 30),
-                Anchor = AnchorStyles.Top | AnchorStyles.Right
-            };
-
-            cboIdioma.DrawItem += CboIdioma_DrawItem;
-            cboIdioma.SelectedIndexChanged += CboIdioma_SelectedIndexChanged;
-
-            btnPerfil = BotonCabecera("My profile", (s, e) => Estilo.Ejecutar(this, () =>
+        private void BtnPerfil_Click(object remitente, EventArgs argumentos)
+        {
+            Estilo.Ejecutar(this, () =>
             {
                 using (FrmPerfil perfil = new FrmPerfil())
                 {
                     perfil.ShowDialog(this);
                 }
-            }));
-            btnPedirAyuda = BotonCabecera("Request help", (s, e) => DialogosUsuario.PedirAyuda(this));
-            btnAyuda = BotonCabecera("Help", (s, e) => DialogosUsuario.AbrirAyuda(this));
-            btnCerrarSesion = BotonCabecera("Sign out", BtnCerrarSesion_Click);
-
-            // En modo demostracion no hay usuarios reales: no tiene sentido el perfil ni pedir ayuda al administrador.
-            btnPerfil.Visible = !Edelstahl.Services.Configuration.ApplicationMode.IsDemo;
-            btnPedirAyuda.Visible = !Edelstahl.Services.Configuration.ApplicationMode.IsDemo;
-
-            pnlHeader.Controls.Add(btnPerfil);
-            pnlHeader.Controls.Add(btnPedirAyuda);
-            pnlHeader.Controls.Add(btnAyuda);
-            pnlHeader.Controls.Add(btnCerrarSesion);
-            pnlHeader.Controls.Add(lblModulo);
-            pnlHeader.Controls.Add(lblUsuario);
-            pnlHeader.Controls.Add(lblAlertas);
-            pnlHeader.Controls.Add(lblPedidos);
-            pnlHeader.Controls.Add(lblIdioma);
-            pnlHeader.Controls.Add(cboIdioma);
-            pnlHeader.Resize += (remitente, argumentos) => Distribuir();
+            });
         }
 
-        private Button BotonCabecera(string clave, EventHandler accion)
+        private void BtnPedirAyuda_Click(object remitente, EventArgs argumentos)
         {
-            Button boton = new Button
-            {
-                AutoSize = true,
-                AutoSizeMode = AutoSizeMode.GrowAndShrink,
-                MinimumSize = new Size(96, 28),
-                FlatStyle = FlatStyle.Flat,
-                ForeColor = Color.White,
-                BackColor = Color.FromArgb(64, 106, 172),
-                Font = new Font("Segoe UI", 9f),
-                Cursor = Cursors.Hand,
-                Padding = new Padding(8, 0, 8, 0),
-                Tag = clave,
-                Anchor = AnchorStyles.Top | AnchorStyles.Right
-            };
+            DialogosUsuario.PedirAyuda(this);
+        }
 
-            boton.FlatAppearance.BorderColor = Color.FromArgb(200, 215, 245);
-            boton.FlatAppearance.BorderSize = 1;
-            boton.Click += accion;
-            return boton;
+        private void BtnAyuda_Click(object remitente, EventArgs argumentos)
+        {
+            DialogosUsuario.AbrirAyuda(this);
+        }
+
+        private void LblPedidos_Click(object remitente, EventArgs argumentos)
+        {
+            AbrirPedidosDeAyuda();
         }
 
         /// <summary>Muestra cuantos pedidos de ayuda esperan al administrador.</summary>
@@ -425,13 +302,6 @@ namespace Edelstahl.WinApp
                 boton.Location = new Point(x, 68);
                 x -= 8;
             }
-        }
-
-        private void CrearWorkspace()
-        {
-            pnlWorkspace = new Panel { Dock = DockStyle.Fill, BackColor = Estilo.Fondo };
-            Controls.Add(pnlWorkspace);
-            pnlWorkspace.BringToFront();
         }
 
         private void CboIdioma_DrawItem(object sender, DrawItemEventArgs e)
