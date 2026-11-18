@@ -306,11 +306,11 @@ namespace Edelstahl.Services.DataAccess.Tools
             switch (baseDeDatos)
             {
                 case BaseDeDatos.Negocio:
-                    return SqlServerConnection.CreateBusinessConnection();
+                    return SqlServerConnection.Instance.CreateBusinessConnection();
                 case BaseDeDatos.Servicios:
-                    return SqlServerConnection.CreateServicesConnection();
+                    return SqlServerConnection.Instance.CreateServicesConnection();
                 default:
-                    return SqlServerConnection.CreateMasterConnection();
+                    return SqlServerConnection.Instance.CreateMasterConnection();
             }
         }
 

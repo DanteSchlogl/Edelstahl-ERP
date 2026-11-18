@@ -22,7 +22,7 @@ namespace Edelstahl.DAL.EntityFramework
         }
 
         public EdelstahlNegocioContext()
-            : base(Edelstahl.Services.DataAccess.Tools.SqlServerConnection.CadenaNegocio)
+            : base(Edelstahl.Services.DataAccess.Tools.SqlServerConnection.Instance.CadenaNegocio)
         {
             Configuration.LazyLoadingEnabled = false;
             Configuration.ProxyCreationEnabled = false;

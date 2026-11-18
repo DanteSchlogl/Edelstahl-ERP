@@ -7,13 +7,19 @@ namespace Edelstahl.Services.DataAccess.Tools
     /// <summary>
     /// Centraliza las conexiones con las bases de datos de Edelstahl ERP.
     ///
-    /// La instancia de SQL Server se detecta sola (SQL Server Express o
-    /// LocalDB) y puede fijarse en App.config con las claves SqlServerInstancia,
+    /// Es un Singleton: existe una sola instancia para todo el programa (Instance), porque la
+    /// instancia de SQL Server detectada (SQL Server Express, LocalDB, etc.) es un dato que se
+    /// resuelve una sola vez y se comparte desde ahí en adelante, en vez de volver a detectarla
+    /// cada vez. Cada llamada a CreateXxxConnection sigue devolviendo un SqlConnection nuevo
+    /// (así ADO.NET puede usar su pool de conexiones): lo único único es el objeto que sabe
+    /// resolver la instancia y armar las cadenas de conexión, no la conexión en sí.
+    ///
+    /// La instancia de SQL Server puede fijarse en App.config con las claves SqlServerInstancia,
     /// BaseNegocio y BaseServicios. También admiten variables de entorno
     /// (EDELSTAHL_SQL_SERVER, EDELSTAHL_NEGOCIO_DB, EDELSTAHL_SERVICIOS_DB),
     /// útiles para ejecutar pruebas sobre bases separadas.
     /// </summary>
-    public static class SqlServerConnection
+    public sealed class SqlServerConnection
     {
         private const string BaseNegocioPorDefecto = "EdelstahlNegocio";
         private const string BaseServiciosPorDefecto = "EdelstahlServicios";
@@ -26,10 +32,23 @@ namespace Edelstahl.Services.DataAccess.Tools
             "localhost"
         };
 
-        private static readonly object Candado = new object();
-        private static string _instancia;
+        private static readonly Lazy<SqlServerConnection> UnicaInstancia =
+            new Lazy<SqlServerConnection>(() => new SqlServerConnection());
 
-        public static string Instancia
+        private readonly object Candado = new object();
+        private string _instancia;
+
+        private SqlServerConnection()
+        {
+        }
+
+        /// <summary>La única instancia de la clase (patrón Singleton).</summary>
+        public static SqlServerConnection Instance
+        {
+            get { return UnicaInstancia.Value; }
+        }
+
+        public string Instancia
         {
             get
             {
@@ -45,47 +64,47 @@ namespace Edelstahl.Services.DataAccess.Tools
             }
         }
 
-        public static string NombreBaseNegocio
+        public string NombreBaseNegocio
         {
             get { return Leer("EDELSTAHL_NEGOCIO_DB", "BaseNegocio", BaseNegocioPorDefecto); }
         }
 
-        public static string NombreBaseServicios
+        public string NombreBaseServicios
         {
             get { return Leer("EDELSTAHL_SERVICIOS_DB", "BaseServicios", BaseServiciosPorDefecto); }
         }
 
-        public static string CadenaNegocio
+        public string CadenaNegocio
         {
             get { return Construir(NombreBaseNegocio, true); }
         }
 
-        public static string CadenaServicios
+        public string CadenaServicios
         {
             get { return Construir(NombreBaseServicios, false); }
         }
 
-        public static string CadenaMaster
+        public string CadenaMaster
         {
             get { return Construir("master", false); }
         }
 
-        public static SqlConnection CreateConnection()
+        public SqlConnection CreateConnection()
         {
             return CreateBusinessConnection();
         }
 
-        public static SqlConnection CreateBusinessConnection()
+        public SqlConnection CreateBusinessConnection()
         {
             return new SqlConnection(CadenaNegocio);
         }
 
-        public static SqlConnection CreateServicesConnection()
+        public SqlConnection CreateServicesConnection()
         {
             return new SqlConnection(CadenaServicios);
         }
 
-        public static SqlConnection CreateMasterConnection()
+        public SqlConnection CreateMasterConnection()
         {
             return new SqlConnection(CadenaMaster);
         }
@@ -93,7 +112,7 @@ namespace Edelstahl.Services.DataAccess.Tools
         /// <summary>
         /// Descarta la instancia detectada para volver a buscarla.
         /// </summary>
-        public static void Reiniciar()
+        public void Reiniciar()
         {
             lock (Candado)
             {
@@ -101,7 +120,7 @@ namespace Edelstahl.Services.DataAccess.Tools
             }
         }
 
-        private static string Construir(string baseDeDatos, bool variasConsultasActivas)
+        private string Construir(string baseDeDatos, bool variasConsultasActivas)
         {
             SqlConnectionStringBuilder cadena = new SqlConnectionStringBuilder
             {

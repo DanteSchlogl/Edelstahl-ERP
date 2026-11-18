@@ -108,7 +108,7 @@ CREATE INDEX IX_Bitacora_FechaHora ON dbo.Bitacora (FechaHora DESC);
 
         public static void Instalar()
         {
-            AdministradorDeBases.AsegurarBase(SqlServerConnection.NombreBaseServicios);
+            AdministradorDeBases.AsegurarBase(SqlServerConnection.Instance.NombreBaseServicios);
 
             SqlHelper.EjecutarNoQuery(BaseDeDatos.Servicios, 120, ScriptTablas);
 

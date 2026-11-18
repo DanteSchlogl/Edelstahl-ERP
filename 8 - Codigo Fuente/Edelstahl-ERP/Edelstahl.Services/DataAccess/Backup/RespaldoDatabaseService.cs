@@ -28,12 +28,12 @@ namespace Edelstahl.Services.DataAccess.Backup
         /// </summary>
         public string BaseNegocio
         {
-            get { return SqlServerConnection.NombreBaseNegocio; }
+            get { return SqlServerConnection.Instance.NombreBaseNegocio; }
         }
 
         public string BaseServicios
         {
-            get { return SqlServerConnection.NombreBaseServicios; }
+            get { return SqlServerConnection.Instance.NombreBaseServicios; }
         }
 
         public string ObtenerCarpetaPredeterminada()
@@ -331,8 +331,8 @@ namespace Edelstahl.Services.DataAccess.Backup
 
         private static void ValidarNombreBase(string baseDatos)
         {
-            if (!string.Equals(baseDatos, SqlServerConnection.NombreBaseNegocio, StringComparison.Ordinal) &&
-                !string.Equals(baseDatos, SqlServerConnection.NombreBaseServicios, StringComparison.Ordinal))
+            if (!string.Equals(baseDatos, SqlServerConnection.Instance.NombreBaseNegocio, StringComparison.Ordinal) &&
+                !string.Equals(baseDatos, SqlServerConnection.Instance.NombreBaseServicios, StringComparison.Ordinal))
             {
                 throw new DatoInvalidoException(
                     LanguageService.Translate("The requested database is not enabled for backup."));

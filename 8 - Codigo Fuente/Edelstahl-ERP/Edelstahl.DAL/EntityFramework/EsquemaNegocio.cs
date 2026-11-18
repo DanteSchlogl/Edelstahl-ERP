@@ -117,7 +117,7 @@ namespace Edelstahl.DAL.EntityFramework
         /// </summary>
         public static void Instalar()
         {
-            AsegurarBase(SqlServerConnection.NombreBaseNegocio);
+            AsegurarBase(SqlServerConnection.Instance.NombreBaseNegocio);
 
             List<string> sentencias = ObtenerSentenciasModelo();
 

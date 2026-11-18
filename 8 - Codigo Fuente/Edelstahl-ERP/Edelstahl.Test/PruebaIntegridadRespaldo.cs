@@ -247,7 +247,7 @@ namespace Edelstahl.Test
             Verificador.Seccion("Digitos verificadores, respaldo y restauracion");
 
             // La prueba restaura la base de negocio: nunca debe correr sobre la real.
-            if (SqlServerConnection.NombreBaseNegocio == "EdelstahlNegocio")
+            if (SqlServerConnection.Instance.NombreBaseNegocio == "EdelstahlNegocio")
             {
                 Verificador.Verificar(true, "Omitida: defina EDELSTAHL_NEGOCIO_DB y EDELSTAHL_SERVICIOS_DB para no tocar las bases reales");
                 return;

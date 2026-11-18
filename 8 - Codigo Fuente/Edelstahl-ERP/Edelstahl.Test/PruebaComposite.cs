@@ -191,7 +191,7 @@ namespace Edelstahl.Test
 
         private static void UsuarioDePrueba(out Guid id, out string nombre)
         {
-            using (SqlConnection conexion = new SqlConnection(SqlServerConnection.CadenaServicios))
+            using (SqlConnection conexion = new SqlConnection(SqlServerConnection.Instance.CadenaServicios))
             using (SqlCommand comando = new SqlCommand("SELECT TOP 1 Id, NombreUsuario FROM dbo.Usuarios ORDER BY NombreUsuario", conexion))
             {
                 conexion.Open();
