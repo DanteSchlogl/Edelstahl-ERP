@@ -3,7 +3,7 @@ using System.Collections.Concurrent;
 using System.Security.Cryptography;
 using System.Text;
 
-namespace Edelstahl.Services.Cryptography
+namespace Edelstahl.Services.Logic.Infrastructure
 {
     /// <summary>
     /// Proporciona cifrado simétrico AES-256 (CBC) con autenticación

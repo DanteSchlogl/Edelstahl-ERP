@@ -3,7 +3,7 @@ using QuestPDF.Fluent;
 using QuestPDF.Helpers;
 using QuestPDF.Infrastructure;
 
-namespace Edelstahl.Services.Documents
+namespace Edelstahl.Services.Logic.Documents
 {
     /// <summary>
     /// Factura A, factura B y nota de crédito. En la A se discrimina el IVA;

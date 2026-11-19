@@ -7,7 +7,7 @@ using Edelstahl.Services.DataAccess.Interfaces;
 using Edelstahl.Services.DataAccess.Tools;
 using Edelstahl.Services.DomainModel.Exceptions;
 using Edelstahl.Services.DomainModel.Security;
-using Edelstahl.Services.Localization;
+using Edelstahl.Services.Logic.Infrastructure;
 
 namespace Edelstahl.Services.DataAccess.Backup
 {
@@ -235,6 +235,25 @@ namespace Edelstahl.Services.DataAccess.Backup
                         carpetaDestino,
                         ex.Message),
                     ex);
+            }
+        }
+
+        /// <summary>
+        /// Borra un archivo de respaldo. Un archivo que no se puede borrar
+        /// no impide seguir (por ejemplo, si quedó abierto en otro proceso).
+        /// </summary>
+        public void BorrarArchivo(string ruta)
+        {
+            try
+            {
+                if (!string.IsNullOrWhiteSpace(ruta) && File.Exists(ruta))
+                {
+                    File.Delete(ruta);
+                }
+            }
+            catch (Exception ex) when (ex is IOException || ex is UnauthorizedAccessException)
+            {
+                // Un archivo que no se puede borrar no impide seguir.
             }
         }
 

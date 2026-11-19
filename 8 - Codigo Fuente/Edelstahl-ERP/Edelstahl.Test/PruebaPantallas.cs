@@ -18,8 +18,7 @@ using Edelstahl.BLL.Services;
 using Edelstahl.DAL.EntityFramework;
 using Edelstahl.DAL.Factory;
 using Edelstahl.Services.DomainModel.Security;
-using Edelstahl.Services.Configuration;
-using Edelstahl.Services.Localization;
+using Edelstahl.Services.DataAccess.Configuration;
 using System.Text;
 using Edelstahl.WinApp;
 using Edelstahl.WinApp.Modulos;
@@ -389,30 +388,30 @@ namespace Edelstahl.Test
             LanguageService.Inicializar();
             LanguageService.CambiarIdioma(idioma);
 
-            Edelstahl.Services.Documents.DatosReceptor receptor = new Edelstahl.Services.Documents.DatosReceptor
+            Edelstahl.Services.Logic.Documents.DatosReceptor receptor = new Edelstahl.Services.Logic.Documents.DatosReceptor
             {
                 RazonSocial = "Cliente de Prueba SRL", Cuit = "30712345678", EtiquetaDocumento = "CUIT", Domicilio = "Av. Mitre 1200", Localidad = "Avellaneda, Buenos Aires",
                 CondicionIva = "Responsable Inscripto", Email = "cliente@example.test"
             };
 
-            Edelstahl.Services.Documents.DatosRemito remito = new Edelstahl.Services.Documents.DatosRemito
+            Edelstahl.Services.Logic.Documents.DatosRemito remito = new Edelstahl.Services.Logic.Documents.DatosRemito
             {
                 Numero = "0001-00000099", Fecha = DateTime.Today, Receptor = receptor, DireccionEntrega = "Av. Mitre 1200, Avellaneda", Pedido = "PED-2026-DEMO",
                 Chofer = "Pereyra, Lucia", Vehiculo = "AC456EF"
             };
-            remito.Lineas.Add(new Edelstahl.Services.Documents.LineaRemito { Codigo = "JCTEF30", Descripcion = "Junta clamp de teflon (3\")", Unidad = "UNIDAD", Cantidad = 2m });
-            remito.Lineas.Add(new Edelstahl.Services.Documents.LineaRemito { Codigo = "KFS", Descripcion = "Keg filler stop plastico (5/8\")", Unidad = "UNIDAD", Cantidad = 3m });
-            new Edelstahl.Services.Documents.RemitoPdfService(remito).Generar(Path.Combine(carpeta, "remito.pdf"));
-            new Edelstahl.Services.Documents.RemitoPdfService(remito).GenerarImagenes(Path.Combine(carpeta, "remito"));
+            remito.Lineas.Add(new Edelstahl.Services.Logic.Documents.LineaRemito { Codigo = "JCTEF30", Descripcion = "Junta clamp de teflon (3\")", Unidad = "UNIDAD", Cantidad = 2m });
+            remito.Lineas.Add(new Edelstahl.Services.Logic.Documents.LineaRemito { Codigo = "KFS", Descripcion = "Keg filler stop plastico (5/8\")", Unidad = "UNIDAD", Cantidad = 3m });
+            new Edelstahl.Services.Logic.Documents.RemitoPdfService(remito).Generar(Path.Combine(carpeta, "remito.pdf"));
+            new Edelstahl.Services.Logic.Documents.RemitoPdfService(remito).GenerarImagenes(Path.Combine(carpeta, "remito"));
 
-            Edelstahl.Services.Documents.DatosFactura factura = new Edelstahl.Services.Documents.DatosFactura
+            Edelstahl.Services.Logic.Documents.DatosFactura factura = new Edelstahl.Services.Logic.Documents.DatosFactura
             {
                 Letra = "A", CodigoComprobante = "001", Numero = "0001-00000099", Fecha = DateTime.Today, Vencimiento = DateTime.Today.AddDays(30), Receptor = receptor,
                 CondicionVenta = "Contado", Referencia = "Pedido PED-2026-DEMO", Neto = 100m, Iva = 21m, AlicuotaIva = 21m, Total = 121m, Saldo = 121m
             };
-            factura.Lineas.Add(new Edelstahl.Services.Documents.LineaDocumento { Codigo = "JCTEF30", Descripcion = "Junta clamp de teflon (3\")", Cantidad = 2m, Unidad = "UNIDAD", PrecioUnitario = 50m, Subtotal = 100m });
-            new Edelstahl.Services.Documents.FacturaPdfService(factura).Generar(Path.Combine(carpeta, "factura.pdf"));
-            new Edelstahl.Services.Documents.FacturaPdfService(factura).GenerarImagenes(Path.Combine(carpeta, "factura"));
+            factura.Lineas.Add(new Edelstahl.Services.Logic.Documents.LineaDocumento { Codigo = "JCTEF30", Descripcion = "Junta clamp de teflon (3\")", Cantidad = 2m, Unidad = "UNIDAD", PrecioUnitario = 50m, Subtotal = 100m });
+            new Edelstahl.Services.Logic.Documents.FacturaPdfService(factura).Generar(Path.Combine(carpeta, "factura.pdf"));
+            new Edelstahl.Services.Logic.Documents.FacturaPdfService(factura).GenerarImagenes(Path.Combine(carpeta, "factura"));
 
             Verificador.Verificar(File.Exists(Path.Combine(carpeta, "remito.pdf")) && File.Exists(Path.Combine(carpeta, "factura.pdf")), "Se generaron el remito y la factura de ejemplo");
 

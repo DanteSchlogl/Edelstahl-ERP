@@ -2,7 +2,6 @@ using System;
 using Edelstahl.Services.Logic.DTOs;
 using Edelstahl.Services.Logic.Infrastructure;
 using Edelstahl.Services.DomainModel.Security;
-using Edelstahl.Services.Security;
 
 namespace Edelstahl.Services.Logic
 {

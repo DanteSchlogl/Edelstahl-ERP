@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Data.Entity;
 using Edelstahl.DAL.EntityFramework;
-using Edelstahl.Services.Configuration;
+using Edelstahl.Services.DataAccess.Configuration;
 
 namespace Edelstahl.Test
 {
@@ -18,7 +18,7 @@ namespace Edelstahl.Test
 
             // Las preferencias (idioma, respaldos) de las pruebas van a una carpeta temporal.
             Environment.SetEnvironmentVariable(
-                Edelstahl.Services.Localization.LanguageService.VariableCarpetaDatos,
+                Edelstahl.Services.Logic.Infrastructure.LanguageService.VariableCarpetaDatos,
                 System.IO.Path.Combine(System.IO.Path.GetTempPath(), "edelstahl-prueba-datos-" + Guid.NewGuid().ToString("N")));
 
             bool cifrado = args.Length == 0 || Array.IndexOf(args, "cifrado") >= 0;

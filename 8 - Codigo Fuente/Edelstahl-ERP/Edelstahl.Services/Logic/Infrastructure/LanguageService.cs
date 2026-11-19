@@ -7,7 +7,7 @@ using System.IO;
 using System.Resources;
 using System.Text;
 
-namespace Edelstahl.Services.Localization
+namespace Edelstahl.Services.Logic.Infrastructure
 {
     /// <summary>
     /// Administra el idioma activo y las traducciones de Edelstahl ERP.

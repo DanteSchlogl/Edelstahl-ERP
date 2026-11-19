@@ -13,7 +13,7 @@ using Edelstahl.Domain.Comercial;
 using Edelstahl.Domain.Finanzas;
 using Edelstahl.Domain.Produccion;
 using Edelstahl.Services.DomainModel.Security;
-using Edelstahl.Services.Configuration;
+using Edelstahl.Services.DataAccess.Configuration;
 
 namespace Edelstahl.Test
 {

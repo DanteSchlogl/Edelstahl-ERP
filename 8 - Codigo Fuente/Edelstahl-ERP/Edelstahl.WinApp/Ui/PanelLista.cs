@@ -13,8 +13,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using Edelstahl.BLL.Services;
 using Edelstahl.Services.DomainModel.Security;
-using Edelstahl.Services.Export;
-using Edelstahl.Services.Localization;
+using Edelstahl.Services.Logic.Export;
 
 namespace Edelstahl.WinApp.Ui
 {

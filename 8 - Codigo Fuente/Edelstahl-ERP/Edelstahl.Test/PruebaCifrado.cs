@@ -1,6 +1,6 @@
 using System;
 using System.Diagnostics;
-using Edelstahl.Services.Cryptography;
+using Edelstahl.Services.Logic.Infrastructure;
 
 namespace Edelstahl.Test
 {

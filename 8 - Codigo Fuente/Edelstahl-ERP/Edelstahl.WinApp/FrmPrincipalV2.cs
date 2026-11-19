@@ -9,7 +9,6 @@ using System.Windows.Forms;
 using Edelstahl.BLL.Infrastructure;
 using Edelstahl.BLL.Services;
 using Edelstahl.Services.DomainModel.Security;
-using Edelstahl.Services.Localization;
 using Edelstahl.WinApp.Modulos;
 using Edelstahl.WinApp.Ui;
 
@@ -179,8 +178,8 @@ namespace Edelstahl.WinApp
         private void ConfigurarHeader()
         {
             // En modo demostracion no hay usuarios reales: no tiene sentido el perfil ni pedir ayuda al administrador.
-            btnPerfil.Visible = !Edelstahl.Services.Configuration.ApplicationMode.IsDemo;
-            btnPedirAyuda.Visible = !Edelstahl.Services.Configuration.ApplicationMode.IsDemo;
+            btnPerfil.Visible = !Edelstahl.Services.DataAccess.Configuration.ApplicationMode.IsDemo;
+            btnPedirAyuda.Visible = !Edelstahl.Services.DataAccess.Configuration.ApplicationMode.IsDemo;
         }
 
         private void PnlHeader_Resize(object remitente, EventArgs argumentos)
@@ -218,7 +217,7 @@ namespace Edelstahl.WinApp
         private void ActualizarPedidos()
         {
             if (IsDisposed || !SesionActual.EstaIniciada || !SesionActual.Tiene(Permiso.UsuariosAdministrar) ||
-                Edelstahl.Services.Configuration.ApplicationMode.IsDemo)
+                Edelstahl.Services.DataAccess.Configuration.ApplicationMode.IsDemo)
             {
                 return;
             }

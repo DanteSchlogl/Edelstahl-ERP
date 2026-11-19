@@ -98,7 +98,7 @@ namespace Edelstahl.BLL.Services
             ClienteSeleccionado = cliente;
             PresupuestoSeleccionado = null;
 
-            if (Edelstahl.Services.Configuration.ApplicationMode.IsDemo)
+            if (Edelstahl.Services.DataAccess.Configuration.ApplicationMode.IsDemo)
             {
                 _presupuestoService.CrearPresupuestosDemostracion(
                     cliente.Id);

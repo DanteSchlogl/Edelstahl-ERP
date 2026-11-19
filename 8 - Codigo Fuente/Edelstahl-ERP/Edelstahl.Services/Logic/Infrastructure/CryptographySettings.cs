@@ -1,6 +1,6 @@
 ﻿using System.Configuration;
 
-namespace Edelstahl.Services.Cryptography
+namespace Edelstahl.Services.Logic.Infrastructure
 {
     /// <summary>
     /// Obtiene la configuración utilizada por los

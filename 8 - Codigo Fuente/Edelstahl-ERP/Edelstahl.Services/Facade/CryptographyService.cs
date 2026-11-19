@@ -1,4 +1,6 @@
-﻿namespace Edelstahl.Services.Cryptography
+﻿using Edelstahl.Services.Logic.Infrastructure;
+
+namespace Edelstahl.Services.Facade
 {
     /// <summary>
     /// Proporciona una fachada para las operaciones

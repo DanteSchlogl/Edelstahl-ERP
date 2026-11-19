@@ -6,7 +6,7 @@ using Edelstahl.DAL.EntityFramework;
 using Edelstahl.DAL.Interfaces;
 using Edelstahl.Domain.Comercial;
 using Edelstahl.Services.DomainModel.Exceptions;
-using Edelstahl.Services.Localization;
+using Edelstahl.Services.Logic.Infrastructure;
 
 namespace Edelstahl.DAL.Implementations.EntityFramework
 {

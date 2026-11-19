@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace Edelstahl.Services.Configuration
+namespace Edelstahl.Services.DataAccess.Configuration
 {
     /// <summary>
     /// Mantiene el modo de ejecución seleccionado

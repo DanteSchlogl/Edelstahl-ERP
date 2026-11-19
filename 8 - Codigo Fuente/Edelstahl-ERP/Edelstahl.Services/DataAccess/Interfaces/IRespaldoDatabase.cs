@@ -35,6 +35,9 @@ namespace Edelstahl.Services.DataAccess.Interfaces
         /// <summary>Copia un archivo con los permisos del usuario de Windows.</summary>
         string CopiarArchivo(string rutaOrigen, string carpetaDestino);
 
+        /// <summary>Borra un archivo de respaldo; si no se puede borrar, no interrumpe.</summary>
+        void BorrarArchivo(string ruta);
+
         /// <summary>Indica si el error se debe a que SQL Server no pudo abrir el archivo.</summary>
         bool EsErrorDeArchivo(Exception ex);
     }

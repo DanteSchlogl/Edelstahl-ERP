@@ -1,7 +1,7 @@
 using System;
 using System.Security.Cryptography;
 
-namespace Edelstahl.Services.Security
+namespace Edelstahl.Services.Logic.Infrastructure
 {
     /// <summary>
     /// Resultado seguro del procesamiento de una contraseña.
@@ -177,14 +177,14 @@ namespace Edelstahl.Services.Security
             if (string.IsNullOrWhiteSpace(password))
             {
                 throw new ArgumentException(
-                    Edelstahl.Services.Localization.LanguageService.Translate("The password cannot be empty."),
+                    Edelstahl.Services.Logic.Infrastructure.LanguageService.Translate("The password cannot be empty."),
                     nameof(password));
             }
 
             if (password.Length < 8)
             {
                 throw new ArgumentException(
-                    Edelstahl.Services.Localization.LanguageService.Translate("The password must have at least 8 characters."),
+                    Edelstahl.Services.Logic.Infrastructure.LanguageService.Translate("The password must have at least 8 characters."),
                     nameof(password));
             }
         }

@@ -6,7 +6,7 @@ using System.Linq.Expressions;
 using System.Reflection;
 using Edelstahl.Domain.Common;
 using Edelstahl.Services.DomainModel.Exceptions;
-using Edelstahl.Services.Localization;
+using Edelstahl.Services.Logic.Infrastructure;
 
 namespace Edelstahl.DAL.Store
 {

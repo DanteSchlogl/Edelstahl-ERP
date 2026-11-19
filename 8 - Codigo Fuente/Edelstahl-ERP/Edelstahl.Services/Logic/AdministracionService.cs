@@ -6,7 +6,6 @@ using System.Collections.Generic;
 using System.Linq;
 using Edelstahl.Services.DomainModel.Exceptions;
 using Edelstahl.Services.DomainModel.Security;
-using Edelstahl.Services.Security;
 
 namespace Edelstahl.Services.Logic
 {
@@ -350,7 +349,7 @@ namespace Edelstahl.Services.Logic
 
         private static void ExigirFamilias()
         {
-            if (!Edelstahl.Services.Configuration.ApplicationMode.UsesSqlServer)
+            if (!Edelstahl.Services.DataAccess.Configuration.ApplicationMode.UsesSqlServer)
             {
                 throw Mensajes.Regla("Families can only be used with the SQL Server database.");
             }

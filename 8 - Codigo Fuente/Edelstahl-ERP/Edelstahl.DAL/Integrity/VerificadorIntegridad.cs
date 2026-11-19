@@ -8,7 +8,7 @@ using Edelstahl.Domain.Comercial;
 using Edelstahl.Services.DomainModel.Exceptions;
 using Edelstahl.Domain.Integrity;
 using Edelstahl.DAL.Integrity;
-using Edelstahl.Services.Localization;
+using Edelstahl.Services.Logic.Infrastructure;
 
 namespace Edelstahl.DAL.Integrity
 {

@@ -6,7 +6,8 @@ using System.Linq;
 using System.Security.Cryptography;
 using Edelstahl.Domain.Comercial;
 using Edelstahl.Domain.Integrity;
-using Edelstahl.Services.Cryptography;
+using Edelstahl.Services.Facade;
+using Edelstahl.Services.Logic.Infrastructure;
 using Edelstahl.DAL.Integrity;
 
 namespace Edelstahl.DAL.EntityFramework

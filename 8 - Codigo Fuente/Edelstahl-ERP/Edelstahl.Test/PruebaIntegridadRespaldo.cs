@@ -19,8 +19,7 @@ using Edelstahl.Domain.Comercial;
 using Edelstahl.Services.DomainModel.Exceptions;
 using Edelstahl.Domain.Integrity;
 using Edelstahl.Services.DomainModel.Security;
-using Edelstahl.Services.Configuration;
-using Edelstahl.Services.Localization;
+using Edelstahl.Services.DataAccess.Configuration;
 using Edelstahl.WinApp.Ui;
 
 namespace Edelstahl.Test

@@ -3,10 +3,10 @@ using System.Collections.Generic;
 using System.Configuration;
 using System.IO;
 using System.Reflection;
-using Edelstahl.Services.Configuration;
+using Edelstahl.Services.DataAccess.Configuration;
 using Edelstahl.Services.DataAccess.Interfaces;
 using Edelstahl.Services.DomainModel.Exceptions;
-using Edelstahl.Services.Localization;
+using Edelstahl.Services.Logic.Infrastructure;
 
 namespace Edelstahl.Services.DataAccess.Factory
 {

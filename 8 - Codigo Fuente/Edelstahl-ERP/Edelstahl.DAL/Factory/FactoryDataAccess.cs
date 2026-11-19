@@ -6,10 +6,10 @@ using System.Reflection;
 using Edelstahl.DAL.EntityFramework;
 using Edelstahl.DAL.Interfaces;
 using Edelstahl.DAL.Store;
-using Edelstahl.Services.Configuration;
+using Edelstahl.Services.DataAccess.Configuration;
 using Edelstahl.Services.DataAccess.Factory;
 using Edelstahl.Services.DomainModel.Exceptions;
-using Edelstahl.Services.Localization;
+using Edelstahl.Services.Logic.Infrastructure;
 
 namespace Edelstahl.DAL.Factory
 {

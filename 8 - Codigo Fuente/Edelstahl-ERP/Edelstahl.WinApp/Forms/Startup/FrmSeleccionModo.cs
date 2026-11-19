@@ -2,8 +2,8 @@
 using System.ComponentModel;
 using System.Drawing;
 using System.Windows.Forms;
-using Edelstahl.Services.Configuration;
-using Edelstahl.Services.Localization;
+using Edelstahl.Services.DataAccess.Configuration;
+using Edelstahl.Services.Logic.Infrastructure;
 
 namespace Edelstahl.WinApp.Forms.Startup
 {

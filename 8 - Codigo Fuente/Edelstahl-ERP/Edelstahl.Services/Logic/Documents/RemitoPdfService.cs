@@ -4,7 +4,7 @@ using QuestPDF.Fluent;
 using QuestPDF.Helpers;
 using QuestPDF.Infrastructure;
 
-namespace Edelstahl.Services.Documents
+namespace Edelstahl.Services.Logic.Documents
 {
     /// <summary>
     /// Remito de entrega en tres copias (original, duplicado y triplicado),

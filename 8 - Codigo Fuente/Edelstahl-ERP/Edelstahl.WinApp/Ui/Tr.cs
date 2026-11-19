@@ -1,6 +1,6 @@
 using System;
 using System.Text;
-using Edelstahl.Services.Localization;
+using Edelstahl.Services.Logic.Infrastructure;
 
 namespace Edelstahl.WinApp.Ui
 {

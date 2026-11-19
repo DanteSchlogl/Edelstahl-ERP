@@ -3,7 +3,6 @@ using Edelstahl.Services.Logic.Infrastructure;
 using System.Windows.Forms;
 using Edelstahl.BLL.Infrastructure;
 using Edelstahl.Services.DomainModel.Security;
-using Edelstahl.Services.Localization;
 
 namespace Edelstahl.WinApp.Ui
 {

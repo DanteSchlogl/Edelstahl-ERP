@@ -2,8 +2,9 @@ using System;
 using System.Collections.Generic;
 using System.Configuration;
 using System.Globalization;
+using Edelstahl.Services.Logic.Infrastructure;
 
-namespace Edelstahl.Services.Documents
+namespace Edelstahl.Services.Logic.Documents
 {
     /// <summary>
     /// Datos de la empresa que emite los documentos. Son ficticios y se
@@ -175,7 +176,7 @@ namespace Edelstahl.Services.Documents
 
         public static string T(string clave)
         {
-            string texto = Localization.LanguageService.Translate(clave);
+            string texto = LanguageService.Translate(clave);
 
             // Las claves escritas en mayusculas (INVOICE, DELIVERY NOTE...) son los titulos del documento:
             // se muestran en mayusculas en cualquier idioma, aunque el texto traducido este en minusculas.

@@ -11,7 +11,7 @@ using Edelstahl.Domain.Comercial;
 using Edelstahl.Domain.Compras;
 using Edelstahl.Domain.Finanzas;
 using Edelstahl.Domain.Logistica;
-using Edelstahl.Services.Documents;
+using Edelstahl.Services.Logic.Documents;
 using Edelstahl.BLL.Documents;
 
 namespace Edelstahl.BLL.Services

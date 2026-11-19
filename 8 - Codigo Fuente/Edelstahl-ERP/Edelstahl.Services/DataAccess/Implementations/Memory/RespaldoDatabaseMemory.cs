@@ -2,7 +2,7 @@ using System;
 using Edelstahl.Services.DataAccess.Interfaces;
 using Edelstahl.Services.DomainModel.Exceptions;
 using Edelstahl.Services.DomainModel.Security;
-using Edelstahl.Services.Localization;
+using Edelstahl.Services.Logic.Infrastructure;
 
 namespace Edelstahl.Services.DataAccess.Implementations.Memory
 {
@@ -47,6 +47,11 @@ namespace Edelstahl.Services.DataAccess.Implementations.Memory
         }
 
         public string CopiarArchivo(string rutaOrigen, string carpetaDestino)
+        {
+            throw NoDisponible();
+        }
+
+        public void BorrarArchivo(string ruta)
         {
             throw NoDisponible();
         }

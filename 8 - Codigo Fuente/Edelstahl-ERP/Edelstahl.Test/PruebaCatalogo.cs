@@ -11,7 +11,7 @@ using Edelstahl.DAL.Factory;
 using Edelstahl.Domain.Catalogo;
 using Edelstahl.Domain.Compras;
 using Edelstahl.Services.DomainModel.Security;
-using Edelstahl.Services.Configuration;
+using Edelstahl.Services.DataAccess.Configuration;
 
 namespace Edelstahl.Test
 {

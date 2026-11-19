@@ -1,7 +1,7 @@
 using System;
 using System.Globalization;
 using Edelstahl.Domain.Comercial;
-using Edelstahl.Services.Documents;
+using Edelstahl.Services.Logic.Documents;
 using QuestPDF.Fluent;
 using QuestPDF.Helpers;
 using QuestPDF.Infrastructure;

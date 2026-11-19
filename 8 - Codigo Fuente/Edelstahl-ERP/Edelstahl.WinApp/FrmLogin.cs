@@ -5,8 +5,8 @@ using System.Drawing;
 using System.IO;
 using System.Windows.Forms;
 using Edelstahl.BLL.Services;
-using Edelstahl.Services.Configuration;
-using Edelstahl.Services.Localization;
+using Edelstahl.Services.DataAccess.Configuration;
+using Edelstahl.Services.Logic.Infrastructure;
 using Edelstahl.WinApp.Ui;
 
 namespace Edelstahl.WinApp

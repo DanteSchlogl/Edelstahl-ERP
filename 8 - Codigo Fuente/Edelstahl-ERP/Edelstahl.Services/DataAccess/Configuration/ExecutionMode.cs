@@ -1,4 +1,4 @@
-﻿namespace Edelstahl.Services.Configuration
+﻿namespace Edelstahl.Services.DataAccess.Configuration
 {
     /// <summary>
     /// Define los modos disponibles para iniciar

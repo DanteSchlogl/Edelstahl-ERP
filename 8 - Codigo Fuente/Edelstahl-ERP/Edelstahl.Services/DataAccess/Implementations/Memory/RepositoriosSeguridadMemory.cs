@@ -4,7 +4,7 @@ using System.Linq;
 using Edelstahl.Services.DataAccess.Interfaces;
 using Edelstahl.Services.DomainModel.Security;
 using Edelstahl.Services.DomainModel.Exceptions;
-using Edelstahl.Services.Localization;
+using Edelstahl.Services.Logic.Infrastructure;
 
 namespace Edelstahl.Services.DataAccess.Implementations.Memory
 {

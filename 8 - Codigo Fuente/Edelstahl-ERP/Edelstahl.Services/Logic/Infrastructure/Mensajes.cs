@@ -2,7 +2,7 @@ using System;
 using Edelstahl.Services.Logic.DTOs;
 using Edelstahl.Services.Logic;
 using Edelstahl.Services.DomainModel.Exceptions;
-using Edelstahl.Services.Localization;
+using Edelstahl.Services.Logic.Infrastructure;
 
 namespace Edelstahl.Services.Logic.Infrastructure
 {

@@ -10,10 +10,10 @@ using Edelstahl.DAL.Interfaces;
 using Edelstahl.Domain.Comercial;
 using Edelstahl.Domain.Integrity;
 using Edelstahl.Services.DomainModel.Security;
-using Edelstahl.Services.Cryptography;
+using Edelstahl.Services.Facade;
 using Edelstahl.DAL.Integrity;
 using Edelstahl.Services.DomainModel.Exceptions;
-using Edelstahl.Services.Localization;
+using Edelstahl.Services.Logic.Infrastructure;
 
 namespace Edelstahl.DAL.Implementations.EntityFramework
 {

@@ -258,25 +258,10 @@ namespace Edelstahl.BLL.Services
 
                 foreach (RegistroRespaldo viejo in sobrantes)
                 {
-                    BorrarArchivo(viejo.RutaSql);
-                    BorrarArchivo(viejo.RutaCopia);
+                    _database.BorrarArchivo(viejo.RutaSql);
+                    _database.BorrarArchivo(viejo.RutaCopia);
                     _repositorio.Delete(viejo.Id);
                 }
-            }
-        }
-
-        private static void BorrarArchivo(string ruta)
-        {
-            try
-            {
-                if (!string.IsNullOrWhiteSpace(ruta) && File.Exists(ruta))
-                {
-                    File.Delete(ruta);
-                }
-            }
-            catch (Exception ex) when (ex is IOException || ex is UnauthorizedAccessException)
-            {
-                // Un archivo que no se puede borrar no impide seguir.
             }
         }
 

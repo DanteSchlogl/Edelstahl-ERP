@@ -3,7 +3,7 @@ using QuestPDF.Fluent;
 using QuestPDF.Helpers;
 using QuestPDF.Infrastructure;
 
-namespace Edelstahl.Services.Documents
+namespace Edelstahl.Services.Logic.Documents
 {
     /// <summary>
     /// Orden de compra dirigida a un proveedor.

@@ -5,9 +5,9 @@ using System.Linq;
 using System.Reflection;
 using System.Text;
 using System.Xml.Serialization;
-using Edelstahl.Services.Localization;
+using Edelstahl.Services.Logic.Infrastructure;
 
-namespace Edelstahl.Services.Export
+namespace Edelstahl.Services.Logic.Export
 {
     /// <summary>
     /// Patrón Template Method: el esqueleto de la exportación (encabezado,

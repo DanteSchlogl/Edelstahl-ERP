@@ -94,7 +94,7 @@ namespace Edelstahl.Services.Logic.Infrastructure
             HashSet<Permiso> leido = null;
 
             // Solo existe la base de servicios en modo SQL Server; en demostración se usa la matriz.
-            if (Edelstahl.Services.Configuration.ApplicationMode.UsesSqlServer)
+            if (Edelstahl.Services.DataAccess.Configuration.ApplicationMode.UsesSqlServer)
             {
                 try
                 {

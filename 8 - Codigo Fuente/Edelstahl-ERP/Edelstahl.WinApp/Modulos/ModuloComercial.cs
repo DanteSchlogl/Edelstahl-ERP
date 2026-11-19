@@ -12,7 +12,7 @@ using Edelstahl.BLL.Services;
 using Edelstahl.Domain.Comercial;
 using Edelstahl.Domain.Finanzas;
 using Edelstahl.Services.DomainModel.Security;
-using Edelstahl.Services.Documents;
+using Edelstahl.Services.Logic.Documents;
 using Edelstahl.BLL.Documents;
 using Edelstahl.WinApp.Ui;
 

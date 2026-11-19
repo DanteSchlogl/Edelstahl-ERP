@@ -6,7 +6,6 @@ using Edelstahl.Services.DataAccess.Factory;
 using System.Collections.Generic;
 using Edelstahl.Services.DomainModel.Exceptions;
 using Edelstahl.Services.DomainModel.Security;
-using Edelstahl.Services.Security;
 
 namespace Edelstahl.Services.Logic
 {
