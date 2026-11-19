@@ -92,6 +92,7 @@
     <Compile Include="DomainModel\Security\RegistroBitacora.cs" />
     <Compile Include="DomainModel\Security\RegistroRespaldo.cs" />
     <Compile Include="DomainModel\Security\ResultadoRespaldo.cs" />
+    <Compile Include="DomainModel\Integrity\ResultadoIntegridad.cs" />
     <Compile Include="DomainModel\Security\Rol.cs" />
     <Compile Include="DomainModel\Security\Usuario.cs" />
     <Compile Include="DomainModel\Exceptions\BusinessRuleException.cs" />
@@ -103,6 +104,7 @@
     <Compile Include="DataAccess\Interfaces\IPermisoUsuarioRepository.cs" />
     <Compile Include="DataAccess\Interfaces\IRespaldoDatabase.cs" />
     <Compile Include="DataAccess\Interfaces\IRespaldoRepository.cs" />
+    <Compile Include="DataAccess\Interfaces\IVerificadorIntegridad.cs" />
     <Compile Include="DataAccess\Interfaces\IRolRepository.cs" />
     <Compile Include="DataAccess\Interfaces\IUsuarioRepository.cs" />
     <Compile Include="DataAccess\Implementations\SqlServer\BitacoraRepositorySqlServer.cs" />
@@ -123,6 +125,9 @@
     <Compile Include="Logic\Infrastructure\Autorizacion.cs" />
     <Compile Include="Logic\Infrastructure\PermisosEfectivos.cs" />
     <Compile Include="Logic\Infrastructure\ConfiguracionRespaldo.cs" />
+    <Compile Include="Logic\Respaldo\IntegridadService.cs" />
+    <Compile Include="Logic\Respaldo\RecuperacionService.cs" />
+    <Compile Include="Logic\Respaldo\RespaldoService.cs" />
     <Compile Include="Logic\Infrastructure\Mensajes.cs" />
     <Compile Include="Logic\DTOs\PermisosDtos.cs" />
     <Compile Include="Logic\DTOs\FamiliasDtos.cs" />

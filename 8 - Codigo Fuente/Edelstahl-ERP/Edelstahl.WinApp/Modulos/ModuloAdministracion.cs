@@ -6,7 +6,7 @@ using System.Linq;
 using System.Windows.Forms;
 using Edelstahl.BLL.DTOs;
 using Edelstahl.BLL.Services;
-using Edelstahl.BLL.Services.Respaldo;
+using Edelstahl.Services.Logic.Respaldo;
 using Edelstahl.Services.DomainModel.Security;
 using Edelstahl.WinApp.Ui;
 
@@ -564,9 +564,9 @@ namespace Edelstahl.WinApp.Modulos
             }
         }
 
-        private void EjecutarRestauracion(Func<Edelstahl.Domain.Integrity.ResultadoIntegridad> restauracion)
+        private void EjecutarRestauracion(Func<Edelstahl.Services.DomainModel.Integrity.ResultadoIntegridad> restauracion)
         {
-            Edelstahl.Domain.Integrity.ResultadoIntegridad resultado = null;
+            Edelstahl.Services.DomainModel.Integrity.ResultadoIntegridad resultado = null;
 
             bool correcto = Estilo.Ejecutar(this, () =>
                 FrmEspera.Ejecutar("Restoring the backup...", () =>
@@ -589,7 +589,7 @@ namespace Edelstahl.WinApp.Modulos
 
         private void Verificar()
         {
-            Edelstahl.Domain.Integrity.ResultadoIntegridad resultado = null;
+            Edelstahl.Services.DomainModel.Integrity.ResultadoIntegridad resultado = null;
 
             bool correcto = Estilo.Ejecutar(this, () =>
                 FrmEspera.Ejecutar("Checking the integrity of the data...", () =>

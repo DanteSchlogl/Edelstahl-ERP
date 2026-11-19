@@ -69,6 +69,19 @@ namespace Edelstahl.Services.DataAccess.Factory
         /// <summary>Crear, comprobar y restaurar respaldos de las bases.</summary>
         public static IRespaldoDatabase RespaldoDatabase { get; private set; }
 
+        /// <summary>
+        /// Verificación de los dígitos verificadores de las tablas protegidas. Lo publica
+        /// FactoryDataAccess al inicializarse, porque la implementación concreta vive en la DAL
+        /// (necesita consultar las tablas del negocio) y Services no puede depender de la DAL.
+        /// </summary>
+        public static IVerificadorIntegridad VerificadorIntegridad { get; set; }
+
+        /// <summary>
+        /// Recrea las tablas y columnas que falten después de restaurar un respaldo viejo. La
+        /// publica FactoryDataAccess por el mismo motivo que VerificadorIntegridad.
+        /// </summary>
+        public static Action PrepararBaseDeDatos { get; set; }
+
         public static bool EstaInicializada
         {
             get { return _inicializada; }

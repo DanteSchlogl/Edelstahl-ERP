@@ -2,7 +2,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 
-namespace Edelstahl.Domain.Integrity
+namespace Edelstahl.Services.DomainModel.Integrity
 {
     /// <summary>
     /// Qué dígito verificador no coincide: el de un registro (horizontal)

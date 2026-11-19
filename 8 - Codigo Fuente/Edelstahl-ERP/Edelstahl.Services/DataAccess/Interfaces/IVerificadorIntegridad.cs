@@ -1,6 +1,6 @@
-using Edelstahl.Domain.Integrity;
+using Edelstahl.Services.DomainModel.Integrity;
 
-namespace Edelstahl.DAL.Interfaces
+namespace Edelstahl.Services.DataAccess.Interfaces
 {
     /// <summary>
     /// Comprueba (y, a pedido de un administrador, recalcula) los dígitos

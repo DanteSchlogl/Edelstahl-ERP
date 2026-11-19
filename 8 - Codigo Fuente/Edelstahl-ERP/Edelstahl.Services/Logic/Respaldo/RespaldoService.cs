@@ -6,14 +6,11 @@ using Edelstahl.Services.DataAccess.Factory;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
-using Edelstahl.BLL.Infrastructure;
-using Edelstahl.DAL.Factory;
-using Edelstahl.DAL.Interfaces;
 using Edelstahl.Services.DomainModel.Exceptions;
-using Edelstahl.Domain.Integrity;
+using Edelstahl.Services.DomainModel.Integrity;
 using Edelstahl.Services.DomainModel.Security;
 
-namespace Edelstahl.BLL.Services.Respaldo
+namespace Edelstahl.Services.Logic.Respaldo
 {
     /// <summary>
     /// Crea, lista y restaura respaldos de las bases de negocio y servicios.
@@ -379,7 +376,7 @@ namespace Edelstahl.BLL.Services.Respaldo
                 RestaurarPrimeraRutaDisponible(rutas);
 
                 // Un respaldo viejo puede no tener las tablas o columnas nuevas.
-                FactoryDataAccess.PrepararBaseDeDatos();
+                FactoryServicios.PrepararBaseDeDatos();
 
                 ResultadoIntegridad resultado = _integridad.Verificar();
 

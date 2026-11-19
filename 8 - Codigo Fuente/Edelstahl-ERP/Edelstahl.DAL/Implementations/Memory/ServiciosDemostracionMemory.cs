@@ -1,7 +1,7 @@
 using System;
-using Edelstahl.DAL.Interfaces;
+using Edelstahl.Services.DataAccess.Interfaces;
 using Edelstahl.Services.DomainModel.Exceptions;
-using Edelstahl.Domain.Integrity;
+using Edelstahl.Services.DomainModel.Integrity;
 using Edelstahl.Services.DomainModel.Security;
 using Edelstahl.Services.Logic.Infrastructure;
 

@@ -1,12 +1,12 @@
 using System;
-using Edelstahl.Services.Logic;
 using System.Linq;
 using System.Text;
-using Edelstahl.DAL.Factory;
-using Edelstahl.DAL.Interfaces;
-using Edelstahl.Domain.Integrity;
+using Edelstahl.Services.Logic;
+using Edelstahl.Services.DataAccess.Factory;
+using Edelstahl.Services.DataAccess.Interfaces;
+using Edelstahl.Services.DomainModel.Integrity;
 
-namespace Edelstahl.BLL.Services.Respaldo
+namespace Edelstahl.Services.Logic.Respaldo
 {
     /// <summary>
     /// Verifica los dígitos verificadores (DVH por registro y DVV por tabla)
@@ -20,7 +20,7 @@ namespace Edelstahl.BLL.Services.Respaldo
         private readonly BitacoraService _bitacora;
 
         public IntegridadService()
-            : this(FactoryDataAccess.VerificadorIntegridad, new BitacoraService())
+            : this(FactoryServicios.VerificadorIntegridad, new BitacoraService())
         {
         }
 

@@ -58,7 +58,6 @@
   <ItemGroup>
     <Compile Include="Integrity\ClienteDvhService.cs" />
     <Compile Include="Integrity\VerificadorIntegridad.cs" />
-    <Compile Include="Interfaces\IVerificadorIntegridad.cs" />
     <Compile Include="Implementations\Memory\ServiciosDemostracionMemory.cs" />
     <Compile Include="EntityFramework\ClienteConfiguration.cs" />
     <Compile Include="EntityFramework\DetallePedidoConfiguration.cs" />

@@ -8,6 +8,7 @@ using Edelstahl.DAL.Interfaces;
 using Edelstahl.DAL.Store;
 using Edelstahl.Services.DataAccess.Configuration;
 using Edelstahl.Services.DataAccess.Factory;
+using Edelstahl.Services.DataAccess.Interfaces;
 using Edelstahl.Services.DomainModel.Exceptions;
 using Edelstahl.Services.Logic.Infrastructure;
 
@@ -110,6 +111,12 @@ namespace Edelstahl.DAL.Factory
             _modo = modo;
             NegocioStore = almacen;
             _inicializada = true;
+
+            // Services no puede depender de la DAL (es al revés), así que las piezas de
+            // integridad/respaldo que la necesitan (VerificadorIntegridad, PrepararBaseDeDatos)
+            // se publican acá, en vez de que Services las busque directamente en la DAL.
+            FactoryServicios.VerificadorIntegridad = integridad;
+            FactoryServicios.PrepararBaseDeDatos = PrepararBaseDeDatos;
         }
 
         /// <summary>

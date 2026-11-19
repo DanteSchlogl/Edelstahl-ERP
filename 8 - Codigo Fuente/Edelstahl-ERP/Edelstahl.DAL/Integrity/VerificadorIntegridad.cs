@@ -3,10 +3,11 @@ using System.Collections.Generic;
 using System.Data.Entity;
 using System.Linq;
 using Edelstahl.DAL.EntityFramework;
-using Edelstahl.DAL.Interfaces;
 using Edelstahl.Domain.Comercial;
-using Edelstahl.Services.DomainModel.Exceptions;
 using Edelstahl.Domain.Integrity;
+using Edelstahl.Services.DomainModel.Exceptions;
+using Edelstahl.Services.DomainModel.Integrity;
+using Edelstahl.Services.DataAccess.Interfaces;
 using Edelstahl.DAL.Integrity;
 using Edelstahl.Services.Logic.Infrastructure;
 

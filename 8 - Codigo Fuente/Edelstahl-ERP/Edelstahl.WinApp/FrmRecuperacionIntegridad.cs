@@ -4,8 +4,8 @@ using System.Drawing;
 using System.Linq;
 using System.Windows.Forms;
 using Edelstahl.BLL.Services;
-using Edelstahl.BLL.Services.Respaldo;
-using Edelstahl.Domain.Integrity;
+using Edelstahl.Services.Logic.Respaldo;
+using Edelstahl.Services.DomainModel.Integrity;
 using Edelstahl.Services.DomainModel.Security;
 using Edelstahl.WinApp.Ui;
 

@@ -15,7 +15,7 @@ using Edelstahl.Domain.Catalogo;
 using Edelstahl.Domain.Comercial;
 using Edelstahl.Domain.Finanzas;
 using Edelstahl.BLL.Services;
-using Edelstahl.BLL.Services.Respaldo;
+using Edelstahl.Services.Logic.Respaldo;
 using Edelstahl.DAL.EntityFramework;
 using Edelstahl.DAL.Factory;
 using Edelstahl.Services.DomainModel.Security;
@@ -535,7 +535,7 @@ namespace Edelstahl.Test
                     Edelstahl.Services.DataAccess.Tools.SqlHelper.Parametro("@Id", System.Data.SqlDbType.UniqueIdentifier, Guid.Parse(id)));
             }
 
-            Edelstahl.Domain.Integrity.ResultadoIntegridad resultado = new IntegridadService().VerificarYRegistrar("inicio del sistema");
+            Edelstahl.Services.DomainModel.Integrity.ResultadoIntegridad resultado = new IntegridadService().VerificarYRegistrar("inicio del sistema");
             Verificador.Verificar(!resultado.Correcto, "La alteracion preparada se detecta");
 
             using (FrmRecuperacionIntegridad ventana = new FrmRecuperacionIntegridad(resultado))

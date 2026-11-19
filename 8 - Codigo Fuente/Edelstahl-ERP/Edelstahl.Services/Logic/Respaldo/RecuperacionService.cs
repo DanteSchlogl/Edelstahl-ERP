@@ -2,12 +2,11 @@ using System;
 using Edelstahl.Services.Logic.Infrastructure;
 using Edelstahl.Services.Logic;
 using System.Collections.Generic;
-using Edelstahl.BLL.Infrastructure;
 using Edelstahl.Services.DomainModel.Exceptions;
-using Edelstahl.Domain.Integrity;
+using Edelstahl.Services.DomainModel.Integrity;
 using Edelstahl.Services.DomainModel.Security;
 
-namespace Edelstahl.BLL.Services.Respaldo
+namespace Edelstahl.Services.Logic.Respaldo
 {
     /// <summary>
     /// Pantalla de recuperación: cuando los dígitos verificadores indican que
