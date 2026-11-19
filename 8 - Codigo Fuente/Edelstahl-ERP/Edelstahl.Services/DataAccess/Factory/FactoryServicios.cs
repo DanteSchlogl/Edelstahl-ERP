@@ -36,7 +36,7 @@ namespace Edelstahl.Services.DataAccess.Factory
                         { typeof(IPermisoUsuarioRepository), Sql + "PermisoUsuarioRepositorySqlServer" },
                         { typeof(IBitacoraRepository), Sql + "BitacoraRepositorySqlServer" },
                         { typeof(IRespaldoRepository), Sql + "RespaldoRepositorySqlServer" },
-                        { typeof(IRespaldoDatabase), "Edelstahl.Services.DataAccess.Backup.RespaldoDatabaseService" }
+                        { typeof(IRespaldoDatabase), "Edelstahl.Services.DataAccess.Respaldo.RespaldoDatabaseService" }
                     }
                 },
                 {

@@ -7,7 +7,7 @@ using Edelstahl.Services.DomainModel.Exceptions;
 using Edelstahl.Domain.Integrity;
 using Edelstahl.Services.DomainModel.Security;
 
-namespace Edelstahl.BLL.Services
+namespace Edelstahl.BLL.Services.Respaldo
 {
     /// <summary>
     /// Pantalla de recuperación: cuando los dígitos verificadores indican que

@@ -53,9 +53,9 @@
     <Compile Include="Services\ConfirmarPedidoService.cs" />
     <Compile Include="Services\PedidoService.cs" />
     <Compile Include="Services\PresupuestoService.cs" />
-    <Compile Include="Services\IntegridadService.cs" />
-    <Compile Include="Services\RecuperacionService.cs" />
-    <Compile Include="Services\RespaldoService.cs" />
+    <Compile Include="Services\Respaldo\IntegridadService.cs" />
+    <Compile Include="Services\Respaldo\RecuperacionService.cs" />
+    <Compile Include="Services\Respaldo\RespaldoService.cs" />
     <Compile Include="Services\AyudaService.cs" />
     <Compile Include="Documents\ComprobantePedidoPdfService.cs" />
     <Compile Include="Documents\PresupuestoPdfService.cs" />

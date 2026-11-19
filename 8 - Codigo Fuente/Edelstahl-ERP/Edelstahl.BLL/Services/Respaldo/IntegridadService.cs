@@ -6,7 +6,7 @@ using Edelstahl.DAL.Factory;
 using Edelstahl.DAL.Interfaces;
 using Edelstahl.Domain.Integrity;
 
-namespace Edelstahl.BLL.Services
+namespace Edelstahl.BLL.Services.Respaldo
 {
     /// <summary>
     /// Verifica los dígitos verificadores (DVH por registro y DVV por tabla)

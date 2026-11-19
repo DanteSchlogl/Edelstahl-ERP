@@ -9,7 +9,7 @@ using Edelstahl.Services.DomainModel.Exceptions;
 using Edelstahl.Services.DomainModel.Security;
 using Edelstahl.Services.Logic.Infrastructure;
 
-namespace Edelstahl.Services.DataAccess.Backup
+namespace Edelstahl.Services.DataAccess.Respaldo
 {
     /// <summary>
     /// Crea, verifica y restaura respaldos completos de SQL Server.
